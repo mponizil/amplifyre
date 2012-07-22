@@ -1,0 +1,113 @@
+.content {
+  width: 800px;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  margin-left: -420px;
+  @include box-shadow(0 0 6px rgba(206, 206, 206, 0.9));
+  border: 1px solid #ebebeb;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+}
+.content a {
+  color: #06bcff;
+}
+.scrollpane {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.news .date,
+.news .title,
+.news .body {
+  margin-bottom: 6px;
+}
+
+.pics li {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  margin: 7px;
+  list-style: none;
+}
+.pics a img,
+.listen .album-cover img,
+.tour .thm img {
+  border: 4px solid #000;
+}
+.pics a:hover img,
+.listen .album-cover a:hover img,
+.tour .thm a:hover img {
+  border: 4px solid #06bcff;
+}
+
+.album {
+  width: 220px;
+  float: left;
+  margin: 0 20px 20px 0;
+}
+.album ul {background: rgba(0,0,0,0.2);padding: 10px}
+.album li {
+  list-style: none;
+  position: relative;
+}
+.album li:hover {background: rgba(255,255,255,0.4);}
+.album-cover {
+  width: 150px;
+  margin: 0 auto 20px auto;
+}
+.album .downloadable {float: right;}
+.listen li {
+  padding: 4px;
+}
+.listen .tracks li {
+  color: #000;
+  font-style: italic;
+  cursor: pointer;
+}
+.listen .track-title {width: 170px;float: left;}
+.tour .calendar {
+  width: 600px;
+  margin: 0 auto 20px auto;
+}
+.tour .cal-entry {
+  border-top: 2px solid #06bcff;
+  position: relative;
+  padding-top: 4px;
+  margin-top: 10px;
+}
+.tour .tour-body {
+  float: left;
+  width: 450px;
+}
+.tour-body .time {
+  margin-bottom: 4px;
+}
+.tour .date {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Impact,'Arial Black',Arial,sans-serif;
+}
+.tour .time {
+  font-style: italic;
+}
+.tour .venue {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.tour .thm {
+  width: 120px;
+  float: right;
+}
+.tour .thm img {
+  float: right;
+  margin-bottom: 4px;
+}
+
+.contact-form .loader {
+  display: none;
+}
+.contact-form .result {
+  display: none;
+  margin-top: 20px;
+}

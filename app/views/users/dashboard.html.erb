@@ -1,0 +1,27 @@
+<h1>User Dashboard Page: <%= current_user.email %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Slug</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% current_user.band_sites.each do |band_site| %>
+  <tr>
+    <td><%= band_site.name %></td>
+    <td><%= band_site.description %></td>
+    <td><%= band_site.slug %></td>
+    <td><%= link_to 'Show', band_site_dashboard_path(band_site) %></td>
+    <td><%= link_to 'Edit', edit_band_site_path(band_site) %></td>
+    <td><%= link_to 'Destroy', band_site, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Site', new_band_site_path %>

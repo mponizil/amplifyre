@@ -1,0 +1,53 @@
+#play-pause {
+  width: 209px;
+  height: 250px;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  margin-left: -104px;
+  cursor: pointer;
+  z-index: 6;
+}
+#play {
+  width: 209px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -104px;
+  display: none;
+}
+#pause {
+  width: 142px;
+  height: 262px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -71px;
+}
+#next-prev {
+  width: 833px;
+  height: 250px;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  margin-left: -416px;
+  cursor: pointer;
+  z-index: 5;
+}
+#prev {
+  width: 282px;
+  height: 248px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+#next {
+  width: 282px;
+  height: 248px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
