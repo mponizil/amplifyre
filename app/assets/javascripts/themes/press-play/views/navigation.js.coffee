@@ -1,17 +1,26 @@
 define [
   'quilt'
-  'templates/navigation'
-], (Quilt, jst) ->
+  'list'
+  'views/nav-item'
+], (Quilt, List, NavItem) ->
 
   class NavigationView extends Quilt.View
 
-    template: jst
+    template: -> '<ul></ul>'
 
     events:
       'click li' : 'navigate'
 
     render: ->
-      @$el.html(@template(pages: @collection.toJSON()))
+      super
+
+      @views.push(new List
+        el: @$('ul')
+        view: NavItem,
+        collection: @collection
+      .render())
+
+      @
 
     navigate: (e) ->
       pageId = $(e.currentTarget).data('id')

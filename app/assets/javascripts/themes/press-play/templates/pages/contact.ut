@@ -1,0 +1,35 @@
+<div class="content">
+
+  <div class="contact-form">
+
+    <form name="email_form" id="email_form">
+      <table align="center">
+        <tr>
+          <td width="80">Name</td>
+          <td><input type="text" name="name" id="name" /></td>
+        </tr>
+        <tr>
+          <td>E-mail</td>
+          <td><input type="text" name="email" id="email" /></td>
+        </tr>
+        <tr>
+          <td>Subject</td>
+          <td><input type="text" name="subject" id="subject" /></td>
+        </tr>
+        <tr>
+          <td>Message</td>
+          <td><textarea name="message" id="message"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right">
+            <button class="send">Send</button>
+            <img src="/assets/global/ajax-loader.gif" class="loader" />
+            <div class="result"></div>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+  </div>
+
+</div>

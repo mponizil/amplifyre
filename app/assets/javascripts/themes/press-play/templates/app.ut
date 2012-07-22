@@ -1,0 +1,44 @@
+<!-- background image goodness -->
+<div id='background' data-ref='background'>
+</div>
+
+<!-- music player goodness -->
+<div id='play-pause'>
+  <div id='play'><img src='/assets/controls/play.png' /></div>
+  <div id='pause'><img src='/assets/controls/pause.png' /></div>
+</div>
+<div id='next-prev'>
+  <div id='prev'><img src='/assets/controls/prev.png' /></div>
+  <div id='next'><img src='/assets/controls/next.png' /></div>
+</div>
+<div id='jp_interface'></div>
+
+<!-- begin amplifyre website -->
+<div class='container'>
+
+  <nav>
+
+    <!-- navigation -->
+    <div class='outerwrap'><div id='navigation' class='outerfloat clearfix' data-ref='navigation'>
+    </div></div>
+
+    <!-- social media -->
+    <div id='social-media' class='clearfix' data-ref='social'>
+    </div>
+
+  </nav>
+
+  <div data-ref='page'>
+  </div>
+
+  <div class='outerwrap'><div class='outerfloat'>
+    <div class='black-banner'>
+
+      <a href='javascript:void(0)' title='Home'><h1>The Loot</h1></a>
+
+      <div id='tagline'><div class='track-info'>pumpin sweet beats</div></div>
+
+    </div>
+  </div></div>
+
+</div>

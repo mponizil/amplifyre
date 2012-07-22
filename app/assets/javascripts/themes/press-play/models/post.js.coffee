@@ -2,9 +2,6 @@ define [
   'models/model'
 ], (Model) ->
 
-  class Social extends Model
-
+  class Post extends Model
     defaults:
       id: null
-      type: null
-      link: null

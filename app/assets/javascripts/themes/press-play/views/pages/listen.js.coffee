@@ -1,6 +1,6 @@
 define [
   'views/page'
-  'templates/pages/listen'
+  'jst!templates/pages/listen'
 ], (Page, jst) ->
 
   class ListenView extends Page
@@ -9,7 +9,7 @@ define [
       @music = @options.music
       super
 
-    template: JST["themes/press-play/templates/listen"]
+    template: jst
 
     events:
       "click .tracks li" : "playTrack"

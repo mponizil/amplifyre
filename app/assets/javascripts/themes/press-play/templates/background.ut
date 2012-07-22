@@ -1,0 +1,2 @@
+<div id='background-desat'><img src='/assets/images/backgrounds/<%= o.model.get('desat') %>' /></div>
+<div id='background-sat'><img src='/assets/images/backgrounds/<%= o.model.get('sat') %>' /></div>

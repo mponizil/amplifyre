@@ -1,6 +1,6 @@
 define [
   'views/page'
-  'templates/pages/photos'
+  'jst!templates/pages/photos'
 ], (Page, jst) ->
 
   class PhotosView extends Page

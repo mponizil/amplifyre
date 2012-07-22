@@ -1,6 +1,6 @@
 define [
   'views/page'
-  'templates/pages/custom'
+  'jst!templates/pages/custom'
 ], (Page, jst) ->
 
   class CustomView extends Page

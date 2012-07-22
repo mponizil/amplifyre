@@ -4,4 +4,5 @@ define [
 ], (Collection, Track) ->
 
   class Tracks extends Collection
-      model: Track
+
+      model: -> Track.create(arguments...)

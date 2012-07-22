@@ -1,11 +1,20 @@
 define [
   'quilt'
-  'templates/social'
-], (Quilt, jst) ->
+  'jst!templates/social-item'
+], (Quilt, socialJst) ->
 
   class SocialView extends Quilt.View
 
-    template: jst
+    template: -> '<ul></ul>'
 
     render: ->
-      @$el.html(@template(socials: @collection.toJSON()))
+      super
+
+      @views.push(new List
+        el: @$('ul')
+        view: Quilt.View.extend
+          template: socialJst
+        collection: @collection
+      .render())
+
+      @

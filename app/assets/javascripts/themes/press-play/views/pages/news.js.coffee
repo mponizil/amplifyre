@@ -1,6 +1,6 @@
 define [
   'views/page'
-  'templates/pages/news'
+  'jst!templates/pages/news'
 ], (Page, jst) ->
 
   class NewsView extends Page

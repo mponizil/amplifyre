@@ -1,10 +1,11 @@
 define [
   'models/collection'
   'models/page'
-], (Collection, Page)
+], (Collection, Page) ->
 
   class Pages extends Collection
-    model: Page
+
+    model: -> Page.create(arguments...)
 
     comparator: (page) ->
       page.get('order')

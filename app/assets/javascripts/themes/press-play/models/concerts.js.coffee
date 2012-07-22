@@ -4,4 +4,5 @@ define [
 ], (Collection, Concert) ->
 
   class Concerts extends Collection
-      model: Concert
+
+      model: -> Concert.create(arguments...)

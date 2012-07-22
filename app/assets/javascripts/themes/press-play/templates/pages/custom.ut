@@ -1,0 +1,11 @@
+<div class="content custom-page">
+
+  <div class="scrollpane">
+
+    <h2><%= title %></h2>
+
+    <div class="custom-body"><%= data.body %></div>
+
+  </div>
+
+</div>

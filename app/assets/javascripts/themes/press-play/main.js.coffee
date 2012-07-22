@@ -1,6 +1,7 @@
 define [
+  'jquery'
   'views/app'
-], (App) ->
+], ($, App) ->
 
   $ ->
 

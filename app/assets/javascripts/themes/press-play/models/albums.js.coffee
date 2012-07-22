@@ -4,4 +4,5 @@ define [
 ], (Collection, Album) ->
 
   class Albums extends Collection
-      model: Album
+
+      model: -> Album.create(arguments...)

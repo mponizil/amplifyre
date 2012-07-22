@@ -1,15 +1,23 @@
 define [
   'quilt'
-], (Quilt) ->
+  'jst!templates/background'
+], (Quilt, jst) ->
 
   class BackgroundView extends Quilt.View
 
-    initialize: ->
-      @divs = $('#background-sat, #background-desat')
-      @initMeasure => @render()
-      $(window).resize => @render()
+    template: jst
 
     render: ->
+      super
+
+      @divs = @$('#background-sat, #background-desat')
+
+      @initMeasure => @resize()
+      $(window).resize => @resize()
+
+      @
+
+    resize: ->
       [windowWidth, windowHeight, windowRatio] = @measureWindow()
 
       if windowRatio > @imgRatio
@@ -21,7 +29,7 @@ define [
         heightRatio = windowHeight / @imgHeight
         @forcedWidth = @imgWidth * heightRatio
 
-      @divs.find('img').width(@forcedWidth).height(@forcedHeight)
+      @divs.children('img').width(@forcedWidth).height(@forcedHeight)
 
       marginTop = -@forcedHeight / 2
       marginLeft = -@forcedWidth / 2

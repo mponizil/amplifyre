@@ -1,12 +1,13 @@
 define [
   'backbone'
+  'views/pages/home'
   'views/pages/news'
   'views/pages/listen'
   'views/pages/photos'
   'views/pages/tour'
   'views/pages/contact'
   'views/pages/custom'
-], (Backbone, NewsView, ListenView, PhotosView, TourView, ContactView, CustomView) ->
+], (Backbone, HomeView, NewsView, ListenView, PhotosView, TourView, ContactView, CustomView) ->
 
   class Site extends Backbone.Router
 

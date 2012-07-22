@@ -4,4 +4,5 @@ define [
 ], (Collection, Social) ->
 
   class Socials extends Collection
-      model: Social
+
+      model: -> Social.create(arguments...)

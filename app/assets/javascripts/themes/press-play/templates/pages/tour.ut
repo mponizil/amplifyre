@@ -1,0 +1,33 @@
+<div class="content tour">
+
+  <div class="scrollpane">
+
+    <div class="calendar">
+
+      <% for(var i=0; i<data.concerts.length; i++) { var concert = data.concerts[i]; %>
+      <div class="cal-entry clearfix" data-id="<%= concert.id %>">
+
+        <div class="tour-body">
+          <div class="date"><%= concert.date %></div>
+
+          <% if(concert.time) { %><div class="time"><%= concert.time %></div><% } %>
+
+          <% if(concert.venue) { %><div class="venue"><%= concert.venue %></div><% } %>
+
+          <% if(concert.details) { %><div class="details"><%= concert.details %></div><% } %>
+        </div>
+
+        <% if(concert.photo) { %>
+        <div class="thm">
+          <a href="/assets/images/tour/<%= concert.photo %>" rel="group"><img src="/assets/images/tour/thms/<%= concert.photo %>" /></a>
+        </div>
+        <% } %>
+
+      </div>
+      <% } %>
+
+    </div>
+
+  </div>
+
+</div>

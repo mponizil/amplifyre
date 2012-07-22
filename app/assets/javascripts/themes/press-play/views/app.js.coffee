@@ -9,13 +9,14 @@ define [
   'models/posts'
   'models/concerts'
   'models/pages'
+  'views/background'
   'views/navigation'
   'views/social'
   'views/music'
   'views/ticker'
   'jst!templates/app'
   'ui/all'
-], (Backbone, Quilt, Site, BandSite, Socials, Albums, Tracks, Posts, Concerts, Pages, NavigationView, SocialView, MusicView, TickerView, jst) ->
+], (Backbone, Quilt, Site, BandSite, Socials, Albums, Tracks, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, jst) ->
 
   class App extends Quilt.View
 
@@ -47,6 +48,11 @@ define [
 
     render: ->
       super
+
+      @views.push(new BackgroundView
+        el: @$background
+        model: @band_site
+      .render())
       @views.push(new NavigationView
         el: @$navigation
         collection: @pages
@@ -55,12 +61,13 @@ define [
         el: @$social
         collection: @socials
       .render())
-      @views.push(new MusicView
-        el: @$music
-        collection: @tracks
-      .render())
-      @views.push(new TickerView
-        el: @$ticker
-        collection: @tracks
-      .render())
+      # @views.push(new MusicView
+      #   el: @$music
+      #   collection: @tracks
+      # .render())
+      # @views.push(new TickerView
+      #   el: @$ticker
+      #   collection: @tracks
+      # .render())
+
       @
