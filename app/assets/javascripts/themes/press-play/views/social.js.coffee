@@ -1,11 +1,11 @@
-class PressPlay.Views.SocialView extends Backbone.View
+define [
+  'quilt'
+  'templates/social'
+], (Quilt, jst) ->
 
-  el: "#social-media"
+  class SocialView extends Quilt.View
 
-  template: JST["themes/press-play/templates/social"]
+    template: jst
 
-  initialize: ->
-    @render()
-
-  render: ->
-    @$el.html(@template(socials: @collection.toJSON()))
+    render: ->
+      @$el.html(@template(socials: @collection.toJSON()))

@@ -1,12 +1,15 @@
-PressPlay.Views.Pages ||= {}
+define [
+  'views/page'
+  'templates/pages/contact'
+], (Page, jst) ->
 
-class PressPlay.Views.Pages.ContactPageView extends PressPlay.Views.Page
+  class ContactView extends Page
 
-  template: JST["themes/press-play/templates/contact"]
+    template: jst
 
-  events:
-    "submit #email_form": "submit"
+    events:
+      'submit #email_form': 'submit'
 
-  submit: ->
-    console.log $("#email_form").serialize()
-    false
+    submit: ->
+      console.log $('#email_form').serialize()
+      false

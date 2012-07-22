@@ -1,10 +1,11 @@
-class PressPlay.Models.Track extends Backbone.Model
-  defaults:
-    id: null
-    album_id: null
-    file: null
-    title: null
-    artist: null
+define [
+  'models/model'
+], (Model) ->
 
-class PressPlay.Collections.TracksCollection extends Backbone.Collection
-  model: PressPlay.Models.Track
+  class Track extends Model
+    defaults:
+      id: null
+      album_id: null
+      file: null
+      title: null
+      artist: null

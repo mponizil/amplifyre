@@ -1,5 +1,8 @@
-PressPlay.Views.Pages ||= {}
+define [
+  'views/page'
+  'templates/pages/custom'
+], (Page, jst) ->
 
-class PressPlay.Views.Pages.CustomPageView extends PressPlay.Views.Page
+  class CustomView extends Page
 
-  template: JST["themes/press-play/templates/custom"]
+    template: jst

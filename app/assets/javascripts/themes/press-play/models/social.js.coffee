@@ -1,8 +1,9 @@
-class PressPlay.Models.Social extends Backbone.Model
-  defaults:
-    id: null
-    type: null
-    link: null
+define [
+  'model'
+], (Model) ->
 
-class PressPlay.Collections.SocialsCollection extends Backbone.Collection
-  model: PressPlay.Models.Social
+  class Social extends Model
+    defaults:
+      id: null
+      type: null
+      link: null

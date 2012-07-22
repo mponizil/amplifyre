@@ -1,27 +1,30 @@
-PressPlay.Views.Pages ||= {}
+define [
+  'views/page'
+  'templates/pages/listen'
+], (Page, jst) ->
 
-class PressPlay.Views.Pages.ListenPageView extends PressPlay.Views.Page
+  class ListenView extends Page
 
-  initialize: ->
-    @music = @options.music
-    super()
+    initialize: ->
+      @music = @options.music
+      super
 
-  template: JST["themes/press-play/templates/listen"]
+    template: JST["themes/press-play/templates/listen"]
 
-  events:
-    "click .tracks li" : "playTrack"
+    events:
+      "click .tracks li" : "playTrack"
 
-  render: ->
-    super()
-    if @music.isPlaying then @highlight @music.track.get("id")
-    $(".album-cover a").fancybox
-      overlayColor: '#000000'
+    render: ->
+      super()
+      if @music.isPlaying then @highlight @music.track.get("id")
+      $(".album-cover a").fancybox
+        overlayColor: '#000000'
 
-  playTrack: (e) ->
-    trackId = $(e.currentTarget).data("id")
-    @highlight trackId
-    @music.setTrack trackId: trackId, true
+    playTrack: (e) ->
+      trackId = $(e.currentTarget).data("id")
+      @highlight trackId
+      @music.setTrack trackId: trackId, true
 
-  highlight: (trackId) ->
-    @$(".tracks").find("li").removeClass("playing-bg")
-    @$(".tracks").find("li[data-id=" + trackId + "]").addClass("playing-bg")
+    highlight: (trackId) ->
+      @$(".tracks").find("li").removeClass("playing-bg")
+      @$(".tracks").find("li[data-id=" + trackId + "]").addClass("playing-bg")

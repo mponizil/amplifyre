@@ -1,5 +1,8 @@
-PressPlay.Views.Pages ||= {}
+define [
+  'views/page'
+  'templates/pages/news'
+], (Page, jst) ->
 
-class PressPlay.Views.Pages.NewsPageView extends PressPlay.Views.Page
+  class NewsView extends Page
 
-  template: JST["themes/press-play/templates/news"]
+    template: jst

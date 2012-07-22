@@ -1,10 +1,13 @@
-PressPlay.Views.Pages ||= {}
+define [
+  'views/page'
+  'templates/pages/photos'
+], (Page, jst) ->
 
-class PressPlay.Views.Pages.PhotosPageView extends PressPlay.Views.Page
+  class PhotosView extends Page
 
-  template: JST["themes/press-play/templates/photos"]
+    template: jst
 
-  render: ->
-    super()
-    $("#pics-ul a").fancybox
-      overlayColor: '#000000'
+    render: ->
+      super()
+      $('#pics-ul a').fancybox
+        overlayColor: '#000000'

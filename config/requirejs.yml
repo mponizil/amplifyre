@@ -1,0 +1,20 @@
+paths:
+  jquery: "vendor/jquery"
+  underscore: "vendor/underscore"
+  backbone: "vendor/backbone"
+  quilt: "vendor/quilt"
+  supermodel: "vendor/supermodel"
+shim:
+  backbone:
+    deps: ["underscore", "jquery"]
+    exports: "Backbone"
+  underscore:
+    exports: "_"
+  jquery:
+    exports: "jquery"
+  supermodel:
+    deps: ["backbone"]
+    exports: "Supermodel"
+  quilt:
+    deps: ["backbone"]
+    exports: "Quilt"
