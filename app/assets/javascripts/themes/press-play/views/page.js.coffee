@@ -8,14 +8,11 @@ define [
       $(window).resize => @updateContentHeight()
 
     render: ->
-      @$el.html(@template(@model.toJSON())).show()
+      super
+
       @updateContentHeight()
 
-    destroy: (next) ->
-      @$el.fadeOut('fast'
-        => next?()
-      )
-      super
+      @
 
     updateContentHeight: =>
       top = $('.black-banner').offset().top - 60

@@ -8,6 +8,9 @@ define [
     template: jst
 
     render: ->
-      super()
+      super
+
       $('.thm a').fancybox
         overlayColor: '#000000'
+
+      @

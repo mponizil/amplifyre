@@ -15,10 +15,13 @@ define [
       "click .tracks li" : "playTrack"
 
     render: ->
-      super()
+      super
+
       if @music.isPlaying then @highlight @music.track.get("id")
       $(".album-cover a").fancybox
         overlayColor: '#000000'
+
+      @
 
     playTrack: (e) ->
       trackId = $(e.currentTarget).data("id")

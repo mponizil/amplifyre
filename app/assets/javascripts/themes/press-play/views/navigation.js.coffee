@@ -8,9 +8,6 @@ define [
 
     template: -> '<ul></ul>'
 
-    events:
-      'click li' : 'navigate'
-
     render: ->
       super
 
@@ -21,9 +18,3 @@ define [
       .render())
 
       @
-
-    navigate: (e) ->
-      pageId = $(e.currentTarget).data('id')
-      page = @collection.get(pageId)
-      if page isnt window.router.m.page
-        window.router.navigate(page.get('slug'), trigger: true)

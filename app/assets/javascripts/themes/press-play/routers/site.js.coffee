@@ -11,20 +11,20 @@ define [
 
   class Site extends Backbone.Router
 
+    constructor: ({@app, @pages}) ->
+      super
+
     routes:
       '': 'index'
       'home': 'index'
-      ':slug': 'page'
+      ':slug': 'slug'
 
-    page: (slug) ->
+    slug: (slug) ->
       page = @pages.find (page) -> page.get('slug') is slug
       if not page
-        @navigate('home'
-          trigger: true
-          replace: true
-        )
-
-      @[@page.get('type')](@page)
+        @navigate('home', { trigger: true, replace: true })
+      else
+        @[page.get('type')](page)
 
     index: ->
       @changePage(new HomeView)

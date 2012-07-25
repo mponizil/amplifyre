@@ -27,8 +27,6 @@ define [
     initialize: ->
       super
 
-      @router = new Site(app: @)
-
       data = JSON.parse($('#bootstrap').html())
 
       @band_site = new BandSite(data.band_site)
@@ -39,6 +37,9 @@ define [
       @concerts = new Concerts(data.concerts)
       @pages = new Pages(data.pages)
 
+      @router = new Site
+        app: @
+        pages: @pages
       Backbone.history or= new Backbone.History()
       Backbone.history.options = {root: '/'}
 
@@ -73,5 +74,7 @@ define [
         model: @band_site
         collection: @tracks
       .render())
+
+      Backbone.history.start(pushState: true)
 
       @

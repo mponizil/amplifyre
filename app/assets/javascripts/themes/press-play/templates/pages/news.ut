@@ -1,22 +1,20 @@
-<div class="content news">
+<div class='content news'>
 
-  <h2><%= title %></h2>
+  <h2 data-html='title'></h2>
 
-  <div class="scrollpane">
+  <div class='scrollpane'>
 
-    <div class="news-posts">
+    <div class='news-posts'>
 
-      <% for(var i=0; i<data.posts.length; i++) { var post = data.posts[i]; %>
-      <div class="news-post" data-id="<%= post.id %>">
-        <div class="date"><%= post.date %></div>
+      <div class='news-post'>
+        <div class='date'></div>
 
-        <div class="title"><%= post.title %></div>
+        <div class='title'></div>
 
-        <div class="body"><%= post.body %></div>
+        <div class='body'></div>
 
-        <div class="hr"></div>
+        <div class='hr'></div>
       </div>
-      <% } %>
 
     </div>
 
