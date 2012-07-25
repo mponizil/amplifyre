@@ -68,6 +68,7 @@ define [
       @views.push(new MusicView
         el: @$music
         collection: @tracks
+        router: @router
       .render())
       @views.push(new TickerView
         el: @$ticker

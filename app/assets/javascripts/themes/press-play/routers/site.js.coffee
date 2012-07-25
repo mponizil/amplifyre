@@ -1,13 +1,13 @@
 define [
   'backbone'
-  'views/pages/home'
+  'quilt'
   'views/pages/news'
   'views/pages/listen'
   'views/pages/photos'
   'views/pages/tour'
   'views/pages/contact'
   'views/pages/custom'
-], (Backbone, HomeView, NewsView, ListenView, PhotosView, TourView, ContactView, CustomView) ->
+], (Backbone, Quilt, NewsView, ListenView, PhotosView, TourView, ContactView, CustomView) ->
 
   class Site extends Backbone.Router
 
@@ -27,7 +27,7 @@ define [
         @[page.get('type')](page)
 
     index: ->
-      @changePage(new HomeView)
+      @changePage(new Quilt.View)
 
     news: (model) ->
       @changePage(new NewsView(model: model))

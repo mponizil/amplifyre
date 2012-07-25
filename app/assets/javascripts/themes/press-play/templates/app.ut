@@ -25,7 +25,7 @@
   <div class='outerwrap'><div class='outerfloat'>
     <div class='black-banner'>
 
-      <a href='javascript:void(0)' title='Home'><h1>The Loot</h1></a>
+      <a data-fragment='home' title='Home'><h1>The Loot</h1></a>
 
       <div id='ticker' data-ref='ticker'></div>
 

@@ -5,10 +5,11 @@ define [
 
   class MusicView extends Quilt.View
 
-    initialize: ->
+    initialize: ({@router}) ->
       super
 
       @collection.on('set:track', @setTrack, @)
+      @router.on('all', @route, @)
 
     template: jst
 
@@ -70,3 +71,6 @@ define [
       @$('#jp_interface').jPlayer 'setMedia',
         m4a: '/assets/audio/' + track.get('file') + '.m4a'
         mp3: '/assets/audio/' + track.get('file') + '.mp3'
+
+    route: (e) ->
+      @$el.toggleClass('hidden', e is 'route:slug')
