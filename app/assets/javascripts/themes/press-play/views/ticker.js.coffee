@@ -1,40 +1,40 @@
 define [
   'quilt'
-], (Quilt) ->
+  'jst!templates/ticker'
+], (Quilt, jst) ->
 
   class TickerView extends Quilt.View
 
-    initialize: (options) ->
-      @data = options.data
-      @duration = 5000
-      @tagIndex = 0
+    template: jst
 
-    render: (state) ->
-      @$('.track-info').fadeOut =>
-        if state == 'stop'
-          @$('.track-info').html(@data.tagline)
+    initialize: ->
+      super
+
+      @duration = 5000
+      @mod = 0
+
+      @collection.on('play:track', @start, @)
+      @collection.on('pause:track', @stop, @)
+
+    toggle: (state) ->
+      @$ticker_text.fadeOut =>
+
+        if state is 'stop'
+          @$ticker_text.html(@model.get('tagline'))
         else
-          tagline = @track.get('title')
-          artist = @track.get('artist')
-          if @tagIndex % 2 == 0 then @$('.track-info').html(tagline)
-          else @$('.track-info').html(artist)
-        @$('.track-info').fadeIn()
-        @tagIndex++
+          if @mod % 2 is 0 then @$ticker_text.html(@collection.track.get('title'))
+          else @$ticker_text.html(@collection.track.get('artist'))
+
+        @$ticker_text.fadeIn()
+        @mod++
 
     start: ->
-      @render('play')
+      @toggle('play')
       @interval = setInterval(
-        => @render('play')
+        => @toggle('play')
         @duration
       )
 
     stop: ->
       clearInterval(@interval)
-      @render('stop')
-
-    update: (track, isPlaying) ->
-      @track = track
-      @tagIndex = 0
-      if isPlaying
-        clearInterval(@interval)
-        @start()
+      @toggle('stop')

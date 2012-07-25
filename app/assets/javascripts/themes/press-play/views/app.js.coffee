@@ -68,9 +68,10 @@ define [
         el: @$music
         collection: @tracks
       .render())
-      # @views.push(new TickerView
-      #   el: @$ticker
-      #   collection: @tracks
-      # .render())
+      @views.push(new TickerView
+        el: @$ticker
+        model: @band_site
+        collection: @tracks
+      .render())
 
       @

@@ -27,7 +27,7 @@
 
       <a href='javascript:void(0)' title='Home'><h1>The Loot</h1></a>
 
-      <div id='tagline'><div class='track-info'>pumpin sweet beats</div></div>
+      <div id='ticker' data-ref='ticker'></div>
 
     </div>
   </div></div>
