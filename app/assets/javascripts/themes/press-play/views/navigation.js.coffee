@@ -16,7 +16,7 @@ define [
 
       @views.push(new List
         el: @$('ul')
-        view: NavItem,
+        view: NavItem
         collection: @collection
       .render())
 

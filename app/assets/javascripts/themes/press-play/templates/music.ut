@@ -1,0 +1,9 @@
+<div id='play-pause' class='invisible'>
+  <div id='play'><img src='/assets/controls/play.png' /></div>
+  <div id='pause' class='invisible'><img src='/assets/controls/pause.png' /></div>
+</div>
+<div id='next-prev'>
+  <div id='prev' class='invisible'><img src='/assets/controls/prev.png' /></div>
+  <div id='next' class='invisible'><img src='/assets/controls/next.png' /></div>
+</div>
+<div id='jp_interface'></div>

@@ -1,17 +1,8 @@
 <!-- background image goodness -->
-<div id='background' data-ref='background'>
-</div>
+<div data-ref='background'></div>
 
 <!-- music player goodness -->
-<div id='play-pause'>
-  <div id='play'><img src='/assets/controls/play.png' /></div>
-  <div id='pause'><img src='/assets/controls/pause.png' /></div>
-</div>
-<div id='next-prev'>
-  <div id='prev'><img src='/assets/controls/prev.png' /></div>
-  <div id='next'><img src='/assets/controls/next.png' /></div>
-</div>
-<div id='jp_interface'></div>
+<div data-ref='music'></div>
 
 <!-- begin amplifyre website -->
 <div class='container'>

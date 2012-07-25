@@ -7,6 +7,12 @@ define [
 
     template: jst
 
+    initialize: ({@tracks}) ->
+      super
+
+      @tracks.on('play:track', @fadeUp, @)
+      @tracks.on('pause:track', @fadeDown, @)
+
     render: ->
       super
 
@@ -16,6 +22,18 @@ define [
       $(window).resize => @resize()
 
       @
+
+    fadeUp: ->
+      @$el.animate
+        'background-color': '#ffffff'
+      , 1000, 'easeOutSine'
+      @$('#background-desat').fadeOut(1000, 'easeOutSine')
+
+    fadeDown: ->
+      @$el.animate(
+        'background-color': '#ffffff'
+      , 1000, 'easeOutSine')
+      @$('#background-desat').fadeIn(1000, 'easeOutSine')
 
     resize: ->
       [windowWidth, windowHeight, windowRatio] = @measureWindow()

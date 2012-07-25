@@ -5,4 +5,4 @@ define [
 
   $ ->
 
-    new App({ el: "body" }).render();
+    new App(el: 'body').render()

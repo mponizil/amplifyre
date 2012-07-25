@@ -13,6 +13,8 @@ require.config({
     quilt: '../../quilt',
     supermodel: '../../supermodel',
     list: '../../list',
+    jplayer: '../../jplayer/jquery.jplayer.min',
+    'jquery.easing': '../../jquery.easing.1.3',
     text: '../../text',
     jst: '../../jst'
   },
@@ -38,6 +40,8 @@ require.config({
     list: {
       deps: ['quilt'],
       exports: 'List'
-    }
+    },
+    jplayer: ['jquery'],
+    'jquery.easing': ['jquery']
   }
 });

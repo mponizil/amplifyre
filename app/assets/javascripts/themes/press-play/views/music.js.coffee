@@ -1,41 +1,40 @@
 define [
   'quilt'
-], (Quilt) ->
+  'jst!templates/music'
+], (Quilt, jst) ->
 
   class MusicView extends Quilt.View
 
-    initialize: (options) ->
-      @data = options.data
-      @isPlaying = false
+    initialize: ->
+      super
 
-      @jPlayerInit()
+      @collection.on('set:track', @setTrack, @)
+
+    template: jst
 
     events:
-      'mouseenter #play-pause' : 'playPauseEnter'
-      'mouseleave #play-pause' : 'playPauseLeave'
-      'click #prev'            : 'prev'
-      'click #next'            : 'next'
+      'click #prev': 'prev'
+      'click #next': 'next'
+      'click #play': 'play'
+      'click #pause': 'pause'
 
     render: ->
-      $('#play-pause').show()
-      $('#next-prev').show()
-      $('#play').click => @play() # for some reason can't define in events hash
-      $('#pause').click => @pause() # for some reason can't define in events hash
-      $('#prev, #next').hover(
+      super
+
+      @$('#play').click => @play() # some bs
+      @$('#pause').click => @pause() #some bs
+      @$('#play-pause, #prev, #next').hover(
         -> $(@).animate('opacity': 1)
         -> $(@).animate('opacity': 0)
       )
+      @jPlayerInit()
 
-    destroy: ->
-      $('#play-pause').hide()
-      $('#next-prev').hide()
-      $('#play, #pause').unbind('click')
-      $('#prev, #next').unbind('mouseenter').unbind('mouseleave')
+      @
 
     jPlayerInit: ->
-      $('#jp_interface').jPlayer(
-        ready: => @setTrack track: @collection.at(0)
-        ended: @next
+      @$('#jp_interface').jPlayer(
+        ready: => @setTrack(@collection.track)
+        ended: => @next()
         volume: 1
         swfPath: '/assets/jplayer'
         supplied: 'mp3, m4a'
@@ -45,63 +44,29 @@ define [
           'pause': '#pause'
       ).css('height', 0)
 
-    playPauseEnter: ->
-      if @isPlaying
-        $('#play').fadeOut()
-        $('#pause').fadeIn()
-      else
-        $('#pause').fadeOut()
-        $('#play').fadeIn()
-
-    playPauseLeave: ->
-      $('#pause').fadeOut()
-      $('#play').fadeOut()
-
     play: ->
-      $('body').animate(
-        'background-color': '#ffffff'
-        , 1000, 'easeOutSine')
-      $('#background-desat').fadeOut(1000, 'easeOutSine')
+      @collection.trigger('play:track')
 
-      $('#play').fadeOut()
-      $('#pause').fadeIn()
+      @$('#play').animate(opacity: 0)
+      @$('#pause').animate(opacity: 1)
 
-      $('#jp_interface').jPlayer('play')
-      @isPlaying = true
+      @$('#jp_interface').jPlayer('play')
 
     pause: ->
-      $('body').animate(
-        'background-color': '#ffffff'
-        , 1000, 'easeOutSine')
-      $('#background-desat').fadeIn(1000, 'easeOutSine')
+      @collection.trigger('pause:track')
 
-      $('#pause').fadeOut()
-      $('#play').fadeIn()
+      @$('#pause').animate(opacity: 0)
+      @$('#play').animate(opacity: 1)
 
-      $('#jp_interface').jPlayer('pause')
-      @isPlaying = false
+      @$('#jp_interface').jPlayer('pause')
 
     prev: ->
-      trackIndex = @collection.indexOf(@track)
-      trackIndex = if --trackIndex < 0 then @collection.length - 1 else trackIndex
-      track = @collection.at(trackIndex)
-
-      @setTrack track: track, @isPlaying
+      @collection.trigger('prev:track')
 
     next: ->
-      trackIndex = @collection.indexOf(@track)
-      trackIndex = if ++trackIndex >= @collection.length then 0 else trackIndex
-      track = @collection.at(trackIndex)
+      @collection.trigger('next:track')
 
-      @setTrack track: track, @isPlaying
-
-    setTrack: (data, andPlay) =>
-      @track = if data.track? then data.track else @collection.get(data.trackId)
-
-      $('#jp_interface').jPlayer 'setMedia',
-        m4a: '/assets/audio/' + @track.get('file').m4a
-        mp3: '/assets/audio/' + @track.get('file').mp3
-
-      if andPlay
-        $('#jp_interface').jPlayer('play')
-        @isPlaying = true
+    setTrack: (track) ->
+      @$('#jp_interface').jPlayer 'setMedia',
+        m4a: '/assets/audio/' + track.get('file') + '.m4a'
+        mp3: '/assets/audio/' + track.get('file') + '.mp3'

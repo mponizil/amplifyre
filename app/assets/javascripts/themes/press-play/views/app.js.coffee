@@ -16,6 +16,8 @@ define [
   'views/ticker'
   'jst!templates/app'
   'ui/all'
+  'jplayer'
+  'jquery.easing'
 ], (Backbone, Quilt, Site, BandSite, Socials, Albums, Tracks, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, jst) ->
 
   class App extends Quilt.View
@@ -52,6 +54,7 @@ define [
       @views.push(new BackgroundView
         el: @$background
         model: @band_site
+        tracks: @tracks
       .render())
       @views.push(new NavigationView
         el: @$navigation
@@ -61,10 +64,10 @@ define [
         el: @$social
         collection: @socials
       .render())
-      # @views.push(new MusicView
-      #   el: @$music
-      #   collection: @tracks
-      # .render())
+      @views.push(new MusicView
+        el: @$music
+        collection: @tracks
+      .render())
       # @views.push(new TickerView
       #   el: @$ticker
       #   collection: @tracks
