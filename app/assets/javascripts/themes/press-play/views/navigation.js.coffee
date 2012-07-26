@@ -6,13 +6,20 @@ define [
 
   class NavigationView extends Quilt.View
 
-    template: -> '<ul></ul>'
+    attributes:
+      class: 'clearfix'
+
+    template: -> '''
+      <ul class='left'>
+        <li><a data-fragment='home'>Home</a></li>
+      </ul>
+      <ul class='left' data-ref='custom_nav'></ul>'''
 
     render: ->
       super
 
       @views.push(new List
-        el: @$('ul')
+        el: @$custom_nav
         view: NavItem
         collection: @collection
       .render())
