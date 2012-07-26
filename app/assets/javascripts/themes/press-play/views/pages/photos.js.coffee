@@ -18,7 +18,10 @@ define [
         collection: @collection
       .render())
 
-      @$('a').fancybox
-        overlayColor: '#000000'
+      @$('[data-fancybox]').fancybox
+        helpers:
+          overlay:
+            css:
+              'background-color': '#000'
 
       @
