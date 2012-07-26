@@ -1,9 +1,9 @@
 define [
   'views/page'
   'jst!templates/pages/listen'
-], (Page, jst) ->
+], (PageView, jst) ->
 
-  class ListenView extends Page
+  class ListenView extends PageView
 
     initialize: ->
       @music = @options.music

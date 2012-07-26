@@ -1,16 +1,8 @@
-<div class='content pics'>
+<div class='content pics' data-ref='content'>
 
-  <div class='scrollpane'>
+  <div class='scrollpane' data-ref='scrollpane'>
 
-    <ul id='pics-ul'>
-
-      <li data-id='<%= photo.id %>'>
-        <a href='/assets/images/photos/<%= photo.filename %>' rel='group'>
-          <img src='/assets/images/photos/thms/<%= photo.filename %>' width='80' height='80' />
-        </a>
-      </li>
-
-    </ul>
+    <ul data-ref='pics'></ul>
 
     <div style='height:1px'></div>
 

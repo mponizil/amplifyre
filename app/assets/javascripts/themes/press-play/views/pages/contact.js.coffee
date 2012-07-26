@@ -1,9 +1,9 @@
 define [
   'views/page'
   'jst!templates/pages/contact'
-], (Page, jst) ->
+], (PageView, jst) ->
 
-  class ContactView extends Page
+  class ContactView extends PageView
 
     template: jst
 

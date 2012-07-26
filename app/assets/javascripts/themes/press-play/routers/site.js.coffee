@@ -36,7 +36,7 @@ define [
       @changePage(new ListenView(model: model))
 
     photos: (model) ->
-      @changePage(new PhotosView(model: model))
+      @changePage(new PhotosView(model: model, collection: @app.photos))
 
     tour: (model) ->
       @changePage(new TourView(model: model))

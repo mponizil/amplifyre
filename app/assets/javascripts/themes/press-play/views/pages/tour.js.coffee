@@ -1,9 +1,9 @@
 define [
   'views/page'
   'jst!templates/pages/tour'
-], (Page, jst) ->
+], (PageView, jst) ->
 
-  class TourView extends Page
+  class TourView extends PageView
 
     template: jst
 

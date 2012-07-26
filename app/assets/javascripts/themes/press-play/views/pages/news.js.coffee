@@ -1,8 +1,8 @@
 define [
   'views/page'
   'jst!templates/pages/news'
-], (Page, jst) ->
+], (PageView, jst) ->
 
-  class NewsView extends Page
+  class NewsView extends PageView
 
     template: jst

@@ -1,0 +1,5 @@
+<li>
+  <a href='/assets/images/photos/<%= o.model.get('filename') %>' rel='group'>
+    <img src='/assets/images/photos/thms/<%= o.model.get('filename') %>' width='80' height='80' />
+  </a>
+</li>

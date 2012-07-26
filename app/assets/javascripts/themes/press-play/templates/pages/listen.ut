@@ -1,6 +1,6 @@
-<div class='content listen'>
+<div class='content listen' data-ref='content'>
 
-  <div class='scrollpane clearfix'>
+  <div class='scrollpane clearfix' data-ref='scrollpane'>
 
     <div class='album custom-album'>
 

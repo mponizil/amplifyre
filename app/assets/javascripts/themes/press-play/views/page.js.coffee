@@ -4,26 +4,15 @@ define [
 
   class Page extends Quilt.View
 
-    initialize: ->
-      $(window).resize => @updateContentHeight()
+    events:
+      'window:resize': 'resize'
 
-    render: ->
-      super
-
-      @updateContentHeight()
-
-      @
-
-    updateContentHeight: =>
-      top = $('.black-banner').offset().top - 60
-      bottom = $('nav').offset().top + $('nav').height() + 20
-      max_height = top - bottom
-
-      $('.content').css('max-height', max_height)
-      $('.content').css('top', bottom)
+    resize: (e, max_height, bottom) ->
+      @$content.css('max-height', max_height)
+      @$content.css('top', bottom)
 
       sp_height = max_height
-      $('.content').children().each ->
+      @$content.children().each ->
         if !$(@).hasClass('scrollpane') then sp_height -= $(@).outerHeight()
 
-      $('.scrollpane').css('max-height', sp_height)
+      @$scrollpane?.css('max-height', sp_height)

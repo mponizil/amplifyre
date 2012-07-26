@@ -6,6 +6,7 @@ define [
   'models/socials'
   'models/albums'
   'models/tracks'
+  'models/photos'
   'models/posts'
   'models/concerts'
   'models/pages'
@@ -18,7 +19,8 @@ define [
   'ui/all'
   'jplayer'
   'jquery.easing'
-], (Backbone, Quilt, Site, BandSite, Socials, Albums, Tracks, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, jst) ->
+  'fancybox'
+], (Backbone, Quilt, Site, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, jst) ->
 
   class App extends Quilt.View
 
@@ -33,6 +35,7 @@ define [
       @socials = new Socials(data.socials)
       @albums = new Albums(data.albums)
       @tracks = new Tracks(data.tracks)
+      @photos = new Photos(data.photos)
       @posts = new Posts(data.posts)
       @concerts = new Concerts(data.concerts)
       @pages = new Pages(data.pages)
@@ -78,4 +81,14 @@ define [
 
       Backbone.history.start(pushState: true)
 
+      @resize()
+      $(window).resize => @resize()
+
       @
+
+    resize: ->
+      top = @$black_banner.offset().top - 60
+      bottom = @$nav.offset().top + @$nav.height() + 20
+      max_height = top - bottom
+
+      @$page.children(':first').trigger('window:resize', [max_height, bottom])

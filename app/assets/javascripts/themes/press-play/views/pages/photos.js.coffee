@@ -1,16 +1,24 @@
 define [
+  'list'
   'views/page'
+  'views/pages/photo'
   'jst!templates/pages/photos'
-], (Page, jst) ->
+], (List, PageView, PhotoView, jst) ->
 
-  class PhotosView extends Page
+  class PhotosView extends PageView
 
     template: jst
 
     render: ->
       super
 
-      $('#pics-ul a').fancybox
+      @views.push(new List
+        el: @$pics
+        view: PhotoView
+        collection: @collection
+      .render())
+
+      @$('a').fancybox
         overlayColor: '#000000'
 
       @

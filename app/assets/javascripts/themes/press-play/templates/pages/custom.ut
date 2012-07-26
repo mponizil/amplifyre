@@ -1,6 +1,6 @@
-<div class='content custom-page'>
+<div class='content custom-page' data-ref='content'>
 
-  <div class='scrollpane'>
+  <div class='scrollpane' data-ref='scrollpane'>
 
     <h2 data-html='title'></h2>
 

@@ -15,6 +15,7 @@ require.config({
     list: '../../list',
     jplayer: '../../jplayer/jquery.jplayer.min',
     'jquery.easing': '../../jquery.easing.1.3',
+    fancybox: '../../fancybox/jquery.fancybox.pack',
     text: '../../text',
     jst: '../../jst'
   },
@@ -42,6 +43,7 @@ require.config({
       exports: 'List'
     },
     jplayer: ['jquery'],
-    'jquery.easing': ['jquery']
+    'jquery.easing': ['jquery'],
+    fancybox: ['jquery']
   }
 });

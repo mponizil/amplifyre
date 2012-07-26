@@ -1,6 +1,6 @@
-<div class='content tour'>
+<div class='content tour' data-ref='content'>
 
-  <div class='scrollpane'>
+  <div class='scrollpane' data-ref='scrollpane'>
 
     <div class='calendar'>
 
