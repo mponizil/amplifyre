@@ -15,7 +15,7 @@ define [
 
       @collection.on('play', @start, @)
       @collection.on('pause', @stop, @)
-      @collection.on('set', @reset, @)
+      @collection.on('change:active', @reset, @)
 
     toggle: (state) ->
       @$ticker_text.fadeOut =>

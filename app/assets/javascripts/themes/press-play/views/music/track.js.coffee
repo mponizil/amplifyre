@@ -7,8 +7,7 @@ define [
     initialize: ->
       super
 
-      @model.on('play', @highlight, @)
-      @model.on('stop', @clear, @)
+      @model.on('change:active', @render, @)
 
     tagName: 'li'
 
@@ -21,11 +20,10 @@ define [
       'click': 'play'
 
     play: ->
-      @model.trigger('set', @model)
-      @model.trigger('play', @model)
+      @model.set(active: true)
+      @model.set(playing: true)
 
-    highlight: ->
-      @$el.addClass('playing-bg')
-
-    clear: ->
-      @$el.removeClass('playing-bg')
+    render: ->
+      super
+      @$el.toggleClass('playing-bg', @model.get('active'))
+      @

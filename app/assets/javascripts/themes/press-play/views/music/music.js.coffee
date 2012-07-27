@@ -10,24 +10,16 @@ define [
 
       @collection.on('play', @play, @)
       @collection.on('pause', @pause, @)
-      @collection.on('set', @set, @)
+      @collection.on('change:active', @set, @)
       @router.on('all', @route, @)
 
     template: jst
 
     events:
-      'click #prev': ->
-        track = @collection.prev()
-        track.trigger('set', track)
-      'click #next': ->
-        track = @collection.next()
-        track.trigger('set', track)
-      'click #play': ->
-        track = @collection.current()
-        track.trigger('play', track)
-      'click #pause': ->
-        track = @collection.current()
-        track.trigger('pause', track)
+      'click #prev': -> @collection.prev().set(active: true)
+      'click #next': -> @collection.next().set(active: true)
+      'click #play': -> @collection.trigger('play')
+      'click #pause': -> @collection.trigger('pause')
 
     render: ->
       super
@@ -42,10 +34,8 @@ define [
 
     jPlayerInit: ->
       @$('#jp_interface').jPlayer(
-        ready: =>
-          track = @collection.at(0)
-          track.trigger('set', track)
-        ended: => @next()
+        ready: => @collection.at(0).set(active: true)
+        ended: => @collection.next().set(active: true)
         volume: 1
         swfPath: '/assets/jplayer'
         supplied: 'mp3, m4a'

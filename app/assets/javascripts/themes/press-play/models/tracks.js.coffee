@@ -11,7 +11,7 @@ define [
 
       @on('play', @play, @)
       @on('pause', @pause, @)
-      @on('set', @set, @)
+      @on('change:active', @set, @)
 
     model: -> Track.create(arguments...)
 
@@ -20,6 +20,14 @@ define [
 
     pause: ->
       @playing = false
+
+    set: (track) ->
+      return unless track.get('active')
+
+      @track?.set(active: false)
+
+      @index = @indexOf(track)
+      @track = track
 
     isPlaying: ->
       @playing
@@ -38,9 +46,3 @@ define [
       @index = 0 unless @index < @length
 
       @at(@index)
-
-    set: (track) ->
-      @track?.trigger('stop')
-
-      @index = @indexOf(track)
-      @track = track
