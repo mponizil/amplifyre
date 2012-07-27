@@ -42,7 +42,8 @@ define [
       ).css('height', 0)
 
     play: ->
-      @$('#play').fadeOut()
+      # Sometimes it doesn't wanna hide.
+      @$('#play').fadeOut -> $(@).hide()
       @$('#pause').fadeIn()
 
       @$('#jp_interface').jPlayer('play')

@@ -13,9 +13,8 @@ define [
       @duration = 5000
       @mod = 0
 
-      @collection.on('play', @start, @)
+      @collection.on('play change:active', @reset, @)
       @collection.on('pause', @stop, @)
-      @collection.on('change:active', @reset, @)
 
     toggle: (state) ->
       @$ticker_text.fadeOut =>
@@ -29,6 +28,11 @@ define [
         @$ticker_text.fadeIn()
         @mod++
 
+    reset: ->
+      if @collection.isPlaying()
+        clearInterval(@interval)
+        @start()
+
     start: ->
       @mod = 0
 
@@ -41,8 +45,3 @@ define [
     stop: ->
       clearInterval(@interval)
       @toggle('stop')
-
-    reset: ->
-      if @collection.isPlaying()
-        clearInterval(@interval)
-        @start()

@@ -21,7 +21,7 @@ define [
 
     play: ->
       @model.set(active: true)
-      @model.set(playing: true)
+      @model.trigger('play')
 
     render: ->
       super
