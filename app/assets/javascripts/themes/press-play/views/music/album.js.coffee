@@ -1,11 +1,14 @@
 define [
   'quilt'
   'list'
-  'ui/html'
+  'views/music/track'
   'jst!templates/music/album'
-], (Quilt, List, Html, jst) ->
+], (Quilt, List, TrackView, jst) ->
 
   class AlbumView extends Quilt.View
+
+    initialize: ->
+      super
 
     template: jst
 
@@ -17,16 +20,7 @@ define [
 
       @views.push(new List
         el: @$tracks
-        view: Html.extend
-          tagName: 'li'
-          attributes:
-            class: 'clearfix'
-          attr: 'title'
-          events:
-            'click': 'play'
-          play: ->
-            @model.trigger('set', @model)
-            @model.trigger('play', @model)
+        view: TrackView
         collection: @model.tracks()
       .render())
 
