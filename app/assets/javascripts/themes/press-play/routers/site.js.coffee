@@ -30,7 +30,9 @@ define [
       @changePage new Quilt.View
 
     news: (model) ->
-      @changePage new NewsView(model: model)
+      @changePage new NewsView
+        model: model
+        posts: @app.posts
 
     listen: (model) ->
       @changePage new ListenView

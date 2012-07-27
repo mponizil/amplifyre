@@ -1,0 +1,7 @@
+<div class='date' data-html='date'></div>
+
+<div class='title' data-html='title'></div>
+
+<div class='body' data-html='body'></div>
+
+<div class='hr'></div>

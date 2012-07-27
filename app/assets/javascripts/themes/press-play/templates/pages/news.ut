@@ -4,18 +4,7 @@
 
   <div class='scrollpane' data-ref='scrollpane'>
 
-    <div class='news-posts'>
-
-      <div class='news-post'>
-        <div class='date'></div>
-
-        <div class='title'></div>
-
-        <div class='body'></div>
-
-        <div class='hr'></div>
-      </div>
-
+    <div class='news-posts' data-ref='news'>
     </div>
 
   </div>
