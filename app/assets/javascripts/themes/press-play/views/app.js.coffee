@@ -17,6 +17,7 @@ define [
   'views/ticker'
   'jst!templates/app'
   'ui/all'
+  'models/associations'
   'jplayer'
   'jquery.easing'
   'fancybox'

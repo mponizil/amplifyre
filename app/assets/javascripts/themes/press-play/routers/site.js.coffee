@@ -27,25 +27,29 @@ define [
         @[page.get('type')](page)
 
     index: ->
-      @changePage(new Quilt.View)
+      @changePage new Quilt.View
 
     news: (model) ->
-      @changePage(new NewsView(model: model))
+      @changePage new NewsView(model: model)
 
     listen: (model) ->
-      @changePage(new ListenView(model: model))
+      @changePage new ListenView
+        model: model
+        albums: @app.albums
 
     photos: (model) ->
-      @changePage(new PhotosView(model: model, collection: @app.photos))
+      @changePage new PhotosView
+        model: model
+        photos: @app.photos
 
     tour: (model) ->
-      @changePage(new TourView(model: model))
+      @changePage new TourView(model: model)
 
     contact: (model) ->
-      @changePage(new ContactView(model: model))
+      @changePage new ContactView(model: model)
 
     custom: (model) ->
-      @changePage(new CustomView(model: model))
+      @changePage new CustomView(model: model)
 
     changePage: (view) ->
       @page?.remove().destroy()

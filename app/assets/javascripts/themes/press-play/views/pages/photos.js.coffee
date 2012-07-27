@@ -7,6 +7,9 @@ define [
 
   class PhotosView extends PageView
 
+    initialize: ({@photos}) ->
+      super
+
     template: jst
 
     render: ->
@@ -15,7 +18,7 @@ define [
       @views.push(new List
         el: @$pics
         view: PhotoView
-        collection: @collection
+        collection: @photos
       .render())
 
       @$('[data-fancybox]').fancybox

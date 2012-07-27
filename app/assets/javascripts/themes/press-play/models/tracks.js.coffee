@@ -5,17 +5,13 @@ define [
 
   class Tracks extends Collection
 
-    constructor: ->
-      super
-
+    initialize: ->
       @index = 0
       @playing = false
-      @setTrack()
 
-      @on('play:track', @play, @)
-      @on('pause:track', @pause, @)
-      @on('prev:track', @prev, @)
-      @on('next:track', @next, @)
+      @on('play', @play, @)
+      @on('pause', @pause, @)
+      @on('set', @set, @)
 
     model: -> Track.create(arguments...)
 
@@ -25,18 +21,24 @@ define [
     pause: ->
       @playing = false
 
+    isPlaying: ->
+      @playing
+
+    current: ->
+      @at(@index)
+
     prev: ->
       @index -= 1
       @index = @length-1 unless @index >= 0
 
-      @setTrack()
+      @at(@index)
 
     next: ->
       @index += 1
       @index = 0 unless @index < @length
 
-      @setTrack()
+      @at(@index)
 
-    setTrack: ->
-      @track = @at(@index)
-      @trigger('set:track', @track, @)
+    set: (track) ->
+      @index = @indexOf(track)
+      @track = track

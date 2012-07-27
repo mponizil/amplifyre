@@ -1,0 +1,8 @@
+<div class='album-cover'>
+  <a href='/assets/images/albums/<%= o.model.get('cover') %>' rel='group' data-fancybox>
+    <img src='/assets/images/albums/thms/<%= o.model.get('cover') %>' alt='<%= o.model.get('title') %>' title='<%= o.model.get('title') %>' />
+  </a>
+</div>
+
+<ul class='tracks' data-ref='tracks'>
+</ul>

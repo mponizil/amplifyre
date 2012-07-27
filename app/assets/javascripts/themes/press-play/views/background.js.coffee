@@ -10,8 +10,8 @@ define [
     initialize: ({@tracks}) ->
       super
 
-      @tracks.on('play:track', @fadeUp, @)
-      @tracks.on('pause:track', @fadeDown, @)
+      @tracks.on('play', @fadeUp, @)
+      @tracks.on('pause', @fadeDown, @)
 
     render: ->
       super

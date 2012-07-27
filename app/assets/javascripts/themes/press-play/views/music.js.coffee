@@ -8,25 +8,33 @@ define [
     initialize: ({@router}) ->
       super
 
-      @collection.on('set:track', @setTrack, @)
+      @collection.on('play', @play, @)
+      @collection.on('pause', @pause, @)
+      @collection.on('set', @set, @)
       @router.on('all', @route, @)
 
     template: jst
 
     events:
-      'click #prev': 'prev'
-      'click #next': 'next'
-      'click #play': 'play'
-      'click #pause': 'pause'
+      'click #prev': ->
+        track = @collection.prev()
+        track.trigger('set', track)
+      'click #next': ->
+        track = @collection.next()
+        track.trigger('set', track)
+      'click #play': ->
+        track = @collection.current()
+        track.trigger('play', track)
+      'click #pause': ->
+        track = @collection.current()
+        track.trigger('pause', track)
 
     render: ->
       super
 
-      @$('#play').click => @play() # some bs
-      @$('#pause').click => @pause() #some bs
       @$('#play-pause, #prev, #next').hover(
-        -> $(@).animate('opacity': 1)
-        -> $(@).animate('opacity': 0)
+        -> $(@).animate(opacity: 1)
+        -> $(@).animate(opacity: 0)
       )
       @jPlayerInit()
 
@@ -34,43 +42,34 @@ define [
 
     jPlayerInit: ->
       @$('#jp_interface').jPlayer(
-        ready: => @setTrack(@collection.track)
+        ready: =>
+          track = @collection.at(0)
+          track.trigger('set', track)
         ended: => @next()
         volume: 1
         swfPath: '/assets/jplayer'
         supplied: 'mp3, m4a'
-        cssSelectorAncestor: '#play-pause'
-        cssSelector:
-          'play': '#play'
-          'pause': '#pause'
       ).css('height', 0)
 
     play: ->
-      @collection.trigger('play:track')
-
-      @$('#play').animate(opacity: 0)
-      @$('#pause').animate(opacity: 1)
+      @$('#play').fadeOut()
+      @$('#pause').fadeIn()
 
       @$('#jp_interface').jPlayer('play')
 
     pause: ->
-      @collection.trigger('pause:track')
-
-      @$('#pause').animate(opacity: 0)
-      @$('#play').animate(opacity: 1)
+      @$('#pause').fadeOut()
+      @$('#play').fadeIn()
 
       @$('#jp_interface').jPlayer('pause')
 
-    prev: ->
-      @collection.trigger('prev:track')
-
-    next: ->
-      @collection.trigger('next:track')
-
-    setTrack: (track) ->
+    set: (track) ->
       @$('#jp_interface').jPlayer 'setMedia',
         m4a: '/assets/audio/' + track.get('file') + '.m4a'
         mp3: '/assets/audio/' + track.get('file') + '.mp3'
+
+      if @collection.isPlaying()
+        @$('#jp_interface').jPlayer('play')
 
     route: (e) ->
       @$el.toggleClass('hidden', e is 'route:slug')

@@ -1,33 +1,24 @@
 define [
+  'list'
   'views/page'
+  'views/pages/album'
   'jst!templates/pages/listen'
-], (PageView, jst) ->
+], (List, PageView, AlbumView, jst) ->
 
   class ListenView extends PageView
 
-    initialize: ->
-      @music = @options.music
+    initialize: ({@albums}) ->
       super
 
     template: jst
 
-    events:
-      "click .tracks li" : "playTrack"
-
     render: ->
       super
 
-      if @music.isPlaying then @highlight @music.track.get("id")
-      $(".album-cover a").fancybox
-        overlayColor: '#000000'
+      @views.push(new List
+        el: @$scrollpane
+        view: AlbumView
+        collection: @albums
+      .render())
 
       @
-
-    playTrack: (e) ->
-      trackId = $(e.currentTarget).data("id")
-      @highlight trackId
-      @music.setTrack trackId: trackId, true
-
-    highlight: (trackId) ->
-      @$(".tracks").find("li").removeClass("playing-bg")
-      @$(".tracks").find("li[data-id=" + trackId + "]").addClass("playing-bg")

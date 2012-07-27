@@ -2,24 +2,6 @@
 
   <div class='scrollpane clearfix' data-ref='scrollpane'>
 
-    <div class='album custom-album'>
-
-      <div class='album-cover'>
-        <a href='/assets/images/albums/<%= album.cover %>' rel='group'>
-          <img src='/assets/images/albums/thms/<%= album.cover %>' alt='<%= album.title %>' title='<%= album.title %>' />
-        </a>
-      </div>
-
-      <ul class='tracks'>
-
-        <li data-id='<%= track.id %>' class='clearfix'>
-          <div class='track-title'><%= track.title %></div>
-        </li>
-
-      </ul>
-
-    </div>
-
   </div>
 
 </div>
