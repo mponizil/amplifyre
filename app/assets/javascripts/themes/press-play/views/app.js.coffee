@@ -48,6 +48,7 @@ define [
       Backbone.history.options = {root: '/'}
 
     events:
+      'change:page [data-ref=page]': 'resize'
       'route a': 'route'
 
     route: (e, fragment) ->
@@ -82,7 +83,6 @@ define [
 
       Backbone.history.start(pushState: true)
 
-      @resize()
       $(window).resize => @resize()
 
       @
@@ -92,4 +92,4 @@ define [
       bottom = @$nav.offset().top + @$nav.height() + 20
       max_height = top - bottom
 
-      @$page.children(':first').trigger('window:resize', [max_height, bottom])
+      @$page.children(':first').trigger('page:resize', [max_height, bottom])
