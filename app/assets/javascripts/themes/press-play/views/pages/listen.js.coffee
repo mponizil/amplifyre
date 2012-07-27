@@ -1,7 +1,7 @@
 define [
   'list'
   'views/page'
-  'views/pages/album'
+  'views/music/album'
   'jst!templates/pages/listen'
 ], (List, PageView, AlbumView, jst) ->
 

@@ -1,9 +1,9 @@
 define [
   'quilt'
-  'jst!templates/pages/photo'
+  'jst!templates/links/nav-item'
 ], (Quilt, jst) ->
 
-  class PhotosView extends Quilt.View
+  class NavItem extends Quilt.View
 
     tagName: 'li'
 

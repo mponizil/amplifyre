@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'jst!templates/background'
+  'jst!templates/visual/background'
 ], (Quilt, jst) ->
 
   class BackgroundView extends Quilt.View

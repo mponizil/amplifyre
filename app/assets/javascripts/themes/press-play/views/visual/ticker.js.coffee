@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'jst!templates/ticker'
+  'jst!templates/visual/ticker'
 ], (Quilt, jst) ->
 
   class TickerView extends Quilt.View

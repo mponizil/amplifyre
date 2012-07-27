@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'jst!templates/music'
+  'jst!templates/music/music'
 ], (Quilt, jst) ->
 
   class MusicView extends Quilt.View

@@ -2,7 +2,7 @@ define [
   'quilt'
   'list'
   'ui/html'
-  'jst!templates/pages/album'
+  'jst!templates/music/album'
 ], (Quilt, List, Html, jst) ->
 
   class AlbumView extends Quilt.View

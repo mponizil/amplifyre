@@ -1,7 +1,7 @@
 define [
   'quilt'
   'list'
-  'views/nav-item'
+  'views/links/nav-item'
 ], (Quilt, List, NavItem) ->
 
   class NavigationView extends Quilt.View
