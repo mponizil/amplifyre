@@ -43,7 +43,9 @@ define [
         photos: @app.photos
 
     tour: (model) ->
-      @changePage new TourView(model: model)
+      @changePage new TourView
+        model: model
+        concerts: @app.concerts
 
     contact: (model) ->
       @changePage new ContactView(model: model)

@@ -1,0 +1,15 @@
+<div class='tour-body'>
+  <div class='date' data-html='date'></div>
+
+  <div class='time' data-html='time'></div>
+
+  <div class='venue' data-html='venue'></div>
+
+  <div class='details' data-html='details'></div>
+</div>
+
+<div class='thm'>
+  <a href='/assets/images/tour/<%= o.model.get('photo') %>' rel='group' data-fancybox>
+    <img src='/assets/images/tour/thms/<%= o.model.get('photo') %>' />
+  </a>
+</div>

@@ -2,26 +2,7 @@
 
   <div class='scrollpane' data-ref='scrollpane'>
 
-    <div class='calendar'>
-
-      <div class='cal-entry clearfix'>
-
-        <div class='tour-body'>
-          <div class='date' data-html='date'></div>
-
-          <div class='time' data-html='time'></div>
-
-          <div class='venue' data-html='venue'></div>
-
-          <div class='details' data-html='details'></div>
-        </div>
-
-        <div class='thm'>
-          <a href='/assets/images/tour/<%= concert.photo %>' rel='group'><img src='/assets/images/tour/thms/<%= concert.photo %>' /></a>
-        </div>
-
-      </div>
-
+    <div class='calendar' data-ref='calendar'>
     </div>
 
   </div>
