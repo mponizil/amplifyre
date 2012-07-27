@@ -8,10 +8,11 @@ define [
       super
 
       @model.on('play', @highlight, @)
+      @model.on('stop', @clear, @)
 
     tagName: 'li'
 
-    attributes: ->
+    attributes:
       class: 'clearfix'
 
     attr: 'title'
@@ -25,3 +26,6 @@ define [
 
     highlight: ->
       @$el.addClass('playing-bg')
+
+    clear: ->
+      @$el.removeClass('playing-bg')

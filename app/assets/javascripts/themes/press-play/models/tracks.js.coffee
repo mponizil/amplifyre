@@ -40,5 +40,7 @@ define [
       @at(@index)
 
     set: (track) ->
+      @track?.trigger('stop')
+
       @index = @indexOf(track)
       @track = track
