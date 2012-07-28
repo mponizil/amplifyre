@@ -11,22 +11,10 @@ define [
       super
 
       @duration = 5000
-      @mod = 0
+      @counter = 0
 
       @collection.on('play change:active', @reset, @)
       @collection.on('pause', @stop, @)
-
-    toggle: (state) ->
-      @$ticker_text.fadeOut =>
-
-        if state is 'stop'
-          @$ticker_text.html(@model.get('tagline'))
-        else
-          if @mod % 2 is 0 then @$ticker_text.html(@collection.current().get('title'))
-          else @$ticker_text.html(@collection.current().get('artist'))
-
-        @$ticker_text.fadeIn()
-        @mod++
 
     reset: ->
       if @collection.isPlaying()
@@ -34,14 +22,35 @@ define [
         @start()
 
     start: ->
-      @mod = 0
+      @counter = 0
 
-      @toggle('play')
+      @toggle(@playing)
       @interval = setInterval(
-        => @toggle('play')
+        => @toggle(@playing)
         @duration
       )
 
     stop: ->
       clearInterval(@interval)
-      @toggle('stop')
+      @toggle(@paused)
+
+    toggle: (action) ->
+      @$ticker_text.fadeOut =>
+
+        action =>
+
+          @$ticker_text.fadeIn()
+          @counter++
+
+    playing: (next) =>
+      if @counter % 2 is 0
+        @$ticker_text.html(@collection.current().get('title'))
+      else
+        @$ticker_text.html(@collection.current().get('artist'))
+
+      next()
+
+    paused: (next) =>
+      @$ticker_text.html(@model.get('tagline'))
+
+      next()
