@@ -58,4 +58,3 @@ define [
     changePage: (view) ->
       @page?.remove().destroy()
       @app.$page.html((@page = view.render()).el)
-      @app.$page.trigger('change:page')
