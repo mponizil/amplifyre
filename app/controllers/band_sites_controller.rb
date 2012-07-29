@@ -22,10 +22,10 @@ class BandSitesController < ApplicationController
 
     respond_to do |format|
       if @band_site.save
-        format.html { redirect_to :action => "dashboard", :slug => @band_site.slug, notice: 'Site was successfully created.' }
+        format.html { redirect_to :action => 'dashboard', :slug => @band_site.slug }
         format.json { render json: @band_site, status: :created, location: @band_site }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @band_site.errors, status: :unprocessable_entity }
       end
     end
@@ -38,10 +38,10 @@ class BandSitesController < ApplicationController
 
     respond_to do |format|
       if @band_site.update_attributes(params[:band_site])
-        format.html { redirect_to :action => "dashboard", :slug => @band_site.slug, notice: 'Site was successfully updated.' }
+        format.html { redirect_to :action => 'dashboard', :slug => @band_site.slug }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @band_site.errors, status: :unprocessable_entity }
       end
     end
@@ -77,7 +77,8 @@ class BandSitesController < ApplicationController
   private
 
   def get_site_from_subdomain
-    @layout = "press-play"
+    @layout = 'press-play'
+    @version = 'normal'
   end
 
   def site_layout

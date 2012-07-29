@@ -142,7 +142,12 @@
   }
   </script>
 
+  <% if @version == 'normal' %>
   <%= stylesheet_link_tag    'themes/press-play', :media => 'all' %>
+  <% elsif @version == 'editor' %>
+  <%= stylesheet_link_tag    'themes/press-play/editor', :media => 'all' %>
+  <% end %>
+
   <script type='text/javascript' src='/assets/require.js'></script>
   <script type='text/javascript' src='/assets/themes/press-play/config.js'></script>
   <script type='text/javascript'>
@@ -150,7 +155,11 @@
       urlArgs: '_=' + (+new Date),
       baseUrl: '/assets/themes/press-play'
     });
+    <% if @version == 'normal' %>
     require(['main']);
+    <% elsif @version == 'editor' %>
+    require(['editor/main']);
+    <% end %>
   </script>
   <!-- end application init -->
   

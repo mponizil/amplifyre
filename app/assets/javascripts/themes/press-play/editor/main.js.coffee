@@ -8,5 +8,5 @@ define [
     new App
       el: 'body'
       bootstrap: JSON.parse($('#bootstrap').html())
-      root: '/'
+      root: '/edit/'
     .render()

@@ -26,7 +26,7 @@ define [
 
   class App extends Quilt.View
 
-    initialize: ({@bootstrap}) ->
+    initialize: ({@bootstrap, @root}) ->
       super
 
       @band_site = new BandSite(@bootstrap.band_site)
@@ -42,7 +42,7 @@ define [
         app: @
         pages: @pages
       Backbone.history or= new Backbone.History()
-      Backbone.history.options = {root: '/'}
+      Backbone.history.options = {root: @root}
 
     template: jst
 
