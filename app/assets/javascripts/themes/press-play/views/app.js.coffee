@@ -26,27 +26,25 @@ define [
 
   class App extends Quilt.View
 
-    template: jst
-
-    initialize: ->
+    initialize: ({@bootstrap}) ->
       super
 
-      data = JSON.parse($('#bootstrap').html())
-
-      @band_site = new BandSite(data.band_site)
-      @socials = new Socials(data.socials)
-      @albums = new Albums(data.albums)
-      @tracks = new Tracks(data.tracks)
-      @photos = new Photos(data.photos)
-      @posts = new Posts(data.posts)
-      @concerts = new Concerts(data.concerts)
-      @pages = new Pages(data.pages)
+      @band_site = new BandSite(@bootstrap.band_site)
+      @socials = new Socials(@bootstrap.socials)
+      @albums = new Albums(@bootstrap.albums)
+      @tracks = new Tracks(@bootstrap.tracks)
+      @photos = new Photos(@bootstrap.photos)
+      @posts = new Posts(@bootstrap.posts)
+      @concerts = new Concerts(@bootstrap.concerts)
+      @pages = new Pages(@bootstrap.pages)
 
       @router = new Site
         app: @
         pages: @pages
       Backbone.history or= new Backbone.History()
       Backbone.history.options = {root: '/'}
+
+    template: jst
 
     events:
       'route a': 'route'

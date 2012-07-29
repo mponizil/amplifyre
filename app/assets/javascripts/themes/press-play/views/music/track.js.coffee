@@ -26,12 +26,12 @@ define [
 
     render: ->
       super
-      @update(@player, @player.get('index'))
+      @update(@player)
       @
 
     update: (player) ->
-      track = @player.active()
-      playing = @model is track and @player.get('playing')
+      track = player.active()
+      playing = @model is track and player.get('playing')
       @toggle(playing)
 
     toggle: (playing) ->
