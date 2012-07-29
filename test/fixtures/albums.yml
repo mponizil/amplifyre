@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: Episodes
+  cover: 6-1313881677.jpg
+  band_site_id: 1
+
+two:
+  title: Blammin
+  cover: 6-1313881677.jpg
+  band_site_id: 2

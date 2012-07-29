@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: facebook
+  link: http://facebook.com/thelootnyc
+  band_site_id: 1
+
+two:
+  type: facebook
+  link: http://facebook.com/flubba
+  band_site_id: 2

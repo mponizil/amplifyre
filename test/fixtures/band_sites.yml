@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  slug: MyString
-  name: MyString
-  description: MyString
-  title: MyString
-  phrase: MyString
+  slug: bringtheloot
+  name: The Loot
+  description: NYC Jazz Hip-Hop Collective
+  title: The Loot
+  phrase: pumpin sweet beats
+  user_id: 1
 
 two:
-  slug: MyString
-  name: MyString
+  slug: flubba
+  name: Flubba
   description: MyString
   title: MyString
-  phrase: MyString
+  phrase: house jams
+  user_id: 1

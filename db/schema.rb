@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120527215757) do
+ActiveRecord::Schema.define(:version => 20120729185107) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20120527215757) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "albums", :force => true do |t|
+    t.integer  "band_site_id"
+    t.string   "title"
+    t.string   "cover"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "band_sites", :force => true do |t|
     t.integer  "user_id"
     t.string   "slug"
@@ -55,6 +63,58 @@ ActiveRecord::Schema.define(:version => 20120527215757) do
     t.string   "phrase"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "concerts", :force => true do |t|
+    t.integer  "band_site_id"
+    t.string   "venue"
+    t.text     "details"
+    t.string   "photo"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.integer  "band_site_id"
+    t.integer  "order"
+    t.string   "type"
+    t.string   "slug"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "band_site_id"
+    t.string   "file"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "band_site_id"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "socials", :force => true do |t|
+    t.integer  "band_site_id"
+    t.string   "type"
+    t.string   "link"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "tracks", :force => true do |t|
+    t.integer  "album_id"
+    t.string   "title"
+    t.string   "file"
+    t.string   "artist"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

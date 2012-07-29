@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order: 1
+  type: custom
+  slug: about
+  title: About
+  body: Sexy folk music on the Lower East Side.<br /> Featuring:<br /><br />Raveena Aurora<br />Minnie and Aya<br />Steady Sun<br />Eric Ching<br /><br />Culture Fix<br />9 Clinton Street<br />New York, NY 10002<br />(646) 863-7171<br />culturefixny.comSexy folk music on the Lower East Side.<br /> Featuring:<br /><br />Raveena Aurora<br />Minnie and Aya<br />Steady Sun<br />Eric Ching<br /><br />Culture Fix<br />9 Clinton Street<br />New York, NY 10002<br />(646) 863-7171<br />culturefixny.comSexy folk music on the Lower East Side.<br /> Featuring:<br /><br />Raveena Aurora<br />Minnie and Aya<br />Steady Sun<br />Eric Ching<br /><br />Culture Fix<br />9 Clinton Street<br />New York, NY 10002<br />(646) 863-7171<br />culturefixny.comSexy folk music on the Lower East Side.<br /> Featuring:<br /><br />Raveena Aurora<br />Minnie and Aya<br />Steady Sun<br />Eric Ching<br /><br />Culture Fix<br />9 Clinton Street<br />New York, NY 10002<br />(646) 863-7171<br />culturefixny.comSexy folk music on the Lower East Side.<br /> Featuring:<br /><br />Raveena Aurora<br />Minnie and Aya<br />Steady Sun<br />Eric Ching<br /><br />Culture Fix<br />9 Clinton Street<br />New York, NY 10002<br />(646) 863-7171<br />culturefixny.com
+  band_site_id: 1
+
+two:
+  order: 2
+  type: photos
+  slug: photos
+  title: Photos
+  body: 
+  band_site_id: 1
+
+three:
+  order: 3
+  type: listen
+  slug: listen
+  title: Listen
+  body: 
+  band_site_id: 1
+
+four:
+  order: 4
+  type: contact
+  slug: contact
+  title: Contact
+  body:
+  band_site_id: 1
+
+five: 
+  order: 5
+  type: news
+  slug: news
+  title: News
+  body: 
+  band_site_id: 1
+
+six:
+  order: 6
+  type: tour
+  slug: tour
+  title: Tour
+  body: 
+  band_site_id: 1

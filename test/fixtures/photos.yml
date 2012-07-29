@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  file: 6-1315856282.jpg
+  band_site_id: 1
+
+two:
+  file: 6-1315856283.jpg
+  band_site_id: 1
+
+three:
+  file: 6-1315856284.jpg
+  band_site_id: 2
+
+four:
+  file: 6-1315856285.jpg
+  band_site_id: 2

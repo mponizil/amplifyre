@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: Thanks for coming out. We had a great time!
+  body: Sullivan Hall was bumping Saturday night. Much love to Carlton &quot;Fred Hampton&quot; Tarantino for coming out from DC for the show and thank you all for coming to see us. For those who couldn't make it, you missed out, but we've got recordings. Stay tuned.
+  band_site_id: 1
+
+two:
+  title: Episodes EP
+  body: <div style='text-align:center;'>Download the Episodes EP Now!<br /><a href='http://bringtheloot.com/download/Episodes%20EP.zip'><img src='http://i.imgur.com/ECEuu.jpg' /></a></div>
+  band_site_id: 1

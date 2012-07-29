@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  venue: CultureFix
+  details: Sexy folk music on the Lower East Side.<br /> Featuring:<br /><br />Raveena Aurora<br />Minnie and Aya<br />Steady Sun<br />Eric Ching<br /><br />Culture Fix<br />9 Clinton Street<br />New York, NY 10002<br />(646) 863-7171<br />culturefixny.com
+  photo: 189-1329107550.jpg
+  band_site_id: 1
+
+two:
+  venue: MyString
+  details: MyText
+  photo: MyString
+  band_site_id: 1

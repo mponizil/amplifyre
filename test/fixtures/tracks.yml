@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: The Gift Be
+  file: 6-1313946157
+  artist: The Loot
+  album_id: 1
+
+two:
+  title: Come Clean
+  file: 6-1313946195
+  artist: The Loot
+  album_id: 1
