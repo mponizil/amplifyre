@@ -2,6 +2,7 @@ define [
   'backbone'
   'quilt'
   'routers/site'
+  'models/player'
   'models/band_site'
   'models/socials'
   'models/albums'
@@ -21,7 +22,7 @@ define [
   'jplayer'
   'jquery.easing'
   'fancybox'
-], (Backbone, Quilt, Site, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, jst) ->
+], (Backbone, Quilt, Site, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, jst) ->
 
   class App extends Quilt.View
 
@@ -57,10 +58,14 @@ define [
     render: ->
       super
 
+      @player = new Player
+        tracks: @tracks
+        jplayer: @$('#jp_interface')
+
       @views.push(new BackgroundView
         el: @$background
         model: @band_site
-        tracks: @tracks
+        player: @player
       .render())
       @views.push(new NavigationView
         el: @$navigation
@@ -74,11 +79,12 @@ define [
         el: @$music
         collection: @tracks
         router: @router
+        player: @player
       .render())
       @views.push(new TickerView
         el: @$ticker
         model: @band_site
-        collection: @tracks
+        player: @player
       .render())
 
       Backbone.history.start(pushState: true)

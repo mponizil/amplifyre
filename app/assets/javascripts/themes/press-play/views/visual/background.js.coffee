@@ -7,11 +7,10 @@ define [
 
     template: jst
 
-    initialize: ({@tracks}) ->
+    initialize: ({@player}) ->
       super
 
-      @tracks.on('play', @fadeUp, @)
-      @tracks.on('pause', @fadeDown, @)
+      @player.on('change:playing', @update, @)
 
     render: ->
       super
@@ -22,6 +21,10 @@ define [
       $(window).resize => @resize()
 
       @
+
+    update: (player, playing) ->
+      if playing then @fadeUp()
+      else @fadeDown()
 
     fadeUp: ->
       @$el.animate

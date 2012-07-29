@@ -7,22 +7,27 @@ define [
 
     template: jst
 
-    initialize: ->
+    initialize: ({@player}) ->
       super
 
       @duration = 5000
       @counter = 0
 
-      @collection.on('play change:active', @reset, @)
-      @collection.on('pause', @stop, @)
+      @player.on('change:index', @update, @)
+      @player.on('change:playing', @reset, @)
 
-    reset: ->
-      if @collection.isPlaying()
-        clearInterval(@interval)
+    update: (player, index) ->
+      if player.get('playing')
         @start()
+
+    reset: (player, playing) ->
+      if playing then @start()
+      else @stop()
 
     start: ->
       @counter = 0
+
+      clearInterval(@interval)
 
       @toggle(@playing)
       @interval = setInterval(
@@ -32,9 +37,10 @@ define [
 
     stop: ->
       clearInterval(@interval)
+
       @toggle(@paused)
 
-    toggle: (action) ->
+    toggle: (action) -> 
       @$ticker_text.fadeOut =>
 
         action =>
@@ -44,9 +50,9 @@ define [
 
     playing: (next) =>
       if @counter % 2 is 0
-        @$ticker_text.html(@collection.current().get('title'))
+        @$ticker_text.html(@player.active().get('title'))
       else
-        @$ticker_text.html(@collection.current().get('artist'))
+        @$ticker_text.html(@player.active().get('artist'))
 
       next()
 

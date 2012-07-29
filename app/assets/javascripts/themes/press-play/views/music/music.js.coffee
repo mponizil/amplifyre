@@ -5,21 +5,19 @@ define [
 
   class MusicView extends Quilt.View
 
-    initialize: ({@router}) ->
+    initialize: ({@router, @player}) ->
       super
 
-      @collection.on('play', @play, @)
-      @collection.on('pause', @pause, @)
-      @collection.on('change:active', @set, @)
       @router.on('all', @route, @)
+      @player.on('change:playing', @update, @)
 
     template: jst
 
     events:
-      'click #prev': -> @collection.prev().set(active: true)
-      'click #next': -> @collection.next().set(active: true)
-      'click #play': -> @collection.trigger('play')
-      'click #pause': -> @collection.trigger('pause')
+      'click #prev': -> @player.set(index: @player.prev())
+      'click #next': -> @player.set(index: @player.next())
+      'click #play': -> @player.set(playing: true)
+      'click #pause': -> @player.set(playing: false)
 
     render: ->
       super
@@ -28,39 +26,21 @@ define [
         -> $(@).animate(opacity: 1)
         -> $(@).animate(opacity: 0)
       )
-      @jPlayerInit()
 
       @
 
-    jPlayerInit: ->
-      @$('#jp_interface').jPlayer(
-        ready: => @collection.at(0).set(active: true)
-        ended: => @collection.next().set(active: true)
-        volume: 1
-        swfPath: '/assets/jplayer'
-        supplied: 'mp3, m4a'
-      ).css('height', 0)
+    update: (player, playing) ->
+      if playing then @play()
+      else @pause()
 
     play: ->
       # Sometimes it doesn't wanna hide.
       @$('#play').fadeOut -> $(@).hide()
       @$('#pause').fadeIn()
 
-      @$('#jp_interface').jPlayer('play')
-
     pause: ->
       @$('#pause').fadeOut()
       @$('#play').fadeIn()
-
-      @$('#jp_interface').jPlayer('pause')
-
-    set: (track) ->
-      @$('#jp_interface').jPlayer 'setMedia',
-        m4a: '/assets/audio/' + track.get('file') + '.m4a'
-        mp3: '/assets/audio/' + track.get('file') + '.mp3'
-
-      if @collection.isPlaying()
-        @$('#jp_interface').jPlayer('play')
 
     route: (e) ->
       @$el.toggleClass('hidden', e is 'route:slug')

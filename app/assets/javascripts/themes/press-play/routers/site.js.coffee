@@ -37,6 +37,7 @@ define [
     listen: (model) ->
       @changePage new ListenView
         model: model
+        player: @app.player
         albums: @app.albums
 
     photos: (model) ->

@@ -7,9 +7,6 @@ define [
 
   class AlbumView extends Quilt.View
 
-    initialize: ->
-      super
-
     template: jst
 
     attributes:
@@ -20,7 +17,7 @@ define [
 
       @views.push(new List
         el: @$tracks
-        view: TrackView
+        view: TrackView.extend(player: @player)
         collection: @model.tracks()
       .render())
 

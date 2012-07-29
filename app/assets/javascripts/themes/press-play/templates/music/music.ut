@@ -6,4 +6,3 @@
   <div id='prev' class='invisible'><img src='/assets/controls/prev.png' /></div>
   <div id='next' class='invisible'><img src='/assets/controls/next.png' /></div>
 </div>
-<div id='jp_interface'></div>
