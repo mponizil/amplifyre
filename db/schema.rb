@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
     t.string   "description"
     t.string   "title"
     t.string   "phrase"
+    t.string   "desat"
+    t.string   "sat"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -77,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
   create_table "pages", :force => true do |t|
     t.integer  "band_site_id"
     t.integer  "order"
-    t.string   "type"
+    t.string   "category"
     t.string   "slug"
     t.string   "title"
     t.text     "body"
@@ -102,7 +104,7 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
 
   create_table "socials", :force => true do |t|
     t.integer  "band_site_id"
-    t.string   "type"
+    t.string   "category"
     t.string   "link"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

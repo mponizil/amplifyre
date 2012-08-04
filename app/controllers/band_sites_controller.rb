@@ -65,6 +65,8 @@ class BandSitesController < ApplicationController
 
   def live
     @slug = request.subdomain
+    @band_site = BandSite.where(:slug => @slug)[0]
+    @tracks = @band_site.albums.map { |album| album.tracks }.flatten
     render :layout => @layout
   end
 

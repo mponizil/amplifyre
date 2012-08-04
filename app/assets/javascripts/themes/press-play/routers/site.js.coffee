@@ -24,7 +24,7 @@ define [
       if not page
         @navigate('home', { trigger: true, replace: true })
       else
-        @[page.get('type')](page)
+        @[page.get('category')](page)
 
     index: ->
       @changePage new Quilt.View

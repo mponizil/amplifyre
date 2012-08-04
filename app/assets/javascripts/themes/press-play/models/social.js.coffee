@@ -6,5 +6,5 @@ define [
 
     defaults:
       id: null
-      type: null
+      category: null
       link: null

@@ -1,5 +1,6 @@
 class Album < ActiveRecord::Base
   belongs_to :band_site
+  has_many :tracks
 
-  attr_accessible :band_site_id, :cover, :title
+  attr_protected
 end

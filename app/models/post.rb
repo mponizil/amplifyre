@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
   belongs_to :band_site
 
-  attr_accessible :body, :title
+  attr_protected
 end

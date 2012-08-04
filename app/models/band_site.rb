@@ -8,6 +8,6 @@ class BandSite < ActiveRecord::Base
   has_many :posts
   has_many :socials
 
-  attr_accessible :name, :description, :phrase, :slug, :title
+  attr_protected
 
 end
