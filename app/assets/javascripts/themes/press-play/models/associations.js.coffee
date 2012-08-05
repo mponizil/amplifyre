@@ -21,3 +21,9 @@ define [
       collection: Tracks
       inverse: 'album'
     )
+
+  Track.has()
+    .one('album',
+      model: Album
+      inverse: 'tracks'
+    )
