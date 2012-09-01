@@ -72,6 +72,8 @@ class BandSitesController < ApplicationController
 
   def edit_mode
     @slug = request.subdomain
+    @band_site = BandSite.where(:slug => @slug)[0]
+    @tracks = @band_site.albums.map { |album| album.tracks }.flatten
     @version = 'editor'
     render :layout => @layout
   end

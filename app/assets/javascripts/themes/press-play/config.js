@@ -7,7 +7,7 @@ require.config({
     'text'
   ],
   paths: {
-    jquery: '../..//jquery',
+    jquery: '../../jquery',
     underscore: '../../underscore',
     backbone: '../../backbone',
     quilt: '../../quilt',
