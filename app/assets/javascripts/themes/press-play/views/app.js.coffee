@@ -30,13 +30,13 @@ define [
       super
 
       @band_site = new BandSite(@bootstrap.band_site)
-      @socials = new Socials(@bootstrap.socials)
-      @albums = new Albums(@bootstrap.albums)
+      @socials = @band_site.socials().reset(@bootstrap.socials)
+      @albums = @band_site.albums().reset(@bootstrap.albums)
       @tracks = new Tracks(@bootstrap.tracks)
-      @photos = new Photos(@bootstrap.photos)
-      @posts = new Posts(@bootstrap.posts)
-      @concerts = new Concerts(@bootstrap.concerts)
-      @pages = new Pages(@bootstrap.pages)
+      @photos = @band_site.photos().reset(@bootstrap.photos)
+      @posts = @band_site.posts().reset(@bootstrap.posts)
+      @concerts = @band_site.concerts().reset(@bootstrap.concerts)
+      @pages = @band_site.pages().reset(@bootstrap.pages)
 
       @router = new Site
         app: @

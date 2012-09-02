@@ -3,5 +3,6 @@ define [
 ], (Model) ->
 
   class Post extends Model
+
     defaults:
       id: null

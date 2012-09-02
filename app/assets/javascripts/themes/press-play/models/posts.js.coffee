@@ -5,4 +5,6 @@ define [
 
   class Posts extends Collection
 
-      model: -> Post.create(arguments...)
+    model: -> Post.create(arguments...)
+
+    url: -> super + '/band_sites/' + @owner.id + '/posts'

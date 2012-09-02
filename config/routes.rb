@@ -1,6 +1,6 @@
 Amplifyre::Application.routes.draw do
 
-  resources :posts
+  match '*all' => 'application#cors', :constraints => {:method => 'OPTIONS'}
 
   # Band site based on subdomain
   constraints Subdomain do
@@ -9,7 +9,15 @@ Amplifyre::Application.routes.draw do
     root :to => 'band_sites#live'
   end
 
-  resources :band_sites, :except => [:index, :show, :edit]
+  resources :band_sites, :except => [:index, :show, :edit] do
+    resources :socials
+    resources :albums
+    resources :tracks
+    resources :photos
+    resources :posts
+    resources :concerts
+    resources :pages
+  end
 
   # Static pages
   root :to => 'statics#home'

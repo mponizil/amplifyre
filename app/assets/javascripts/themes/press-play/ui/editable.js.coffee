@@ -29,8 +29,7 @@ define [
       editor = @['start' + @type]()
 
       $(window).on 'click.away', (e) =>
-        if not $(e.target).closest(@$el).length
-          @endEdit(editor)
+        if not $(e.target).closest(@$el).length then @endEdit(editor)
 
     # Use redactor for textareas
     startTextArea: ->
@@ -56,7 +55,8 @@ define [
     endTextArea: (editor) ->
       content = editor.getCode()
       editor.destroyEditor()
-      @$el.html(content)
+      # @$el.html(content)
+      @$el.trigger('update', [content])
 
     endTextInput: (editor) ->
       console.log 'end text input'

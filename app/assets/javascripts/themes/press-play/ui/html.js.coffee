@@ -19,3 +19,10 @@ define [
     render: ->
       @$el.html(@model.get(@attr))
       @
+
+    events:
+      'update': 'update'
+
+    update: (e, value) ->
+      window.derp = @model
+      @model.save(@attr, value)
