@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class PostHelperTest < ActionView::TestCase
+class PostsHelperTest < ActionView::TestCase
 end
