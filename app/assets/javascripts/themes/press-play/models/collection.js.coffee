@@ -2,4 +2,4 @@ define ['backbone'], (Backbone) ->
 
   class Collection extends Backbone.Collection
 
-    url: -> 'http://amplifyre.dev:3000'
+    url: -> 'http://amplifyre.dev'

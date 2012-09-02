@@ -10,13 +10,13 @@ Amplifyre::Application.routes.draw do
   end
 
   resources :band_sites, :except => [:index, :show, :edit] do
-    resources :socials
-    resources :albums
-    resources :tracks
-    resources :photos
-    resources :posts
-    resources :concerts
-    resources :pages
+    resources :socials, :format => false
+    resources :albums, :format => false
+    resources :tracks, :format => false
+    resources :photos, :format => false
+    resources :posts, :format => false
+    resources :concerts, :format => false
+    resources :pages, :format => false
   end
 
   # Static pages
@@ -24,7 +24,7 @@ Amplifyre::Application.routes.draw do
   match '/examples' => 'statics#examples'
 
   # User dashboard
-  match '/dashboard' => 'users#dashboard', :as => :user
+  match '/dashboard' => 'users#dashboard', :as => :user_root
 
   # Site dashboard
   match '/:slug/dashboard' => 'band_sites#dashboard', :as => :band_site_dashboard

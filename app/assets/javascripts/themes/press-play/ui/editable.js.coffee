@@ -1,5 +1,6 @@
 define [
   'quilt'
+  'jquery'
   'redactor'
 ], (Quilt, $) ->
 

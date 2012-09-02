@@ -46,9 +46,6 @@ require.config({
     jplayer: ['jquery'],
     'jquery.easing': ['jquery'],
     fancybox: ['jquery'],
-    redactor: {
-      deps: ['jquery'],
-      exports: '$'
-    }
+    redactor: ['jquery']
   }
 });
