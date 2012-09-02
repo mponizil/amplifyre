@@ -17,7 +17,8 @@ require.config({
     'jquery.easing': '../../jquery.easing.1.3',
     fancybox: '../../fancybox/jquery.fancybox.pack',
     text: '../../text',
-    jst: '../../jst'
+    jst: '../../jst',
+    redactor: '../../redactor.min'
   },
   shim: {
     backbone: {
@@ -44,6 +45,10 @@ require.config({
     },
     jplayer: ['jquery'],
     'jquery.easing': ['jquery'],
-    fancybox: ['jquery']
+    fancybox: ['jquery'],
+    redactor: {
+      deps: ['jquery'],
+      exports: '$'
+    }
   }
 });
