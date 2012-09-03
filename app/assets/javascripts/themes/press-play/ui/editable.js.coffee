@@ -23,14 +23,29 @@ define [
       'mouseover': 'showBorder'
       'mouseout': 'hideBorder'
 
+    render: ->
+      super
+      $(window).click (e) =>
+        # If target has no parent, we must be clicking the original content
+        return unless $(e.target).parent().length
+
+        # Return if we're clicking inside @$el
+        return if $(e.target).closest(@$el).length
+
+        # Return if we're clicking inside a redactor modal
+        return if $(e.target).closest('#redactor_modal').length
+
+        # Return if no @editor exists
+        return unless @editor
+
+        @endEdit()
+      @
+
     startEdit: (e) ->
       @undelegateEvents()
       @hideBorder()
 
       @['start' + @type]()
-
-      $(window).on 'click.away', (e) =>
-        if not $(e.target).closest(@$el).length then @endEdit()
 
     # Use redactor for textareas
     startTextArea: ->
@@ -49,8 +64,6 @@ define [
       console.log 'start date input'
 
     endEdit: ->
-      $(window).off('click.away')
-
       @['end' + @type]()
       @editor = null
 

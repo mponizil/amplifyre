@@ -24,4 +24,9 @@ define [
       'update': 'update'
 
     update: (e, value) ->
+      # Display the value
+      @$el.html(value)
+
+      # Save the value to the model if it has changed
+      return unless value isnt @model.get(@attr)
       @model.save(@attr, value)
