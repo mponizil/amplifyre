@@ -33,7 +33,7 @@ define [
         return if $(e.target).closest(@$el).length
 
         # Return if we're clicking inside a redactor modal
-        return if $(e.target).closest('#redactor_modal').length
+        return if $(e.target).closest('#redactor_modal, .redactor_dropdown').length
 
         # Return if no @editor exists
         return unless @editor
