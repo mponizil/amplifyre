@@ -1,4 +1,4 @@
-.redactor_box {	     
+.redactor_box {
 	position: relative;
 	border: 1px solid #ddd;
 }
@@ -33,7 +33,7 @@ body .redactor_air {
 	position: relative;
 	outline: none;
 	box-shadow: none !important;
-	padding: 15px !important;
+	padding: 15px;
 	margin: 0 !important;
 	background: none;	
 	background: #fff !important;

@@ -56,7 +56,7 @@ define [
 
     startTextInput: ->
       content = @$el.html()
-      @editor = $('<input>').val(content)
+      @editor = $('<input>').attr('type','text').addClass('editable').val(content)
       @$el.empty().append(@editor)
       @editor.focus()
 

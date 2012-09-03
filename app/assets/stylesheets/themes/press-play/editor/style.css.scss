@@ -1,0 +1,20 @@
+input.editable,
+textarea.editable {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.redactor_box {
+  border: none;
+}
+.redactor_box, .redactor_box textarea {
+  background-color: transparent;
+}
+.redactor_editor, .redactor_editor:focus {
+  padding: 10px 0 0 0 !important;
+  background-color: transparent !important;
+}

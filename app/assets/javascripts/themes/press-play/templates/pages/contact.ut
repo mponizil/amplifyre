@@ -3,7 +3,7 @@
   <div class='contact-form'>
 
     <form name='email_form' id='email_form'>
-      <table align='center'>
+      <table align='center' width="500">
         <tr>
           <td width='80'>Name</td>
           <td><input type='text' name='name' id='name' /></td>
