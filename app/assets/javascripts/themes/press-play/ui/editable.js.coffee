@@ -27,42 +27,46 @@ define [
       @undelegateEvents()
       @hideBorder()
 
-      editor = @['start' + @type]()
+      @['start' + @type]()
 
       $(window).on 'click.away', (e) =>
-        if not $(e.target).closest(@$el).length then @endEdit(editor)
+        if not $(e.target).closest(@$el).length then @endEdit()
 
     # Use redactor for textareas
     startTextArea: ->
       content = @$el.html()
-      editor = $('<div>').html(content)
-      @$el.empty().append(editor)
-      editor.redactor(focus: true)
-      editor
+      @editor = $('<div>').html(content)
+      @$el.empty().append(@editor)
+      @editor.redactor(focus: true)
 
     startTextInput: ->
-      console.log 'start text input'
+      content = @$el.html()
+      @editor = $('<input>').val(content)
+      @$el.empty().append(@editor)
+      @editor.focus()
 
     startDateInput: ->
       console.log 'start date input'
 
-    endEdit: (editor) ->
+    endEdit: ->
       $(window).off('click.away')
-      
-      @['end' + @type](editor)
+
+      @['end' + @type]()
+      @editor = null
 
       @delegateEvents()
 
-    endTextArea: (editor) ->
-      content = editor.getCode()
-      editor.destroyEditor()
-      # @$el.html(content)
+    endTextArea: ->
+      content = @editor.getCode()
+      @editor.destroyEditor()
       @$el.trigger('update', [content])
 
-    endTextInput: (editor) ->
-      console.log 'end text input'
+    endTextInput: ->
+      content = @editor.val()
+      @editor.remove()
+      @$el.trigger('update', [content])
 
-    endDateInput: (editor) ->
+    endDateInput: ->
       console.log 'end date input'
 
     showBorder: (e) ->

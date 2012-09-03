@@ -24,5 +24,4 @@ define [
       'update': 'update'
 
     update: (e, value) ->
-      window.derp = @model
       @model.save(@attr, value)
