@@ -4,7 +4,7 @@
 
     <h2 data-html='title'></h2>
 
-    <div class='custom-body' data-html='body'></div>
+    <div class='custom-body' data-html='body' data-editable='text-area'></div>
 
   </div>
 

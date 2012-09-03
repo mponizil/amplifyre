@@ -8,9 +8,140 @@
   border: 1px solid #ebebeb;
   padding: 20px;
   background: rgba(255, 255, 255, 0.95);
-}
-.content a {
-  color: #06bcff;
+
+  a {
+    color: #15c;
+    text-decoration: underline;
+  }
+
+  object,
+  embed,
+  video,
+  img {
+    width: auto;
+    max-width: 100%;
+  }
+  video,
+  img {
+    height: auto;
+  }
+
+  div,
+  p,
+  ul,
+  ol,
+  table,
+  dl,
+  blockquote,
+  pre {
+    box-shadow: none;
+    margin: 0;
+    margin-bottom: 15px;
+    line-height: 1.5em;
+    font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
+    font-size: 15px;
+    background: none;
+    border: none;
+  }
+  iframe,
+  object,
+  hr {
+    margin-bottom: 15px;
+  }
+  blockquote {
+    margin-left: 3em;
+    font-style: italic;
+    color: #777;
+  }
+  ul,
+  ol {
+    padding-left: 2em;
+  }
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    border: none;
+    margin: 2px;
+    padding: 0;
+    padding-left: 2em;
+  }
+  dl dt { font-weight: bold; }
+  dd { margin-left: 1em;}
+
+  table {
+    border-collapse: collapse;
+    font-size: 1em;
+  }
+  table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    vertical-align: top;
+  }
+  table thead td {
+    border-bottom: 2px solid #000;
+    font-weight: bold;
+  }
+  code,
+  pre {
+    font-family: Menlo, Monaco, monospace, sans-serif;
+  }
+  code {
+    background-color: #d8d7d7;
+  }
+  pre {
+    font-size: 90%;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1em;
+    white-space: pre;
+    overflow: auto;
+  }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #000;
+    background: none;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+  h5 {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
 }
 .scrollpane {
   max-height: 300px;

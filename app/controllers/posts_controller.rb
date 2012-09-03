@@ -38,7 +38,6 @@ class PostsController < ApplicationController
 
   # PUT /posts/1
   def update
-    logger.debug params.inspect
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])

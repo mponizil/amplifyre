@@ -9,3 +9,5 @@ define [
 
     comparator: (page) ->
       page.get('order')
+
+    url: -> super + '/band_sites/' + @owner.id + '/pages'

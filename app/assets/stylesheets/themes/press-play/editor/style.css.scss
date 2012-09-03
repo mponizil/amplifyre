@@ -1,4 +1,3 @@
-input.editable,
 textarea.editable {
   width: 100%;
   padding: 0;
@@ -6,6 +5,14 @@ textarea.editable {
   background: none;
   border: none;
   outline: none;
+}
+[contenteditable] {
+  outline: none;
+}
+
+[contenteditable].editable,
+.editable {
+  outline: 1px dashed rgba(100, 100, 100, 0.5);
 }
 
 .redactor_box {

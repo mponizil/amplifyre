@@ -8,26 +8,40 @@ define [
   if window.location.pathname.indexOf('/edit/') >= 0
     Quilt.attributes.editable = (el, options) ->
       camel = (match, letter) -> (letter + '').toUpperCase()
-      new Editable
+      type = options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
+      new Editable[type]
         el: el
         model: @model
-        type: options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
 
-  class Editable extends Quilt.View
+  Editable = {}
 
-    constructor: ({@type}) ->
-      super
+  class Editor extends Quilt.View
 
-    events:
-      'click': 'startEdit'
+    events: ->
       'mouseover': 'showBorder'
       'mouseout': 'hideBorder'
 
+    showBorder: (e) ->
+      @$el.addClass('editable')
+
+    hideBorder: (e) ->
+      @$el.removeClass('editable')
+
+  class Editable.TextArea extends Editor
+
+    events: ->
+      _.extend super,
+        'click': 'startEdit'
+
     render: ->
       super
+
       $(window).click (e) =>
-        # If target has no parent, we must be clicking the original content
-        return unless $(e.target).parent().length
+        # Return if no @editor exists
+        return unless @editor
+
+        # If target is not inside body, we must be clicking a removed element
+        return unless $('body').find(e.target).length
 
         # Return if we're clicking inside @$el
         return if $(e.target).closest(@$el).length
@@ -35,55 +49,58 @@ define [
         # Return if we're clicking inside a redactor modal
         return if $(e.target).closest('#redactor_modal, .redactor_dropdown').length
 
-        # Return if no @editor exists
-        return unless @editor
-
         @endEdit()
+
       @
 
-    startEdit: (e) ->
-      @undelegateEvents()
-      @hideBorder()
+    startEdit: ->
+      @$el.off('click')
 
-      @['start' + @type]()
-
-    # Use redactor for textareas
-    startTextArea: ->
       content = @$el.html()
       @editor = $('<div>').html(content)
       @$el.empty().append(@editor)
       @editor.redactor(focus: true)
 
-    startTextInput: ->
-      content = @$el.html()
-      @editor = $('<input>').attr('type','text').addClass('editable').val(content)
-      @$el.empty().append(@editor)
-      @editor.focus()
-
-    startDateInput: ->
-      console.log 'start date input'
-
     endEdit: ->
-      @['end' + @type]()
-      @editor = null
-
-      @delegateEvents()
-
-    endTextArea: ->
       content = @editor.getCode()
       @editor.destroyEditor()
       @$el.trigger('update', [content])
 
-    endTextInput: ->
-      content = @editor.val()
-      @editor.remove()
+      @editor = null
+      @$el.click => @startEdit()
+
+  class Editable.TextInput extends Editor
+
+    events: ->
+      _.extend super,
+        'blur': 'endEdit'
+
+    render: ->
+      super
+
+      @editor = @$el.attr('contenteditable', true)
+
+      @
+
+    endEdit: ->
+      content = @editor.html()
       @$el.trigger('update', [content])
 
-    endDateInput: ->
-      console.log 'end date input'
+  class Editable.DateInput extends Editor
 
-    showBorder: (e) ->
-      @$el.addClass('editable')
+    events: ->
+      _.extend super,
+        'blur': 'endEdit'
 
-    hideBorder: (e) ->
-      @$el.removeClass('editable')
+    render: ->
+      super
+
+      @editor = @$el.attr('contenteditable', true)
+
+      @
+
+    endEdit: ->
+      content = @editor.html()
+      @$el.trigger('update', [content])
+
+  return Editable
