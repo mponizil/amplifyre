@@ -1,1 +1,1 @@
-<div data-ref='ticker_text'>pumpin sweet beats</div>
+<div data-ref='ticker_text'><%= o.model.get('phrase') %></div>

@@ -57,6 +57,6 @@ define [
       next()
 
     paused: (next) =>
-      @$ticker_text.html(@model.get('tagline'))
+      @$ticker_text.html(@model.get('phrase'))
 
       next()
