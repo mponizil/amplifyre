@@ -1,4 +1,4 @@
-<div class='date' data-html='created_at' data-editable='date-input'></div>
+<div class='date' data-html='created_at'></div>
 
 <div class='title' data-html='title' data-editable='text-input'></div>
 

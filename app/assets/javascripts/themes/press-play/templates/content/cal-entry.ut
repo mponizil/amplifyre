@@ -1,11 +1,9 @@
 <div class='tour-body'>
-  <div class='date' data-html='date'></div>
+  <div class='date' data-html='date' data-editable='date-input'></div>
 
-  <div class='time' data-html='time'></div>
+  <div class='venue' data-html='venue' data-editable='text-input'></div>
 
-  <div class='venue' data-html='venue'></div>
-
-  <div class='details' data-html='details'></div>
+  <div class='details' data-html='details' data-editable='text-area'></div>
 </div>
 
 <div class='thm'>

@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
 
   create_table "concerts", :force => true do |t|
     t.integer  "band_site_id"
+    t.date     "date"
     t.string   "venue"
     t.text     "details"
     t.string   "photo"
