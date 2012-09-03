@@ -35,7 +35,6 @@
   blockquote,
   pre {
     box-shadow: none;
-    margin: 0;
     line-height: 1.5em;
     font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
     font-size: 15px;
@@ -68,19 +67,6 @@
   dl dt { font-weight: bold; }
   dd { margin-left: 1em;}
 
-  table {
-    border-collapse: collapse;
-    font-size: 1em;
-  }
-  table td {
-    border: 1px solid #ddd;
-    padding: 5px;
-    vertical-align: top;
-  }
-  table thead td {
-    border-bottom: 2px solid #000;
-    font-weight: bold;
-  }
   code,
   pre {
     font-family: Menlo, Monaco, monospace, sans-serif;
@@ -235,6 +221,10 @@
   margin-bottom: 4px;
 }
 
+.contact-form table {
+  width: 500px;
+  margin: 0 auto;
+}
 .contact-form .loader {
   display: none;
 }
