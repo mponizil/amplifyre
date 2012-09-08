@@ -1,6 +1,6 @@
 define [
   'list'
-  'views/page'
+  'views/pages/base'
   'views/visual/photo'
   'jst!templates/pages/photos'
 ], (List, PageView, PhotoView, jst) ->

@@ -1,6 +1,6 @@
 define [
   'list'
-  'views/page'
+  'views/pages/base'
   'views/content/cal-entry'
   'jst!templates/pages/tour'
 ], (List, PageView, CalEntryView, jst) ->

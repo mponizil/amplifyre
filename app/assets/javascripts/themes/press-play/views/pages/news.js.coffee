@@ -1,5 +1,5 @@
 define [
-  'views/page'
+  'views/pages/base'
   'views/content/post'
   'jst!templates/pages/news'
 ], (PageView, PostView, jst) ->
