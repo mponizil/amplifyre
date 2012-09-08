@@ -1,7 +1,10 @@
 define [
   'jquery'
+  'backbone'
+  'router'
+  'models/pages'
   'views/app'
-], ($, App) ->
+], ($, Backbone, Router, Pages, App) ->
 
   $ ->
 
@@ -9,8 +12,17 @@ define [
       headers:
         'X-Requested-With': 'XMLHttpRequest'
 
+    bootstrap = JSON.parse($('#bootstrap').html())
+
+    pages = new Pages(bootstrap.pages)
+
+    router = new Router
+      pages: pages
+    Backbone.history or= new Backbone.History()
+    Backbone.history.options = {root: '/'}
+
     new App
       el: 'body'
-      bootstrap: JSON.parse($('#bootstrap').html())
-      root: '/'
+      bootstrap: bootstrap
+      router: router
     .render()

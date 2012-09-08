@@ -1,5 +1,4 @@
 define [
-  'backbone'
   'quilt'
   'views/pages/news'
   'views/pages/listen'
@@ -7,24 +6,19 @@ define [
   'views/pages/tour'
   'views/pages/contact'
   'views/pages/custom'
-], (Backbone, Quilt, NewsView, ListenView, PhotosView, TourView, ContactView, CustomView) ->
+], (Quilt, NewsView, ListenView, PhotosView, TourView, ContactView, CustomView) ->
 
-  class Site extends Backbone.Router
+  class Pages extends Quilt.View
 
-    constructor: ({@app, @pages}) ->
+    constructor: ({@router, @band_site, @player}) ->
       super
 
-    routes:
-      '': 'index'
-      'home': 'index'
-      ':slug': 'slug'
+    initialize: ->
+      super
 
-    slug: (slug) ->
-      page = @pages.find (page) -> page.get('slug') is slug
-      if not page
-        @navigate('home', { trigger: true, replace: true })
-      else
-        @[page.get('category')](page)
+      @router.on('change:page', (page, model) ->
+        @[page](model)
+      , @)
 
     index: ->
       @changePage new Quilt.View
@@ -32,23 +26,23 @@ define [
     news: (model) ->
       @changePage new NewsView
         model: model
-        posts: @app.posts
+        posts: @band_site.posts()
 
     listen: (model) ->
       @changePage new ListenView
         model: model
-        player: @app.player
-        albums: @app.albums
+        player: @player
+        albums: @band_site.albums()
 
     photos: (model) ->
       @changePage new PhotosView
         model: model
-        photos: @app.photos
+        photos: @band_site.photos()
 
     tour: (model) ->
       @changePage new TourView
         model: model
-        concerts: @app.concerts
+        concerts: @band_site.concerts()
 
     contact: (model) ->
       @changePage new ContactView(model: model)
@@ -58,4 +52,4 @@ define [
 
     changePage: (view) ->
       @page?.remove().destroy()
-      @app.$page.html((@page = view.render()).el)
+      @$el.html((@page = view.render()).el)

@@ -1,7 +1,6 @@
 define [
   'backbone'
   'quilt'
-  'routers/site'
   'models/player'
   'models/band_site'
   'models/socials'
@@ -16,20 +15,21 @@ define [
   'views/links/social'
   'views/music/music'
   'views/visual/ticker'
+  'views/pages'
   'jst!templates/app'
   'ui/all'
   'models/associations'
   'jplayer'
   'jquery.easing'
   'fancybox'
-], (Backbone, Quilt, Site, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, jst) ->
+], (Backbone, Quilt, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, PagesView, jst) ->
 
   class App extends Quilt.View
 
-    initialize: ({@bootstrap, @root}) ->
+    initialize: ({@bootstrap, @router}) ->
       super
 
-      @band_site = new BandSite(@bootstrap.band_site)
+      @band_site = BandSite.create(@bootstrap.band_site)
       @socials = @band_site.socials().reset(@bootstrap.socials)
       @albums = @band_site.albums().reset(@bootstrap.albums)
       @tracks = new Tracks(@bootstrap.tracks)
@@ -38,20 +38,10 @@ define [
       @concerts = @band_site.concerts().reset(@bootstrap.concerts)
       @pages = @band_site.pages().reset(@bootstrap.pages)
 
-      @router = new Site
-        app: @
-        pages: @pages
-      Backbone.history or= new Backbone.History()
-      Backbone.history.options = {root: @root}
-
     template: jst
 
     events:
       'route a': 'route'
-
-    route: (e, fragment) ->
-      @router.navigate(fragment, true)
-      @resize()
 
     render: ->
       super
@@ -85,11 +75,22 @@ define [
         player: @player
       .render())
 
+      @views.push(new PagesView
+        el: @$page
+        router: @router
+        band_site: @band_site
+        player: @player
+      .render())
+
       Backbone.history.start(pushState: true)
 
       $(window).resize => @resize()
 
       @
+
+    route: (e, fragment) ->
+      @router.navigate(fragment, true)
+      @resize()
 
     resize: ->
       top = @$black_banner.offset().top - 60
