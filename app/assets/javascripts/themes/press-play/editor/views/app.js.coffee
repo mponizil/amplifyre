@@ -1,12 +1,18 @@
 define [
   'views/app'
-], (App) ->
+  'editor/views/pages'
+], (App, EditPagesView) ->
 
   class EditApp extends App
 
-    initialize: ->
+    render: ->
       super
 
-      @router.on('change:page', (page, model) ->
-        console.log page, model
-      , @)
+      @views.push(new EditPagesView
+        el: @$page
+        router: @router
+        band_site: @band_site
+        player: @player
+      .render())
+
+      @

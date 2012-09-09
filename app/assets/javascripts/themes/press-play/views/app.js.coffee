@@ -26,17 +26,15 @@ define [
 
   class App extends Quilt.View
 
-    initialize: ({@bootstrap, @router}) ->
+    initialize: ({@band_site, @pages, @bootstrap, @router}) ->
       super
 
-      @band_site = BandSite.create(@bootstrap.band_site)
       @socials = @band_site.socials().reset(@bootstrap.socials)
       @albums = @band_site.albums().reset(@bootstrap.albums)
       @tracks = new Tracks(@bootstrap.tracks)
       @photos = @band_site.photos().reset(@bootstrap.photos)
       @posts = @band_site.posts().reset(@bootstrap.posts)
       @concerts = @band_site.concerts().reset(@bootstrap.concerts)
-      @pages = @band_site.pages().reset(@bootstrap.pages)
 
     template: jst
 
@@ -81,8 +79,6 @@ define [
         band_site: @band_site
         player: @player
       .render())
-
-      Backbone.history.start(pushState: true)
 
       $(window).resize => @resize()
 
