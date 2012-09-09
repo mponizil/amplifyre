@@ -8,6 +8,10 @@ define [
       super
 
     render: ->
-      console.log 'edit news'
-
       @
+
+    events:
+      'click [data-new-post]': 'newPost'
+
+    newPost: (e) ->
+      console.log 'new post'

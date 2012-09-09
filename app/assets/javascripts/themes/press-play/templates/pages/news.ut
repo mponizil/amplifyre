@@ -1,6 +1,14 @@
 <div class='content news' data-ref='content'>
 
-  <h2 data-html='title'></h2>
+  <div class='clearfix'>
+
+    <h2 data-html='title' class='left'></h2>
+
+    <div data-edit-mode class='right'>
+      <button data-new-post>New Post</button>
+    </div>
+
+  </div>
 
   <div class='scrollpane' data-ref='scrollpane'>
 

@@ -3,4 +3,5 @@ define [
   'ui/html'
   'ui/fragment'
   'ui/editable'
+  'ui/edit-mode'
 ], ->
