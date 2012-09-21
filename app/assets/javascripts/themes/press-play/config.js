@@ -18,7 +18,8 @@ require.config({
     fancybox: '../../fancybox/jquery.fancybox.pack',
     text: '../../text',
     jst: '../../jst',
-    redactor: '../../redactor.min'
+    redactor: '../../redactor.min',
+    moment: '../../moment'
   },
   shim: {
     backbone: {

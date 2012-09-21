@@ -1,8 +1,11 @@
 define [
   'models/model'
-], (Model) ->
+  'moment'
+], (Model, moment) ->
 
   class Post extends Model
 
-    defaults:
-      id: null
+    defaults: ->
+      created_at: +new Date
+      title: 'New Post'
+      body: 'Fill in your post content here...'

@@ -1,3 +1,5 @@
+<div class='right' data-edit-mode data-destroy>Delete</div>
+
 <div class='date' data-html='created_at'></div>
 
 <div class='title' data-html='title' data-editable='text-input'></div>

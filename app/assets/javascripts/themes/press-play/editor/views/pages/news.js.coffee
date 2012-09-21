@@ -14,4 +14,5 @@ define [
       'click [data-new-post]': 'newPost'
 
     newPost: (e) ->
-      console.log 'new post'
+      @posts.create()
+      @$('[data-editable]:first').focus()
