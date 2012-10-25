@@ -1,7 +1,5 @@
 Amplifyre::Application.routes.draw do
 
-  match '*all' => 'application#cors', :constraints => {:method => 'OPTIONS'}
-
   # Band site based on subdomain
   constraints Subdomain do
     match '/edit(/:page)' => 'band_sites#edit_mode'

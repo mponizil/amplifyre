@@ -5,7 +5,7 @@ define [
 
   class Collection extends Backbone.Collection
 
-    url: -> 'http://amplifyre.dev'
+    url: -> window.location.origin
 
     comparator: (model1, model2) ->
       moment(model1.get('created_at')).unix() < moment(model2.get('created_at')).unix()

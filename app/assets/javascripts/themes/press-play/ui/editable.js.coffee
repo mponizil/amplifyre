@@ -74,6 +74,7 @@ define [
     events: ->
       _.extend super,
         'blur': 'endEdit'
+        'keydown': 'checkTab'
 
     render: ->
       super
@@ -85,6 +86,11 @@ define [
     endEdit: ->
       content = @editor.html()
       @$el.trigger('update', [content])
+
+    checkTab: (e) ->
+      if (e.keyCode is 9)
+        e.preventDefault()
+        @$el.trigger('editor:next')
 
   class Editable.DateInput extends Editor
 

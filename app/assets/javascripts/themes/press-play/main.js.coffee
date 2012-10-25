@@ -9,10 +9,6 @@ define [
 
   $ ->
 
-    $.ajaxSetup
-      headers:
-        'X-Requested-With': 'XMLHttpRequest'
-
     bootstrap = JSON.parse($('#bootstrap').html())
 
     band_site = BandSite.create(bootstrap.band_site)
