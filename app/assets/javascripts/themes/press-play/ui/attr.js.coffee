@@ -3,13 +3,13 @@ define [
 ], (Quilt) ->
 
   # Set and update the current element's content based on an attribute.
-  Quilt.attributes.html = (el, options) ->
-    new Html
+  Quilt.attributes.attr = (el, options) ->
+    new Attr
       el: el
       attr: options
       model: @model
 
-  class Html extends Quilt.View
+  class Attr extends Quilt.View
 
     initialize: (options) ->
       super

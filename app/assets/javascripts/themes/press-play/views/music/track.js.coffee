@@ -1,8 +1,8 @@
 define [
-  'ui/html'
-], (Html) ->
+  'ui/attr'
+], (Attr) ->
 
-  class TrackView extends Html
+  class TrackView extends Attr
 
     initialize: ->
       super

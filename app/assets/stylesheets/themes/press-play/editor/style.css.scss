@@ -1,4 +1,15 @@
-textarea.editable {
+@import "compass/css3";
+
+.editor-default {
+  color: #999;
+  font-style: italic;
+}
+.editor-active {
+  @include box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 0);
+  outline: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+textarea.editor-hover {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -6,22 +17,20 @@ textarea.editable {
   border: none;
   outline: none;
 }
-[contenteditable] {
-  outline: none;
-}
 
-[contenteditable].editable,
-.editable {
+[contenteditable].editor-hover,
+.editor-hover {
   outline: 1px dashed rgba(100, 100, 100, 0.5);
 }
 
 .redactor_box {
   border: none;
+  margin-top: -38px;
 }
 .redactor_box, .redactor_box textarea {
   background-color: transparent;
 }
 .redactor_editor, .redactor_editor:focus {
-  padding: 10px 0 0 0 !important;
+  padding: 5px 0 0 0 !important;
   background-color: transparent !important;
 }

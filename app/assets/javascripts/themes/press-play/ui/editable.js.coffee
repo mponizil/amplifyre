@@ -17,24 +17,42 @@ define [
 
   class Editor extends Quilt.View
 
+    active: false
+
+    initialize: ->
+      super
+
+      attr = @$el.data('attr')
+      @defaultVal = _.result(@model, 'defaults')[attr]
+
     events: ->
       'mouseover': 'showBorder'
       'mouseout': 'hideBorder'
 
+    startEdit: ->
+      @active = true
+      @$el.removeClass('editor-hover')
+      @$el.addClass('editor-active')
+
+    endEdit: ->
+      @active = false
+      @$el.removeClass('editor-active')
+
     showBorder: (e) ->
-      @$el.addClass('editable')
+      @$el.addClass('editor-hover') unless @active
 
     hideBorder: (e) ->
-      @$el.removeClass('editable')
+      @$el.removeClass('editor-hover')
 
   class Editable.TextArea extends Editor
 
-    events: ->
-      _.extend super,
-        'click': 'startEdit'
-
     render: ->
       super
+
+      if $.trim(@$el.text()) is @defaultVal
+        @$el.addClass('editor-default')
+
+      @$el.one('dblclick', => @startEdit())
 
       $(window).click (e) =>
         # Return if no @editor exists
@@ -54,38 +72,84 @@ define [
       @
 
     startEdit: ->
-      @$el.off('click')
+      super
 
-      content = @$el.html()
-      @editor = $('<div>').html(content)
+      # Clear value if it's the default
+      @$el.text('') if $.trim(@$el.text()) is @defaultVal
+      @$el.removeClass('editor-default')
+
+      html = @$el.html()
+      @editor = $('<div>').html(html)
       @$el.empty().append(@editor)
       @editor.redactor(focus: true)
 
     endEdit: ->
-      content = @editor.getCode()
+      super
+
+      html = @editor.getCode()
+      text = @editor.getText()
       @editor.destroyEditor()
-      @$el.trigger('update', [content])
+
+      # Restore default value if it was left empty
+      if $.trim(text) is ''
+        @$el.text(text = html = @defaultVal)
+        @$el.addClass('editor-default')
+
+      @$el.trigger('update', [html])
 
       @editor = null
-      @$el.click => @startEdit()
+      @$el.one('dblclick', => @startEdit())
 
   class Editable.TextInput extends Editor
 
     events: ->
       _.extend super,
-        'blur': 'endEdit'
+        'dblclick': 'startEdit'
         'keydown': 'checkTab'
 
     render: ->
       super
 
-      @editor = @$el.attr('contenteditable', true)
+      if $.trim(@$el.text()) is @defaultVal
+        @$el.addClass('editor-default')
+
+      $(window).click (e) =>
+        # Return if no @editor exists
+        return unless @editor
+
+        # If target is not inside body, we must be clicking a removed element
+        return unless $('body').find(e.target).length
+
+        # Return if we're clicking inside @$el
+        return if $(e.target).closest(@$el).length
+
+        @endEdit()
 
       @
 
+    startEdit: ->
+      super
+
+      @editor = @$el.attr('contenteditable', true)
+
+      # Clear value if it's the default
+      @$el.text('') if $.trim(@$el.text()) is @defaultVal
+      @$el.removeClass('editor-default')
+
     endEdit: ->
-      content = @editor.html()
-      @$el.trigger('update', [content])
+      super
+
+      html = @editor.html()
+      text = @editor.text()
+
+      # Restore default value if it was left empty
+      if $.trim(text) is ''
+        @$el.text(html = text = @defaultVal)
+        @$el.addClass('editor-default')
+
+      @$el.trigger('update', [html])
+
+      @editor = @$el.attr('contenteditable', false)
 
     checkTab: (e) ->
       if (e.keyCode is 9)

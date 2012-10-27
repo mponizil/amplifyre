@@ -1,6 +1,6 @@
 define [
   'ui/ref'
-  'ui/html'
+  'ui/attr'
   'ui/fragment'
   'ui/destroy'
   'ui/editable'
