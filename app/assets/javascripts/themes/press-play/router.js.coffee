@@ -17,4 +17,4 @@ define [
       if not page
         @navigate('home', { trigger: true, replace: true })
       else
-        @trigger('change:page', page.get('category'), page)
+        @trigger('page:change', page.get('category'), page)

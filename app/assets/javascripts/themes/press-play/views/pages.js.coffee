@@ -16,7 +16,7 @@ define [
     initialize: ->
       super
 
-      @router.on('change:page', (page, model) ->
+      @router.on('page:change', (page, model) ->
         @[page](model)
       , @)
 
@@ -53,3 +53,4 @@ define [
     changePage: (view) ->
       @page?.remove().destroy()
       @$el.html((@page = view.render()).el)
+      @$el.trigger('page:render')

@@ -40,6 +40,7 @@ define [
 
     events:
       'route a': 'route'
+      'page:render': 'resize'
 
     render: ->
       super
@@ -86,11 +87,10 @@ define [
 
     route: (e, fragment) ->
       @router.navigate(fragment, true)
-      @resize()
 
     resize: ->
       top = @$black_banner.offset().top - 60
       bottom = @$nav.offset().top + @$nav.height() + 20
       max_height = top - bottom
 
-      @$page.children(':first').trigger('update:size', [max_height, bottom])
+      @$page.children(':first').trigger('size:update', [max_height, bottom])

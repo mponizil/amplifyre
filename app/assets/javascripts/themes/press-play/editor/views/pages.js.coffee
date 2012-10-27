@@ -16,7 +16,7 @@ define [
     initialize: ->
       super
 
-      @router.on('change:page', (page, model) ->
+      @router.on('page:change', (page, model) ->
         @[page](model)
       , @)
 

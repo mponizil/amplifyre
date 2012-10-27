@@ -5,7 +5,7 @@ define [
   class Page extends Quilt.View
 
     events:
-      'update:size': 'resize'
+      'size:update': 'resize'
 
     resize: (e, max_height, bottom) ->
       @$content.css('max-height', max_height)

@@ -1,5 +1,12 @@
 @import "compass/css3";
 
+.delete {
+  cursor: pointer;
+}
+.delete:hover {
+  background-color: #e00000;
+}
+
 .editor-default {
   color: #999;
   font-style: italic;
