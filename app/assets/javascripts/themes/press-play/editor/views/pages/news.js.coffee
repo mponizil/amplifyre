@@ -19,4 +19,4 @@ define [
       @$('[data-editable]:first').focus()
 
     tabNext: (e) ->
-      $(e.target).next('[data-editable]').click()
+      $(e.target).next('[data-editable]').dblclick()

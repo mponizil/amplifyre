@@ -105,7 +105,6 @@ define [
     events: ->
       _.extend super,
         'dblclick': 'startEdit'
-        'keydown': 'checkTab'
 
     render: ->
       super
@@ -131,6 +130,7 @@ define [
       super
 
       @editor = @$el.attr('contenteditable', true)
+      @$el.on('keydown', (e) => @checkTab(e))
 
       # Clear value if it's the default
       @$el.text('') if $.trim(@$el.text()) is @defaultVal
@@ -149,6 +149,7 @@ define [
 
       @$el.trigger('update', [html])
 
+      @$el.off('keydown')
       @editor = @$el.attr('contenteditable', false)
 
     checkTab: (e) ->

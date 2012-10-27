@@ -7,5 +7,5 @@ define [
 
     defaults: ->
       created_at: +new Date
-      title: 'New Post'
-      body: 'Fill in your post content here...'
+      title: 'Post title...'
+      body: 'Post content...'
