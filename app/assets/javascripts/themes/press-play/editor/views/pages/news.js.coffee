@@ -15,8 +15,12 @@ define [
       'editor:next': 'tabNext'
 
     newPost: (e) ->
+      e.stopPropagation()
+
+      @$('[data-ref=news]').one 'added', (e, $post) =>
+        $post.find('[data-editable]:first').trigger('editable:start')
       @posts.create()
-      @$('[data-editable]:first').focus()
 
     tabNext: (e) ->
-      $(e.target).next('[data-editable]').dblclick()
+      $(e.target).trigger('editable:end')
+      $(e.target).next('[data-editable]').trigger('editable:start')

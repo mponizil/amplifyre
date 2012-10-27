@@ -1,11 +1,10 @@
 define [
   'models/model'
-  'moment'
-], (Model, moment) ->
+], (Model) ->
 
   class Post extends Model
 
     defaults: ->
-      created_at: +new Date
+      created_at: (new Date()).toISOString()
       title: 'Post title...'
       body: 'Post content...'

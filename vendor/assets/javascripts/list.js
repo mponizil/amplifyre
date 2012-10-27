@@ -60,6 +60,8 @@
       var previous = this.findView(this.collection.at(index - 1));
       if (previous) previous.$el.after(view.el);
       else this.$el.prepend(view.el);
+
+      this.$el.trigger('added', [view.$el]);
     },
 
     // Destroy the removed model's view and remove it from the DOM.

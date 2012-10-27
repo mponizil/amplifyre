@@ -14,11 +14,11 @@ require.config({
     supermodel: '../../supermodel',
     list: '../../list',
     jplayer: '../../jplayer/jquery.jplayer.min',
-    'jquery.easing': '../../jquery.easing.1.3',
+    easing: '../../jquery.easing.1.3',
     fancybox: '../../fancybox/jquery.fancybox.pack',
     text: '../../text',
     jst: '../../jst',
-    redactor: '../../redactor.min',
+    redactor: '../../redactor',
     moment: '../../moment'
   },
   shim: {
@@ -44,9 +44,21 @@ require.config({
       deps: ['quilt'],
       exports: 'List'
     },
-    jplayer: ['jquery'],
-    'jquery.easing': ['jquery'],
-    fancybox: ['jquery'],
-    redactor: ['jquery']
+    jplayer: {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    easing: {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    fancybox: {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    redactor: {
+      deps: ['jquery'],
+      exports: '$'
+    }
   }
 });

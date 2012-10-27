@@ -20,7 +20,7 @@ define [
   'ui/all'
   'models/associations'
   'jplayer'
-  'jquery.easing'
+  'easing'
   'fancybox'
 ], (Backbone, Quilt, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, PagesView, jst) ->
 

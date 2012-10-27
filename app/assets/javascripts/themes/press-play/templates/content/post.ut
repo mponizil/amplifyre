@@ -1,6 +1,6 @@
 <div class='right delete' data-edit-mode data-destroy>Delete</div>
 
-<div class='date' data-attr='created_at'></div>
+<div class='date' data-date-attr='created_at' data-date-format='MMMM Do, YYYY'></div>
 
 <div class='title' data-attr='title' data-editable='text-input'></div>
 
