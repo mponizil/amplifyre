@@ -12,6 +12,9 @@ define [
       'home': 'index'
       ':slug': 'slug'
 
+    index: ->
+      @trigger('page:change', 'index')
+
     slug: (slug) ->
       page = @pages.find (page) -> page.get('slug') is slug
       if not page
