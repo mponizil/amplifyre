@@ -1,5 +1,7 @@
 <div class='content pics' data-ref='content'>
 
+  <input type='file' name='photos[]' data-edit-mode data-fileupload />
+
   <div class='scrollpane' data-ref='scrollpane'>
 
     <ul data-ref='pics'></ul>

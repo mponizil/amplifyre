@@ -10,4 +10,6 @@ class BandSite < ActiveRecord::Base
 
   attr_protected
 
+  mount_uploader :background_file, BackgroundUploader
+
 end

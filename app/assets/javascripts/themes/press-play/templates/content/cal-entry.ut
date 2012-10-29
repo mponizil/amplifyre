@@ -7,7 +7,7 @@
 </div>
 
 <div class='thm'>
-  <a href='/assets/images/tour/<%= o.model.get('photo') %>' rel='group' data-fancybox>
-    <img src='/assets/images/tour/thms/<%= o.model.get('photo') %>' />
+  <a href='<%= o.model.get('photo_file').url %>' rel='group' data-fancybox>
+    <img src='<%= o.model.get('photo_file').sm_thumb.url %>' />
   </a>
 </div>

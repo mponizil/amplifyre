@@ -1,6 +1,6 @@
 <div class='album-cover'>
-  <a href='/assets/images/albums/<%= o.model.get('cover') %>' rel='group' data-fancybox>
-    <img src='/assets/images/albums/thms/<%= o.model.get('cover') %>' alt='<%= o.model.get('title') %>' title='<%= o.model.get('title') %>' />
+  <a href='<%= o.model.get('cover_file').url %>' rel='group' data-fancybox>
+    <img src='<%= o.model.get('cover_file').lrg_thumb.url %>' alt='<%= o.model.get('title') %>' title='<%= o.model.get('title') %>' />
   </a>
 </div>
 
