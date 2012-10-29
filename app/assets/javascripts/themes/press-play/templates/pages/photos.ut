@@ -1,12 +1,10 @@
-<div class='content pics' data-ref='content'>
+<div class='content content-photos' data-ref='content'>
 
-  <input type='file' name='file' data-edit-mode data-fileupload />
+  <input type='file' name='file' data-edit-mode data-fileupload multiple />
 
   <div class='scrollpane' data-ref='scrollpane'>
 
     <ul data-ref='pics'></ul>
-
-    <div style='height:1px'></div>
 
   </div>
 

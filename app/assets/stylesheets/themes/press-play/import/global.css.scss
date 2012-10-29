@@ -67,9 +67,7 @@ p {
   margin: 0;
 }
 
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix { @include clearfix; }
 .left { float: left; }
 .right { float: right; }
 .hidden { display: none; }
@@ -96,5 +94,5 @@ p {
   left: 50%;
 }
 .playing-bg {
-  background-color:#06bcff;
+  background-color: #06bcff;
 }

@@ -13,7 +13,8 @@ define [
         ended: => @set(index: @next())
         volume: 1
         swfPath: '/assets/jplayer'
-        supplied: 'mp3, m4a'
+        # supplied: 'mp3, m4a'
+        supplied: 'mp3'
       ).css('height', 0)
 
       @on('change:index', @choose, @)
@@ -54,8 +55,8 @@ define [
     # Tell jPlayer what to play.
     setMedia: (track) ->
       @jplayer.jPlayer 'setMedia',
-        m4a: track.get('file')
-        mp3: track.get('file')
+        # m4a: track.get('file').url
+        mp3: track.get('file').url
 
       # Keep playing if we were playing.
       if @get('playing')

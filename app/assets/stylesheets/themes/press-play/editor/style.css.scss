@@ -1,11 +1,19 @@
 @import "compass/css3";
 
+//
+// Editor UI
+//
+
 .delete {
   cursor: pointer;
 }
 .delete:hover {
   background-color: #e00000;
 }
+
+//
+// Editable
+//
 
 .editable-default {
   color: #999;
@@ -15,7 +23,6 @@
   @include box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 0);
   outline: 1px solid rgba(100, 100, 100, 0.3);
 }
-
 textarea.editable-hover {
   width: 100%;
   padding: 0;
@@ -24,11 +31,14 @@ textarea.editable-hover {
   border: none;
   outline: none;
 }
-
 [contenteditable].editable-hover,
 .editable-hover {
   outline: 1px dashed rgba(100, 100, 100, 0.5);
 }
+
+//
+// Redactor styles
+//
 
 .redactor_box {
   border: none;
@@ -40,4 +50,26 @@ textarea.editable-hover {
 .redactor_editor, .redactor_editor:focus {
   padding: 5px 0 0 0 !important;
   background-color: transparent !important;
+}
+
+//
+// Section-specific UI
+//
+
+.content-photos li {
+  position: relative;
+  .delete {
+    font-size: 12px;
+    line-height: normal;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 2px;
+    width: 16px;
+    height: 14px;
+    text-align: center;
+  }:hover {
+    background-color: #e00000;
+  }
 }
