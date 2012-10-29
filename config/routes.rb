@@ -7,14 +7,14 @@ Amplifyre::Application.routes.draw do
     root :to => 'band_sites#live'
   end
 
-  resources :band_sites, :except => [:index, :create, :show, :edit] do
-    resources :socials, :format => false
-    resources :albums, :format => false
-    resources :tracks, :format => false
-    resources :photos, :format => false
-    resources :posts, :format => false
-    resources :concerts, :format => false
-    resources :pages, :format => false
+  resources :band_sites, :except => [:index, :edit] do
+    resources :socials, :except => [:index, :new, :edit], :format => false
+    resources :albums, :except => [:index, :new, :edit], :format => false
+    resources :tracks, :except => [:index, :new, :edit], :format => false
+    resources :photos, :except => [:index, :new, :edit], :format => false
+    resources :posts, :except => [:index, :new, :edit], :format => false
+    resources :concerts, :except => [:index, :new, :edit], :format => false
+    resources :pages, :except => [:index, :new, :edit], :format => false
   end
 
   # Static pages

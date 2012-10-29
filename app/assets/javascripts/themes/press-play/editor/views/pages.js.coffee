@@ -33,7 +33,8 @@ define [
       @changePage new EditListenView
         el: @$el
         model: model
-        collection: @band_site.albums()
+        collection: @band_site.tracks()
+        albums: @band_site.albums()
         player: @player
 
     photos: (model) ->

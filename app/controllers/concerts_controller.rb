@@ -1,28 +1,9 @@
 class ConcertsController < ApplicationController
-  # GET /concerts
-  def index
-    @concerts = Concert.all
-
-    render json: @concerts
-  end
-
   # GET /concerts/1
   def show
     @concert = Concert.find(params[:id])
 
     render json: @concert
-  end
-
-  # GET /concerts/new
-  def new
-    @concert = Concert.new
-
-    render json: @concert
-  end
-
-  # GET /concerts/1/edit
-  def edit
-    @concert = Concert.find(params[:id])
   end
 
   # POST /concerts

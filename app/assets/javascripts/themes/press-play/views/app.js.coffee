@@ -31,7 +31,7 @@ define [
 
       @socials = @band_site.socials().reset(@bootstrap.socials)
       @albums = @band_site.albums().reset(@bootstrap.albums)
-      @tracks = new Tracks(@bootstrap.tracks)
+      @tracks = @band_site.tracks().reset(@bootstrap.tracks)
       @photos = @band_site.photos().reset(@bootstrap.photos)
       @posts = @band_site.posts().reset(@bootstrap.posts)
       @concerts = @band_site.concerts().reset(@bootstrap.concerts)

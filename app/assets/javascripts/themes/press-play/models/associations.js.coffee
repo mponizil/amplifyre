@@ -21,6 +21,10 @@ define [
       collection: Albums
       inverse: 'band_site'
     )
+    .many('tracks',
+      collection: Tracks
+      inverse: 'band_site'
+    )
     .many('concerts',
       collection: Concerts
       inverse: 'band_site'
@@ -53,6 +57,10 @@ define [
     )
 
   Track.has()
+    .one('band_site'
+      model: BandSite
+      inverse: 'tracks'
+    )
     .one('album',
       model: Album
       inverse: 'tracks'

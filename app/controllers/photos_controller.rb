@@ -1,28 +1,9 @@
 class PhotosController < ApplicationController
-  # GET /photos
-  def index
-    @photos = Photo.all
-
-    render json: @photos
-  end
-
   # GET /photos/1
   def show
     @photo = Photo.find(params[:id])
 
     render json: @photo
-  end
-
-  # GET /photos/new
-  def new
-    @photo = Photo.new
-
-    render json: @photo
-  end
-
-  # GET /photos/1/edit
-  def edit
-    @photo = Photo.find(params[:id])
   end
 
   # POST /photos

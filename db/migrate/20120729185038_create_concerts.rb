@@ -5,7 +5,7 @@ class CreateConcerts < ActiveRecord::Migration
       t.date :date
       t.string :venue
       t.text :details
-      t.string :photo
+      t.string :photo_file
 
       t.timestamps
     end

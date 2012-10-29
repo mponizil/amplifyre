@@ -7,8 +7,7 @@ class CreateBandSites < ActiveRecord::Migration
       t.string :description
       t.string :title
       t.string :phrase
-      t.string :desat
-      t.string :sat
+      t.string :background_file
 
       t.timestamps
     end

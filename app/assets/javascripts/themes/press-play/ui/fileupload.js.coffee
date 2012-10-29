@@ -12,7 +12,7 @@ define [
       'fileuploaddone': 'done'
 
     render: ->
-      @$el.fileupload(dataType: 'json', url: @collection.url(), dropZone: @$content)
+      @$el.fileupload(dataType: 'json', url: @collection.url())
       return this
 
     done: (e, data) ->

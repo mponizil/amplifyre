@@ -31,7 +31,8 @@ define [
     listen: (model) ->
       @changePage new ListenView
         model: model
-        collection: @band_site.albums()
+        collection: @band_site.tracks()
+        albums: @band_site.albums()
         player: @player
 
     photos: (model) ->

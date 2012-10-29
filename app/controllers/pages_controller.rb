@@ -1,28 +1,9 @@
 class PagesController < ApplicationController
-  # GET /pages
-  def index
-    @pages = Page.all
-
-    render json: @pages
-  end
-
   # GET /pages/1
   def show
     @page = Page.find(params[:id])
 
     render json: @page
-  end
-
-  # GET /pages/new
-  def new
-    @page = Page.new
-
-    render json: @page
-  end
-
-  # GET /pages/1/edit
-  def edit
-    @page = Page.find(params[:id])
   end
 
   # POST /pages

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121029010128) do
+ActiveRecord::Schema.define(:version => 20120729185107) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(:version => 20121029010128) do
   create_table "albums", :force => true do |t|
     t.integer  "band_site_id"
     t.string   "title"
+    t.string   "cover_file"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "cover_file"
   end
 
   create_table "band_sites", :force => true do |t|
@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(:version => 20121029010128) do
     t.string   "description"
     t.string   "title"
     t.string   "phrase"
+    t.string   "background_file"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "background_file"
   end
 
   create_table "concerts", :force => true do |t|
@@ -71,9 +71,9 @@ ActiveRecord::Schema.define(:version => 20121029010128) do
     t.date     "date"
     t.string   "venue"
     t.text     "details"
+    t.string   "photo_file"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "photo_file"
   end
 
   create_table "pages", :force => true do |t|
@@ -111,12 +111,13 @@ ActiveRecord::Schema.define(:version => 20121029010128) do
   end
 
   create_table "tracks", :force => true do |t|
+    t.integer  "band_site_id"
     t.integer  "album_id"
     t.string   "title"
     t.string   "file"
     t.string   "artist"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -59,21 +59,22 @@ class BandSitesController < ApplicationController
     end
   end
 
+  # GET /band_sites/1
   def dashboard
     @band_site = BandSite.where(:slug => params[:slug])[0]
   end
 
+  # <band_site_slug>.amplifyre.com
   def live
     @slug = request.subdomain
     @band_site = BandSite.where(:slug => @slug)[0]
-    @tracks = @band_site.albums.map { |album| album.tracks }.flatten
     render :layout => @layout
   end
 
+  # <band_site_slug>.amplifyre.com/edit
   def edit_mode
     @slug = request.subdomain
     @band_site = BandSite.where(:slug => @slug)[0]
-    @tracks = @band_site.albums.map { |album| album.tracks }.flatten
     @version = 'editor'
     render :layout => @layout
   end
