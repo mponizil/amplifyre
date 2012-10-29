@@ -54,8 +54,8 @@ define [
     # Tell jPlayer what to play.
     setMedia: (track) ->
       @jplayer.jPlayer 'setMedia',
-        m4a: '/assets/audio/' + track.get('file') + '.m4a'
-        mp3: '/assets/audio/' + track.get('file') + '.mp3'
+        m4a: track.get('file')
+        mp3: track.get('file')
 
       # Keep playing if we were playing.
       if @get('playing')

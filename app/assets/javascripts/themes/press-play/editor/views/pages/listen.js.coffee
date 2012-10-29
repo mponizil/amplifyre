@@ -4,8 +4,8 @@ define [
 
   class ListenView extends Quilt.View
 
-    constructor: ({@player, @albums}) ->
+    constructor: ({@player}) ->
       super
 
     render: ->
-      @
+      return this

@@ -7,7 +7,7 @@ Amplifyre::Application.routes.draw do
     root :to => 'band_sites#live'
   end
 
-  resources :band_sites, :except => [:index, :show, :edit] do
+  resources :band_sites, :except => [:index, :create, :show, :edit] do
     resources :socials, :format => false
     resources :albums, :format => false
     resources :tracks, :format => false

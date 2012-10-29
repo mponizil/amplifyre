@@ -26,23 +26,23 @@ define [
     news: (model) ->
       @changePage new NewsView
         model: model
-        posts: @band_site.posts()
+        collection: @band_site.posts()
 
     listen: (model) ->
       @changePage new ListenView
         model: model
+        collection: @band_site.albums()
         player: @player
-        albums: @band_site.albums()
 
     photos: (model) ->
       @changePage new PhotosView
         model: model
-        photos: @band_site.photos()
+        collection: @band_site.photos()
 
     tour: (model) ->
       @changePage new TourView
         model: model
-        concerts: @band_site.concerts()
+        collection: @band_site.concerts()
 
     contact: (model) ->
       @changePage new ContactView(model: model)

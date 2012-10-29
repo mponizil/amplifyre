@@ -1,14 +1,12 @@
 define [
+  'quilt'
   'list'
   'views/pages/base'
   'views/visual/photo'
   'jst!templates/pages/photos'
-], (List, PageView, PhotoView, jst) ->
+], (Quilt, List, PageView, PhotoView, jst) ->
 
   class PhotosView extends PageView
-
-    initialize: ({@photos}) ->
-      super
 
     template: jst
 
@@ -18,7 +16,7 @@ define [
       @views.push(new List
         el: @$pics
         view: PhotoView
-        collection: @photos
+        collection: @collection
       .render())
 
       @$('[data-fancybox]').fancybox

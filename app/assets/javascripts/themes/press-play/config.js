@@ -16,10 +16,13 @@ require.config({
     jplayer: '../../jplayer/jquery.jplayer.min',
     easing: '../../jquery.easing.1.3',
     fancybox: '../../fancybox/jquery.fancybox.pack',
-    text: '../../text',
-    jst: '../../jst',
+    'jquery.ui.widget': '../../jquery.fileupload/jquery.ui.widget',
+    iframe_transport: '../../jquery.fileupload/jquery.iframe-transport',
+    fileupload: '../../jquery.fileupload/jquery.fileupload',
     redactor: '../../redactor',
-    moment: '../../moment'
+    moment: '../../moment',
+    text: '../../text',
+    jst: '../../jst'
   },
   shim: {
     backbone: {
@@ -55,6 +58,9 @@ require.config({
     fancybox: {
       deps: ['jquery'],
       exports: '$'
+    },
+    fileupload: {
+      deps: ['jquery', 'iframe_transport']
     },
     redactor: {
       deps: ['jquery'],

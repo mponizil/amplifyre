@@ -6,9 +6,6 @@ define [
 
   class NewsView extends PageView
 
-    initialize: ({@posts}) ->
-      super
-
     template: jst
 
     render: ->
@@ -17,7 +14,7 @@ define [
       @views.push(new List
         el: @$news
         view: PostView
-        collection: @posts
+        collection: @collection
       .render())
 
       @

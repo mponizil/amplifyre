@@ -5,4 +5,4 @@ define [
   class ContactView extends Quilt.View
 
     render: ->
-      @
+      return this

@@ -4,8 +4,5 @@ define [
 
   class TourView extends Quilt.View
 
-    initialize: ({@concerts}) ->
-      super
-
     render: ->
-      @
+      return this

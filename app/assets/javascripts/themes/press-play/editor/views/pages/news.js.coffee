@@ -4,11 +4,8 @@ define [
 
   class NewsView extends Quilt.View
 
-    constructor: ({@posts}) ->
-      super
-
     render: ->
-      @
+      return this
 
     events:
       'click [data-new-post]': 'newPost'

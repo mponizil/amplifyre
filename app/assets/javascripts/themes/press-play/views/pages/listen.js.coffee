@@ -7,7 +7,7 @@ define [
 
   class ListenView extends PageView
 
-    initialize: ({@player, @albums}) ->
+    constructor: ({@player}) ->
       super
 
     template: jst
@@ -18,7 +18,7 @@ define [
       @views.push(new List
         el: @$scrollpane
         view: AlbumView.extend(player: @player)
-        collection: @albums
+        collection: @collection
       .render())
 
       @

@@ -27,26 +27,26 @@ define [
       @changePage new EditNewsView
         el: @$el
         model: model
-        posts: @band_site.posts()
+        collection: @band_site.posts()
 
     listen: (model) ->
       @changePage new EditListenView
         el: @$el
         model: model
+        collection: @band_site.albums()
         player: @player
-        albums: @band_site.albums()
 
     photos: (model) ->
       @changePage new EditPhotosView
         el: @$el
         model: model
-        photos: @band_site.photos()
+        collection: @band_site.photos()
 
     tour: (model) ->
       @changePage new EditTourView
         el: @$el
         model: model
-        concerts: @band_site.concerts()
+        collection: @band_site.concerts()
 
     contact: (model) ->
       @changePage new EditContactView(el: @$el, model: model)

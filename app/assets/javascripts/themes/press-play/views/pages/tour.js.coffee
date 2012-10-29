@@ -7,9 +7,6 @@ define [
 
   class TourView extends PageView
 
-    initialize: ({@concerts}) ->
-      super
-
     template: jst
 
     render: ->
@@ -18,7 +15,7 @@ define [
       @views.push(new List
         el: @$calendar
         view: CalEntryView
-        collection: @concerts
+        collection: @collection
       .render())
 
       @$('[data-fancybox]').fancybox
