@@ -25,7 +25,7 @@ define [
 
     new EditApp
       el: 'body'
-      band_site: band_site
+      model: band_site
       pages: pages
       bootstrap: bootstrap
       router: router

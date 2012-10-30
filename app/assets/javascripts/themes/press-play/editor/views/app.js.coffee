@@ -11,7 +11,7 @@ define [
       @views.push(new EditPagesView
         el: @$page
         router: @router
-        band_site: @band_site
+        band_site: @model
         player: @player
       .render())
 

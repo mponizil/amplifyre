@@ -26,15 +26,15 @@ define [
 
   class App extends Quilt.View
 
-    initialize: ({@band_site, @pages, @bootstrap, @router}) ->
+    initialize: ({@pages, @bootstrap, @router}) ->
       super
 
-      @socials = @band_site.socials().reset(@bootstrap.socials)
-      @albums = @band_site.albums().reset(@bootstrap.albums)
-      @tracks = @band_site.tracks().reset(@bootstrap.tracks)
-      @photos = @band_site.photos().reset(@bootstrap.photos)
-      @posts = @band_site.posts().reset(@bootstrap.posts)
-      @concerts = @band_site.concerts().reset(@bootstrap.concerts)
+      @socials = @model.socials().reset(@bootstrap.socials)
+      @albums = @model.albums().reset(@bootstrap.albums)
+      @tracks = @model.tracks().reset(@bootstrap.tracks)
+      @photos = @model.photos().reset(@bootstrap.photos)
+      @posts = @model.posts().reset(@bootstrap.posts)
+      @concerts = @model.concerts().reset(@bootstrap.concerts)
 
     template: jst
 
@@ -51,7 +51,7 @@ define [
 
       @views.push(new BackgroundView
         el: @$background
-        model: @band_site
+        model: @model
         player: @player
       .render())
       @views.push(new NavigationView
@@ -70,14 +70,14 @@ define [
       .render())
       @views.push(new TickerView
         el: @$ticker
-        model: @band_site
+        model: @model
         player: @player
       .render())
 
       @views.push(new PagesView
         el: @$page
         router: @router
-        band_site: @band_site
+        band_site: @model
         player: @player
       .render())
 

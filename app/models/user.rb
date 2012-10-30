@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :band_sites
+  has_many :band_sites, :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
