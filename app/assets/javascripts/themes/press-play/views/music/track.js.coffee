@@ -1,8 +1,9 @@
 define [
-  'ui/attr'
-], (Attr) ->
+  'quilt'
+  'jst!templates/music/track'
+], (Quilt, jst) ->
 
-  class TrackView extends Attr
+  class TrackView extends Quilt.View
 
     initialize: ->
       super
@@ -12,10 +13,7 @@ define [
 
     tagName: 'li'
 
-    attributes:
-      class: 'clearfix'
-
-    attr: 'title'
+    template: jst
 
     events:
       'click': 'play'

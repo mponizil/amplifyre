@@ -9,7 +9,7 @@ define [
 
       # Initialize jPlayer.
       @jplayer.jPlayer(
-        ready: => @choose(@, 0)
+        ready: => @choose(this, 0)
         ended: => @set(index: @next())
         volume: 1
         swfPath: '/assets/jplayer'
@@ -17,12 +17,17 @@ define [
         supplied: 'mp3'
       ).css('height', 0)
 
+      @tracks.on('add remove', @reset, @)
       @on('change:index', @choose, @)
       @on('change:playing', @toggle, @)
 
     defaults:
       index: 0
       playing: false
+
+    reset: ->
+      @choose(this, @get('index'))
+      @set(playing: false)
 
     choose: (player, index) ->
       track = @tracks.at(index)

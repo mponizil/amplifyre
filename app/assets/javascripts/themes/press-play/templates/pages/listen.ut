@@ -1,12 +1,8 @@
-<div class='content listen' data-ref='content'>
+<div class='content content-listen' data-ref='content'>
 
   <input type='file' name='file' data-edit-mode data-fileupload multiple />
 
   <div class='scrollpane' data-ref='scrollpane'>
-
-    <div>
-      <div class='album' data-ref='singles_album'></div>
-    </div>
 
     <div data-ref='albums'></div>
 

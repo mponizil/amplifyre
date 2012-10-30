@@ -136,12 +136,12 @@
   }
 }
 .content-photos a img,
-.listen .album-cover img,
+.content-listen .album-cover img,
 .tour .thm img {
   border: 4px solid #000;
 }
 .content-photos a:hover img,
-.listen .album-cover a:hover img,
+.content-listen .album-cover a:hover img,
 .tour .thm a:hover img {
   border: 4px solid #06bcff;
 }
@@ -162,15 +162,15 @@
   margin: 0 auto 20px auto;
 }
 .album .downloadable {float: right;}
-.listen li {
+.content-listen li {
   padding: 4px;
 }
-.listen .tracks li {
+.content-listen .tracks li {
   color: #000;
   font-style: italic;
   cursor: pointer;
 }
-.listen .track-title {width: 170px;float: left;}
+.content-listen .track-title {width: 170px;float: left;}
 .tour .calendar {
   width: 600px;
   margin: 0 auto 20px auto;

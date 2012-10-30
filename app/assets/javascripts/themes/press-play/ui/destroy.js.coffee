@@ -15,7 +15,7 @@ define [
       next() if confirm("Are you sure you want to delete this #{@model.label}?")
 
     click: (e) ->
-      e.preventDefault()
+      e.stopPropagation()
       @confirm => @model.destroy(wait: true)
 
     render: ->

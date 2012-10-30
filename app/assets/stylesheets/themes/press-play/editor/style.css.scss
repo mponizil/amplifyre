@@ -56,7 +56,8 @@ textarea.editable-hover {
 // Section-specific UI
 //
 
-.content-photos li {
+.content-photos li,
+.content-listen li {
   position: relative;
   .delete {
     font-size: 12px;
@@ -69,7 +70,8 @@ textarea.editable-hover {
     width: 16px;
     height: 14px;
     text-align: center;
-  }:hover {
+  }
+  .delete:hover {
     background-color: #e00000;
   }
 }
