@@ -27,7 +27,7 @@
   <div class='outerwrap'><div class='outerfloat'>
     <div class='black-banner' data-ref='black_banner'>
 
-      <a data-fragment='home' title='Home'><h1 data-attr='name'></h1></a>
+      <h1 data-attr='name' data-editable='text-input'></h1>
 
       <div id='ticker' data-ref='ticker'></div>
 

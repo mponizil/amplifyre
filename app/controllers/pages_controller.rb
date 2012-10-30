@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
-  # GET /pages/1
+  # GET /api/v1/band_sites/1/pages/1
   def show
     @page = Page.find(params[:id])
 
     render json: @page
   end
 
-  # POST /pages
+  # POST /api/v1/band_sites/1/pages
   def create
     @page = Page.new(params[:page])
 
@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     end
   end
 
-  # PUT /pages/1
+  # PUT /api/v1/band_sites/1/pages/1
   def update
     @page = Page.find(params[:id])
 
@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     end
   end
 
-  # DELETE /pages/1
+  # DELETE /api/v1/band_sites/1/pages/1
   def destroy
     @page = Page.find(params[:id])
     @page.destroy

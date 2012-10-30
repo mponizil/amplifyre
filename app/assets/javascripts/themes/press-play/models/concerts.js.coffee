@@ -7,4 +7,4 @@ define [
 
       model: -> Concert.create(arguments...)
 
-      url: -> super + '/band_sites/' + @owner.id + '/concerts'
+      url: -> super + 'band_sites/' + @owner.id + '/concerts'

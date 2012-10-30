@@ -3,5 +3,7 @@ define [
 ], (Model) ->
 
   class Concert extends Model
-    defaults:
-      id: null
+
+    name: 'concert'
+
+    label: 'concert date'

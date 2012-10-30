@@ -7,7 +7,7 @@ define [
 
     model: -> Track.create(arguments...)
 
-    url: -> super + '/band_sites/' + @owner.id + '/tracks'
+    url: -> super + 'band_sites/' + @owner.id + '/tracks'
 
     singles: ->
       @filter (track) -> track.get('album_id') is null

@@ -7,4 +7,4 @@ define [
 
     model: -> Post.create(arguments...)
 
-    url: -> super + '/band_sites/' + @owner.id + '/posts'
+    url: -> super + 'band_sites/' + @owner.id + '/posts'

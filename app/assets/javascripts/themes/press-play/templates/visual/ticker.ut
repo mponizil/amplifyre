@@ -1,1 +1,2 @@
-<div data-ref='ticker_text'><%= o.model.get('phrase') %></div>
+<div data-ref='phrase' data-attr='phrase' data-editable='text-input'></div>
+<div data-ref='ticker'></div>

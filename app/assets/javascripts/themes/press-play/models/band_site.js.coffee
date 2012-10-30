@@ -4,7 +4,8 @@ define [
 
   class BandSite extends Model
 
-    defaults:
-      id: null
-      name: null
-      tagline: null
+    name: 'band_site'
+
+    label: 'amplifyre'
+
+    urlRoot: -> super + 'band_sites'

@@ -5,7 +5,7 @@ define [
 
   class Collection extends Backbone.Collection
 
-    url: -> window.location.origin
+    url: -> '/api/v1/'
 
     comparator: (model1, model2) ->
       moment(model1.get('created_at')).unix() < moment(model2.get('created_at')).unix()

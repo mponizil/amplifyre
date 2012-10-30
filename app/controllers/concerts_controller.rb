@@ -1,12 +1,12 @@
 class ConcertsController < ApplicationController
-  # GET /concerts/1
+  # GET /api/v1/band_sites/1/concerts/1
   def show
     @concert = Concert.find(params[:id])
 
     render json: @concert
   end
 
-  # POST /concerts
+  # POST /api/v1/band_sites/1/concerts
   def create
     @concert = Concert.new(params[:concert])
 
@@ -17,7 +17,7 @@ class ConcertsController < ApplicationController
     end
   end
 
-  # PUT /concerts/1
+  # PUT /api/v1/band_sites/1/concerts/1
   def update
     @concert = Concert.find(params[:id])
 
@@ -28,7 +28,7 @@ class ConcertsController < ApplicationController
     end
   end
 
-  # DELETE /concerts/1
+  # DELETE /api/v1/band_sites/1/concerts/1
   def destroy
     @concert = Concert.find(params[:id])
     @concert.destroy

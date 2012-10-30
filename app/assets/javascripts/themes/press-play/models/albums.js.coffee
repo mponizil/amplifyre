@@ -5,4 +5,6 @@ define [
 
   class Albums extends Collection
 
-      model: -> Album.create(arguments...)
+    model: -> Album.create(arguments...)
+
+    url: -> super + 'band_sites/' + @owner.id + '/albums'

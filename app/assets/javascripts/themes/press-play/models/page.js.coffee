@@ -3,8 +3,7 @@ define [
 ], (Model) ->
 
   class Page extends Model
-    defaults:
-      id: null
-      slug: null
-      title: null
-      data: null
+
+    name: 'page'
+
+    label: 'page'

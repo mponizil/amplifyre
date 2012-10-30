@@ -23,7 +23,7 @@ define [
       super
 
       attr = @$el.data('attr')
-      @defaultVal = _.result(@model, 'defaults')[attr]
+      @defaultVal = _.result(@model, 'defaults')?[attr] or 'Sample ' + @model.label
 
     events: ->
       'editable:start': 'startEdit'
@@ -151,7 +151,7 @@ define [
       return if not super
 
       @$editor = @$el.attr('contenteditable', true)
-      @$el.on('keydown', (e) => @checkTab(e))
+      @$el.on('keydown', (e) => @checkKey(e))
 
       # Clear value if it's the default
       @$el.text('') if $.trim(@$el.text()) is @defaultVal
@@ -162,23 +162,25 @@ define [
     endEdit: ->
       return if not super
 
-      html = @$editor.html()
       text = @$editor.text()
 
       # Restore default value if it was left empty
       if $.trim(text) is ''
-        @$el.html(html = text = @defaultVal)
+        @$el.html(text = @defaultVal)
         @$el.addClass('editable-default')
 
-      @$el.trigger('update', [html])
+      @$el.trigger('update', [text])
 
       @$el.off('keydown')
       @$editor = @$el.attr('contenteditable', false)
 
-    checkTab: (e) ->
-      if (e.keyCode is 9)
+    checkKey: (e) ->
+      if e.keyCode is 9
         e.preventDefault()
         @$el.trigger('editor:next')
+      else if e.keyCode is 13
+        e.stopPropagation()
+        @endEdit()
 
   class Editable.DateInput extends Editor
 

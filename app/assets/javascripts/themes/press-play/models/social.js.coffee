@@ -4,7 +4,6 @@ define [
 
   class Social extends Model
 
-    defaults:
-      id: null
-      category: null
-      link: null
+    name: 'social'
+
+    label: 'link'

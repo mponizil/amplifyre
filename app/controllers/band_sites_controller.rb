@@ -3,19 +3,41 @@ class BandSitesController < ApplicationController
   before_filter :get_site_from_subdomain
   layout 'dashboard'
 
+
   # GET /band_sites/new
-  # GET /band_sites/new.json
   def new
     @band_site = BandSite.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @band_site }
-    end
   end
 
-  # POST /band_sites
-  # POST /band_sites.json
+  # GET /bringtheloot/dashboard
+  def dashboard
+    @band_site = BandSite.where(:slug => params[:slug])[0]
+  end
+
+  # GET bringtheloot.amplifyre.com
+  def live
+    @slug = request.subdomain
+    @band_site = BandSite.where(:slug => @slug)[0]
+    render :layout => @layout
+  end
+
+  # GET bringtheloot.amplifyre.com/edit
+  def edit_mode
+    @slug = request.subdomain
+    @band_site = BandSite.where(:slug => @slug)[0]
+    @version = 'editor'
+    render :layout => @layout
+  end
+
+
+  # GET /api/v1/band_sites/1
+  def show
+    @band_site = BandSite.find(params[:id])
+
+    render json: @band_site
+  end
+
+  # POST /api/v1/band_sites
   def create
     @band_site = BandSite.new(params[:band_site])
     @band_site.user_id = current_user.id
@@ -31,15 +53,14 @@ class BandSitesController < ApplicationController
     end
   end
 
-  # PUT /band_sites/1
-  # PUT /band_sites/1.json
+  # PUT /api/v1/band_sites/1
   def update
     @band_site = BandSite.find(params[:id])
 
     respond_to do |format|
       if @band_site.update_attributes(params[:band_site])
         format.html { redirect_to :action => 'dashboard', :slug => @band_site.slug }
-        format.json { head :no_content }
+        format.json { render json: @band_site, status: :ok }
       else
         format.html { render action: 'edit' }
         format.json { render json: @band_site.errors, status: :unprocessable_entity }
@@ -47,37 +68,17 @@ class BandSitesController < ApplicationController
     end
   end
 
-  # DELETE /band_sites/1
-  # DELETE /band_sites/1.json
+  # DELETE /api/v1/band_sites/1
   def destroy
     @band_site = BandSite.find(params[:id])
     @band_site.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_path }
+      format.html { redirect_to user_root_path }
       format.json { head :no_content }
     end
   end
 
-  # GET /band_sites/1
-  def dashboard
-    @band_site = BandSite.where(:slug => params[:slug])[0]
-  end
-
-  # <band_site_slug>.amplifyre.com
-  def live
-    @slug = request.subdomain
-    @band_site = BandSite.where(:slug => @slug)[0]
-    render :layout => @layout
-  end
-
-  # <band_site_slug>.amplifyre.com/edit
-  def edit_mode
-    @slug = request.subdomain
-    @band_site = BandSite.where(:slug => @slug)[0]
-    @version = 'editor'
-    render :layout => @layout
-  end
 
   private
 

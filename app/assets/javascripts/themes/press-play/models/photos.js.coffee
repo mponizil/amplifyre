@@ -7,4 +7,4 @@ define [
 
       model: -> Photo.create(arguments...)
 
-      url: -> super + '/band_sites/' + @owner.id + '/photos'
+      url: -> super + 'band_sites/' + @owner.id + '/photos'

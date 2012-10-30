@@ -10,4 +10,4 @@ define [
     comparator: (page) ->
       page.get('index')
 
-    url: -> super + '/band_sites/' + @owner.id + '/pages'
+    url: -> super + 'band_sites/' + @owner.id + '/pages'

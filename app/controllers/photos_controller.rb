@@ -1,12 +1,12 @@
 class PhotosController < ApplicationController
-  # GET /photos/1
+  # GET /api/v1/band_sites/1/photos/1
   def show
     @photo = Photo.find(params[:id])
 
     render json: @photo
   end
 
-  # POST /photos
+  # POST /api/v1/band_sites/1/photos
   def create
     @photo = Photo.new({ :band_site_id => params[:band_site_id], :file => params[:file] })
 
@@ -17,7 +17,7 @@ class PhotosController < ApplicationController
     end
   end
 
-  # PUT /photos/1
+  # PUT /api/v1/band_sites/1/photos/1
   def update
     @photo = Photo.find(params[:id])
 
@@ -28,7 +28,7 @@ class PhotosController < ApplicationController
     end
   end
 
-  # DELETE /photos/1
+  # DELETE /api/v1/band_sites/1/photos/1
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy

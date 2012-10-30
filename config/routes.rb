@@ -2,30 +2,34 @@ Amplifyre::Application.routes.draw do
 
   # Band site based on subdomain
   constraints Subdomain do
-    match '/edit(/:page)' => 'band_sites#edit_mode'
-    match '/:page' => 'band_sites#live'
-    root :to => 'band_sites#live'
+    match '/edit(/:page)' => 'band_sites#edit_mode', :format => false
+    match '/:page' => 'band_sites#live', :format => false
+    root :to => 'band_sites#live', :format => false
   end
 
-  resources :band_sites, :except => [:index, :edit] do
-    resources :socials, :except => [:index, :new, :edit], :format => false
-    resources :albums, :except => [:index, :new, :edit], :format => false
-    resources :tracks, :except => [:index, :new, :edit], :format => false
-    resources :photos, :except => [:index, :new, :edit], :format => false
-    resources :posts, :except => [:index, :new, :edit], :format => false
-    resources :concerts, :except => [:index, :new, :edit], :format => false
-    resources :pages, :except => [:index, :new, :edit], :format => false
+  scope '/api/v1', :format => false do
+    resources :band_sites, :except => [:index, :new, :edit] do
+      resources :socials, :except => [:index, :new, :edit]
+      resources :albums, :except => [:index, :new, :edit]
+      resources :tracks, :except => [:index, :new, :edit]
+      resources :photos, :except => [:index, :new, :edit]
+      resources :posts, :except => [:index, :new, :edit]
+      resources :concerts, :except => [:index, :new, :edit]
+      resources :pages, :except => [:index, :new, :edit]
+    end
   end
+
+  resources :band_sites, :except => [:index, :edit], :format => false
 
   # Static pages
-  root :to => 'statics#home'
-  match '/examples' => 'statics#examples'
+  root :to => 'statics#home', :format => false
+  match '/examples' => 'statics#examples', :format => false
 
   # User dashboard
-  match '/dashboard' => 'users#dashboard', :as => :user_root
+  match '/dashboard' => 'users#dashboard', :as => :user_root, :format => false
 
   # Site dashboard
-  match '/:slug/dashboard' => 'band_sites#dashboard', :as => :band_site_dashboard
+  match '/:slug/dashboard' => 'band_sites#dashboard', :as => :band_site_dashboard, :format => false
 
   # ActiveAdmin
   ActiveAdmin.routes(self)

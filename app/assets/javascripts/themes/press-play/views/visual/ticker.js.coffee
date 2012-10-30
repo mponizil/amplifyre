@@ -16,6 +16,14 @@ define [
       @player.on('change:index', @update, @)
       @player.on('change:playing', @reset, @)
 
+    render: ->
+      super
+
+      @$ticker.addClass('hidden')
+      @$phrase.removeClass('hidden')
+
+      return this
+
     update: (player, index) ->
       if player.get('playing')
         @start()
@@ -41,22 +49,26 @@ define [
       @toggle(@paused)
 
     toggle: (action) -> 
-      @$ticker_text.fadeOut =>
+      @$el.fadeOut =>
 
         action =>
 
-          @$ticker_text.fadeIn()
+          @$el.fadeIn()
           @counter++
 
     playing: (next) =>
+      @$phrase.addClass('hidden')
+      @$ticker.removeClass('hidden')
+
       if @counter % 2 is 0
-        @$ticker_text.html(@player.active().get('title'))
+        @$ticker.html(@player.active().get('title'))
       else
-        @$ticker_text.html(@player.active().get('artist'))
+        @$ticker.html(@player.active().get('artist'))
 
       next()
 
     paused: (next) =>
-      @$ticker_text.html(@model.get('phrase'))
+      @$phrase.removeClass('hidden')
+      @$ticker.addClass('hidden')
 
       next()

@@ -3,3 +3,7 @@ define [
 ], (Model) ->
 
   class Photo extends Model
+
+    name: 'photo'
+
+    label: 'photo'

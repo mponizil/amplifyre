@@ -4,6 +4,10 @@ define [
 
   class Album extends Model
 
+    name: 'album'
+
+    label: 'album'
+
     defaults: ->
       cover_file:
         url: '/assets/images/album/cover_file/default.jpg'
