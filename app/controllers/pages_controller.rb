@@ -9,9 +9,10 @@ class PagesController < ApplicationController
   # POST /api/v1/band_sites/1/pages
   def create
     @page = Page.new(params[:page])
+    @page.band_site_id ||= params[:band_site_id]
 
     if @page.save
-      render json: @page, status: :created, location: @page
+      render json: @page, status: :created
     else
       render json: @page.errors, status: :unprocessable_entity
     end

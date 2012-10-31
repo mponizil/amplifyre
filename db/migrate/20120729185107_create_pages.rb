@@ -3,9 +3,9 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.references :band_site
       t.integer :position, :default => 1
-      t.string :category
+      t.string :category, :default => 'custom'
       t.string :slug
-      t.string :title
+      t.string :title, :default => 'New Page'
       t.text :body
 
       t.timestamps

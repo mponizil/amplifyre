@@ -9,7 +9,7 @@
 <!-- begin amplifyre website -->
 <div class='container'>
 
-  <nav data-ref='nav'>
+  <div class='nav-bar' data-ref='nav'>
 
     <!-- navigation -->
     <div class='outerwrap'><div id='navigation' class='outerfloat clearfix' data-ref='navigation'>
@@ -19,7 +19,7 @@
     <div id='social-media' class='clearfix' data-ref='social'>
     </div>
 
-  </nav>
+  </div>
 
   <div data-ref='page'>
   </div>

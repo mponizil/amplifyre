@@ -16,7 +16,7 @@ define [
 
       @$('[data-ref=news]').one 'added', (e, $post) =>
         $post.find('[data-editable]:first').trigger('editable:start')
-      @posts.create()
+      @collection.create()
 
     tabNext: (e) ->
       $(e.target).trigger('editable:end')

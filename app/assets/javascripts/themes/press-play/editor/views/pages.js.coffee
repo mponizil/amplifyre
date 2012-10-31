@@ -8,7 +8,7 @@ define [
   'editor/views/pages/custom'
 ], (Quilt, EditNewsView, EditListenView, EditPhotosView, EditTourView, EditContactView, EditCustomView) ->
 
-  class Pages extends Quilt.View
+  class EditPages extends Quilt.View
 
     constructor: ({@router, @band_site, @player}) ->
       super
@@ -18,6 +18,9 @@ define [
 
       @router.on('page:change', (page, model) ->
         @[page](model)
+      , @)
+      @band_site.pages().on('destroy', ->
+        @router.navigate('home', true)
       , @)
 
     index: ->

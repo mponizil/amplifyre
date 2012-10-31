@@ -12,5 +12,11 @@ class Page < ActiveRecord::Base
     if last_page
       self.position = last_page.position + 1
     end
+
+    self.slug ||= self.title.parameterize
+
+    if self.category == 'custom'
+      self.body ||= 'Brand new page'
+    end
   end
 end

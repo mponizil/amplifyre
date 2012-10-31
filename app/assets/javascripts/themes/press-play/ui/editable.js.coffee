@@ -5,8 +5,10 @@ define [
 ], (Quilt, $) ->
 
   # TODO: This should be done somewhere else
-  if window.location.pathname.indexOf('/edit/') >= 0
-    Quilt.attributes.editable = (el, options) ->
+  Quilt.attributes.editable = (el, options) ->
+    if window.location.pathname.indexOf('/edit') < 0
+      $(el).removeAttr('data-editable')
+    else
       camel = (match, letter) -> (letter + '').toUpperCase()
       type = options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
       new Editable[type]

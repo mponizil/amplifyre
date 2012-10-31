@@ -14,7 +14,7 @@
   z-index: 4;
   height: 100%;
 }
-nav {
+.nav-bar {
   font-family: 'Oswald', arial, serif;
   width: 100%;
   height: 40px;
@@ -25,14 +25,12 @@ nav {
   display: block;
 
   #navigation {
-    ul {
-      padding: 0;
-      margin: 0;
+    .nav-bar-set {
       float: left;
       position: relative;
       left: -50%;
     }
-    li {
+    .nav-bar-set > li {
       margin: 0 5px;
       list-style: none;
       float: left;

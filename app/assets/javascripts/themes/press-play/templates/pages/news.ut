@@ -2,15 +2,16 @@
 
   <div class='clearfix'>
 
-    <h2 data-attr='title' class='left'></h2>
-
     <div data-edit-mode class='right'>
       <button data-new-post>New Post</button>
+      <button class='delete' data-destroy>Delete Page</button>
     </div>
 
   </div>
 
   <div class='scrollpane' data-ref='scrollpane'>
+
+    <h2 data-attr='title'></h2>
 
     <div class='news-posts' data-ref='news'>
     </div>

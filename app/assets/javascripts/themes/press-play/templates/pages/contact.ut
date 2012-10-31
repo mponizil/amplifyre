@@ -1,5 +1,13 @@
 <div class='content' data-ref='content'>
 
+  <div class='clearfix'>
+
+    <div data-edit-mode class='right'>
+      <button class='delete' data-destroy>Delete Page</button>
+    </div>
+
+  </div>
+
   <div class='contact-form'>
 
     <form name='email_form' id='email_form'>

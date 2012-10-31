@@ -1,6 +1,16 @@
 <div class='content content-photos' data-ref='content'>
 
-  <input type='file' name='file' data-edit-mode data-fileupload multiple />
+  <div class='clearfix'>
+
+    <div class='left'>
+      <input type='file' name='file' data-edit-mode data-fileupload multiple />
+    </div>
+
+    <div data-edit-mode class='right'>
+      <button class='delete' data-destroy>Delete Page</button>
+    </div>
+
+  </div>
 
   <div class='scrollpane' data-ref='scrollpane'>
 

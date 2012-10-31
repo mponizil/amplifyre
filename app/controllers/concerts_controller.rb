@@ -9,6 +9,7 @@ class ConcertsController < ApplicationController
   # POST /api/v1/band_sites/1/concerts
   def create
     @concert = Concert.new(params[:concert])
+    @concert.band_site_id ||= params[:band_site_id]
 
     if @concert.save
       render json: @concert, status: :created, location: @concert

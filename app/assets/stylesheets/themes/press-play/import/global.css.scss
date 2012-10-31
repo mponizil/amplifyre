@@ -96,3 +96,18 @@ p {
 .playing-bg {
   background-color: #06bcff;
 }
+
+// dropdown
+.dropdown {
+  position: relative;
+  z-index: 10;
+
+  .dropdown-toggle {
+    position: relative;
+  }
+  .dropdown-content {
+    top: 100%;
+    position: absolute;
+    z-index: 10;
+  }
+}

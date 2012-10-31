@@ -57,6 +57,7 @@ define [
       @views.push(new NavigationView
         el: @$navigation
         collection: @pages
+        router: @router
       .render())
       @views.push(new SocialView
         el: @$social

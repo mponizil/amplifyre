@@ -19,4 +19,4 @@ define [
       @confirm => @model.destroy(wait: true)
 
     render: ->
-      @
+      return this

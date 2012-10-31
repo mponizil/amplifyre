@@ -1,5 +1,13 @@
 <div class='content tour' data-ref='content'>
 
+  <div class='clearfix'>
+
+    <div data-edit-mode class='right'>
+      <button class='delete' data-destroy>Delete Page</button>
+    </div>
+
+  </div>
+
   <div class='scrollpane' data-ref='scrollpane'>
 
     <div class='calendar' data-ref='calendar'>

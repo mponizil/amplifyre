@@ -79,12 +79,12 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
   create_table "pages", :force => true do |t|
     t.integer  "band_site_id"
     t.integer  "position",     :default => 1
-    t.string   "category"
+    t.string   "category",     :default => "custom"
     t.string   "slug"
-    t.string   "title"
+    t.string   "title",        :default => "New Page"
     t.text     "body"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "photos", :force => true do |t|
