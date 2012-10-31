@@ -8,4 +8,4 @@ define [
 
     label: 'amplifyre'
 
-    urlRoot: -> super + 'band_sites'
+    urlRoot: -> @urlPrefix + 'band_sites'

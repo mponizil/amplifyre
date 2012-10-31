@@ -2,7 +2,7 @@ define ['supermodel'], (Supermodel) ->
   
   class Model extends Supermodel.Model
 
-    urlRoot: -> '/api/v1/'
+    urlPrefix: -> '/api/v1/'
 
     label: 'item'
 

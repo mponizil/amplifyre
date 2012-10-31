@@ -21,7 +21,8 @@ define [
       , @)
 
     index: ->
-      return
+      @changePage new Quilt.View
+        el: @$el
 
     news: (model) ->
       @changePage new EditNewsView

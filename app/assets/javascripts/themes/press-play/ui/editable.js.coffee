@@ -98,6 +98,11 @@ define [
       @$el.empty().append(@$editor)
       @$editor.redactor
         focus: true
+        convertDivs: false
+        buttons:
+          ['html', '|', 'formatting', '|', 'bold', 'italic', '|',
+           'image', 'video', 'file', 'link', '|',
+           'fontcolor', 'backcolor', '|', 'alignment']
         allowedTags:
           ['span', 'div', 'a', 'br', 'p', 'b', 'i', 'u', 'img', 'video',
            'audio', 'object', 'embed', 'param', 'ul', 'ol', 'li', 'hr',

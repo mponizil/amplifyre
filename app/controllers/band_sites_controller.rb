@@ -12,21 +12,37 @@ class BandSitesController < ApplicationController
   # GET /bringtheloot/dashboard
   def dashboard
     @band_site = BandSite.where(:slug => params[:slug])[0]
+
+    if @band_site
+      render
+    else
+      redirect_to request.protocol + request.domain
+    end
   end
 
   # GET bringtheloot.amplifyre.com
   def live
     @slug = request.subdomain
     @band_site = BandSite.where(:slug => @slug)[0]
-    render :layout => @layout
+
+    if @band_site
+      render :layout => @layout
+    else
+      redirect_to request.protocol + request.domain
+    end
   end
 
   # GET bringtheloot.amplifyre.com/edit
   def edit_mode
     @slug = request.subdomain
     @band_site = BandSite.where(:slug => @slug)[0]
-    @version = 'editor'
-    render :layout => @layout
+
+    if @band_site
+      @version = 'editor'
+      render :layout => @layout
+    else
+      redirect_to request.protocol + request.domain
+    end
   end
 
 
