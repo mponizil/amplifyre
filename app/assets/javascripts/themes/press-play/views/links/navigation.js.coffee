@@ -23,7 +23,7 @@ define [
           <ul class='dropdown-content' data-dropdown-content>
             <li data-new-page='news'>News</li>
             <li data-new-page='photos'>Photos</li>
-            <li data-new-page='music'>Music</li>
+            <li data-new-page='listen'>Music</li>
             <li data-new-page='tour'>Tour</li>
             <li data-new-page='contact'>Contact</li>
             <li data-new-page='custom'>Custom</li>
