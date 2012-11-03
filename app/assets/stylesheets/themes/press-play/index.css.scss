@@ -9,8 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require ./fonts
- *= require ./style
  *= require fancybox/jquery.fancybox
  *= require redactor
+ *= require ./fonts
+ *= require ./style
 */

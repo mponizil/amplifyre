@@ -1,2 +1,2 @@
-<div id='background-desat'><img src='<%= o.model.get('background_file').bw.url %>' /></div>
-<div id='background-sat'><img src='<%= o.model.get('background_file').url %>' /></div>
+<div class='background-inactive' data-ref='bg_inactive'><img src='<%= o.model.get('background_file').bw.url %>' /></div>
+<div class='background-active' data-ref='bg_active'><img src='<%= o.model.get('background_file').url %>' /></div>

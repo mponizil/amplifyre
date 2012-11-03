@@ -15,7 +15,7 @@ define [
     render: ->
       super
 
-      @divs = @$('#background-sat, #background-desat')
+      @$bgs = @$('[data-ref^=bg_]')
 
       @initMeasure => @resize()
       $(window).resize => @resize()
@@ -30,13 +30,13 @@ define [
       @$el.animate
         'background-color': '#ffffff'
       , 1000, 'easeOutSine'
-      @$('#background-desat').fadeOut(1000, 'easeOutSine')
+      @$bg_inactive.fadeOut(1000, 'easeOutSine')
 
     fadeDown: ->
       @$el.animate(
         'background-color': '#ffffff'
       , 1000, 'easeOutSine')
-      @$('#background-desat').fadeIn(1000, 'easeOutSine')
+      @$bg_active.fadeIn(1000, 'easeOutSine')
 
     resize: ->
       [windowWidth, windowHeight, windowRatio] = @measureWindow()
@@ -50,21 +50,23 @@ define [
         heightRatio = windowHeight / @imgHeight
         @forcedWidth = @imgWidth * heightRatio
 
-      @divs.children('img').width(@forcedWidth).height(@forcedHeight)
+      @$bgs.children('img').width(@forcedWidth).height(@forcedHeight)
 
       marginTop = -@forcedHeight / 2
       marginLeft = -@forcedWidth / 2
-      @divs.css('margin-top', marginTop).css('margin-left', marginLeft)
+      @$bgs.css('margin-top', marginTop).css('margin-left', marginLeft)
 
     initMeasure: (next) ->
       [windowWidth, windowHeight, windowRatio] = @measureWindow()
-      $('#background-sat img').load =>
-        @imgWidth = $('#background-sat img').width()
-        @imgHeight = $('#background-sat img').height()
+      $img = @$bg_active.children('img')
+      $img.load =>
+        @imgWidth = $img.width()
+        @imgHeight = $img.height()
         @imgRatio = @imgWidth / @imgHeight
         next()
 
     measureWindow: ->
-      windowWidth = $(window).width()
-      windowHeight = $(window).height()
-      [$(window).width(), $(window).height(), windowWidth / windowHeight]
+      $window = $(window)
+      windowWidth = $window.width()
+      windowHeight = $window.height()
+      [$window.width(), $window.height(), windowWidth / windowHeight]

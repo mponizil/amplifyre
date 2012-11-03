@@ -1,14 +1,16 @@
-#background-sat {
+// Background
+.background-active {
   position: absolute;
   top: 50%;
   left: 50%;
 }
-#background-desat {
+.background-inactive {
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 3;
 }
+
 .container {
   position: relative;
   z-index: 4;

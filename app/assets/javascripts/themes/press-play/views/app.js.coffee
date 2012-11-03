@@ -47,7 +47,7 @@ define [
 
       @player = new Player
         tracks: @tracks
-        jplayer: @$('#jp_interface')
+        jplayer: @$jp_interface
 
       @views.push(new BackgroundView
         el: @$background

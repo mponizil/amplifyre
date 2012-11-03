@@ -1,4 +1,4 @@
-<div id='jp_interface'></div>
+<div data-ref='jp_interface'></div>
 
 <!-- background image goodness -->
 <div data-ref='background'></div>
