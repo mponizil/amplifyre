@@ -1,0 +1,17 @@
+<ul class='horizontal-list'>
+  <li><a data-fragment='home'>Home</a></li>
+</ul>
+<ul class='horizontal-list' data-ref='custom_nav'></ul>
+<ul class='horizontal-list' data-edit-mode>
+  <li class='dropdown' data-dropdown>
+    <span class='dropdown-toggle' data-dropdown-toggle>+ New</span>
+    <ul class='dropdown-content' data-dropdown-content>
+      <li data-new-page='news'>News</li>
+      <li data-new-page='photos'>Photos</li>
+      <li data-new-page='listen'>Music</li>
+      <li data-new-page='tour'>Tour</li>
+      <li data-new-page='contact'>Contact</li>
+      <li data-new-page='custom'>Custom</li>
+    </ul>
+  </li>
+</ul>

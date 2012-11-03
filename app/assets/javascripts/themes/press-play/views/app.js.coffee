@@ -91,7 +91,7 @@ define [
 
     resize: ->
       top = @$black_banner.offset().top - 60
-      bottom = @$nav.offset().top + @$nav.height() + 20
+      bottom = @$top_bar.offset().top + @$top_bar.height() + 20
       max_height = top - bottom
 
       @$page.children(':first').trigger('size:update', [max_height, bottom])

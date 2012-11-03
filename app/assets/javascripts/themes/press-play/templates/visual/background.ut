@@ -1,2 +1,2 @@
-<div class='background-inactive' data-ref='bg_inactive'><img src='<%= o.model.get('background_file').bw.url %>' /></div>
-<div class='background-active' data-ref='bg_active'><img src='<%= o.model.get('background_file').url %>' /></div>
+<div class='abs-mid-mid' data-ref='bg_inactive'><img src='<%= o.model.get('background_file').bw.url %>' /></div>
+<div class='abs-mid-mid z-raise' data-ref='bg_active'><img src='<%= o.model.get('background_file').url %>' /></div>

@@ -33,4 +33,4 @@ define [
       @toggle(playing)
 
     toggle: (playing) ->
-      @$el.toggleClass('playing-bg', playing)
+      @$el.toggleClass('highlight', playing)
