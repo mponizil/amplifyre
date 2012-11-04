@@ -1,9 +1,11 @@
 class Page < ActiveRecord::Base
+  validates :category, :uniqueness => { :scope => :band_site_id, :message => 'only one of each page category except custom' }, :unless => Proc.new { |p| p.category == 'custom' }
+
   belongs_to :band_site
 
   attr_accessible :band_site_id, :created_at, :updated_at, :position, :category, :slug, :title, :body
 
-  before_create :set_defaults
+  before_validation :set_defaults
 
   private
 

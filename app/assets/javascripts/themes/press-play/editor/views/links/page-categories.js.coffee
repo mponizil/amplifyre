@@ -31,7 +31,7 @@ define [
         $el.toggleClass('hidden', !!used and category isnt 'custom')
 
     newPage: (e) ->
-      e.stopPropagation()
+      @$('[data-dropdown]').trigger('dropdown:hide')
 
       category = $(e.currentTarget).data('new-page') or 'custom'
 
