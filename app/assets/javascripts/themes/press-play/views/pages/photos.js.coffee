@@ -14,7 +14,7 @@ define [
       super
 
       @views.push(new List
-        el: @$pics
+        el: @$photos
         view: PhotoView
         collection: @collection
       .render())

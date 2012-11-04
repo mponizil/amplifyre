@@ -1,9 +1,9 @@
 define [
   'list'
   'views/pages/base'
-  'views/content/cal-entry'
+  'views/content/concert'
   'jst!templates/pages/tour'
-], (List, PageView, CalEntryView, jst) ->
+], (List, PageView, ConcertView, jst) ->
 
   class TourView extends PageView
 
@@ -14,7 +14,7 @@ define [
 
       @views.push(new List
         el: @$calendar
-        view: CalEntryView
+        view: ConcertView
         collection: @collection
       .render())
 

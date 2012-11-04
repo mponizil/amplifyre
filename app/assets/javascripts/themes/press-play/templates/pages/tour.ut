@@ -1,18 +1,14 @@
-<div class='content tour' data-ref='content'>
+<div class='clearfix'>
 
-  <div class='clearfix'>
-
-    <div data-edit-mode class='right'>
-      <button class='delete' data-destroy>Delete Page</button>
-    </div>
-
+  <div class='right' data-edit-mode>
+    <button class='delete' data-destroy>Delete Page</button>
   </div>
 
-  <div class='scrollpane' data-ref='scrollpane'>
+</div>
 
-    <div class='calendar' data-ref='calendar'>
-    </div>
+<div class='scrollpane page-tour' data-ref='scrollpane'>
 
+  <div class='calendar' data-ref='calendar'>
   </div>
 
 </div>

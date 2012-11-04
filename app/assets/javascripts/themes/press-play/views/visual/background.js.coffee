@@ -16,7 +16,6 @@ define [
       super
 
       @$bgs = @$('[data-ref^=bg_]')
-      console.log @$bgs
 
       @$bg_active.addClass('hidden')
 

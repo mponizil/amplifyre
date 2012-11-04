@@ -5,7 +5,7 @@ define [
 
   class Post extends Quilt.View
 
-    template: jst
-
     attributes:
       class: 'news-post'
+
+    template: jst

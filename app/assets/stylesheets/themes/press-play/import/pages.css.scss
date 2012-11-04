@@ -1,133 +1,13 @@
-.content {
-  width: 800px;
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  margin-left: -420px;
-  @include box-shadow(0 0 6px rgba(206, 206, 206, 0.9));
-  border: 1px solid #ebebeb;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.95);
-
-  a {
-    color: #15c;
-    text-decoration: underline;
-  }
-
-  object, embed, video, img {
-    width: auto;
-    max-width: 100%;
-  }
-  video, img {
-    height: auto;
-  }
-
-  div, p, ul, ol, table, dl, blockquote, pre {
-    line-height: 1.45em;
-    font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
-    font-size: 15px;
-  }
-  iframe, object, hr {
-    margin-bottom: 15px;
-  }
-  blockquote {
-    margin-left: 3em;
-    font-style: italic;
-    color: #777;
-  }
-  ul, ol {
-    padding-left: 2em;
-  }
-  ul ul, ol ol, ul ol, ol ul {
-    border: none;
-    margin: 2px;
-    padding: 0;
-    padding-left: 2em;
-  }
-  dl dt { font-weight: bold; }
-  dd { margin-left: 1em;}
-
-  code, pre {
-    font-family: Menlo, Monaco, monospace, sans-serif;
-  }
-  code {
-    background-color: #d8d7d7;
-  }
-  pre {
-    font-size: 90%;
-    background: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    padding: 1em;
-    white-space: pre;
-    overflow: auto;
-  }
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-  }
-
-  h1, h2, h3, h4, h5 {
-    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-    color: #000;
-    background: none;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-  }
-
-  h1 {
-    font-size: 36px;
-    line-height: 40px;
-    margin-bottom: 10px;
-  }
-  h2 {
-    font-size: 30px;
-    line-height: 38px;
-    margin-bottom: 15px;
-  }
-  h3 {
-    font-size: 24px;
-    line-height: 30px;
-    margin-bottom: 10px;
-  }
-  h4 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 10px;
-  }
-  h5 {
-    font-size: 1em;
-    margin-bottom: 10px;
-  }
-}
-.scrollpane {
-  max-height: 300px;
-  overflow-y: auto;
-  padding: 2px;
-}
-
-.news .date,
-.news .title,
-.news .body {
-  margin-bottom: 6px;
-}
-
-.content-photos {
-  ul {
-    @include clearfix;
-    margin: 0;
-    padding: 0;
-  }
-  li {
-    overflow: hidden;
-    width: 88px;
-    height: 88px;
-    float: left;
-    margin-right: 14px;
-    list-style: none;
+//=== Photos Page
+.page-photos {
+  .horizontal-list {
+    li {
+      width: 88px;
+      height: 88px;
+      margin: 0 14px 0 0;
+      padding: 0;
+      overflow: hidden;
+    }
     a {
       width: 88px;
       height: 88px;
@@ -135,88 +15,29 @@
     }
   }
 }
-.content-photos a img,
-.content-listen .album-cover img,
-.tour .thm img {
-  border: 4px solid #000;
-}
-.content-photos a:hover img,
-.content-listen .album-cover a:hover img,
-.tour .thm a:hover img {
-  border: 4px solid #06bcff;
+
+//=== Tour Page
+.page-tour {
+  .calendar {
+    width: 600px;
+    margin: 0 auto 20px auto;
+  }
 }
 
-.album {
-  width: 220px;
-  float: left;
-  margin: 0 20px 20px 0;
-}
-.album ul {background: rgba(0,0,0,0.2);padding: 10px}
-.album li {
-  list-style: none;
-  position: relative;
-}
-.album li:hover {background: rgba(255,255,255,0.4);}
-.album-cover {
-  width: 150px;
-  margin: 0 auto 20px auto;
-}
-.album .downloadable {float: right;}
-.content-listen li {
-  padding: 4px;
-}
-.content-listen .tracks li {
-  color: #000;
-  font-style: italic;
-  cursor: pointer;
-}
-.content-listen .track-title {width: 170px;float: left;}
-.tour .calendar {
-  width: 600px;
-  margin: 0 auto 20px auto;
-}
-.tour .cal-entry {
-  border-top: 2px solid #06bcff;
-  position: relative;
-  padding-top: 4px;
-  margin-top: 10px;
-}
-.tour .tour-body {
-  float: left;
-  width: 450px;
-}
-.tour-body .time {
-  margin-bottom: 4px;
-}
-.tour .date {
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Impact, 'Arial Black', Arial, sans-serif;
-}
-.tour .time {
-  font-style: italic;
-}
-.tour .venue {
-  margin-bottom: 4px;
-  font-weight: bold;
-}
-.tour .thm {
-  width: 120px;
-  float: right;
-}
-.tour .thm img {
-  float: right;
-  margin-bottom: 4px;
-}
+//=== Music Page
+.page-listen {}
 
-.contact-form table {
-  width: 500px;
-  margin: 0 auto;
-}
-.contact-form .loader {
-  display: none;
-}
-.contact-form .result {
-  display: none;
-  margin-top: 20px;
+//=== Contact Page
+.page-contact {
+  table {
+    width: 500px;
+    margin: 0 auto;  
+  }
+  .loader {
+    display: none;
+  }
+  .result {
+    display: none;
+    margin-top: 20px;
+  }
 }

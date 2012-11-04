@@ -1,15 +1,24 @@
-.container {
-  z-index: 4;
-  height: 100%;
+.pp {
+  .container {
+    z-index: 4;
+    height: 100%;
+  }
+  .page-container {
+    width: 800px;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    margin-left: -420px;
+  }
 }
 
-.background {
+.pp-background {
   .z-raise {
     z-index: 3;
   }
 }
 
-.black-bar-top {
+.pp-top-bar {
   position: relative;
   z-index: 2;
 

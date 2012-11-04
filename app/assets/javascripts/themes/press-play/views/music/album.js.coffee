@@ -15,9 +15,14 @@ define [
     render: ->
       super
 
+      TrackView = TrackView.extend
+        player: @player
+        tagName: 'li'
+        attributes:
+          class: 'album-track'
       @views.push(new List
         el: @$tracks
-        view: TrackView.extend(player: @player)
+        view: TrackView
         collection: @model.tracks()
       .render())
 

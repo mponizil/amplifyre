@@ -1,4 +1,4 @@
-<div class='tour-body'>
+<div class='concert-left'>
   <div class='date' data-attr='date' data-editable='date-input'></div>
 
   <div class='venue' data-attr='venue' data-editable='text-input'></div>
@@ -6,7 +6,7 @@
   <div class='details' data-attr='details' data-editable='text-area'></div>
 </div>
 
-<div class='thm'>
+<div class='concert-right thumbs'>
   <a href='<%= o.model.get('photo_file').url %>' rel='group' data-fancybox>
     <img src='<%= o.model.get('photo_file').sm_thumb.url %>' />
   </a>

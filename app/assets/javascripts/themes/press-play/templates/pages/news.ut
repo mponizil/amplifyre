@@ -1,21 +1,16 @@
-<div class='content news' data-ref='content'>
+<div class='clearfix'>
 
-  <div class='clearfix'>
-
-    <div data-edit-mode class='right'>
-      <button data-new-post>New Post</button>
-      <button class='delete' data-destroy>Delete Page</button>
-    </div>
-
+  <div data-edit-mode class='right'>
+    <button data-new-post>New Post</button>
+    <button class='delete' data-destroy>Delete Page</button>
   </div>
 
-  <div class='scrollpane' data-ref='scrollpane'>
+</div>
 
-    <h2 data-attr='title'></h2>
+<div class='scrollpane page-news' data-ref='scrollpane'>
 
-    <div class='news-posts' data-ref='news'>
-    </div>
+  <h2 data-attr='title'></h2>
 
-  </div>
+  <div data-ref='news'></div>
 
 </div>

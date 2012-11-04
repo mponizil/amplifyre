@@ -1,11 +1,11 @@
 define [
   'quilt'
-  'jst!templates/content/cal-entry'
+  'jst!templates/content/concert'
 ], (Quilt, jst) ->
 
   class CalEntry extends Quilt.View
 
-    template: jst
-
     attributes:
-      class: 'cal-entry clearfix'
+      class: 'concert'
+
+    template: jst

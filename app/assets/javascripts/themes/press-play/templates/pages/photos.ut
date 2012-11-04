@@ -1,21 +1,17 @@
-<div class='content content-photos' data-ref='content'>
+<div class='clearfix'>
 
-  <div class='clearfix'>
-
-    <div class='left'>
-      <input type='file' name='file' data-edit-mode data-fileupload multiple />
-    </div>
-
-    <div data-edit-mode class='right'>
-      <button class='delete' data-destroy>Delete Page</button>
-    </div>
-
+  <div class='left'>
+    <input type='file' name='file' data-edit-mode data-fileupload multiple />
   </div>
 
-  <div class='scrollpane' data-ref='scrollpane'>
-
-    <ul data-ref='pics'></ul>
-
+  <div class='right' data-edit-mode>
+    <button class='delete' data-destroy>Delete Page</button>
   </div>
+
+</div>
+
+<div class='scrollpane page-photos' data-ref='scrollpane'>
+
+  <ul class='horizontal-list thumbs' data-ref='photos'></ul>
 
 </div>

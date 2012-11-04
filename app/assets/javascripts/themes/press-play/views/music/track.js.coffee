@@ -11,8 +11,6 @@ define [
       @player.on('change:index', @update, @)
       @player.on('change:playing', @update, @)
 
-    tagName: 'li'
-
     template: jst
 
     events:
