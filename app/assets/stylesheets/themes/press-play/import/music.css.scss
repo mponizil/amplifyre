@@ -1,4 +1,4 @@
-#play-pause {
+.pp-play-pause {
   width: 209px;
   height: 250px;
   position: absolute;
@@ -8,7 +8,7 @@
   cursor: pointer;
   z-index: 6;
 }
-#play {
+.pp-play {
   width: 209px;
   height: 250px;
   position: absolute;
@@ -16,7 +16,7 @@
   left: 50%;
   margin-left: -104px;
 }
-#pause {
+.pp-pause {
   width: 142px;
   height: 262px;
   position: absolute;
@@ -24,7 +24,7 @@
   left: 50%;
   margin-left: -71px;
 }
-#next-prev {
+.pp-next-prev {
   width: 833px;
   height: 250px;
   position: absolute;
@@ -34,7 +34,7 @@
   cursor: pointer;
   z-index: 5;
 }
-#prev {
+.pp-prev {
   width: 282px;
   height: 248px;
   position: absolute;
@@ -42,7 +42,7 @@
   left: 0;
   opacity: 0;
 }
-#next {
+.pp-next {
   width: 282px;
   height: 248px;
   position: absolute;

@@ -14,20 +14,25 @@ define [
     template: jst
 
     events:
-      'click #prev': -> @player.set(index: @player.prev())
-      'click #next': -> @player.set(index: @player.next())
-      'click #play': -> @player.set(playing: true)
-      'click #pause': -> @player.set(playing: false)
+      'click [data-ref=prev]': -> @player.set(index: @player.prev())
+      'click [data-ref=next]': -> @player.set(index: @player.next())
+      'click [data-ref=play]': -> @player.set(playing: true)
+      'click [data-ref=pause]': -> @player.set(playing: false)
 
     render: ->
       super
 
-      @$('#play-pause, #prev, #next').hover(
-        -> $(@).animate(opacity: 1)
-        -> $(@).animate(opacity: 0)
+      @$play_pause.addClass('invisible')
+      @$pause.addClass('hidden')
+      @$prev.addClass('invisible')
+      @$next.addClass('invisible')
+
+      @$('[data-ref=play_pause], [data-ref=prev], [data-ref=next]').hover(
+        -> $(this).animate(opacity: 1)
+        -> $(this).animate(opacity: 0)
       )
 
-      @
+      return this
 
     update: (player, playing) ->
       if playing then @play()
@@ -35,12 +40,12 @@ define [
 
     play: ->
       # Sometimes it doesn't wanna hide.
-      @$('#play').fadeOut -> $(@).hide()
-      @$('#pause').fadeIn()
+      @$play.fadeOut -> $(this).hide()
+      @$pause.fadeIn()
 
     pause: ->
-      @$('#pause').fadeOut()
-      @$('#play').fadeIn()
+      @$pause.fadeOut()
+      @$play.fadeIn()
 
     route: (e) ->
       @$el.toggleClass('hidden', e is 'route:slug')

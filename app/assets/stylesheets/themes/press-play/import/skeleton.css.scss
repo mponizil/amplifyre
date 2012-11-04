@@ -22,27 +22,8 @@
     }
   }
 
-  .social-media {
-    position: absolute;
+  .abs-right {
     top: 8px;
     right: 5px;
   }
-}
-
-.black-banner {
-  background: rgba(0,0,0,0.8);
-  border-bottom: 2px solid #06bcff;
-  @include box-shadow(0 0 10px #000);
-  @include border-radius(20px 20px 0 0);
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-  min-width: 300px;
-  line-height: normal;
-}
-.black-banner h1 {
-  text-transform: uppercase;
-}
-#ticker {
-  font-size: 10px;
 }

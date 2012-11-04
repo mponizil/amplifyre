@@ -16,7 +16,7 @@
     </div></div>
 
     <!-- social media -->
-    <div class='social-media' data-ref='social'>
+    <div class='abs-right' data-ref='social'>
     </div>
 
   </div>
@@ -29,7 +29,7 @@
 
       <h1 data-attr='name' data-editable='text-input'></h1>
 
-      <div id='ticker' data-ref='ticker'></div>
+      <span class='subtitle' data-ref='ticker'></span>
 
     </div>
   </div></div>

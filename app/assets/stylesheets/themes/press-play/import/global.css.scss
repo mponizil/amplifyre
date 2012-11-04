@@ -85,17 +85,40 @@ p {
   margin: 0 auto;
 }
 
+
+// Little things
+.subtitle {
+  font-size: 10px;
+}
+.highlight {
+  background-color: #06bcff;
+}
+
+//=== Container
+// Plain old relatively-positioned container
 .container {
   position: relative;
   margin: 0 auto;
 }
 
+//=== Abs Mid Mid
+// Align the top left corner to the absolute center and figure out negative margins on your own
 .abs-mid-mid {
   position: absolute;
   top: 50%;
   left: 50%;
 }
 
+//=== Abs Right
+// For when it's gotta be on the right
+.abs-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+//=== Symmetry
+// A 3-div hack for centering block elements without a specifying a width
 .symmetry-wrap {
   width: 100%;
   position: absolute;
@@ -112,18 +135,8 @@ p {
   left: -50%;
 }
 
-.highlight {
-  background-color: #06bcff;
-}
-
-.black-bar {
-  width: 100%;
-  height: 40px;
-  font-family: 'Oswald', Arial, serif;
-  @include background-image(linear-gradient(#000, #1f1f1f));
-  @include box-shadow(0 0 10px #000);
-}
-
+//=== Horizontal List
+// Float-left list items
 .horizontal-list {
   @include clearfix;
 
@@ -136,6 +149,8 @@ p {
   }
 }
 
+//=== Dropdown
+// Dropdown menus
 .dropdown {
   position: relative;
   z-index: 10;
@@ -148,4 +163,29 @@ p {
     position: absolute;
     z-index: 10;
   }
+}
+
+//=== Black Bar
+// A nice black horizontal bar that stretches 100%
+.black-bar {
+  width: 100%;
+  height: 40px;
+  font-family: 'Oswald', Arial, serif;
+  @include background-image(linear-gradient(#000, #1f1f1f));
+  @include box-shadow(0 0 10px #000);
+}
+
+//=== Black Banner
+// Slim little black banner with centered text and rounded top corners
+.black-banner {
+  background: rgba(0,0,0,0.8);
+  border-bottom: 2px solid #06bcff;
+  @include box-shadow(0 0 10px #000);
+  @include border-radius(20px 20px 0 0);
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  min-width: 300px;
+  line-height: normal;
+  h1 { text-transform: uppercase; }
 }
