@@ -23,7 +23,8 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-a:hover {
+a:hover,
+a.active {
   color: #06bcff;
 }
 a img {

@@ -1,6 +1,7 @@
 define [
   'ui/ref'
   'ui/attr'
+  'ui/nav'
   'ui/date-format'
   'ui/fragment'
   'ui/fileupload'

@@ -1,7 +1,7 @@
 <ul class='horizontal-list'>
   <li><a data-fragment='home'>Home</a></li>
 </ul>
-<ul class='horizontal-list' data-ref='custom_nav'></ul>
+<ul class='horizontal-list' data-ref='custom_nav' data-nav></ul>
 <ul class='horizontal-list' data-edit-mode>
   <li class='dropdown' data-dropdown>
     <span class='dropdown-toggle' data-dropdown-toggle>+ New</span>
