@@ -16,6 +16,9 @@ define [
       super
 
       @$bgs = @$('[data-ref^=bg_]')
+      console.log @$bgs
+
+      @$bg_active.addClass('hidden')
 
       @initMeasure => @resize()
       $(window).resize => @resize()
@@ -27,16 +30,10 @@ define [
       else @fadeDown()
 
     fadeUp: ->
-      @$el.animate
-        'background-color': '#ffffff'
-      , 1000, 'easeOutSine'
-      @$bg_inactive.fadeOut(1000, 'easeOutSine')
+      @$bg_active.fadeIn(1000, 'easeOutSine')
 
     fadeDown: ->
-      @$el.animate(
-        'background-color': '#ffffff'
-      , 1000, 'easeOutSine')
-      @$bg_active.fadeIn(1000, 'easeOutSine')
+      @$bg_active.fadeOut(1000, 'easeOutSine')
 
     resize: ->
       [windowWidth, windowHeight, windowRatio] = @measureWindow()
@@ -54,14 +51,13 @@ define [
 
       marginTop = -@forcedHeight / 2
       marginLeft = -@forcedWidth / 2
-      @$bgs.css('margin-top', marginTop).css('margin-left', marginLeft)
+      @$bgs.css('margin-top': marginTop, 'margin-left': marginLeft)
 
     initMeasure: (next) ->
       [windowWidth, windowHeight, windowRatio] = @measureWindow()
-      $img = @$bg_active.children('img')
-      $img.load =>
-        @imgWidth = $img.width()
-        @imgHeight = $img.height()
+      @$bg_active.children('img').load (e) =>
+        @imgWidth = e.target.width
+        @imgHeight = e.target.height
         @imgRatio = @imgWidth / @imgHeight
         next()
 
