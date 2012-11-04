@@ -1,12 +1,3 @@
-<div class='clearfix'>
-
-  <div data-edit-mode class='right'>
-    <button data-new-post>New Post</button>
-    <button class='delete' data-destroy>Delete Page</button>
-  </div>
-
-</div>
-
 <div class='scrollpane page-news' data-ref='scrollpane'>
 
   <h2 data-attr='title'></h2>

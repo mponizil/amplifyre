@@ -5,9 +5,10 @@ define [
   class Page extends Quilt.View
 
     attributes:
-      class: 'white-box page-container'
+      'data-page-container': ''
+      'class': 'white-box page-container'
 
-    events:
+    events: ->
       'size:update': 'resize'
 
     resize: (e, max_height, bottom) ->

@@ -11,11 +11,11 @@ define [
     render: ->
       super
 
-      @$page_categories = $('<ul>').addClass('horizontal-list')
-      @$page_categories.appendTo(@$el)
+      @$new_page = $('<ul>').addClass('horizontal-list')
+      @$new_page.appendTo(@$el)
 
       @views.push(new PageCategoriesView
-        el: @$page_categories
+        el: @$new_page
         collection: @collection
         router: @router
       .render())

@@ -1,5 +1,5 @@
 define [
-  'editor/views/view'
-], (View) ->
+  'editor/views/pages/base'
+], (EditPageView) ->
 
-  class ContactView extends View
+  class ContactView extends EditPageView

@@ -1,5 +1,5 @@
 define [
-  'editor/views/view'
-], (View) ->
+  'editor/views/pages/base'
+], (EditPageView) ->
 
-  class TourView extends View
+  class TourView extends EditPageView

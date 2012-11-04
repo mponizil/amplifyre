@@ -1,5 +1,9 @@
 @import "compass/css3";
 
+.delete {
+  &:hover { background-color: #e00000; }
+}
+
 //
 // Editable
 //
@@ -77,6 +81,5 @@ textarea.editable-hover {
     width: 16px;
     height: 14px;
     text-align: center;
-    &:hover { background-color: #e00000; }
   }
 }

@@ -1,11 +1,3 @@
-<div class='clearfix'>
-
-  <div class='right' data-edit-mode>
-    <button class='delete' data-destroy>Delete Page</button>
-  </div>
-
-</div>
-
 <div class='scrollpane page-tour' data-ref='scrollpane'>
 
   <div class='calendar' data-ref='calendar'>

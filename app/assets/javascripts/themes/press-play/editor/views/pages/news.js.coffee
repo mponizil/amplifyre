@@ -1,8 +1,15 @@
 define [
-  'editor/views/view'
-], (View) ->
+  'editor/views/pages/base'
+], (EditPageView) ->
 
-  class NewsView extends View
+  class NewsView extends EditPageView
+
+    controlsJst: -> '''
+      <div data-edit-mode class='right'>
+        <button data-new-post>New Post</button>
+        <button class='delete' data-destroy>Delete Page</button>
+      </div>
+      '''
 
     events:
       'click [data-new-post]': 'newPost'

@@ -61,3 +61,4 @@ define [
     changePage: (view) ->
       @page?.destroy()
       @page = view.render()
+      @$el.trigger('page:render')

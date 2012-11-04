@@ -7,9 +7,10 @@ define [
 
     template: jst
 
-    events:
-      'submit #email_form': 'submit'
+    events: ->
+      _.extend super,
+        'submit [data-email-form]': 'submit'
 
-    submit: ->
-      console.log $('#email_form').serialize()
+    submit: (e) ->
+      console.log $(e.target).serialize()
       false

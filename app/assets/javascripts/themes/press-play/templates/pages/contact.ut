@@ -1,14 +1,6 @@
-<div class='clearfix'>
+<div class='scrollpane page-contact' data-ref='scrollpane'>
 
-  <div class='right' data-edit-mode>
-    <button class='delete' data-destroy>Delete Page</button>
-  </div>
-
-</div>
-
-<div class='page-contact'>
-
-  <form name='email_form' id='email_form'>
+  <form name='email_form' data-email-form>
     <table>
       <tr>
         <td width='80'>Name</td>
