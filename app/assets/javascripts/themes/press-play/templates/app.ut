@@ -3,11 +3,8 @@
 <!-- background image goodness -->
 <div class='pp-background' data-ref='background'></div>
 
-<!-- music player goodness -->
-<div class='pp-music-player' data-ref='music'></div>
-
 <!-- begin amplifyre website -->
-<div class='container'>
+<div class='container pp-container'>
 
   <div class='black-bar pp-top-bar' data-ref='top_bar'>
 
@@ -23,6 +20,9 @@
 
   <div data-ref='page'>
   </div>
+
+  <!-- music player goodness -->
+  <div class='pp-music-player' data-ref='music'></div>
 
   <div class='symmetry-wrap'><div class='symmetry-float'>
     <div class='symmetry-inner black-banner' data-ref='black_banner'>

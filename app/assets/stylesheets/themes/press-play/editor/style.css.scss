@@ -1,17 +1,6 @@
 @import "compass/css3";
 
 //
-// Editor UI
-//
-
-.delete {
-  cursor: pointer;
-}
-.delete:hover {
-  background-color: #e00000;
-}
-
-//
 // Editable
 //
 
@@ -59,9 +48,24 @@ textarea.editable-hover {
 // Section-specific UI
 //
 
+.pp-top-bar {
+  .dropdown {
+    width: 60px;
+    text-align: center;
+  }
+  .dropdown-content {
+    margin-top: 2px;
+  }
+  .black-bar {
+    width: 60px;
+    padding: 10px;
+  }
+}
+
 .page-photos li,
 .page-listen li {
   position: relative;
+
   .delete {
     font-size: 12px;
     line-height: normal;
@@ -73,8 +77,6 @@ textarea.editable-hover {
     width: 16px;
     height: 14px;
     text-align: center;
-  }
-  .delete:hover {
-    background-color: #e00000;
+    &:hover { background-color: #e00000; }
   }
 }

@@ -16,18 +16,33 @@ define [
   # "dropdown:toggle", "dropdown:hide", or "dropdown:show" on the element with
   # the "data-dropdown" attribute.
 
-  Quilt.attributes.dropdown = (el, options) -> new Dropdown(el: el)
+  Quilt.attributes.dropdown = (el, options) ->
+
+    new Dropdown(el: el, listenOn: options)
 
   # Track the current dropdown.  Hide it when another is shown.
   current = null
 
   class Dropdown extends Quilt.View
 
-    events:
-      'click [data-dropdown-toggle]': 'toggle'
-      'dropdown:toggle': 'toggle'
-      'dropdown:show': 'show'
-      'dropdown:hide': 'hide'
+    constructor: ({@listenOn}) ->
+      super
+
+    wantsShowing: false
+
+    events: ->
+      events =
+        'dropdown:toggle': 'toggle'
+        'dropdown:show': 'show'
+        'dropdown:hide': 'hide'
+
+      if not @listenOn or @listenOn is 'click'
+        events['click [data-dropdown-toggle]'] = 'toggle'
+      else if @listenOn is 'hover'
+        events['mouseover'] = 'show'
+        events['mouseout'] = 'wantsHide'
+
+      events
 
     initialize: ->
       @$content = @$('[data-dropdown-content]')
@@ -41,10 +56,17 @@ define [
         @hide()
       $(document).one('click', @hide)
 
+    wantsHide: =>
+      @wantsShowing = false
+      setTimeout =>
+        @hide() unless @wantsShowing
+      , 300
+
     hide: =>
       @$content.addClass('hidden')
 
     show: ->
       current?.hide()
-      current = @
+      current = this
       @$content.removeClass('hidden')
+      @wantsShowing = true
