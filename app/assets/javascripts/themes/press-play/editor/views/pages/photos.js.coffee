@@ -1,9 +1,6 @@
 define [
-  'quilt'
+  'editor/views/view'
   'fileupload'
-], (Quilt) ->
+], (View) ->
 
-  class PhotosView extends Quilt.View
-
-    render: ->
-      return this
+  class PhotosView extends View

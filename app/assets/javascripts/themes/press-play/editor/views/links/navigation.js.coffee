@@ -1,17 +1,14 @@
 define [
-  'quilt'
-], (Quilt) ->
+  'editor/views/view'
+], (View) ->
 
-  class EditNavigation extends Quilt.View
+  class EditNavigation extends View
 
     constructor: ({@router}) ->
       super
 
     events:
       'click [data-new-page]': 'newPage'
-
-    render: ->
-      return this
 
     newPage: (e) ->
       e.stopPropagation()

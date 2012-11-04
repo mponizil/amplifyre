@@ -1,14 +1,14 @@
 define [
-  'quilt'
+  'editor/views/view'
   'editor/views/pages/news'
   'editor/views/pages/listen'
   'editor/views/pages/photos'
   'editor/views/pages/tour'
   'editor/views/pages/contact'
   'editor/views/pages/custom'
-], (Quilt, EditNewsView, EditListenView, EditPhotosView, EditTourView, EditContactView, EditCustomView) ->
+], (View, EditNewsView, EditListenView, EditPhotosView, EditTourView, EditContactView, EditCustomView) ->
 
-  class EditPages extends Quilt.View
+  class EditPages extends View
 
     constructor: ({@router, @band_site, @player}) ->
       super
@@ -24,7 +24,7 @@ define [
       , @)
 
     index: ->
-      @changePage new Quilt.View
+      @changePage new View
         el: @$el
 
     news: (model) ->

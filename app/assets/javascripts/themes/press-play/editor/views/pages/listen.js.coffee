@@ -1,11 +1,8 @@
 define [
-  'quilt'
-], (Quilt) ->
+  'editor/views/view'
+], (View) ->
 
-  class ListenView extends Quilt.View
+  class ListenView extends View
 
     constructor: ({@player, @albums}) ->
       super
-
-    render: ->
-      return this

@@ -1,8 +1,5 @@
 define [
-  'quilt'
-], (Quilt) ->
+  'editor/views/view'
+], (View) ->
 
-  class CustomView extends Quilt.View
-
-    render: ->
-      return this
+  class CustomView extends View

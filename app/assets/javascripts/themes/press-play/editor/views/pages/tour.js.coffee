@@ -1,8 +1,5 @@
 define [
-  'quilt'
-], (Quilt) ->
+  'editor/views/view'
+], (View) ->
 
-  class TourView extends Quilt.View
-
-    render: ->
-      return this
+  class TourView extends View

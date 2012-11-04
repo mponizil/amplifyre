@@ -1,11 +1,8 @@
 define [
-  'quilt'
-], (Quilt) ->
+  'view'
+], (View) ->
 
-  class NewsView extends Quilt.View
-
-    render: ->
-      return this
+  class NewsView extends View
 
     events:
       'click [data-new-post]': 'newPost'
