@@ -11,3 +11,5 @@ define [
       page.get('position')
 
     url: -> super + 'band_sites/' + @owner.id + '/pages'
+
+    allCategories: ['news', 'photos', 'listen', 'tour', 'contact', 'custom']

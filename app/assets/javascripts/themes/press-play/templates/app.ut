@@ -9,7 +9,7 @@
   <div class='black-bar pp-top-bar' data-ref='top_bar'>
 
     <!-- navigation -->
-    <div class='symmetry-wrap'><div class='symmetry-float' data-ref='navigation'>
+    <div class='symmetry'><div class='symmetry-float' data-ref='navigation'>
     </div></div>
 
     <!-- social media -->
@@ -24,7 +24,7 @@
   <!-- music player goodness -->
   <div class='pp-music-player' data-ref='music'></div>
 
-  <div class='symmetry-wrap'><div class='symmetry-float'>
+  <div class='symmetry'><div class='symmetry-float'>
     <div class='symmetry-inner black-banner' data-ref='black_banner'>
 
       <h1 data-attr='name' data-editable='text-input'></h1>

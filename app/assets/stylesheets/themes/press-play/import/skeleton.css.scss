@@ -27,12 +27,14 @@
   position: relative;
   z-index: 2;
 
-  .horizontal-list {
-    @extend .symmetry-inner;
-
-    li {
-      border-bottom: 2px solid #06bcff;
-      text-transform: uppercase;
+  .symmetry {
+    .horizontal-list {
+      @extend .symmetry-inner;
+      li {
+        padding: 10px;
+        border-bottom: 2px solid #06bcff;
+        text-transform: uppercase;
+      }
     }
   }
 

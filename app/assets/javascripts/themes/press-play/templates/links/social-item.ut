@@ -1,1 +1,1 @@
-<li><a href="<%= o.model.get('link') %>" target="_blank"><img src="/assets/social/<%= o.model.get('category') %>.png" /></a></li>
+<a href="<%= o.model.get('link') %>" target="_blank"><img src="/assets/social/<%= o.model.get('category') %>.png" /></a>

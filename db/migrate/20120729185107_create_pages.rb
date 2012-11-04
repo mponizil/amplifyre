@@ -5,7 +5,7 @@ class CreatePages < ActiveRecord::Migration
       t.integer :position, :default => 1
       t.string :category, :default => 'custom'
       t.string :slug
-      t.string :title, :default => 'New Page'
+      t.string :title
       t.text :body
 
       t.timestamps

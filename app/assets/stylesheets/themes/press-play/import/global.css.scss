@@ -119,7 +119,7 @@ p {
 
 //=== Symmetry
 // A 3-div hack for centering block elements without a specific width
-.symmetry-wrap {
+.symmetry {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -142,7 +142,6 @@ p {
 
   > li {
     margin: 0 5px;
-    padding: 10px;
     list-style: none;
     float: left;
     position: relative;

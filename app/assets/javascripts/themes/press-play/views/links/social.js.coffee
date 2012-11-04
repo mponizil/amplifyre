@@ -5,7 +5,7 @@ define [
 
   class SocialView extends Quilt.View
 
-    template: -> '<ul></ul>'
+    template: -> '''<ul class='horizontal-list'></ul>'''
 
     render: ->
       super
@@ -13,6 +13,7 @@ define [
       @views.push(new List
         el: @$('ul')
         view: Quilt.View.extend
+          tagName: 'li'
           template: socialJst
         collection: @collection
       .render())

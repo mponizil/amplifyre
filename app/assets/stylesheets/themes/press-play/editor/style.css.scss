@@ -1,6 +1,7 @@
 @import "compass/css3";
 
 .delete {
+  cursor: pointer;
   &:hover { background-color: #e00000; }
 }
 

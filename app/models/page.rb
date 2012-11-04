@@ -13,6 +13,7 @@ class Page < ActiveRecord::Base
       self.position = last_page.position + 1
     end
 
+    self.title ||= self.category.cap_words
     self.slug ||= self.title.parameterize
 
     if self.category == 'custom'
