@@ -28,6 +28,10 @@ define [
     constructor: ({@listenOn}) ->
       super
 
+    initialize: ->
+      @$content = @$('[data-dropdown-content]')
+      @hide()
+
     wantsShowing: false
 
     events: ->
@@ -42,11 +46,7 @@ define [
         events['mouseover'] = 'show'
         events['mouseout'] = 'wantsHide'
 
-      events
-
-    initialize: ->
-      @$content = @$('[data-dropdown-content]')
-      @hide()
+      return events
 
     toggle: (e) ->
       e?.stopPropagation()

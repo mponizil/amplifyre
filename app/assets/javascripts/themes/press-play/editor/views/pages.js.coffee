@@ -24,8 +24,7 @@ define [
       , @)
 
     index: ->
-      @changePage new View
-        el: @$el
+      @changePage(new View(el: @$el))
 
     news: (model) ->
       @changePage new EditNewsView
@@ -54,10 +53,10 @@ define [
         collection: @band_site.concerts()
 
     contact: (model) ->
-      @changePage new EditContactView(el: @$el, model: model)
+      @changePage(new EditContactView(el: @$el, model: model))
 
     custom: (model) ->
-      @changePage new EditCustomView(el: @$el, model: model)
+      @changePage(new EditCustomView(el: @$el, model: model))
 
     changePage: (view) ->
       @page?.destroy()

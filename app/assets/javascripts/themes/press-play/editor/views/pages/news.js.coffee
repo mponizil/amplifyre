@@ -1,5 +1,5 @@
 define [
-  'view'
+  'editor/views/view'
 ], (View) ->
 
   class NewsView extends View

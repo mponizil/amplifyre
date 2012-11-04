@@ -2,16 +2,3 @@
   <li><a data-fragment='home'>Home</a></li>
 </ul>
 <ul class='horizontal-list' data-ref='custom_nav' data-nav></ul>
-<ul class='horizontal-list' data-edit-mode>
-  <li class='dropdown' data-dropdown='hover'>
-    <a class='dropdown-toggle' data-dropdown-toggle>+ New</a>
-    <ul class='dropdown-content' data-dropdown-content>
-      <li class='black-bar'><a data-new-page='news'>News</a></li>
-      <li class='black-bar'><a data-new-page='photos'>Photos</a></li>
-      <li class='black-bar'><a data-new-page='listen'>Music</a></li>
-      <li class='black-bar'><a data-new-page='tour'>Tour</a></li>
-      <li class='black-bar'><a data-new-page='contact'>Contact</a></li>
-      <li class='black-bar'><a data-new-page='custom'>Custom</a></li>
-    </ul>
-  </li>
-</ul>

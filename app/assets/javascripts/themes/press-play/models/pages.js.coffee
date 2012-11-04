@@ -8,6 +8,6 @@ define [
     model: -> Page.create(arguments...)
 
     comparator: (page) ->
-      page.get('index')
+      page.get('position')
 
     url: -> super + 'band_sites/' + @owner.id + '/pages'

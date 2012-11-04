@@ -1,21 +1,23 @@
 define [
   'editor/views/view'
-], (View) ->
+  'editor/views/links/page-categories'
+], (View, PageCategoriesView) ->
 
   class EditNavigation extends View
 
     constructor: ({@router}) ->
       super
 
-    events:
-      'click [data-new-page]': 'newPage'
+    render: ->
+      super
 
-    newPage: (e) ->
-      e.stopPropagation()
+      @$page_categories = $('<ul>').addClass('horizontal-list')
+      @$page_categories.appendTo(@$el)
 
-      category = $(e.target).data('new-page') or 'custom'
+      @views.push(new PageCategoriesView
+        el: @$page_categories
+        collection: @collection
+        router: @router
+      .render())
 
-      @collection.create { category: category }
-      , wait: true
-      , success: (page, resp) =>
-          @router.navigate(page.get('slug'), true)
+      return this
