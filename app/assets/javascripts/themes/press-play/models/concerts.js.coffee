@@ -5,6 +5,6 @@ define [
 
   class Concerts extends Collection
 
-      model: -> Concert.create(arguments...)
+    model: -> Concert.create(arguments...)
 
-      url: -> super + 'band_sites/' + @owner.id + '/concerts'
+    url: -> super + 'band_sites/' + @owner.id + '/concerts'

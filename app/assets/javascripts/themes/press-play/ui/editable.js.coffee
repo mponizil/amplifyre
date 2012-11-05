@@ -33,17 +33,35 @@ define [
       'mouseover': 'showBorder'
       'mouseout': 'hideBorder'
 
+    listenBlur: ->
+      $(window).click (e) =>
+        # Return if no @$editor exists
+        return unless @$editor
+
+        # If target is not inside body, we must be clicking a removed element
+        return unless $('body').find(e.target).length
+
+        # Return if we're clicking inside @$el
+        return if $(e.target).closest(@$el).length
+
+        @endEdit()
+
     render: ->
       super
 
       @$el.addClass('editable')
+
+      @styleDefault()
 
       return this
 
     startEdit: ->
       return if @active
 
+      @clearDefault()
+
       @active = true
+      @$editor = @$el
       @$el.removeClass('editable-hover')
       @$el.addClass('editable-active')
 
@@ -52,6 +70,31 @@ define [
 
       @active = false
       @$el.removeClass('editable-active')
+
+      [text, html] = @destroyEditor()
+      [text, html] = @restoreDefault(text, html)
+
+      @$el.trigger('update', [html or text])
+
+    # Add the "editable-default" class if it's the default value
+    styleDefault: ->
+      if $.trim(@$el.text()) is @defaultVal
+        @$el.addClass('editable-default')
+
+    # Clear value if it's the default
+    clearDefault: ->
+      @$el.text('') if $.trim(@$el.text()) is @defaultVal
+      @$el.removeClass('editable-default')
+
+    # Restore default value if it was left empty
+    restoreDefault: (text, html) ->
+      if $.trim(text) is ''
+        @$el.html(text = html = @defaultVal)
+        @$el.addClass('editable-default')
+      return [text, html]
+
+    destroyEditor: ->
+      [@$editor.text(), @$editor.html()]
 
     showBorder: (e) ->
       @$el.addClass('editable-hover') unless @active
@@ -65,12 +108,7 @@ define [
       _.extend super,
         'dblclick': 'startEdit'
 
-    render: ->
-      super
-
-      if $.trim(@$el.text()) is @defaultVal
-        @$el.addClass('editable-default')
-
+    listenBlur: ->
       $(window).click (e) =>
         # Return if no @$editor exists
         return unless @$editor
@@ -86,14 +124,15 @@ define [
 
         @endEdit()
 
+    render: ->
+      super
+
+      @listenBlur()
+
       return this
 
     startEdit: ->
       return if not super
-
-      # Clear value if it's the default
-      @$el.text('') if $.trim(@$el.text()) is @defaultVal
-      @$el.removeClass('editable-default')
 
       html = @$el.html()
       @$editor = $('<div>').html(html)
@@ -114,19 +153,14 @@ define [
     endEdit: ->
       return if not super
 
-      html = @$editor.getCode()
-      text = @$editor.getText()
-      @$editor.destroyEditor()
-
-      # Restore default value if it was left empty
-      if $.trim(text) is ''
-        @$el.html(text = html = @defaultVal)
-        @$el.addClass('editable-default')
-
-      @$el.trigger('update', [html])
-
       @$editor = null
       @$el.one('dblclick', => @startEdit())
+
+    destroyEditor: ->
+      text = @$editor.getText()
+      html = @$editor.getCode()
+      @$editor.destroyEditor()
+      [text, html]
 
   class Editable.TextInput extends Editor
 
@@ -137,20 +171,7 @@ define [
     render: ->
       super
 
-      if $.trim(@$el.text()) is @defaultVal
-        @$el.addClass('editable-default')
-
-      $(window).click (e) =>
-        # Return if no @$editor exists
-        return unless @$editor
-
-        # If target is not inside body, we must be clicking a removed element
-        return unless $('body').find(e.target).length
-
-        # Return if we're clicking inside @$el
-        return if $(e.target).closest(@$el).length
-
-        @endEdit()
+      @listenBlur()
 
       return this
 
@@ -160,26 +181,16 @@ define [
       @$editor = @$el.attr('contenteditable', true)
       @$el.on('keydown', (e) => @checkKey(e))
 
-      # Clear value if it's the default
-      @$el.text('') if $.trim(@$el.text()) is @defaultVal
-      @$el.removeClass('editable-default')
-
       @$el.focus()
 
     endEdit: ->
       return if not super
 
-      text = @$editor.text()
-
-      # Restore default value if it was left empty
-      if $.trim(text) is ''
-        @$el.html(text = @defaultVal)
-        @$el.addClass('editable-default')
-
-      @$el.trigger('update', [text])
-
       @$el.off('keydown')
       @$editor = @$el.attr('contenteditable', false)
+
+    destroyEditor: ->
+      [@$editor.text(), null]
 
     checkKey: (e) ->
       if e.keyCode is 9
@@ -193,19 +204,13 @@ define [
 
     events: ->
       _.extend super,
-        'blur': 'endEdit'
+        'dblclick': 'startEdit'
 
     render: ->
       super
 
-      @$editor = @$el.attr('contenteditable', true)
+      @listenBlur()
 
       return this
-
-    endEdit: ->
-      return if not super
-
-      content = @$editor.html()
-      @$el.trigger('update', [content])
 
   return Editable

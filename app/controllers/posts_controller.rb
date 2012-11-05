@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-  # GET /api/band_sites/1/posts/1
+  # GET /api/v1/band_sites/1/posts/1
   def show
     @post = Post.find(params[:id])
 
     render json: @post
   end
 
-  # POST /api/band_sites/1/posts
+  # POST /api/v1/band_sites/1/posts
   def create
     @post = Post.new(params[:post])
     @post.band_site_id ||= params[:band_site_id]
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     end
   end
 
-  # PUT /api/band_sites/1/posts/1
+  # PUT /api/v1/band_sites/1/posts/1
   def update
     @post = Post.find(params[:id])
 
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /api/band_sites/1/posts/1
+  # DELETE /api/v1/band_sites/1/posts/1
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

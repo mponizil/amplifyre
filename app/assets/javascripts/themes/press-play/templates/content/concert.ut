@@ -1,5 +1,5 @@
 <div class='concert-left'>
-  <div class='date' data-attr='date' data-editable='date-input'></div>
+  <div class='date' data-date-attr='date' data-date-format='MMMM Do, YYYY' data-editable='date-input'></div>
 
   <div class='venue' data-attr='venue' data-editable='text-input'></div>
 
@@ -10,4 +10,8 @@
   <a href='<%= o.model.get('photo_file').url %>' rel='group' data-fancybox>
     <img src='<%= o.model.get('photo_file').sm_thumb.url %>' />
   </a>
+
+  <div style='margin-top:10px' data-edit-mode>
+    <button type='button' class='delete' data-destroy>Delete Concert</button>
+  </div>
 </div>

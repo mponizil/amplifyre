@@ -12,7 +12,7 @@ class ConcertsController < ApplicationController
     @concert.band_site_id ||= params[:band_site_id]
 
     if @concert.save
-      render json: @concert, status: :created, location: @concert
+      render json: @concert, status: :created
     else
       render json: @concert.errors, status: :unprocessable_entity
     end
