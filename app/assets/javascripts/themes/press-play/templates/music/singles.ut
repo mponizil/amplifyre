@@ -4,5 +4,5 @@
   </a>
 </div>
 
-<ul class='tracks' data-ref='tracks'>
+<ul class='album-tracks' data-ref='tracks'>
 </ul>

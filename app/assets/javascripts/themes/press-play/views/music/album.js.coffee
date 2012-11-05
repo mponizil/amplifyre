@@ -18,8 +18,7 @@ define [
       TrackView = TrackView.extend
         player: @player
         tagName: 'li'
-        attributes:
-          class: 'album-track'
+        attributes: class: 'album-track'
       @views.push(new List
         el: @$tracks
         view: TrackView
