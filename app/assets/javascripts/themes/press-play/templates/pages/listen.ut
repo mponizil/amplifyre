@@ -1,5 +1,7 @@
 <div class='scrollpane page-listen' data-ref='scrollpane'>
 
+  <div class='album' data-ref='singles'></div>
+
   <div data-ref='albums'></div>
 
 </div>

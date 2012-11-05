@@ -9,6 +9,7 @@ define [
     label: 'album'
 
     defaults: ->
+      title: 'Singles'
       cover_file:
         url: '/assets/images/album/cover_file/default.jpg'
         sm_thumb:

@@ -1,8 +1,0 @@
-<div class='album-cover'>
-  <a href='/assets/images/album/cover_file/default.jpg' rel='group' data-fancybox>
-    <img src='/assets/images/album/cover_file/lrg_thumb_default.jpg' alt='Singles' title='Singles' />
-  </a>
-</div>
-
-<ul class='album-tracks' data-ref='tracks'>
-</ul>

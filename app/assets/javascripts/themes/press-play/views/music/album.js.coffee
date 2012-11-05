@@ -7,6 +7,11 @@ define [
 
   class AlbumView extends Quilt.View
 
+    initialize: ->
+      super
+
+      @model.tracks().on('remove', @checkDestroy, @)
+
     template: jst
 
     attributes:
@@ -31,4 +36,8 @@ define [
             css:
               'background-color': '#000'
 
-      @
+      return this
+
+    checkDestroy: ->
+      if @tracks.length is 0
+        @remove().destroy()
