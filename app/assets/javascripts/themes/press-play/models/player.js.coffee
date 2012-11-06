@@ -59,6 +59,8 @@ define [
 
     # Tell jPlayer what to play.
     setMedia: (track) ->
+      return unless track
+
       @jplayer.jPlayer 'setMedia',
         # m4a: track.get('file').url
         mp3: track.get('file').url
