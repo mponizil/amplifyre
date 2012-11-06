@@ -1,7 +1,5 @@
 <div class='scrollpane page-news' data-ref='scrollpane'>
 
-  <h2 data-attr='title'></h2>
-
   <div data-ref='news'></div>
 
 </div>

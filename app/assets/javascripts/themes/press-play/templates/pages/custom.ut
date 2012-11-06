@@ -1,7 +1,5 @@
 <div class='scrollpane' data-ref='scrollpane'>
 
-  <h2 data-attr='title'></h2>
-
   <div class='custom-body' data-attr='body' data-editable='text-area'></div>
 
 </div>

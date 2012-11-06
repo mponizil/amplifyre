@@ -20,6 +20,12 @@ define [
     render: ->
       super
 
+      @$('[data-fancybox]').fancybox
+        helpers:
+          overlay:
+            css:
+              'background-color': '#000'
+
       TrackView = TrackView.extend
         player: @player
         tagName: 'li'
@@ -29,12 +35,6 @@ define [
         view: TrackView
         collection: @model.tracks()
       .render())
-
-      @$('[data-fancybox]').fancybox
-        helpers:
-          overlay:
-            css:
-              'background-color': '#000'
 
       return this
 

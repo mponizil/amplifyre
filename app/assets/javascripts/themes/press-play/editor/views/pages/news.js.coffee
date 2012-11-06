@@ -4,16 +4,16 @@ define [
 
   class NewsView extends EditPageView
 
-    controlsJst: -> '''
-      <div data-edit-mode class='right'>
-        <button data-new-post>New Post</button>
-        <button class='delete' data-destroy>Delete Page</button>
-      </div>
-      '''
-
     events:
-      'click [data-new-post]': 'newPost'
+      'click [data-ref=new_post]': 'newPost'
       'editor:next': 'tabNext'
+
+    render: ->
+      super
+
+      @$('[data-ref=controls_right]').prepend("<button data-ref='new_post'>New Post</button>")
+
+      return this
 
     newPost: (e) ->
       e.stopPropagation()

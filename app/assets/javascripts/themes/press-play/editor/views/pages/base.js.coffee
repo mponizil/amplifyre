@@ -5,22 +5,22 @@ define [
   class EditPage extends View
 
     controlsJst: -> '''
-      <div class='right'>
-        <button class='delete' data-destroy>Delete Page</button>
+      <div class='left' data-ref='controls_left'>
+        <h2 data-attr='title' data-editable='text-input'></h2>
       </div>
-      '''
+      <div class='right' data-ref='controls_right'>
+        <button class='delete' data-destroy>Delete Page</button>
+      </div>'''
 
     render: ->
       super
 
-      @$page_controls = $('<div>').addClass('clearfix')
-      @$page_controls.prependTo(@$('[data-page-container]'))
+      @$('[data-page-container]').prepend($controls = $('<div>').addClass('clearfix edit-mode'))
 
       @views.push(new Quilt.View
-        el: @$page_controls
+        el: $controls
         template: @controlsJst
         model: @model
-        collection: @collection
       .render())
 
       return this

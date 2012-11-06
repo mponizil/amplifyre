@@ -7,6 +7,13 @@ define [
     constructor: ({@pages}) ->
       super
 
+    initialize: ->
+      super
+
+      @pages.on('change:slug', (page, slug) ->
+        @navigate(slug, { trigger: true, replace: true })
+      , @)
+
     routes:
       '': 'index'
       'home': 'index'

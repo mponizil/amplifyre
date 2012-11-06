@@ -19,7 +19,7 @@ define [
 
       @views.push(new SinglesView
         el: @$singles
-        model: new Album
+        model: Album.create(id: -1)
         tracks: @tracks
         player: @player
       .render())
@@ -30,4 +30,4 @@ define [
         collection: @albums
       .render())
 
-      @
+      return this

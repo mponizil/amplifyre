@@ -4,18 +4,18 @@ define [
 
   class TourView extends EditPageView
 
-    controlsJst: -> '''
-      <div data-edit-mode class='right'>
-        <button data-new-concert>New Concert</button>
-        <button class='delete' data-destroy>Delete Page</button>
-      </div>
-      '''
-
     events:
-      'click [data-new-concert]': 'newPost'
+      'click [data-ref=new_concert]': 'newConcert'
       'editor:next': 'tabNext'
 
-    newPost: (e) ->
+    render: ->
+      super
+
+      @$('[data-ref=controls_right]').prepend("<button data-new-concert>New Concert</button>")
+
+      return this
+
+    newConcert: (e) ->
       e.stopPropagation()
 
       @$('[data-ref=calendar]').one 'added', (e, $concert) =>

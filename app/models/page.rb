@@ -1,6 +1,7 @@
 class Page < ActiveRecord::Base
   validates :category, :uniqueness => { :scope => :band_site_id, :message => 'only one of each page category except custom' }, :unless => Proc.new { |p| p.category == 'custom' }
-  validates :slug, :uniqueness => { :scope => :band_site_id }
+  validates :slug, :presence => true, :uniqueness => { :scope => :band_site_id }
+  validates :title, :presence => true
 
   belongs_to :band_site
 
@@ -26,8 +27,7 @@ class Page < ActiveRecord::Base
 
     self.title ||= self.category.cap_words
 
-    self.slug ||= self.title.parameterize
-    self.slug = ensure_unique_slug(self.slug)
+    self.slug = ensure_unique_slug(self.title.parameterize)
   end
 
   def ensure_unique_slug(slug)
