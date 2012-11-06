@@ -11,7 +11,7 @@ define [
     render: ->
       super
 
-      @$('[data-ref=controls_right]').prepend("<button data-new-concert>New Concert</button>")
+      @$('[data-ref=controls_right]').prepend("<button data-ref='new_concert'>New Concert</button>")
 
       return this
 
