@@ -1,7 +1,7 @@
 class Subdomain
   def self.matches?(request)
     case request.subdomain
-    when 'www', '', nil
+    when 'www', '', 'amplifyre', nil
       false
     else
       true
