@@ -28,7 +28,7 @@ class BandSitesController < ApplicationController
     if @band_site
       render :layout => @layout
     else
-      redirect_to request.protocol + request.domain
+      redirect_to :status => 404
     end
   end
 
