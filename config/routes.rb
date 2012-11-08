@@ -22,7 +22,7 @@ Amplifyre::Application.routes.draw do
   resources :band_sites, :except => [:index, :edit], :format => false
 
   # Static pages
-  root :to => 'statics#home', :format => false
+  root :to => 'statics#prelaunch', :format => false
   match '/examples' => 'statics#examples', :format => false
 
   # User dashboard

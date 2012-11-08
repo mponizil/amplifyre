@@ -57,3 +57,5 @@ gem 'meta_search',    '>= 1.1.0.pre'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'carrierwave'
+
+gem 'gibbon'
