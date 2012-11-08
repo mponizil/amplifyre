@@ -1,0 +1,37 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree ./
+*/
+
+$gold: #dbd69d;
+
+body {
+  background-color: #16161b;
+  background-image: image-url('prelaunch/background.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  font-family: 'Myriad Pro', Arial, Verdana, Tahoma, sans-serif;
+  font-size: 18px;
+  color: #f6f6f6;
+  line-height: 1.4;
+}
+
+.container {
+  width: 650px;
+  margin: 230px auto 0 auto;
+}
+.logo {
+  width: 468px;
+  height: 151px;
+  background-image: image-url('prelaunch/logo.png');
+  margin: 0 auto;
+}

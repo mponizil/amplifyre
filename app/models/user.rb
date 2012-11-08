@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  before_validation :set_defaults
+
   after_create :add_to_mail_chimp
 
   def to_s
@@ -18,6 +20,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def set_defaults
+    self.password ||= Devise.friendly_token.first(6)
+  end
 
   def add_to_mail_chimp
     gb = Gibbon.new
