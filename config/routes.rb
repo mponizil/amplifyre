@@ -23,6 +23,7 @@ Amplifyre::Application.routes.draw do
 
   # Static pages
   root :to => 'statics#prelaunch', :format => false
+  post '/subscribe' => 'statics#subscribe', :format => false
   match '/examples' => 'statics#examples', :format => false
 
   # User dashboard

@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def authenticate
-    return true if params[:controller] == 'statics' and params[:action] == 'prelaunch'
+    return true if params[:controller] == 'statics' and (params[:action] == 'prelaunch' or params[:action] == 'subscribe')
 
     authenticate_or_request_with_http_basic do |username, password|
-      username == 'mponizil' && password == 'dinosaur56'
+      username == 'mponizil' && password == 'mp8293jd'
     end
   end
 end

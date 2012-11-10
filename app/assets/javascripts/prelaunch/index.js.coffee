@@ -18,18 +18,29 @@
 $ ->
 
   $form = $('[data-prelaunch]')
+  $results = $('[data-results]')
+  $results.addClass('hidden')
 
   $form.submit (e) ->
 
+    $results.addClass('hidden')
+    $results.removeClass('results-error')
+
     e.preventDefault()
 
-    data = user: email: $form.find('[name=email]').val()
+    data = email: $form.find('[name=email]').val()
 
     $.ajax
       type: 'POST'
       contentType: 'application/json'
-      url: '/users.json'
+      url: '/subscribe'
       data: JSON.stringify(data)
       dataType: 'json'
-      complete: (resp) ->
-        console.log resp
+      success: (resp) ->
+        $results.html('Thank you for subscribing. We will notify you when your invitation is ready.')
+        $results.removeClass('hidden')
+      error: (xhr) ->
+        resp = JSON.parse(xhr.responseText)
+        $results.html(resp.error)
+        $results.addClass('results-error')
+        $results.removeClass('hidden')

@@ -25,6 +25,9 @@ body {
   line-height: 1.4;
 }
 
+.hidden {
+  display: none;
+}
 .container {
   width: 650px;
   margin: 230px auto 0 auto;
@@ -34,4 +37,10 @@ body {
   height: 151px;
   background-image: image-url('prelaunch/logo.png');
   margin: 0 auto;
+}
+.results {
+  color: green;
+}
+.results-error {
+  color: red;
 }
