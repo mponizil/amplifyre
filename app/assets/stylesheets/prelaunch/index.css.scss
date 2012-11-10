@@ -12,6 +12,7 @@
  *= require_tree ./
 */
 
+@import 'compass/reset';
 @import 'compass/css3';
 
 $gold: #dbd69d;
@@ -42,6 +43,10 @@ button {
   cursor: pointer;
   @include background-image(linear-gradient(#606060, #323232));
 }
+p,
+.block {
+  margin-bottom: 20px;
+}
 
 .hidden {
   display: none;
@@ -51,6 +56,19 @@ button {
   margin: 10% auto 0 auto;
   text-align: center;
 }
+.loader {
+  width: 32px;
+  height: 32px;
+  background-image: image-url('global/dark-loader.gif');
+  margin: 0 auto;
+}
+.results {
+  color: green;
+}
+.results-error {
+  color: red;
+}
+
 .splash-logo {
   width: 468px;
   height: 151px;
@@ -66,10 +84,4 @@ button {
 }
 .splash-action input[type='text'] {
   width: 50%;
-}
-.results {
-  color: green;
-}
-.results-error {
-  color: red;
 }
