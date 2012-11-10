@@ -2,23 +2,23 @@
 <html>
 <head>
   <title>Amplifyre</title>
-  <%= stylesheet_link_tag    "landing", :media => "all" %>
-  <%= javascript_include_tag "landing" %>
+  <%= stylesheet_link_tag    'landing/index', :media => 'all' %>
+  <%= javascript_include_tag 'landing/index' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <div id="user-nav">
+  <div id='user-nav'>
     <% if user_signed_in? %>
       Signed in as <%= link_to current_user.email, user_root_path %>. Not you?
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
     <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+      <%= link_to 'Sign up', new_user_registration_path %> or <%= link_to 'sign in', new_user_session_path %>
     <% end %>
   </div>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p class='notice'><%= notice %></p>
+  <p class='alert'><%= alert %></p>
 
   <%= yield %>
 
