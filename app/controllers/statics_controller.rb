@@ -6,7 +6,10 @@ class StaticsController < ApplicationController
   def subscribe
     email = params[:email]
 
-    if email
+    if email.empty?
+      resp = { :success => false, :error => 'Please enter an email to subscribe.' }
+      render json: resp, status: :unprocessable_entity
+    else
       begin
         gb = Gibbon.new
         gb.list_subscribe({:id => '02d95d2b31', :email_address => email})
@@ -21,9 +24,6 @@ class StaticsController < ApplicationController
 
         render json: resp, status: :unprocessable_entity
       end
-    else
-      resp = { :success => false, :error => 'Please enter an email to subscribe.' }
-      render json: resp, status: :unprocessable_entity
     end
   end
 
