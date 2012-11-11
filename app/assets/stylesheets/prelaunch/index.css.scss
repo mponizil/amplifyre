@@ -12,6 +12,9 @@
  *= require_tree ./
 */
 
+@import 'compass/reset';
+@import 'compass/css3';
+
 $gold: #dbd69d;
 
 body {
@@ -24,18 +27,39 @@ body {
   color: #f6f6f6;
   line-height: 1.4;
 }
+input[type='text'],
+button {
+  font-size: 18px;
+  color: #f6f6f6;
+  padding: 6px 10px;
+  outline: none;
+  border: 1px solid #181818;
+  @include border-radius(8px);
+  background-color: #fefefe;
+  @include background-image(linear-gradient(#545459, #222225));
+  @include box-shadow(rgba(0,0,0,0.1) 1px 1px 3px 0, rgba(255,255,255,0.4) 0 0 4px inset);
+}
+button {
+  cursor: pointer;
+  @include background-image(linear-gradient(#606060, #323232));
+}
+p,
+.block {
+  margin-bottom: 20px;
+}
 
 .hidden {
   display: none;
 }
 .container {
   width: 650px;
-  margin: 230px auto 0 auto;
+  margin: 10% auto 0 auto;
+  text-align: center;
 }
-.logo {
-  width: 468px;
-  height: 151px;
-  background-image: image-url('prelaunch/logo.png');
+.loader {
+  width: 32px;
+  height: 32px;
+  background-image: image-url('global/dark-loader.gif');
   margin: 0 auto;
 }
 .results {
@@ -43,4 +67,22 @@ body {
 }
 .results-error {
   color: red;
+}
+
+.splash-logo {
+  width: 468px;
+  height: 151px;
+  background-image: image-url('prelaunch/logo.png');
+  margin: 0 auto;
+}
+.splash-subtitle {
+  font-size: 24px;
+  color: $gold;
+  em {
+    font-style: italic;
+    color: #f6f6f6;
+  }
+}
+.splash-action input[type='text'] {
+  width: 50%;
 }
