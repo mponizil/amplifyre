@@ -20,7 +20,7 @@ define [
     Backbone.history.options = {root: '/'}
 
     new App
-      el: 'body'
+      el: $('[data-press-play]')
       model: band_site
       pages: pages
       bootstrap: bootstrap
