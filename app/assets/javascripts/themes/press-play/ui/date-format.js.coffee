@@ -1,18 +1,23 @@
 define [
   'quilt'
   'moment'
-], (Quilt, moment) ->
+  'ui/attr'
+], (Quilt, moment, Attr) ->
 
   Quilt.attributes.dateFormat = (el, options) ->
-    new DateFormat(el: el, model: @model, format: options)
+    attr = @$el.data().attr or 'created_at'
+    new DateFormat
+      el: el
+      model: @model
+      attr: attr
+      format: options
 
-  class DateFormat extends Quilt.View
+  class DateFormat extends Attr
 
-    constructor: ({@format}) ->
+    constructor: ({@attr, @format}) ->
       super
 
     render: ->
-      attr = @$el.data('date-attr') or 'created_at'
-      value = @model.get(attr)
+      value = @model.get(@attr)
       @$el.html(moment(value).format(@format))
       return this

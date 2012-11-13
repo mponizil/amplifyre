@@ -4,6 +4,10 @@ define [
   'redactor'
 ], (Quilt, $) ->
 
+  attrFinder = (dataAttrs) ->
+    for attr of dataAttrs
+      return dataAttrs[attr] if /attr$/i.test(attr)
+
   # TODO: This should be done somewhere else
   Quilt.attributes.editable = (el, options) ->
     if window.location.pathname.indexOf('/edit') < 0
@@ -11,21 +15,26 @@ define [
     else
       camel = (match, letter) -> (letter + '').toUpperCase()
       type = options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
+      attr = attrFinder($(el).data())
       new Editable[type]
         el: el
         model: @model
+        attr: attr
 
   Editable = {}
 
   class Editor extends Quilt.View
 
-    active: false
+    constructor: ({@attr}) ->
+      super
 
     initialize: ->
       super
 
       attr = @$el.data('attr')
       @defaultVal = _.result(@model, 'defaults')?[attr] or 'Sample ' + @model.label
+
+    active: false
 
     events: ->
       'editable:start': 'startEdit'
@@ -74,7 +83,8 @@ define [
       [text, html] = @destroyEditor()
       [text, html] = @restoreDefault(text, html)
 
-      @$el.trigger('update', [html or text])
+      @model.set(@attr, html or text)
+      @model.save()
 
     # Add the "editable-default" class if it's the default value
     styleDefault: ->
