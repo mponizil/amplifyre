@@ -9,10 +9,6 @@ define [
 
   $ ->
 
-    $.ajaxSetup
-      headers:
-        'X-Requested-With': 'XMLHttpRequest'
-
     bootstrap = JSON.parse($('#bootstrap').html())
 
     band_site = BandSite.create(bootstrap.band_site)
@@ -24,7 +20,7 @@ define [
     Backbone.history.options = {root: '/edit/'}
 
     new EditApp
-      el: 'body'
+      el: $('[data-press-play]')
       model: band_site
       pages: pages
       bootstrap: bootstrap
