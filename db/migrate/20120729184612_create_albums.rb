@@ -4,6 +4,7 @@ class CreateAlbums < ActiveRecord::Migration
       t.references :band_site
       t.string :title
       t.string :cover_file
+      t.integer :position
 
       t.timestamps
     end
