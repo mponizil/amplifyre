@@ -8,7 +8,7 @@ define [
     initialize: ->
       super
 
-      @model.on('change', @render, @)
+      @model.on('change:title change:slug', @render, @)
 
     tagName: 'li'
 

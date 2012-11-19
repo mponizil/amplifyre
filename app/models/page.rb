@@ -1,6 +1,19 @@
 class Page < ActiveRecord::Base
-  validates :category, :uniqueness => { :scope => :band_site_id, :message => 'only one of each page category except custom' }, :unless => Proc.new { |p| p.category == 'custom' }
-  validates :slug, :presence => true, :uniqueness => { :scope => :band_site_id }
+  validates :category,
+    :uniqueness => {
+      :scope => :band_site_id,
+      :message => 'only one of each page category except custom'
+    },
+    :unless => Proc.new {
+      |p| p.category == 'custom'
+    }
+
+  validates :slug,
+    :presence => true,
+    :uniqueness => {
+      :scope => :band_site_id
+    }
+
   validates :title, :presence => true
 
   belongs_to :band_site
@@ -8,6 +21,10 @@ class Page < ActiveRecord::Base
   attr_accessible :band_site_id, :created_at, :updated_at, :position, :category, :slug, :title, :body
 
   before_validation :set_defaults
+
+  def self.others_with_slug(id, band_site_id, slug)
+    Page.where('id != :id AND band_site_id = :band_site_id AND slug = :slug', { :id => id, :band_site_id => band_site_id, :slug => slug })
+  end
 
   private
 
@@ -28,7 +45,7 @@ class Page < ActiveRecord::Base
   end
 
   def ensure_unique_slug(slug)
-    if Page.where('id != :id AND band_site_id = :band_site_id AND slug = :slug', { :id => self.id, :band_site_id => self.band_site_id, :slug => slug }).count > 0
+    if Page.others_with_slug(self.id, self.band_site_id, slug).count > 0
       if (matches = slug.match(/-([\d]+)$/))
         count = matches[1]
         new_count = (count.to_i + 1).to_s
