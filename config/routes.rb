@@ -15,7 +15,11 @@ Amplifyre::Application.routes.draw do
       resources :photos, :except => [:index, :new, :edit]
       resources :posts, :except => [:index, :new, :edit]
       resources :concerts, :except => [:index, :new, :edit]
-      resources :pages, :except => [:index, :new, :edit]
+      resources :pages, :except => [:index, :new, :edit] do
+        collection do
+          put 'reorder', :format => false
+        end
+      end
     end
   end
 

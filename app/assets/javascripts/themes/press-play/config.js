@@ -13,6 +13,7 @@ require.config({
     quilt: '../../quilt',
     supermodel: '../../supermodel',
     list: '../../list',
+    jquery_ui: '../../jquery-ui',
     jplayer: '../../jplayer/jquery.jplayer.min',
     easing: '../../jquery.easing.1.3',
     fancybox: '../../fancybox/jquery.fancybox.pack',
@@ -33,6 +34,10 @@ require.config({
       exports: '_'
     },
     jquery: {
+      exports: 'jQuery'
+    },
+    jquery_ui: {
+      deps: ['jquery'],
       exports: 'jQuery'
     },
     supermodel: {

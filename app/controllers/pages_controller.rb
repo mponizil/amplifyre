@@ -29,6 +29,16 @@ class PagesController < ApplicationController
     end
   end
 
+  # PUT /api/v1/band_sites/1/pages/reorder
+  def reorder
+    params[:pages].each do |page|
+      @page = Page.find(page[:id])
+      @page.update_attributes({ :position => page[:position] })
+    end
+
+    render json: params[:pages], status: :ok
+  end
+
   # DELETE /api/v1/band_sites/1/pages/1
   def destroy
     @page = Page.find(params[:id])

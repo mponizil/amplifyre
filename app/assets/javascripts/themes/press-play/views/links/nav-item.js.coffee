@@ -12,4 +12,7 @@ define [
 
     tagName: 'li'
 
+    attributes: ->
+      'data-sortable-id': @model.get('id')
+
     template: jst

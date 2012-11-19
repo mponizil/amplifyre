@@ -4,6 +4,9 @@
   cursor: pointer;
   &:hover { background-color: #e00000; }
 }
+.sortable {
+  cursor: move;
+}
 
 //
 // Editable

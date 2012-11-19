@@ -16,10 +16,7 @@ class Page < ActiveRecord::Base
       return false
     end
 
-    last_page = Page.order('position').find_last_by_band_site_id(self.band_site_id)
-    if last_page
-      self.position = last_page.position + 1
-    end
+    self.position ||= Page.where({ :band_site_id => self.band_site_id }).count
 
     if self.category == 'custom'
       self.body ||= 'Brand new page'
@@ -31,7 +28,7 @@ class Page < ActiveRecord::Base
   end
 
   def ensure_unique_slug(slug)
-    if Page.where({ :band_site_id => self.band_site_id, :slug => slug }).count > 0
+    if Page.where('id != :id AND band_site_id = :band_site_id AND slug = :slug', { :id => self.id, :band_site_id => self.band_site_id, :slug => slug }).count > 0
       if (matches = slug.match(/-([\d]+)$/))
         count = matches[1]
         new_count = (count.to_i + 1).to_s

@@ -7,3 +7,9 @@ define [
     name: 'page'
 
     label: 'page'
+
+    toJSON: (options) ->
+      if options?.position
+        return _.pick @attributes, 'id', 'position'
+      else
+        return super

@@ -1,7 +1,8 @@
 define [
+  'ui/sortable'
   'editor/views/view'
   'editor/views/links/page-categories'
-], (View, PageCategoriesView) ->
+], (Sortable, View, PageCategoriesView) ->
 
   class EditNavigation extends View
 
@@ -10,6 +11,11 @@ define [
 
     render: ->
       super
+
+      @views.push(new Sortable
+        el: @$('[data-ref=custom_nav]')
+        collection: @collection
+      .render())
 
       @$new_page = $('<ul>').addClass('horizontal-list')
       @$new_page.appendTo(@$el)
