@@ -7,24 +7,20 @@ define [
 
   class AlbumView extends Quilt.View
 
-    initialize: ->
+    constructor: (options) ->
       super
-
-      @model.tracks().on('remove', @checkDestroy, @)
+      @player or= options.player
 
     template: jst
 
-    attributes:
-      class: 'album'
+    attributes: ->
+      'class': 'album'
+      'data-album-id': @model.get('id')
 
     render: ->
       super
 
-      @$('[data-fancybox]').fancybox
-        helpers:
-          overlay:
-            css:
-              'background-color': '#000'
+      @$el.addClass('hidden') if @model.emptySingles()
 
       TrackView = TrackView.extend
         player: @player
@@ -36,8 +32,10 @@ define [
         collection: @model.tracks()
       .render())
 
-      return this
+      @$('[data-fancybox]').fancybox
+        helpers:
+          overlay:
+            css:
+              'background-color': '#000'
 
-    checkDestroy: ->
-      if @tracks.length is 0
-        @remove().destroy()
+      return this

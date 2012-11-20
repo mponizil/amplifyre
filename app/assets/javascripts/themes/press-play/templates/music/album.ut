@@ -1,4 +1,5 @@
-<div class='album-cover thumbs'>
+<div class='album-cover thumbs' data-album-cover>
+  <div class='delete' data-edit-mode data-destroy>X</div>
   <a href='<%= o.model.get('cover_file').url %>' rel='group' data-fancybox>
     <img src='<%= o.model.get('cover_file').lrg_thumb.url %>' alt='<%= o.model.get('title') %>' title='<%= o.model.get('title') %>' />
   </a>

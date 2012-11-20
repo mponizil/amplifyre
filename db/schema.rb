@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
     t.integer  "band_site_id"
     t.string   "title"
     t.string   "cover_file"
+    t.integer  "position"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -90,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
   create_table "photos", :force => true do |t|
     t.integer  "band_site_id"
     t.string   "file"
+    t.integer  "position"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -113,12 +115,12 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
   create_table "tracks", :force => true do |t|
     t.integer  "band_site_id"
     t.integer  "album_id"
-    t.integer  "position",     :default => 1
+    t.integer  "position"
     t.string   "title"
     t.string   "file"
     t.string   "artist"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

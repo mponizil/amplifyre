@@ -9,11 +9,13 @@ class Track < ActiveRecord::Base
 
   mount_uploader :file, AudioUploader
 
-  before_create :set_defaults
+  before_validation :set_defaults
 
   private
 
   def set_defaults
+    self.album_id ||= -1
+
     if self.file.try(:file).try(:original_filename)
       filename = self.file.file.original_filename
       self.title ||= filename.chomp(File.extname(filename)).cap_words
@@ -23,10 +25,7 @@ class Track < ActiveRecord::Base
 
     self.artist ||= self.band_site.name
 
-    last_track = Track.order('position').find_last_by_band_site_id_and_album_id(self.band_site_id, self.album_id)
-    if last_track
-      self.position = last_track.position + 1
-    end
+    self.position ||= Track.where({ :band_site_id => self.band_site_id, :album_id => self.album_id }).count
   end
 
 end

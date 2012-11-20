@@ -2,10 +2,9 @@ define [
   'list'
   'models/album'
   'views/pages/base'
-  'views/music/singles'
   'views/music/album'
   'jst!templates/pages/listen'
-], (List, Album, PageView, SinglesView, AlbumView, jst) ->
+], (List, Album, PageView, AlbumView, jst) ->
 
   class ListenView extends PageView
 
@@ -17,10 +16,9 @@ define [
     render: ->
       super
 
-      @views.push(new SinglesView
+      @views.push(new AlbumView
         el: @$singles
         model: Album.create(id: -1)
-        tracks: @tracks
         player: @player
       .render())
 
@@ -28,6 +26,7 @@ define [
         el: @$albums
         view: AlbumView.extend(player: @player)
         collection: @albums
+        eventName: 'album'
       .render())
 
       return this

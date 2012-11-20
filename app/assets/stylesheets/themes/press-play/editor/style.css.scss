@@ -2,7 +2,7 @@
 
 .delete {
   cursor: pointer;
-  &:hover { background-color: #e00000; }
+  &:hover, &.edit-mode:hover { background-color: #e00000; }
 }
 .sortable {
   cursor: move;
@@ -14,7 +14,9 @@
 
 .edit-mode {
   padding: 4px;
-  background-color: rgba(107,155,234,0.3);
+  border: 1px solid #919191;
+  background-color: #e7f9ff;
+  @include box-shadow(rgba(0,0,0,0.3) 0 0 4px inset);
 }
 .editable {
   outline: none;
@@ -75,7 +77,8 @@ textarea.editable-hover {
 }
 
 .page-photos li,
-.page-listen li {
+.page-listen li,
+.album-cover {
   position: relative;
 
   .delete {
@@ -90,4 +93,30 @@ textarea.editable-hover {
     height: 14px;
     text-align: center;
   }
+}
+
+.album-create {
+  position: relative;
+  height: 150px;
+  line-height: 150px;
+  cursor: pointer;
+  background-color: #e7f9ff;
+  border: 4px solid #000;
+  text-align: center;
+  font-size: 72px;
+  color: #4C4C4C;
+  &:hover {
+    border-color: #06bcff;
+  }
+}
+.album-upload {
+  cursor: pointer;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  @include opacity(0);
+  width: 158px;
+  height: 158px;
+  margin: 0;
+  padding: 0;
 }
