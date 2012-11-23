@@ -49,18 +49,17 @@
       urlArgs: '_=' + (+new Date),
       baseUrl: '/assets/themes/press-play'
     });
-    <% if @version == 'normal' %>
-    require(['main']);
-    <% elsif @version == 'editor' %>
+    <% if @version == 'editor' %>
     require.config({
+      helpers: ['editor'],
       map: {
         '*': {
-          'views/view': 'views/edit-view'
+          'views/pages/listen': 'help!views/pages/listen'
         }
       }
     });
-    require(['main']);
     <% end %>
+    require(['main']);
   </script>
   <!-- end application init -->
   

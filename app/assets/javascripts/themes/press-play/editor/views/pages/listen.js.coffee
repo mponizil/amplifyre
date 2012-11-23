@@ -1,11 +1,9 @@
 define [
-  'editor/views/view'
-], (View) ->
+  'views/helper-view'
+], (HelperView) ->
 
-  class ListenView extends View
+  class ListenView extends HelperView
 
     render: ->
       super
-      console.log 'rendering'
-      console.log @$singles
       return this

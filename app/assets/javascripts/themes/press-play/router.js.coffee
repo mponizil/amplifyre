@@ -13,6 +13,9 @@ define [
       @pages.on('change:slug', (page, slug) ->
         @navigate(slug, { trigger: true, replace: true })
       , @)
+      @pages.on('destroy', ->
+        @navigate('home', { trigger: true, replace: true })
+      , @)
 
     routes:
       '': 'index'

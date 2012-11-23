@@ -1,6 +1,5 @@
 define [
   'backbone'
-  'quilt'
   'models/player'
   'models/band_site'
   'models/socials'
@@ -10,6 +9,7 @@ define [
   'models/posts'
   'models/concerts'
   'models/pages'
+  'views/view'
   'views/visual/background'
   'views/links/navigation'
   'views/links/social'
@@ -22,9 +22,9 @@ define [
   'jplayer'
   'easing'
   'fancybox'
-], (Backbone, Quilt, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, PagesView, jst) ->
+], (Backbone, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, View, BackgroundView, NavigationView, SocialView, MusicView, TickerView, PagesView, jst) ->
 
-  class App extends Quilt.View
+  class App extends View
 
     initialize: ({@pages, @bootstrap, @router}) ->
       super

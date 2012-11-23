@@ -2,7 +2,7 @@ define [
   'quilt'
 ], (Quilt) ->
 
-  class View extends Quilt.View
+  class HelperView extends Quilt.View
 
     render: ->
       @cache()

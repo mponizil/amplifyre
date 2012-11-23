@@ -7,7 +7,7 @@ define [
   'views/app'
 ], ($, Backbone, Router, BandSite, Pages, App) ->
 
-  editMode = window.location.pathname.indexOf('/edit') >= 0
+  editMode = window.location.pathname.indexOf('/edit') is 0
   historyRoot = if editMode then '/edit/' else '/'
 
   $ ->

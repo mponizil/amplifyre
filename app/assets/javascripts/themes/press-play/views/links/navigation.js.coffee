@@ -1,11 +1,11 @@
 define [
-  'quilt'
   'list'
+  'views/view'
   'views/links/nav-item'
   'jst!templates/links/navigation'
-], (Quilt, List, NavItem, jst) ->
+], (List, View, NavItem, jst) ->
 
-  class NavigationView extends Quilt.View
+  class NavigationView extends View
 
     constructor: ({@router}) ->
       super

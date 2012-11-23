@@ -4,15 +4,12 @@ define [
   'views/pages/base'
   'views/music/album'
   'jst!templates/pages/listen'
-  'editor/views/pages/listen'
-], (List, Album, PageView, AlbumView, jst, EditListenView) ->
+], (List, Album, PageView, AlbumView, jst) ->
 
   class ListenView extends PageView
 
     constructor: ({@player, @albums, @tracks}) ->
       super
-
-    EditView: EditListenView
 
     template: jst
 

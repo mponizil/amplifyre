@@ -23,7 +23,8 @@ require.config({
     redactor: '../../redactor',
     moment: '../../moment',
     text: '../../text',
-    jst: '../../jst'
+    jst: '../../jst',
+    help: '../../help'
   },
   shim: {
     backbone: {

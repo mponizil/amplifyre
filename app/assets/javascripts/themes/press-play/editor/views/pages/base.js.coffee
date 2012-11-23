@@ -1,8 +1,8 @@
 define [
-  'editor/views/view'
+  'views/helper-view'
 ], (View) ->
 
-  class EditPage extends View
+  class EditPage extends HelperView
 
     controlsJst: -> '''
       <div class='left' data-ref='controls_left'>

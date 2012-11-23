@@ -1,10 +1,10 @@
 define [
   'ui/sortable'
-  'editor/views/view'
+  'views/helper-view'
   'editor/views/links/page-categories'
-], (Sortable, View, PageCategoriesView) ->
+], (Sortable, HelperView, PageCategoriesView) ->
 
-  class EditNavigation extends View
+  class EditNavigation extends HelperView
 
     constructor: ({@router}) ->
       super
