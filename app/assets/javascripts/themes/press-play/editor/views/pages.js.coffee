@@ -1,14 +1,14 @@
 define [
-  'editor/views/view'
+  'quilt'
   'editor/views/pages/news'
   'editor/views/pages/listen'
   'editor/views/pages/photos'
   'editor/views/pages/tour'
   'editor/views/pages/contact'
   'editor/views/pages/custom'
-], (View, EditNewsView, EditListenView, EditPhotosView, EditTourView, EditContactView, EditCustomView) ->
+], (Quilt, EditNewsView, EditListenView, EditPhotosView, EditTourView, EditContactView, EditCustomView) ->
 
-  class EditPages extends View
+  class EditPages extends Quilt.View
 
     constructor: ({@router, @band_site, @player}) ->
       super

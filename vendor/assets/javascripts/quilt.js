@@ -27,6 +27,14 @@
       Backbone.View.apply(this, arguments);
     },
 
+    // Cache ref'd elements
+    cache: function() {
+      _.each(this.$('[data-ref]'), function(ref) {
+        var $ref = $(ref);
+        this['$' + $ref.data('ref')] = $ref;
+      }, this);
+    },
+
     // After executing the template function, search the view for relevant
     // attributes, match them with handlers and execute them.  If a handler
     // returns a view, store it for clean up.
@@ -44,6 +52,8 @@
           collection: this.collection
         }));
       }
+
+      this.cache();
 
       var elements = this.$('*').get();
 

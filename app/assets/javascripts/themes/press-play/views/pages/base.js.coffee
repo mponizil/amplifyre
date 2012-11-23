@@ -1,8 +1,8 @@
 define [
-  'quilt'
-], (Quilt) ->
+  'views/view'
+], (View) ->
 
-  class Page extends Quilt.View
+  class Page extends View
 
     attributes:
       'data-page-container': ''

@@ -52,7 +52,14 @@
     <% if @version == 'normal' %>
     require(['main']);
     <% elsif @version == 'editor' %>
-    require(['editor/main']);
+    require.config({
+      map: {
+        '*': {
+          'views/view': 'views/edit-view'
+        }
+      }
+    });
+    require(['main']);
     <% end %>
   </script>
   <!-- end application init -->

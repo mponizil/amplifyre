@@ -7,6 +7,9 @@ define [
   'views/app'
 ], ($, Backbone, Router, BandSite, Pages, App) ->
 
+  editMode = window.location.pathname.indexOf('/edit') >= 0
+  historyRoot = if editMode then '/edit/' else '/'
+
   $ ->
 
     bootstrap = JSON.parse($('#bootstrap').html())
@@ -17,7 +20,7 @@ define [
     router = new Router
       pages: pages
     Backbone.history or= new Backbone.History()
-    Backbone.history.options = {root: '/'}
+    Backbone.history.options = {root: historyRoot}
 
     new App
       el: $('[data-press-play]')
