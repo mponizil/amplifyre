@@ -8,10 +8,16 @@ define [
 
   class Sortable extends Quilt.View
 
+    events:
+      'sortupdate': 'save'
+
     render: ->
+      super
+
       @$el.addClass('sortable')
-      @$el.sortable
-        update: (e) => @save(e)
+
+      @$el.sortable()
+
       return this
 
     save: (e) ->
@@ -22,6 +28,6 @@ define [
       @collection.reorder()
 
     destroy: ->
-      @$el.sortable('destroy')
+      # @$el.sortable('destroy')
 
       super

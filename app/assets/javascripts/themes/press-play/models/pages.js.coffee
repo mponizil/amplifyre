@@ -7,17 +7,10 @@ define [
 
     model: -> Page.create(arguments...)
 
-    comparator: (page) ->
-      page.get('position')
-
     url: -> super + 'band_sites/' + @owner.id + '/pages'
 
-    allCategories: ['news', 'photos', 'listen', 'tour', 'contact', 'custom']
+    name: 'pages'
 
-    reorder: ->
-      $.ajax
-        type: 'PUT'
-        url: @url() + '/reorder'
-        contentType: 'application/json'
-        dataType: 'json'
-        data: JSON.stringify(pages: @toJSON(position: true))
+    comparator: (page) -> page.get('position')
+
+    allCategories: ['news', 'photos', 'listen', 'tour', 'contact', 'custom']

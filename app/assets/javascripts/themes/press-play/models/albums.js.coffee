@@ -8,3 +8,7 @@ define [
     model: -> Album.create(arguments...)
 
     url: -> super + 'band_sites/' + @owner.id + '/albums'
+
+    name: 'albums'
+
+    comparator: (album) -> album.get('position')

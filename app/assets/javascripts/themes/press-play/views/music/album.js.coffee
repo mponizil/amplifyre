@@ -15,7 +15,7 @@ define [
 
     attributes: ->
       'class': 'album'
-      'data-album-id': @model.get('id')
+      'data-sortable-id': @model.get('id')
 
     render: ->
       super

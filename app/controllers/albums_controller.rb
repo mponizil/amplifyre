@@ -28,6 +28,18 @@ class AlbumsController < ApplicationController
     end
   end
 
+  # PUT /api/v1/band_sites/1/albums/reorder
+  def reorder
+    params[:albums].each do |album|
+      if album[:album][:id] > 0
+        @album = Album.find(album[:album][:id])
+        @album.update_attributes({ :position => album[:position] })
+      end
+    end
+
+    render json: params[:albums], status: :ok
+  end
+
   # DELETE /api/v1/band_sites/1/albums/1
   def destroy
     @album = Album.find(params[:id])

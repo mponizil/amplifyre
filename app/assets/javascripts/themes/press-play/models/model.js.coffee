@@ -8,7 +8,11 @@ define ['supermodel'], (Supermodel) ->
 
     name: 'item'
 
-    toJSON: ->
-      json = {}
-      json[@name] = super
-      json
+    toJSON: (options) ->
+      if options.position
+        json = {}
+        json[@name] = super
+      else
+        json = super
+
+      return json

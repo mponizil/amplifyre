@@ -1,8 +1,9 @@
 define [
   'quilt'
   'models/album'
+  'ui/sortable'
   'editor/views/pages/base'
-], (Quilt, Album, EditPageView) ->
+], (Quilt, Album, Sortable, EditPageView) ->
 
   class ListenView extends EditPageView
 
@@ -16,6 +17,11 @@ define [
 
       if not @albums.get(-1)
         Album.create(id: -1, band_site_id: @band_site.id)
+
+      @views.push(new Sortable
+        el: @$albums
+        collection: @albums
+      .render())
 
       @views.push(new Quilt.View
         el: @$new_album

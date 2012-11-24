@@ -10,7 +10,11 @@ Amplifyre::Application.routes.draw do
   scope '/api/v1', :format => false do
     resources :band_sites, :except => [:index, :new, :edit] do
       resources :socials, :except => [:index, :new, :edit]
-      resources :albums, :except => [:index, :new, :edit]
+      resources :albums, :except => [:index, :new, :edit] do
+        collection do
+          put 'reorder', :format => false
+        end
+      end
       resources :tracks, :except => [:index, :new, :edit]
       resources :photos, :except => [:index, :new, :edit]
       resources :posts, :except => [:index, :new, :edit]
