@@ -2,7 +2,7 @@ define [
   'quilt'
   'models/album'
   'editor/views/pages/base'
-], (Quilt, Album, PageView) ->
+], (Quilt, Album, EditPageView) ->
 
   class ListenView extends PageView
 

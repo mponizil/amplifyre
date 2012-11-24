@@ -4,16 +4,14 @@ define [
 
   class NewsView extends EditPageView
 
-    events:
-      'click [data-ref=new_post]': 'newPost'
-      'editor:next': 'tabNext'
-
-    render: ->
+    inject: ->
       super
 
       @$('[data-ref=controls_right]').prepend("<button data-ref='new_post'>New Post</button>")
 
-      return this
+    events:
+      'click [data-ref=new_post]': 'newPost'
+      'editor:next': 'tabNext'
 
     newPost: (e) ->
       e.stopPropagation()
