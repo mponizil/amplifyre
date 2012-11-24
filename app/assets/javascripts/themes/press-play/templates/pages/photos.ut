@@ -1,5 +1,5 @@
 <div class='scrollpane page-photos' data-ref='scrollpane'>
 
-  <ul class='horizontal-list thumbs' data-ref='photos'></ul>
+  <ul class='horizontal-list thumbs' data-ref='photos' data-fancybox></ul>
 
 </div>

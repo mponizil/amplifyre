@@ -19,10 +19,4 @@ define [
         collection: @collection
       .render())
 
-      @$('[data-fancybox]').fancybox
-        helpers:
-          overlay:
-            css:
-              'background-color': '#000'
-
       return this

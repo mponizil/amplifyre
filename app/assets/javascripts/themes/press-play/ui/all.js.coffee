@@ -7,5 +7,5 @@ define [
   'ui/dropdown'
   'ui/destroy'
   'ui/editable'
-  'ui/edit-mode'
+  'ui/fancybox'
 ], ->

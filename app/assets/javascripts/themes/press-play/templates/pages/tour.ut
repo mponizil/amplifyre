@@ -1,6 +1,6 @@
 <div class='scrollpane page-tour' data-ref='scrollpane'>
 
-  <div class='calendar' data-ref='calendar'>
+  <div class='calendar' data-ref='calendar' data-fancybox>
   </div>
 
 </div>

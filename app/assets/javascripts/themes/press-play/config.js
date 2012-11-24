@@ -16,7 +16,7 @@ require.config({
     jquery_ui: '../../jquery-ui',
     jplayer: '../../jplayer/jquery.jplayer.min',
     easing: '../../jquery.easing.1.3',
-    fancybox: '../../fancybox/jquery.fancybox.pack',
+    fancybox: '../../fancybox/jquery.fancybox',
     'jquery.ui.widget': '../../jquery.fileupload/jquery.ui.widget',
     iframe_transport: '../../jquery.fileupload/jquery.iframe-transport',
     fileupload: '../../jquery.fileupload/jquery.fileupload',

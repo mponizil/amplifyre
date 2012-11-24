@@ -1,5 +1,5 @@
 <div class='scrollpane page-listen' data-ref='scrollpane'>
 
-  <div data-ref='albums'></div>
+  <div data-ref='albums' data-fancybox></div>
 
 </div>
