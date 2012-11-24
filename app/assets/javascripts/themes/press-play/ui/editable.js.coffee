@@ -39,7 +39,7 @@ define [
       'mouseout': 'hideBorder'
 
     listenBlur: ->
-      $(window).click (e) =>
+      $(window).on 'click.page', (e) =>
         # Return if no @$editor exists
         return unless @$editor
 
@@ -100,6 +100,7 @@ define [
       return [text, html]
 
     destroyEditor: ->
+      return unless @$editor
       [@$editor.text(), @$editor.html()]
 
     showBorder: (e) ->
@@ -108,14 +109,17 @@ define [
     hideBorder: (e) ->
       @$el.removeClass('editable-hover')
 
+    destroy: ->
+      super
+
+      $(window).off('click.page')
+      @active = false
+      @destroyEditor()
+
   class Editable.TextArea extends Editor
 
-    events: ->
-      _.extend super,
-        'dblclick': 'startEdit'
-
     listenBlur: ->
-      $(window).click (e) =>
+      $(window).on 'click.page', (e) =>
         # Return if no @$editor exists
         return unless @$editor
 
@@ -132,6 +136,8 @@ define [
 
     render: ->
       super
+
+      @$el.one('dblclick', => @startEdit())
 
       @listenBlur()
 
@@ -163,10 +169,16 @@ define [
       @$el.one('dblclick', => @startEdit())
 
     destroyEditor: ->
+      return unless @$editor
       text = @$editor.getText()
       html = @$editor.getCode()
       @$editor.destroyEditor()
       [text, html]
+
+    destroy: ->
+      super
+
+      @$el.off('dblclick')
 
   class Editable.TextInput extends Editor
 
@@ -196,6 +208,7 @@ define [
       @$editor = @$el.attr('contenteditable', false)
 
     destroyEditor: ->
+      return unless @$editor
       text = @$editor.text()
       [$.trim(text), null]
 
@@ -206,6 +219,11 @@ define [
       else if e.keyCode is 13
         e.stopPropagation()
         @endEdit()
+
+    destroy: ->
+      super
+
+      @$el.off('keydown')
 
   class Editable.DateInput extends Editor
 
