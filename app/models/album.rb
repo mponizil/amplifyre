@@ -2,7 +2,7 @@ class Album < ActiveRecord::Base
 
   belongs_to :band_site
 
-  has_many :tracks
+  has_many :tracks, :dependent => :destroy
 
   attr_protected
 
