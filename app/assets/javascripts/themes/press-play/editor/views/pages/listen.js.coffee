@@ -4,7 +4,7 @@ define [
   'editor/views/pages/base'
 ], (Quilt, Album, EditPageView) ->
 
-  class ListenView extends PageView
+  class ListenView extends EditPageView
 
     inject: ->
       super

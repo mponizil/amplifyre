@@ -6,19 +6,16 @@ define [
 
   class EditNavigation extends HelperView
 
-    constructor: ({@router}) ->
-      super
+    inject: ->
+      @$el.append(@$new_page = $('<ul>').addClass('horizontal-list'))
 
     render: ->
       super
 
       @views.push(new Sortable
-        el: @$('[data-ref=custom_nav]')
+        el: @$custom_nav
         collection: @collection
       .render())
-
-      @$new_page = $('<ul>').addClass('horizontal-list')
-      @$new_page.appendTo(@$el)
 
       @views.push(new PageCategoriesView
         el: @$new_page
