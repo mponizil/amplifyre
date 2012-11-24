@@ -10,6 +10,10 @@ define [
 
     url: -> super + 'band_sites/' + @band_site_id() + '/tracks'
 
+    name: 'tracks'
+
+    comparator: (album) -> album.get('position')
+
     band_site_id: ->
       if @owner instanceof BandSite
         return @owner.get('id')

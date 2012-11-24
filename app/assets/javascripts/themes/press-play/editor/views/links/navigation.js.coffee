@@ -15,6 +15,7 @@ define [
       @views.push(new Sortable
         el: @$custom_nav
         collection: @collection
+        label: 'pages'
       .render())
 
       @views.push(new PageCategoriesView

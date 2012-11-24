@@ -1,9 +1,9 @@
 define [
-  'quilt'
+  'views/view'
   'jst!templates/links/nav-item'
-], (Quilt, jst) ->
+], (View, jst) ->
 
-  class NavItem extends Quilt.View
+  class NavItem extends View
 
     initialize: ->
       super
@@ -11,8 +11,5 @@ define [
       @model.on('change:title change:slug', @render, @)
 
     tagName: 'li'
-
-    attributes: ->
-      'data-sortable-id': @model.get('id')
 
     template: jst

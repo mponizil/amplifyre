@@ -28,6 +28,18 @@ class TracksController < ApplicationController
     end
   end
 
+  # PUT /api/v1/band_sites/1/tracks/reorder
+  def reorder
+    params[:tracks].each do |track|
+      if track[:id] > 0
+        @track = Track.find(track[:id])
+        @track.update_attributes({ :album_id => track[:album_id], :position => track[:position] })
+      end
+    end
+
+    render json: params[:tracks], status: :ok
+  end
+
   # DELETE /api/v1/band_sites/1/tracks/1
   def destroy
     @track = Track.find(params[:id])

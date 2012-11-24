@@ -1,13 +1,16 @@
 define [
   'quilt'
   'ui/destroy'
+  'ui/sortable'
   'views/helper-view'
   'jst!editor/templates/music/upload-track'
-], (Quilt, Destroy, HelperView, uploadTrackJst) ->
+], (Quilt, Destroy, Sortable, HelperView, uploadTrackJst) ->
 
   class AlbumView extends HelperView
 
     inject: ->
+      @$el.attr('data-sortable-id', @model.id)
+      @$tracks.attr('data-album-id', @model.id)
       @$el.append(@$new_tracks = $('<div>'))
 
       if @model.id isnt -1
@@ -30,6 +33,15 @@ define [
         el: @$new_tracks
         template: uploadTrackJst
         collection: @model.tracks()
+      .render())
+
+      @views.push(new Sortable
+        el: @$tracks
+        collection: @model.tracks()
+        parentRef: album_id: @model.id
+        label: 'tracks'
+        options:
+          connectWith: "[data-ref=tracks][data-album-id!=#{@model.id}]"
       .render())
 
       return this

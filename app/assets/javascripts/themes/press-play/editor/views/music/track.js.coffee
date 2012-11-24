@@ -6,6 +6,7 @@ define [
   class TrackView extends HelperView
 
     inject: ->
+      @$el.attr('data-sortable-id', @model.id)
       @$el.append(@$destroy = $("<div class='delete edit-mode'>X</div>"))
 
     render: ->

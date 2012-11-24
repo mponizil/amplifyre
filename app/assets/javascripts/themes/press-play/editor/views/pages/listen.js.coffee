@@ -21,6 +21,7 @@ define [
       @views.push(new Sortable
         el: @$albums
         collection: @albums
+        label: 'albums'
       .render())
 
       @views.push(new Quilt.View

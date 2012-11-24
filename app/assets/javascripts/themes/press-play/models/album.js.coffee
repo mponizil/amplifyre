@@ -23,3 +23,9 @@ define [
 
     emptySingles: ->
       @id is -1 and @tracks().length is 0
+
+    toJSON: (options) ->
+      if options?.position
+        return _.pick @attributes, 'id', 'position'
+      else
+        return super

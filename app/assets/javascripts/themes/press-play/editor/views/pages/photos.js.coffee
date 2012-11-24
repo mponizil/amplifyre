@@ -8,16 +8,14 @@ define [
     inject: ->
       super
 
-      @$el.prepend @$upload = $('''
-        <div class='edit-mode'>
-          <input type='file' name='file' data-fileupload multiple />
-        </div>''')
+      @$el.prepend(@$upload = $("<div class='edit-mode'></div>"))
 
     render: ->
       super
 
       @views.push(new Quilt.View
         el: @$upload
+        template: -> "<input type='file' name='file' data-fileupload multiple />"
         collection: @collection
       .render())
 
