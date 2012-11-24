@@ -8,18 +8,14 @@ define [
     for attr of dataAttrs
       return dataAttrs[attr] if /attr$/i.test(attr)
 
-  # TODO: This should be done somewhere else
   Quilt.attributes.editable = (el, options) ->
-    if window.location.pathname.indexOf('/edit') < 0
-      $(el).removeAttr('data-editable')
-    else
-      camel = (match, letter) -> (letter + '').toUpperCase()
-      type = options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
-      attr = attrFinder($(el).data())
-      new Editable[type]
-        el: el
-        model: @model
-        attr: attr
+    camel = (match, letter) -> (letter + '').toUpperCase()
+    type = options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
+    attr = attrFinder($(el).data())
+    new Editable[type]
+      el: el
+      model: @model
+      attr: attr
 
   Editable = {}
 
@@ -200,7 +196,8 @@ define [
       @$editor = @$el.attr('contenteditable', false)
 
     destroyEditor: ->
-      [@$editor.text(), null]
+      text = @$editor.text()
+      [$.trim(text), null]
 
     checkKey: (e) ->
       if e.keyCode is 9

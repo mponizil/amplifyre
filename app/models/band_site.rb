@@ -15,7 +15,7 @@ class BandSite < ActiveRecord::Base
 
   mount_uploader :background_file, BackgroundUploader
 
-  before_create :set_defaults
+  before_validation :set_defaults
   after_create :create_association_defaults
 
   private

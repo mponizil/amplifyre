@@ -1,2 +1,2 @@
-<div data-ref='phrase' data-attr='phrase' data-editable='text-input'></div>
+<div data-ref='phrase' data-attr='phrase'></div>
 <div data-ref='ticker'></div>

@@ -1,9 +1,9 @@
 define [
-  'quilt'
+  'views/view'
   'jst!templates/visual/ticker'
-], (Quilt, jst) ->
+], (View, jst) ->
 
-  class TickerView extends Quilt.View
+  class TickerView extends View
 
     template: jst
 

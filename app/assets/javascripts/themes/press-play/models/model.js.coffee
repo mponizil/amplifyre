@@ -9,10 +9,10 @@ define ['supermodel'], (Supermodel) ->
     name: 'item'
 
     toJSON: (options) ->
-      if options.position
+      if options?.position
+        json = super
+      else
         json = {}
         json[@name] = super
-      else
-        json = super
 
       return json
