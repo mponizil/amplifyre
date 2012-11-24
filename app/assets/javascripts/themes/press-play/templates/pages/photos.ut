@@ -1,7 +1,3 @@
-<div data-edit-mode>
-  <input type='file' name='file' data-fileupload multiple />
-</div>
-
 <div class='scrollpane page-photos' data-ref='scrollpane'>
 
   <ul class='horizontal-list thumbs' data-ref='photos'></ul>

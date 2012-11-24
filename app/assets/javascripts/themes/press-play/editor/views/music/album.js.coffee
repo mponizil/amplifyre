@@ -1,20 +1,28 @@
 define [
   'quilt'
+  'ui/destroy'
   'views/helper-view'
   'jst!templates/music/upload-track'
-], (Quilt, HelperView, uploadTrackJst) ->
+], (Quilt, Destroy, HelperView, uploadTrackJst) ->
 
   class AlbumView extends HelperView
 
     inject: ->
       @$el.append(@$new_tracks = $('<div>'))
 
+      if @model.id isnt -1
+        @$cover.prepend(@$destroy = $("<div class='delete edit-mode'>X</div>"))
+
     render: ->
       super
 
-      @$('[data-album-cover] [data-destroy]').remove() if @model.id is -1
-
-      if @model.get('id') is -1
+      if @model.id isnt -1
+        @views.push(new Destroy
+          el: @$destroy
+          model: @model
+        .render())
+      else
+        @$el.addClass('sortable-exclude')
         @$el.removeClass('hidden')
 
       UploadTrackView = Quilt.View.extend(album: @model)

@@ -31,8 +31,8 @@ class AlbumsController < ApplicationController
   # PUT /api/v1/band_sites/1/albums/reorder
   def reorder
     params[:albums].each do |album|
-      if album[:album][:id] > 0
-        @album = Album.find(album[:album][:id])
+      if album[:id] > 0
+        @album = Album.find(album[:id])
         @album.update_attributes({ :position => album[:position] })
       end
     end

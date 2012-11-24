@@ -19,6 +19,7 @@ define [
           url: '/assets/images/album/cover_file/sm_thumb_default.jpg'
         lrg_thumb:
           url: '/assets/images/album/cover_file/lrg_thumb_default.jpg'
+      position: -1
 
     emptySingles: ->
       @id is -1 and @tracks().length is 0

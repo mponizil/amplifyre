@@ -1,8 +1,19 @@
 define [
+  'ui/destroy'
   'views/helper-view'
-], (HelperView) ->
+], (Destroy, HelperView) ->
 
   class PhotoView extends HelperView
 
     inject: ->
-      @$el.append("<div class='delete edit-mode' data-destroy>X</div>")
+      @$el.append(@$destroy = $("<div class='delete edit-mode'>X</div>"))
+
+    render: ->
+      super
+
+      @views.push(new Destroy
+        el: @$destroy
+        model: @model
+      .render())
+
+      return this

@@ -7,6 +7,9 @@
 .sortable {
   cursor: move;
 }
+.sortable-exclude {
+  cursor: default;
+}
 
 //
 // Editable

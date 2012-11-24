@@ -16,7 +16,8 @@ define [
 
       @$el.addClass('sortable')
 
-      @$el.sortable()
+      @$el.sortable
+        items: '> [data-sortable-id!=-1]'
 
       return this
 
