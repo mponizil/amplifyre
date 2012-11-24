@@ -2,7 +2,7 @@ define [
   'quilt'
   'ui/destroy'
   'views/helper-view'
-  'jst!templates/music/upload-track'
+  'jst!editor/templates/music/upload-track'
 ], (Quilt, Destroy, HelperView, uploadTrackJst) ->
 
   class AlbumView extends HelperView

@@ -1,1 +1,0 @@
-<input type='file' name='file' data-form-data='{"album_id":"<%= o.view.album.get('id') %>"}' data-fileupload multiple />
