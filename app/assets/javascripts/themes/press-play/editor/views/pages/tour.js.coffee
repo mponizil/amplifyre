@@ -4,16 +4,14 @@ define [
 
   class TourView extends EditPageView
 
-    events:
-      'click [data-ref=new_concert]': 'newConcert'
-      'editor:next': 'tabNext'
-
-    render: ->
+    inject: ->
       super
 
       @$('[data-ref=controls_right]').prepend("<button data-ref='new_concert'>New Concert</button>")
 
-      return this
+    events:
+      'click [data-ref=new_concert]': 'newConcert'
+      'editor:next': 'tabNext'
 
     newConcert: (e) ->
       e.stopPropagation()
