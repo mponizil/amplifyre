@@ -1,9 +1,9 @@
 define [
-  'quilt'
+  'views/view'
   'jst!templates/content/concert'
-], (Quilt, jst) ->
+], (View, jst) ->
 
-  class CalEntry extends Quilt.View
+  class ConcertView extends View
 
     attributes:
       class: 'concert'

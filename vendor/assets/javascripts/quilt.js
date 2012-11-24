@@ -91,6 +91,7 @@
       this.undelegateEvents();
 
       // Destroy child views.
+      //console.log(this, this.views)
       _.invoke(this.views, 'destroy');
 
       // Clean up event handlers.

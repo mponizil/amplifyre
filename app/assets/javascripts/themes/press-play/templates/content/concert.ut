@@ -1,17 +1,13 @@
 <div class='concert-left'>
-  <div class='date' data-date-attr='date' data-date-format='MMMM Do, YYYY' data-editable='date-input'></div>
+  <div class='date' data-ref='date' data-date-attr='date' data-date-format='MMMM Do, YYYY'></div>
 
-  <div class='venue' data-attr='venue' data-editable='text-input'></div>
+  <div class='venue' data-ref='venue' data-attr='venue'></div>
 
-  <div class='details' data-attr='details' data-editable='text-area'></div>
+  <div class='details' data-ref='details' data-attr='details'></div>
 </div>
 
-<div class='concert-right thumbs'>
+<div data-ref='right' class='concert-right thumbs'>
   <a href='<%= o.model.get('photo_file').url %>' rel='group' data-fancybox>
     <img src='<%= o.model.get('photo_file').sm_thumb.url %>' />
   </a>
-
-  <div style='margin-top:10px' data-edit-mode>
-    <button type='button' class='delete' data-destroy>Delete Concert</button>
-  </div>
 </div>
