@@ -25,7 +25,9 @@ define [
 
       @$el.addClass('sortable')
 
-      options = items: '> [data-sortable-id!=-1]'
+      options =
+        items: '> [data-sortable-id!=-1]'
+        tolerance: 'pointer'
       _.extend(options, @options)
 
       @$el.sortable(options)
