@@ -7,19 +7,19 @@ define [
     inject: ->
       super
 
-      @$('[data-ref=controls_right]').prepend("<button data-ref='new_post'>New Post</button>")
+      @$controls_right.prepend("<button data-new-post>New Post</button>")
 
     events:
-      'click [data-ref=new_post]': 'newPost'
+      'click [data-new-post]': 'newPost'
       'editor:next': 'tabNext'
 
     newPost: (e) ->
       e.stopPropagation()
 
-      @$('[data-ref=news]').one 'added', (e, $post) =>
-        $post.find('[data-editable]:first').trigger('editable:start')
+      @$news.one 'added', (e, $post) =>
+        $post.find('[data-attr]:first').trigger('editable:start')
       @collection.create()
 
     tabNext: (e) ->
       $(e.target).trigger('editable:end')
-      $(e.target).next('[data-editable]').trigger('editable:start')
+      $(e.target).next('[data-attr]').trigger('editable:start')

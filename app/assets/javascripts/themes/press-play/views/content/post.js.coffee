@@ -1,9 +1,9 @@
 define [
-  'quilt'
+  'views/view'
   'jst!templates/content/post'
-], (Quilt, jst) ->
+], (View, jst) ->
 
-  class Post extends Quilt.View
+  class Post extends View
 
     attributes:
       class: 'news-post'

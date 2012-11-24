@@ -7,19 +7,19 @@ define [
     inject: ->
       super
 
-      @$('[data-ref=controls_right]').prepend("<button data-ref='new_concert'>New Concert</button>")
+      @$controls_right.prepend("<button data-new-concert>New Concert</button>")
 
     events:
-      'click [data-ref=new_concert]': 'newConcert'
+      'click [data-new-concert]': 'newConcert'
       'editor:next': 'tabNext'
 
     newConcert: (e) ->
       e.stopPropagation()
 
-      @$('[data-ref=calendar]').one 'added', (e, $concert) =>
-        $concert.find('[data-editable]:first').trigger('editable:start')
+      @$calendar.one 'added', (e, $concert) =>
+        $concert.find('[data-attr]:first').trigger('editable:start')
       @collection.create()
 
     tabNext: (e) ->
       $(e.target).trigger('editable:end')
-      $(e.target).next('[data-editable]').trigger('editable:start')
+      $(e.target).next('[data-attr]').trigger('editable:start')

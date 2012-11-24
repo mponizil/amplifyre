@@ -1,9 +1,7 @@
-<div class='right delete' data-edit-mode data-destroy>Delete</div>
-
 <div class='date' data-date-attr='created_at' data-date-format='MMMM Do, YYYY'></div>
 
-<div class='title' data-attr='title' data-editable='text-input'></div>
+<div class='title' data-ref='title' data-attr='title'></div>
 
-<div class='body' data-attr='body' data-editable='text-area'></div>
+<div class='body' data-ref='body' data-attr='body'></div>
 
 <div class='hr'></div>
