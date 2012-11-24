@@ -25,4 +25,4 @@ define [
             css:
               'background-color': '#000'
 
-      @
+      return this

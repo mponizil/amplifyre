@@ -1,11 +1,11 @@
 define [
-  'quilt'
   'list'
+  'views/view'
   'views/music/track'
   'jst!templates/music/album'
-], (Quilt, List, TrackView, jst) ->
+], (List, View, TrackView, jst) ->
 
-  class AlbumView extends Quilt.View
+  class AlbumView extends View
 
     constructor: (options) ->
       super
@@ -19,8 +19,6 @@ define [
 
     render: ->
       super
-
-      @$el.addClass('hidden') if @model.emptySingles()
 
       TrackView = TrackView.extend
         player: @player

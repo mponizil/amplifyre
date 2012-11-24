@@ -17,4 +17,4 @@ define [
         collection: @collection
       .render())
 
-      @
+      return this

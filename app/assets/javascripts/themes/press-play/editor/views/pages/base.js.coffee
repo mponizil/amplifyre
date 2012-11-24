@@ -1,25 +1,26 @@
 define [
+  'quilt'
   'views/helper-view'
-], (View) ->
+], (Quilt, HelperView) ->
 
   class EditPage extends HelperView
 
-    controlsJst: -> '''
-      <div class='left' data-ref='controls_left'>
-        <h2 data-attr='title' data-editable='text-input'></h2>
-      </div>
-      <div class='right' data-ref='controls_right'>
-        <button class='delete' data-destroy>Delete Page</button>
-      </div>'''
+    inject: ->
+      @$el.prepend(@$controls = $('''
+        <div class="clearfix edit-mode">
+          <div class='left' data-ref='controls_left'>
+            <h2 data-attr='title' data-editable='text-input'></h2>
+          </div>
+          <div class='right' data-ref='controls_right'>
+            <button class='delete' data-destroy>Delete Page</button>
+          </div>
+        </div>'''))
 
     render: ->
       super
 
-      @$('[data-page-container]').prepend($controls = $('<div>').addClass('clearfix edit-mode'))
-
       @views.push(new Quilt.View
-        el: $controls
-        template: @controlsJst
+        el: @$controls
         model: @model
       .render())
 

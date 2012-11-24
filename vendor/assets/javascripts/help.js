@@ -13,7 +13,7 @@ define(function() {
 
       loadHelpers(req, obj, name, helpers, index+1, next);
     }, function(err) {
-      require.undef(err.requireModules[0]);
+      if (err.requireModules) require.undef(err.requireModules[0]);
 
       loadHelpers(req, obj, name, helpers, index+1, next);
     });

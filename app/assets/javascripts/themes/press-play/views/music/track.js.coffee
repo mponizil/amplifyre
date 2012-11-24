@@ -1,9 +1,9 @@
 define [
-  'quilt'
+  'views/view'
   'jst!templates/music/track'
-], (Quilt, jst) ->
+], (View, jst) ->
 
-  class TrackView extends Quilt.View
+  class TrackView extends View
 
     initialize: ->
       super
@@ -23,7 +23,7 @@ define [
     render: ->
       super
       @update(@player)
-      @
+      return this
 
     update: (player) ->
       track = player.active()

@@ -6,4 +6,7 @@ define [
 
     render: ->
       @cache()
+
+      @inject?()
+
       return this

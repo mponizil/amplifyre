@@ -8,6 +8,9 @@ define [
 
     label: 'album'
 
+    isNew: ->
+      super or @id is -1
+
     defaults: ->
       title: 'Singles'
       cover_file:
@@ -18,4 +21,4 @@ define [
           url: '/assets/images/album/cover_file/lrg_thumb_default.jpg'
 
     emptySingles: ->
-      @get('id') is -1 and @tracks().length is 0
+      @id is -1 and @tracks().length is 0

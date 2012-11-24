@@ -9,10 +9,16 @@ define [
       super
 
       if @constructor.helpers?.editor
-        _.extend @constructor.helpers.editor, options
+        _.extend @constructor.helpers.editor.prototype, options
 
     render: ->
       super
 
       if @constructor.helpers?.editor
-        @views.push((new @constructor.helpers.editor(el: @$el)).render())
+        @views.push(new @constructor.helpers.editor
+          el: @$el
+          model: @model
+          collection: @collection
+        .render())
+
+      return this

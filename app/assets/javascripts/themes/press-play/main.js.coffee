@@ -4,8 +4,10 @@ define [
   'router'
   'models/band_site'
   'models/pages'
+  'views/view'
+  'views/helper-view'
   'views/app'
-], ($, Backbone, Router, BandSite, Pages, App) ->
+], ($, Backbone, Router, BandSite, Pages, View, HelperView, App) ->
 
   editMode = window.location.pathname.indexOf('/edit') is 0
   historyRoot = if editMode then '/edit/' else '/'
@@ -16,6 +18,8 @@ define [
 
     band_site = BandSite.create(bootstrap.band_site)
     pages = band_site.pages().reset(bootstrap.pages)
+
+    View::band_site = HelperView::band_site = band_site
 
     router = new Router
       pages: pages
