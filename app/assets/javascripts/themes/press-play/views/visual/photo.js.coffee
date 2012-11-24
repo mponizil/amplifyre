@@ -1,9 +1,9 @@
 define [
-  'quilt'
+  'views/view'
   'jst!templates/visual/photo'
-], (Quilt, jst) ->
+], (View, jst) ->
 
-  class PhotosView extends Quilt.View
+  class PhotosView extends View
 
     tagName: 'li'
 
