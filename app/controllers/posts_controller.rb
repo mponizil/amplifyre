@@ -8,8 +8,8 @@ class PostsController < ApplicationController
 
   # POST /api/v1/band_sites/1/posts
   def create
+    params[:post][:band_site_id] = params[:band_site_id]
     @post = Post.new(params[:post])
-    @post.band_site_id ||= params[:band_site_id]
 
     if @post.save
       render json: @post, status: :created
