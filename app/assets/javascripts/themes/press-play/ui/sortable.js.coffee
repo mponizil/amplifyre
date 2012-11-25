@@ -17,8 +17,7 @@ define [
       @$el.attr('data-sortable-label', @label)
 
     events:
-      'sortreceive': 'receive'
-      'sortupdate': 'save'
+      'sortupdate': 'update'
 
     render: ->
       super
@@ -34,21 +33,23 @@ define [
 
       return this
 
-    receive: (e, ui) ->
+    update: (e, ui) ->
       # jQueryUI so *brilliantly* triggers sort events on all the sortables.
       # Make sure we're intended to receive the item.
-      return unless ui.sender.data('sortable-label') is @label
-
-      @collection.model(id: ui.item.data('sortable-id'), position: ui.item.index()).set(@parentRef)
-
-      @collection.reorder()
-
-    save: (e, ui) ->
-      return if ui.sender or $(e.target).data('sortable-label') isnt @label
+      return if $(e.target).data('sortable-label') isnt @label
 
       order = @$el.sortable('toArray', attribute: 'data-sortable-id')
 
-      @collection.get(id).set(position: i) for id, i in order
+      # If the item is from another sortable, it won't be in `@collection` yet
+      @collection.get(id)?.set(position: i) for id, i in order
+
+      # If the item is from another sortable, move it to `@collection` by setting `@parentRef`
+      if ui.sender
+        # Creating the model is the same as finding by id because of Supermodel
+        model = @collection.model(id: ui.item.data('sortable-id'))
+
+        attrs = _.extend(@parentRef, position: ui.item.index())
+        model.set(attrs)
 
       @collection.reorder()
 
