@@ -45,7 +45,7 @@ class Page < ActiveRecord::Base
   end
 
   def ensure_unique_slug(slug)
-    if Page.others_with_slug(self.id, self.band_site_id, slug).count > 0
+    if Page.others_with_slug(self.id || 0, self.band_site_id, slug).count > 0
       if (matches = slug.match(/-([\d]+)$/))
         count = matches[1]
         new_count = (count.to_i + 1).to_s
