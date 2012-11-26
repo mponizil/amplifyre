@@ -1,5 +1,5 @@
 class Concert < ActiveRecord::Base
   belongs_to :band_site
-  attr_accessible :band_site_id, :created_at, :updated_at, :date, :venue, :details, :photo_file
+  attr_accessible :created_at, :updated_at, :band_site_id, :date, :venue, :details, :photo_file
   mount_uploader :photo_file, ImageUploader
 end

@@ -4,7 +4,7 @@ class Album < ActiveRecord::Base
 
   has_many :tracks, :dependent => :destroy
 
-  attr_protected
+  attr_accessible :created_at, :updated_at, :band_site_id, :title, :cover_file, :position
 
   mount_uploader :cover_file, ImageUploader
 

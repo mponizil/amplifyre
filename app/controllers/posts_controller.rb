@@ -8,8 +8,7 @@ class PostsController < ApplicationController
 
   # POST /api/v1/band_sites/1/posts
   def create
-    params[:post][:band_site_id] = params[:band_site_id]
-    @post = Post.new(params[:post])
+    @post = Post.new(params)
 
     if @post.save
       render json: @post, status: :created
@@ -22,7 +21,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(params)
       render json: @post
     else
       render json: @post.errors, status: :unprocessable_entity

@@ -6,7 +6,7 @@
   <div class='details' data-ref='details' data-attr='details'></div>
 </div>
 
-<div data-ref='right' class='concert-right thumbs'>
+<div class='concert-right thumbs' data-ref='right'>
   <a href='<%= o.model.get('photo_file').url %>' data-fancybox-group='group'>
     <img src='<%= o.model.get('photo_file').sm_thumb.url %>' />
   </a>

@@ -109,6 +109,14 @@ p {
   left: 50%;
 }
 
+//=== Abs Bot Right
+// For when it's gotta be on the bottom right
+.abs-bot-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 //=== Abs Right
 // For when it's gotta be on the right
 .abs-right {

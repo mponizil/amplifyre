@@ -5,7 +5,6 @@ define [
   class Page extends View
 
     attributes:
-      'data-page-container': ''
       'class': 'white-box page-container'
 
     events: ->

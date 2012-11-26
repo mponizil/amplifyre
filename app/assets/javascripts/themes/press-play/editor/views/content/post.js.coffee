@@ -7,7 +7,7 @@ define [
   class PostView extends HelperView
 
     inject: ->
-      @$el.prepend(@$destroy = $("<div class='right delete edit-mode'>Delete</div>"))
+      @$el.prepend("<div class='right delete edit-mode' data-ref='destroy'>Delete</div>")
 
     render: ->
       super

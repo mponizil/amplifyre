@@ -1,21 +1,23 @@
 define [
+  'ui/fileupload'
   'editor/views/pages/base'
-  'fileupload'
-], (EditPageView) ->
+], (Fileupload, EditPageView) ->
 
   class PhotosView extends EditPageView
 
     inject: ->
       super
 
-      @$el.prepend(@$upload = $("<div class='edit-mode'></div>"))
+      @$el.prepend('''
+        <div class='edit-mode'>
+          <input type='file' name='file' data-ref='upload' multiple />
+        </div>''')
 
     render: ->
       super
 
-      @views.push(new Quilt.View
+      @views.push(new Fileupload
         el: @$upload
-        template: -> "<input type='file' name='file' data-fileupload multiple />"
         collection: @collection
       .render())
 

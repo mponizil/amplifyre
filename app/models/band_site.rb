@@ -11,7 +11,7 @@ class BandSite < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  attr_protected
+  attr_accessible :id, :created_at, :updated_at, :user_id, :slug, :name, :description, :title, :phrase, :background_file
 
   mount_uploader :background_file, BackgroundUploader
 

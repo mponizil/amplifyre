@@ -1,9 +1,9 @@
 define [
-  'quilt'
+  'views/view'
   'jst!templates/visual/background'
-], (Quilt, jst) ->
+], (View, jst) ->
 
-  class BackgroundView extends Quilt.View
+  class BackgroundView extends View
 
     template: jst
 
@@ -11,16 +11,19 @@ define [
       super
 
       @player.on('change:playing', @update, @)
+      @model.on('change:background_file', @render, @)
 
     render: ->
+      $(window).off('resize')
+
       super
 
       @$bgs = @$('[data-ref^=bg_]')
 
-      @$bg_active.addClass('hidden')
+      @$bg_active.addClass('hidden') unless @player.get('playing')
 
       @initMeasure => @resize()
-      $(window).resize => @resize()
+      $(window).on('resize', => @resize())
 
       @
 

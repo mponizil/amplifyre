@@ -7,12 +7,3 @@ define ['supermodel'], (Supermodel) ->
     label: 'item'
 
     name: 'item'
-
-    toJSON: (options) ->
-      if options?.position
-        json = super
-      else
-        json = {}
-        json[@name] = super
-
-      return json

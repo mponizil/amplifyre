@@ -8,8 +8,7 @@ class PagesController < ApplicationController
 
   # POST /api/v1/band_sites/1/pages
   def create
-    params[:page][:band_site_id] = params[:band_site_id]
-    @page = Page.new(params[:page])
+    @page = Page.new(params)
 
     if @page.save
       render json: @page, status: :created
@@ -22,7 +21,7 @@ class PagesController < ApplicationController
   def update
     @page = Page.find(params[:id])
 
-    if @page.update_attributes(params[:page])
+    if @page.update_attributes(params)
       render json: @page
     else
       render json: @page.errors, status: :unprocessable_entity

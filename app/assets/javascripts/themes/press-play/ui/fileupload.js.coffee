@@ -4,16 +4,34 @@ define [
 ], (Quilt, $) ->
 
   Quilt.attributes.fileupload = (el, options) ->
-    new Fileupload(el: el, collection: @collection)
+    new Fileupload(el: el, model: @model, collection: @collection)
 
   class Fileupload extends Quilt.View
+
+    constructor: ({@formData}) ->
+      super
 
     events:
       'fileuploaddone': 'done'
 
     render: ->
-      @$el.fileupload(dataType: 'json', url: @collection.url())
+      options =
+        dataType: 'json'
+        type: 'POST'
+      options.formData = @formData if @formData
+
+      if @model
+        options.url = @model.url()
+        options.type = 'PUT' unless @model.isNew()
+      else
+        options.url = @collection.url()
+
+      @$el.fileupload(options)
+
       return this
 
     done: (e, data) ->
-      @collection.add(data.result)
+      if @model
+        @model.set(data.result)
+      else
+        @collection.add(data.result)

@@ -8,8 +8,7 @@ class ConcertsController < ApplicationController
 
   # POST /api/v1/band_sites/1/concerts
   def create
-    params[:concert][:band_site_id] = params[:band_site_id]
-    @concert = Concert.new(params[:concert])
+    @concert = Concert.new(params)
 
     if @concert.save
       render json: @concert, status: :created
@@ -22,7 +21,7 @@ class ConcertsController < ApplicationController
   def update
     @concert = Concert.find(params[:id])
 
-    if @concert.update_attributes(params[:concert])
+    if @concert.update_attributes(params)
       render json: @concert
     else
       render json: @concert.errors, status: :unprocessable_entity

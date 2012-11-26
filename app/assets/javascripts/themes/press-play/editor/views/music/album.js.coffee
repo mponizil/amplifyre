@@ -1,20 +1,23 @@
 define [
   'quilt'
   'ui/destroy'
+  'ui/fileupload'
   'ui/sortable'
   'views/helper-view'
-  'jst!editor/templates/music/upload-track'
-], (Quilt, Destroy, Sortable, HelperView, uploadTrackJst) ->
+], (Quilt, Destroy, Fileupload, Sortable, HelperView) ->
 
   class AlbumView extends HelperView
 
     inject: ->
       @$el.attr('data-sortable-id', @model.id)
+
+      # For specifying Sortable `connectsWith` [1]
       @$tracks.attr('data-album-id', @model.id)
-      @$el.append(@$new_tracks = $('<div>'))
+
+      @$el.append("<input type='file' name='file' data-ref='upload' multiple />")
 
       if @model.id isnt -1
-        @$cover.prepend(@$destroy = $("<div class='delete edit-mode'>X</div>"))
+        @$cover.prepend("<div class='delete edit-mode' data-ref='destroy'>X</div>")
 
     render: ->
       super
@@ -28,11 +31,10 @@ define [
         @$el.addClass('sortable-exclude')
         @$el.removeClass('hidden')
 
-      UploadTrackView = Quilt.View.extend(album: @model)
-      @views.push(new UploadTrackView
-        el: @$new_tracks
-        template: uploadTrackJst
+      @views.push(new Fileupload
+        el: @$upload
         collection: @model.tracks()
+        formData: album_id: @model.id
       .render())
 
       @views.push(new Sortable
@@ -41,7 +43,7 @@ define [
         parentRef: album_id: @model.id
         label: 'tracks'
         options:
-          connectWith: "[data-ref=tracks][data-album-id!=#{@model.id}]"
+          connectWith: "[data-ref=tracks][data-album-id!=#{@model.id}]" # [1]
       .render())
 
       return this

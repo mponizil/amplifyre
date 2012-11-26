@@ -55,7 +55,8 @@ class BandSitesController < ApplicationController
 
   # POST /api/v1/band_sites
   def create
-    @band_site = BandSite.new(params[:band_site])
+    @band_site = BandSite.new(params)
+
     @band_site.user_id = current_user.id
 
     respond_to do |format|
@@ -74,7 +75,7 @@ class BandSitesController < ApplicationController
     @band_site = BandSite.find(params[:id])
 
     respond_to do |format|
-      if @band_site.update_attributes(params[:band_site])
+      if @band_site.update_attributes(params)
         format.html { redirect_to :action => 'dashboard', :slug => @band_site.slug }
         format.json { render json: @band_site, status: :ok }
       else

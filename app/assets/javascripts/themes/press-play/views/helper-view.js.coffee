@@ -4,9 +4,14 @@ define [
 
   class HelperView extends Quilt.View
 
-    render: ->
+    initialize: ->
+      super
+
       @cache()
 
+    render: ->
       @inject?()
+
+      @cache()
 
       return this

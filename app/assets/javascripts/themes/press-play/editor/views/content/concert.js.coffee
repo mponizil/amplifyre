@@ -7,9 +7,9 @@ define [
   class ConcertView extends HelperView
 
     inject: ->
-      @$right.append @$destroy = $('''
+      @$right.append('''
         <div style='margin-top:10px' class='edit-mode'>
-          <button type='button' class='delete'>Delete Concert</button>
+          <button type='button' class='delete' data-ref='destroy'>Delete Concert</button>
         </div>''')
 
     render: ->

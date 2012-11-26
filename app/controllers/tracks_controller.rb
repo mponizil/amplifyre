@@ -8,7 +8,7 @@ class TracksController < ApplicationController
 
   # POST /api/v1/band_sites/1/tracks
   def create
-    @track = Track.new({ :band_site_id => params[:band_site_id], :album_id => params[:album_id], :file => params[:file] })
+    @track = Track.new(params)
 
     if @track.save
       render json: @track, status: :created
@@ -21,7 +21,7 @@ class TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
 
-    if @track.update_attributes(params[:track])
+    if @track.update_attributes(params)
       render json: @track
     else
       render json: @track.errors, status: :unprocessable_entity

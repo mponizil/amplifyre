@@ -7,7 +7,7 @@ define [
 
     inject: ->
       @$el.attr('data-sortable-id', @model.id)
-      @$el.append(@$destroy = $("<div class='delete edit-mode'>X</div>"))
+      @$el.append("<div class='delete edit-mode' data-ref='destroy'>X</div>")
 
     render: ->
       super

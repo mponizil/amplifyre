@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
 
   # POST /api/v1/band_sites/1/photos
   def create
-    @photo = Photo.new({ :band_site_id => params[:band_site_id], :file => params[:file] })
+    @photo = Photo.new(params)
 
     if @photo.save
       render json: @photo, status: :created
@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
   def update
     @photo = Photo.find(params[:id])
 
-    if @photo.update_attributes(params[:photo])
+    if @photo.update_attributes(params)
       render json: @photo
     else
       render json: @photo.errors, status: :unprocessable_entity

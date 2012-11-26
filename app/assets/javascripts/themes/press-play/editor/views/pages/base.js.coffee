@@ -6,15 +6,16 @@ define [
   class EditPage extends HelperView
 
     inject: ->
-      @$el.prepend @$controls = $("<div class='clearfix edit-mode'></div>")
-      @$controls.append @$controls_left = $('''
-        <div class='left'>
-          <h2 data-attr='title' data-editable='text-input'></h2>
+      @$el.prepend('''
+        <div class='clearfix edit-mode' data-ref='controls'>
+          <div class='left' data-ref='controls_left'>
+            <h2 data-attr='title' data-editable='text-input'></h2>
+          </div>
+          <div class='right' data-ref='controls_right'>
+            <button class='delete' data-destroy>Delete Page</button>
+          </div>
         </div>''')
-      @$controls.append @$controls_right = $('''
-        <div class='right'>
-          <button class='delete' data-destroy>Delete Page</button>
-        </div>''')
+      @cache()
 
     render: ->
       super

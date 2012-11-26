@@ -5,7 +5,7 @@ class Track < ActiveRecord::Base
 
   validates :band_site_id, :presence => true
 
-  attr_protected
+  attr_accessible :created_at, :updated_at, :band_site_id, :album_id, :position, :title, :file, :artist
 
   mount_uploader :file, AudioUploader
 

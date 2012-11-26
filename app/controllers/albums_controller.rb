@@ -8,7 +8,7 @@ class AlbumsController < ApplicationController
 
   # POST /api/v1/band_sites/1/albums
   def create
-    @album = Album.new({ :band_site_id => params[:band_site_id], :cover_file => params[:cover_file] })
+    @album = Album.new(params)
 
     if @album.save
       render json: @album, status: :created
@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
 
-    if @album.update_attributes(params[:album])
+    if @album.update_attributes(params)
       render json: @album
     else
       render json: @album.errors, status: :unprocessable_entity

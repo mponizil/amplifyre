@@ -7,7 +7,7 @@ define [
   class EditNavigation extends HelperView
 
     inject: ->
-      @$el.append(@$new_page = $('<ul>').addClass('horizontal-list'))
+      @$el.append("<ul class='horizontal-list' data-ref='new_page'></ul>")
 
     render: ->
       super
