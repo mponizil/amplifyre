@@ -9,7 +9,7 @@ define [
       super
 
       @views.push(new Editable.TextInput
-        el: @$el
+        el: @$phrase
         model: @model
         attr: 'phrase'
       .render())
