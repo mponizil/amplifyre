@@ -38,43 +38,11 @@
 
   <% if @version == 'normal' %>
   <%= stylesheet_link_tag    'themes/press-play/index', :media => 'all' %>
+  <%= requirejs_include_tag  'themes/press-play/main' %>
   <% elsif @version == 'editor' %>
   <%= stylesheet_link_tag    'themes/press-play/editor/index', :media => 'all' %>
+  <%= requirejs_include_tag  'themes/press-play/main' %>
   <% end %>
-
-  <script type='text/javascript' src='/assets/require.js'></script>
-  <script type='text/javascript' src='/assets/themes/press-play/config.js'></script>
-  <script type='text/javascript'>
-    require.config({
-      urlArgs: '_=' + (+new Date),
-      baseUrl: '/assets/themes/press-play'
-    });
-    <% if @version == 'editor' %>
-    require.config({
-      helpers: ['editor'],
-      map: {
-        '*': {
-          'views/pages/listen': 'help!views/pages/listen',
-          'views/pages/news': 'help!views/pages/news',
-          'views/pages/tour': 'help!views/pages/tour',
-          'views/pages/photos': 'help!views/pages/photos',
-          'views/pages/contact': 'help!views/pages/contact',
-          'views/pages/custom': 'help!views/pages/custom',
-          'views/links/navigation': 'help!views/links/navigation',
-          'views/links/nav-item': 'help!views/links/nav-item',
-          'views/music/album': 'help!views/music/album',
-          'views/music/track': 'help!views/music/track',
-          'views/visual/photo': 'help!views/visual/photo',
-          'views/visual/ticker': 'help!views/visual/ticker',
-          'views/visual/background': 'help!views/visual/background',
-          'views/content/concert': 'help!views/content/concert',
-          'views/content/post': 'help!views/content/post'
-        }
-      }
-    });
-    <% end %>
-    require(['main']);
-  </script>
   <!-- end application init -->
   
 </head>
