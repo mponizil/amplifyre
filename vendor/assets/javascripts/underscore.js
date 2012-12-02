@@ -3,6 +3,8 @@
 //     (c) 2009-2012 Jeremy Ashkenas, DocumentCloud Inc.
 //     Underscore may be freely distributed under the MIT license.
 
+var _;
+
 (function() {
 
   // Baseline setup
@@ -45,7 +47,7 @@
     nativeBind         = FuncProto.bind;
 
   // Create a safe reference to the Underscore object for use below.
-  var _ = function(obj) {
+  _ = function(obj) {
     if (obj instanceof _) return obj;
     if (!(this instanceof _)) return new _(obj);
     this._wrapped = obj;

@@ -31,7 +31,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'requirejs-rails'
+gem 'requirejs-rails', :git => 'git://github.com/mponizil/requirejs-rails.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

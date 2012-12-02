@@ -3,7 +3,7 @@
 <html xmlns=''http'://www.w3.org/1999/xhtml' 'xml':lang='en' lang='en'>
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-  
+
   <!-- og/fb tags -->
   <meta property='og:type' content='website' />
   <meta property='og:url' content=''http'://bringtheloot.com' />
@@ -12,17 +12,17 @@
   <meta property='og:title' content='The Loot' />
   <meta property='fb:admins' content='831670161' />
   <!-- end og/fb tags -->
-  
+
   <!-- meta tags -->
   <meta name='title' content='The Loot' />
   <meta name='description' content='pumpin sweet beats' />
   <link rel='image_src' href='/assets/images/backgrounds/6-1317341185-color.jpg' />
   <!-- end meta tags -->
-  
+
   <title>The Loot</title>
-  
+
   <link rel='shortcut icon' href='/assets/favicon/10.png'>
-  
+
   <script id='bootstrap' type='text/json'>
   {
     "band_site": <%=raw @band_site.to_json %>,
@@ -41,10 +41,10 @@
   <%= requirejs_include_tag  'themes/press-play/main' %>
   <% elsif @version == 'editor' %>
   <%= stylesheet_link_tag    'themes/press-play/editor/index', :media => 'all' %>
-  <%= requirejs_include_tag  'themes/press-play/main' %>
+  <%= requirejs_include_tag  'themes/press-play/editor/main' %>
   <% end %>
   <!-- end application init -->
-  
+
 </head>
 
 <body>
