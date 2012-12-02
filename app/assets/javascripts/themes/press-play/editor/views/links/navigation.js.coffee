@@ -1,7 +1,7 @@
 define [
   'ui/sortable'
-  'views/helper-view'
-  'editor/views/links/page-categories'
+  'at-pp/views/helper-view'
+  'at-pp/editor/views/links/page-categories'
 ], (Sortable, HelperView, PageCategoriesView) ->
 
   class EditNavigation extends HelperView

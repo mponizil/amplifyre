@@ -3,7 +3,7 @@ define [
   'ui/destroy'
   'ui/fileupload'
   'ui/sortable'
-  'views/helper-view'
+  'at-pp/views/helper-view'
 ], (Quilt, Destroy, Fileupload, Sortable, HelperView) ->
 
   class AlbumView extends HelperView

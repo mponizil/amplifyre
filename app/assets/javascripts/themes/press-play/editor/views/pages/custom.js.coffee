@@ -1,6 +1,6 @@
 define [
   'ui/editable'
-  'editor/views/pages/base'
+  'at-pp/editor/views/pages/base'
 ], (Editable, EditPageView) ->
 
   class CustomView extends EditPageView

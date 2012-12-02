@@ -21,7 +21,7 @@ define [
     router = new Router
       pages: pages
     Backbone.history or= new Backbone.History()
-    Backbone.history.options = {root: '/'}
+    Backbone.history.options = {root: '/edit/'}
 
     new App
       el: $('[data-press-play]')

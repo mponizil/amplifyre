@@ -1,9 +1,9 @@
 define [
   'list'
-  'models/album'
-  'views/pages/base'
-  'views/music/album'
-  'jst!templates/pages/listen'
+  'at-pp/models/album'
+  'at-pp/views/pages/base'
+  'at-pp/views/music/album'
+  'jst!at-pp/templates/pages/listen'
 ], (List, Album, PageView, AlbumView, jst) ->
 
   class ListenView extends PageView

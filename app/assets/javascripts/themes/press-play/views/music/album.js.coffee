@@ -1,8 +1,8 @@
 define [
   'list'
-  'views/view'
-  'views/music/track'
-  'jst!templates/music/album'
+  'at-pp/views/view'
+  'at-pp/views/music/track'
+  'jst!at-pp/templates/music/album'
 ], (List, View, TrackView, jst) ->
 
   class AlbumView extends View

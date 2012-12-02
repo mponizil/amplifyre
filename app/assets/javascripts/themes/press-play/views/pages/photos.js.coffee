@@ -1,9 +1,9 @@
 define [
   'quilt'
   'list'
-  'views/pages/base'
-  'views/visual/photo'
-  'jst!templates/pages/photos'
+  'at-pp/views/pages/base'
+  'at-pp/views/visual/photo'
+  'jst!at-pp/templates/pages/photos'
 ], (Quilt, List, PageView, PhotoView, jst) ->
 
   class PhotosView extends PageView

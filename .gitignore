@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+# Ignore Pow dotfiles
+/.powenv
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 

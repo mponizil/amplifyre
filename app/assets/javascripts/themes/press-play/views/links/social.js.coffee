@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'jst!templates/links/social-item'
+  'jst!at-pp/templates/links/social-item'
 ], (Quilt, socialJst) ->
 
   class SocialView extends Quilt.View

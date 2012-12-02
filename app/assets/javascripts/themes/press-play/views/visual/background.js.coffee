@@ -1,6 +1,6 @@
 define [
-  'views/view'
-  'jst!templates/visual/background'
+  'at-pp/views/view'
+  'jst!at-pp/templates/visual/background'
 ], (View, jst) ->
 
   class BackgroundView extends View

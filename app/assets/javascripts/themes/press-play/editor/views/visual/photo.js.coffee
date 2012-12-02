@@ -1,6 +1,6 @@
 define [
   'ui/destroy'
-  'views/helper-view'
+  'at-pp/views/helper-view'
 ], (Destroy, HelperView) ->
 
   class PhotoView extends HelperView

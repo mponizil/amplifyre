@@ -1,6 +1,6 @@
 define [
-  'views/view'
-  'jst!templates/visual/photo'
+  'at-pp/views/view'
+  'jst!at-pp/templates/visual/photo'
 ], (View, jst) ->
 
   class PhotosView extends View

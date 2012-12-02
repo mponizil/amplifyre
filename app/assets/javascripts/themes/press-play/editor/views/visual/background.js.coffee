@@ -1,6 +1,6 @@
 define [
   'ui/fileupload'
-  'views/helper-view'
+  'at-pp/views/helper-view'
 ], (Fileupload, HelperView) ->
 
   class BackgroundView extends HelperView

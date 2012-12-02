@@ -1,5 +1,5 @@
 define [
-  'models/model'
+  'at-pp/models/model'
 ], (Model) ->
 
   class Concert extends Model

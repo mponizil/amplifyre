@@ -1,7 +1,7 @@
 define [
   'ui/editable'
   'ui/destroy'
-  'views/helper-view'
+  'at-pp/views/helper-view'
 ], (Editable, Destroy, HelperView) ->
 
   class PostView extends HelperView

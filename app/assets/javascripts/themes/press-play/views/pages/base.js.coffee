@@ -1,5 +1,5 @@
 define [
-  'views/view'
+  'at-pp/views/view'
 ], (View) ->
 
   class Page extends View

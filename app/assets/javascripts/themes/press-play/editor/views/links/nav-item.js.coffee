@@ -1,5 +1,5 @@
 define [
-  'views/helper-view'
+  'at-pp/views/helper-view'
 ], (HelperView) ->
 
   class NavItemView extends HelperView

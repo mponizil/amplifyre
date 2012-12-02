@@ -1,6 +1,6 @@
 define [
-  'views/view'
-  'jst!templates/visual/ticker'
+  'at-pp/views/view'
+  'jst!at-pp/templates/visual/ticker'
 ], (View, jst) ->
 
   class TickerView extends View
@@ -48,7 +48,7 @@ define [
 
       @toggle(@paused)
 
-    toggle: (action) -> 
+    toggle: (action) ->
       @$el.fadeOut =>
 
         action =>

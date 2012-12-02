@@ -1,5 +1,5 @@
 define [
-  'editor/views/pages/base'
+  'at-pp/editor/views/pages/base'
 ], (EditPageView) ->
 
   class TourView extends EditPageView

@@ -1,7 +1,7 @@
 define [
-  'views/pages/base'
-  'views/content/post'
-  'jst!templates/pages/news'
+  'at-pp/views/pages/base'
+  'at-pp/views/content/post'
+  'jst!at-pp/templates/pages/news'
 ], (PageView, PostView, jst) ->
 
   class NewsView extends PageView

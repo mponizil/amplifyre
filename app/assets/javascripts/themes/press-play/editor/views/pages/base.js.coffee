@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'views/helper-view'
+  'at-pp/views/helper-view'
 ], (Quilt, HelperView) ->
 
   class EditPage extends HelperView

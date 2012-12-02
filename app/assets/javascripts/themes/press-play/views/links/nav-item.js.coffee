@@ -1,6 +1,6 @@
 define [
-  'views/view'
-  'jst!templates/links/nav-item'
+  'at-pp/views/view'
+  'jst!at-pp/templates/links/nav-item'
 ], (View, jst) ->
 
   class NavItem extends View

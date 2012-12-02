@@ -1,6 +1,6 @@
 define [
   'ui/editable'
-  'views/helper-view'
+  'at-pp/views/helper-view'
 ], (Editable, HelperView) ->
 
   class TickerView extends HelperView

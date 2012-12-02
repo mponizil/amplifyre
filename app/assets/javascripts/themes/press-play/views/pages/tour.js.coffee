@@ -1,8 +1,8 @@
 define [
   'list'
-  'views/pages/base'
-  'views/content/concert'
-  'jst!templates/pages/tour'
+  'at-pp/views/pages/base'
+  'at-pp/views/content/concert'
+  'jst!at-pp/templates/pages/tour'
 ], (List, PageView, ConcertView, jst) ->
 
   class TourView extends PageView

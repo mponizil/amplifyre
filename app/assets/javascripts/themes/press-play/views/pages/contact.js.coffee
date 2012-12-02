@@ -1,6 +1,6 @@
 define [
-  'views/pages/base'
-  'jst!templates/pages/contact'
+  'at-pp/views/pages/base'
+  'jst!at-pp/templates/pages/contact'
 ], (PageView, jst) ->
 
   class ContactView extends PageView

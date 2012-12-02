@@ -1,7 +1,7 @@
 define [
-  'models/band_site'
-  'models/collection'
-  'models/track'
+  'at-pp/models/band_site'
+  'at-pp/models/collection'
+  'at-pp/models/track'
 ], (BandSite, Collection, Track) ->
 
   class Tracks extends Collection

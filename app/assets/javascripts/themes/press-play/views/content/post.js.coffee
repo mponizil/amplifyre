@@ -1,6 +1,6 @@
 define [
-  'views/view'
-  'jst!templates/content/post'
+  'at-pp/views/view'
+  'jst!at-pp/templates/content/post'
 ], (View, jst) ->
 
   class Post extends View

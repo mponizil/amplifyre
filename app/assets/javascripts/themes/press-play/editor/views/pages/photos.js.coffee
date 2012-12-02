@@ -1,6 +1,6 @@
 define [
   'ui/fileupload'
-  'editor/views/pages/base'
+  'at-pp/editor/views/pages/base'
 ], (Fileupload, EditPageView) ->
 
   class PhotosView extends EditPageView

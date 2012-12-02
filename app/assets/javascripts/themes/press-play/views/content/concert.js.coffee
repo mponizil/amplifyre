@@ -1,6 +1,6 @@
 define [
-  'views/view'
-  'jst!templates/content/concert'
+  'at-pp/views/view'
+  'jst!at-pp/templates/content/concert'
 ], (View, jst) ->
 
   class ConcertView extends View

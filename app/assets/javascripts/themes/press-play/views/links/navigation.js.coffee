@@ -1,8 +1,8 @@
 define [
   'list'
-  'views/view'
-  'views/links/nav-item'
-  'jst!templates/links/navigation'
+  'at-pp/views/view'
+  'at-pp/views/links/nav-item'
+  'jst!at-pp/templates/links/navigation'
 ], (List, View, NavItem, jst) ->
 
   class NavigationView extends View
