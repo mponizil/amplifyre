@@ -18,7 +18,7 @@
 /tmp
 
 /db/seeds/audio
-/public/assets/audio
+/public/assets/track
 /public/uploads
 
 .DS_Store
