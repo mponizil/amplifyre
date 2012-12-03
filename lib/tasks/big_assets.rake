@@ -5,12 +5,12 @@ namespace :big_assets do
   task :fetch => :environment do
 
     Net::HTTP.start('bringtheloot.com') do |http|
-      mkdir_cmd = 'mkdir -p ' + Rails.root.join('public/assets/audio/track/file').to_s
+      mkdir_cmd = 'mkdir -p ' + Rails.root.join('public/assets/track/file').to_s
       puts mkdir_cmd
       system mkdir_cmd
 
-      puts 'Downloading "bringtheloot.com/mp3/0-1313374341.mp3" to "public/assets/audio/track/file/default.mp3" ...'
-      file1 = open(Rails.root.join('public/assets/audio/track/file/default.mp3'), 'wb')
+      puts 'Downloading "bringtheloot.com/mp3/0-1313374341.mp3" to "public/assets/track/file/default.mp3" ...'
+      file1 = open(Rails.root.join('public/assets/track/file/default.mp3'), 'wb')
 
       http.request_get('/mp3/0-1313374341.mp3') do |response|
         response.read_body do |segment|
