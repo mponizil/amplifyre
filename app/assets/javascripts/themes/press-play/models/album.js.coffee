@@ -14,11 +14,11 @@ define [
     defaults: ->
       title: 'Singles'
       cover_file:
-        url: '/assets/images/album/cover_file/default.jpg'
+        url: '/assets/album/cover_file/default.jpg'
         sm_thumb:
-          url: '/assets/images/album/cover_file/sm_thumb_default.jpg'
+          url: '/assets/album/cover_file/sm_thumb_default.jpg'
         lrg_thumb:
-          url: '/assets/images/album/cover_file/lrg_thumb_default.jpg'
+          url: '/assets/album/cover_file/lrg_thumb_default.jpg'
       position: -1
 
     emptySingles: ->

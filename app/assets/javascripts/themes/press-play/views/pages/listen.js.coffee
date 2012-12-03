@@ -2,7 +2,7 @@ define [
   'list'
   'at-pp/models/album'
   'at-pp/views/pages/base'
-  'at-pp/views/music/album'
+  'help!at-pp/views/music/album'
   'jst!at-pp/templates/pages/listen'
 ], (List, Album, PageView, AlbumView, jst) ->
 

@@ -22,7 +22,7 @@ class AudioUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "/assets/audio/#{model.class.to_s.underscore}/#{mounted_as}/" + [version_name, "default.mp3"].compact.join('_')
+    "/assets/#{model.class.to_s.underscore}/#{mounted_as}/" + [version_name, "default.mp3"].compact.join('_')
   end
 
   # Process files as they are uploaded:

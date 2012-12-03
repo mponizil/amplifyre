@@ -12,6 +12,8 @@ group :production do
   gem 'pg'
 end
 
+# gem 'sqlite3'
+
 gem 'thin'
 
 gem 'json'
@@ -32,6 +34,7 @@ end
 gem 'jquery-rails'
 
 gem 'requirejs-rails', :git => 'git://github.com/mponizil/requirejs-rails.git'
+# gem 'requirejs-rails', :path => '~/dev/rails/requirejs-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,7 +1,7 @@
 define [
   'list'
   'at-pp/views/view'
-  'at-pp/views/links/nav-item'
+  'help!at-pp/views/links/nav-item'
   'jst!at-pp/templates/links/navigation'
 ], (List, View, NavItem, jst) ->
 

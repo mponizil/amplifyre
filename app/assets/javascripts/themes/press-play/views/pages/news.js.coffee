@@ -1,6 +1,6 @@
 define [
   'at-pp/views/pages/base'
-  'at-pp/views/content/post'
+  'help!at-pp/views/content/post'
   'jst!at-pp/templates/pages/news'
 ], (PageView, PostView, jst) ->
 

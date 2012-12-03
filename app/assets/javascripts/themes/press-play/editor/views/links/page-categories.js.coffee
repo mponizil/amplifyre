@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'jst!editor/templates/links/page-categories'
+  'jst!at-pp/editor/templates/links/page-categories'
 ], (Quilt, jst) ->
 
   class PageCategories extends Quilt.View
@@ -15,7 +15,7 @@ define [
 
     template: jst
 
-    events: 
+    events:
       'click [data-new-page]': 'newPage'
 
     render: ->

@@ -1,26 +1,13 @@
+stubModules: ['jst', 'text']
 modules:
   - name: 'themes/press-play/main'
   - name: 'themes/press-play/editor/main'
-    helpers: ['editor']
-    map:
-      '*':
-        'views/pages/listen': 'help!views/pages/listen'
-        'views/pages/news': 'help!views/pages/news'
-        'views/pages/tour': 'help!views/pages/tour'
-        'views/pages/photos': 'help!views/pages/photos'
-        'views/pages/contact': 'help!views/pages/contact'
-        'views/pages/custom': 'help!views/pages/custom'
-        'views/links/navigation': 'help!views/links/navigation'
-        'views/links/nav-item': 'help!views/links/nav-item'
-        'views/music/album': 'help!views/music/album'
-        'views/music/track': 'help!views/music/track'
-        'views/visual/photo': 'help!views/visual/photo'
-        'views/visual/ticker': 'help!views/visual/ticker'
-        'views/visual/background': 'help!views/visual/background'
-        'views/content/concert': 'help!views/content/concert'
-        'views/content/post': 'help!views/content/post'
-stubModules: ['jst', 'text']
-exclude: ['text']
+    helpers:
+      - {
+          label: 'editor',
+          pattern: 'at-pp',
+          replace: 'at-pp/editor'
+        }
 paths:
   'at-pp': 'themes/press-play'
   jquery: 'jquery'
@@ -42,11 +29,11 @@ paths:
   jst: 'jst'
   help: 'help'
 shim:
+  underscore:
+    exports: '_'
   backbone:
     deps: ['underscore', 'jquery']
     exports: 'Backbone'
-  underscore:
-    exports: '_'
   jquery:
     exports: 'jQuery'
   jquery_ui:

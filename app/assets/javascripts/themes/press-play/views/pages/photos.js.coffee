@@ -2,7 +2,7 @@ define [
   'quilt'
   'list'
   'at-pp/views/pages/base'
-  'at-pp/views/visual/photo'
+  'help!at-pp/views/visual/photo'
   'jst!at-pp/templates/pages/photos'
 ], (Quilt, List, PageView, PhotoView, jst) ->
 

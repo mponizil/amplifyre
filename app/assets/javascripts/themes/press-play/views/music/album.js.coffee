@@ -1,7 +1,7 @@
 define [
   'list'
   'at-pp/views/view'
-  'at-pp/views/music/track'
+  'help!at-pp/views/music/track'
   'jst!at-pp/templates/music/album'
 ], (List, View, TrackView, jst) ->
 

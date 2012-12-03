@@ -1,11 +1,11 @@
 define [
   'quilt'
-  'at-pp/views/pages/news'
-  'at-pp/views/pages/listen'
-  'at-pp/views/pages/photos'
-  'at-pp/views/pages/tour'
-  'at-pp/views/pages/contact'
-  'at-pp/views/pages/custom'
+  'help!at-pp/views/pages/news'
+  'help!at-pp/views/pages/listen'
+  'help!at-pp/views/pages/photos'
+  'help!at-pp/views/pages/tour'
+  'help!at-pp/views/pages/contact'
+  'help!at-pp/views/pages/custom'
 ], (Quilt, NewsView, ListenView, PhotosView, TourView, ContactView, CustomView) ->
 
   class Pages extends Quilt.View
