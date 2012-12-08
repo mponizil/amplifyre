@@ -55,7 +55,7 @@ class BandSitesController < ApplicationController
 
   # POST /api/v1/band_sites
   def create
-    @band_site = BandSite.new(params)
+    @band_site = BandSite.new(params[:band_site])
 
     @band_site.user_id = current_user.id
 
