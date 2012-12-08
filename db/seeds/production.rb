@@ -8,7 +8,7 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-# AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
 user = User.create({ :email => 'misha.ponizil@gmail.com', :password => 'password' })
 
 band_site = user.band_sites.create({ :slug => 'bringtheloot', :name => 'The Loot', :description => 'NYC Jazz Hip-Hop Collective', :title => 'The Loot', :phrase => 'pumpin sweet beats', :background_file => File.open('db/seeds/images/background/1317341185.jpg') })
