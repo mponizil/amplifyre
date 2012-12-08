@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rake', '10.0.2'
 gem 'rails', '3.2.3'
 
 group :development do
