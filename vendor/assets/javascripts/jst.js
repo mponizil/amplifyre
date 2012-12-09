@@ -13,9 +13,7 @@ define([
 
       text.get(url, function(data) {
         if (config.isBuild) {
-          modules[name] = require.nodeRequire('underscore')
-            .template(data, null, {variable: 'o'})
-            .source;
+          modules[name] = _.template(data, null, {variable: 'o'}).source;
           return next(null);
         }
         next(_.template(data, null, {variable: 'o'}));
