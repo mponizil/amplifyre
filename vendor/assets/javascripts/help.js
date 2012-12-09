@@ -5,9 +5,9 @@ define(['text'], function(text) {
     buildMap: {},
 
     load: function(name, req, load, config) {
+
       if (config.isBuild) {
-        var _this = this,
-            helpersParams = config.helpers,
+        var helpersParams = config.helpers,
             helpers = [];
 
         // Resolve helper names from configuration helpersParams
@@ -19,7 +19,7 @@ define(['text'], function(text) {
           });
         }
 
-        _this.buildMap[name] = {
+        this.buildMap[name] = {
           helpers: helpers
         }
       }
@@ -82,13 +82,15 @@ define(['text'], function(text) {
   function loadHelpers(req, obj, name, helpersParams, index, next) {
     if (index >= helpersParams.length) return next(obj);
 
-    var helperName = resolveHelperName(name, helpersParams[index])
+    var helperParams = helpersParams[index],
+        helperName = resolveHelperName(name, helperParams)
+        label = helperParams.label;
 
     obj.helpers || (obj.helpers = {});
 
     req([helperName], function(helper) {
       if (helper) {
-        obj.helpers[prefix] = helper;
+        obj.helpers[label] = helper;
       }
 
       loadHelpers(req, obj, name, helpersParams, index+1, next);
