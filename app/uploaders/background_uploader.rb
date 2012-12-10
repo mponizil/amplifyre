@@ -26,6 +26,8 @@ class BackgroundUploader < CarrierWave::Uploader::Base
     "/assets/#{model.class.to_s.underscore}/#{mounted_as}/" + [version_name, "default.jpg"].compact.join('_')
   end
 
+  process :resize_to_limit => [1600, 1200]
+
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
