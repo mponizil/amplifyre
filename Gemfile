@@ -52,6 +52,8 @@ gem 'requirejs-rails', :git => 'git://github.com/mponizil/requirejs-rails.git'
 gem 'devise'
 gem 'cancan'
 
+gem 'fog', '~> 1.3.1'
+
 gem 'activeadmin'
 gem 'meta_search',    '>= 1.1.0.pre'
 
