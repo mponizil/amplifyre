@@ -2,9 +2,10 @@ define [
   'quilt'
   'ui/destroy'
   'ui/fileupload'
+  'ui/progress-bar'
   'ui/sortable'
   'at-pp/views/helper-view'
-], (Quilt, Destroy, Fileupload, Sortable, HelperView) ->
+], (Quilt, Destroy, Fileupload, ProgressBar, Sortable, HelperView) ->
 
   class AlbumView extends HelperView
 
@@ -18,11 +19,17 @@ define [
 
       if @model.id isnt -1
         @$cover.prepend("<div class='delete edit-mode' data-ref='destroy'>X</div>")
+        @$el.append("<div data-ref='progress'><div>")
 
     render: ->
       super
 
       if @model.id isnt -1
+        @views.push(new ProgressBar
+          el: @$progress
+          $target: @$cover
+          model: @model
+        .render())
         @views.push(new Destroy
           el: @$destroy
           model: @model
