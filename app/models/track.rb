@@ -15,17 +15,14 @@ class Track < ActiveRecord::Base
 
   def set_defaults
     self.album_id ||= -1
-
+    self.artist ||= self.band_site.name
+    self.position ||= Track.where({ :band_site_id => self.band_site_id, :album_id => self.album_id }).count
     if self.file.try(:file).try(:original_filename)
       filename = self.file.file.original_filename
       self.title ||= filename.chomp(File.extname(filename)).cap_words
     else
-      self.title ||= 'Welcome to Amplifyre'
+      self.title ||= 'Track ' + (self.position+1).to_s
     end
-
-    self.artist ||= self.band_site.name
-
-    self.position ||= Track.where({ :band_site_id => self.band_site_id, :album_id => self.album_id }).count
   end
 
 end
