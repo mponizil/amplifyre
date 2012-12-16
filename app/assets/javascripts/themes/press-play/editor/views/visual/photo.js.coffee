@@ -8,7 +8,7 @@ define [
 
     inject: ->
       @$el.append("<div class='delete edit-mode' data-ref='destroy'>X</div>")
-      @$el.append("<div data-ref='progress'><div>")
+      @$el.append("<div class='progress' data-ref='progress'><div>")
 
     render: ->
       super

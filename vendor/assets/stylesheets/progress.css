@@ -1,3 +1,9 @@
+.progress {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+}
 .progress-outer {
     width: 100%;
     background-color: #ddd;

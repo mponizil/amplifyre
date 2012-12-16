@@ -18,7 +18,7 @@ define [
       @$el.append("<input type='file' name='file' data-ref='upload' multiple />")
 
       if @model.id isnt -1
-        @$cover.prepend("<div class='delete edit-mode' data-ref='destroy'>X</div>")
+        @$el.append("<div class='delete edit-mode' data-ref='destroy'>X</div>")
         @$el.append("<div data-ref='progress'><div>")
 
     render: ->

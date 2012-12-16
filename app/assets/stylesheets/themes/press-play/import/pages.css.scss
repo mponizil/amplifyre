@@ -12,6 +12,7 @@
       width: 88px;
       height: 88px;
       display: block;
+      &.hidden { display: none; }
     }
   }
 }
@@ -23,7 +24,7 @@
 .page-contact {
   table {
     width: 500px;
-    margin: 0 auto;  
+    margin: 0 auto;
   }
   .loader {
     display: none;
