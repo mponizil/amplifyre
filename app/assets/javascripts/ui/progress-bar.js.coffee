@@ -20,13 +20,11 @@ define [
 
     template: -> '''
       <div class='progress-outer'>
-        <div class='progress-inner' data-bar></div>
+        <div class='progress-inner' data-ref='bar'></div>
       </div>'''
 
     render: ->
       super
-      @$el.html(@template)
-      @$bar = @$('[data-bar]')
       @hide()
       return this
 

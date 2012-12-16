@@ -5,6 +5,6 @@ define [
 
   class Photos extends Collection
 
-      model: -> Photo.create(arguments...)
+    model: -> Photo.create(arguments...)
 
-      url: -> super + 'band_sites/' + @owner.id + '/photos'
+    url: -> super + 'band_sites/' + @owner.id + '/photos'

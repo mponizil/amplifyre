@@ -3,7 +3,12 @@ define [
   'jst!at-pp/templates/visual/photo'
 ], (View, jst) ->
 
-  class PhotosView extends View
+  class PhotoView extends View
+
+    initialize: ->
+      super
+
+      @model.on('change:file', @render, @)
 
     tagName: 'li'
 

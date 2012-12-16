@@ -10,6 +10,18 @@ define [
     comparator: (model1, model2) ->
       moment(model1.get('created_at')).unix() < moment(model2.get('created_at')).unix()
 
+    # TODO: wtf?
+    add: ->
+      if arguments.length
+        return super
+      else
+        attrs = {}
+        attrs[@owner.name + '_id'] = @owner.id if @owner
+        model = new @model(attrs)
+        @add(model)
+        model.collection = this
+        return model
+
     reorder: ->
       data = {}
       data[@name] = @toJSON(position: true)

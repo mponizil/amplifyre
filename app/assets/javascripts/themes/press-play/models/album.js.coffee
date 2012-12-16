@@ -13,11 +13,9 @@ define [
 
     defaults: ->
       cover_file:
-        url: '/assets/album/cover_file/default.jpg'
-        sm_thumb:
-          url: '/assets/album/cover_file/sm_thumb_default.jpg'
-        lrg_thumb:
-          url: '/assets/album/cover_file/lrg_thumb_default.jpg'
+        url: '/assets/global/dark-loader.gif'
+        sm_thumb: url: '/assets/global/dark-loader.gif'
+        lrg_thumb: url: '/assets/global/dark-loader.gif'
       position: (@collection?.length + 1) or 1
 
     emptySingles: ->
@@ -33,6 +31,10 @@ define [
     singlesAttrs =
       id: -1
       title: 'Singles'
+      cover_file:
+        url: '/assets/album/cover_file/default.jpg'
+        sm_thumb: url: '/assets/album/cover_file/sm_thumb_default.jpg'
+        lrg_thumb: url: '/assets/album/cover_file/lrg_thumb_default.jpg'
       position: -1
     @create(_.defaults(attrs, singlesAttrs))
 

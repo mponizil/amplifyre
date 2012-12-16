@@ -1,20 +1,16 @@
 define [
   'list'
   'at-pp/views/view'
+  'at-pp/views/music/album-cover'
   'help!at-pp/views/music/track'
   'jst!at-pp/templates/music/album'
-], (List, View, TrackView, jst) ->
+], (List, View, AlbumCoverView, TrackView, jst) ->
 
   class AlbumView extends View
 
     constructor: (options) ->
       super
       @player or= options.player
-
-    initialize: ->
-      super
-
-      @model.on('change', @render, @)
 
     template: jst
 
@@ -24,6 +20,10 @@ define [
     render: ->
       super
 
+      @views.push(new AlbumCoverView
+        el: @$cover
+        model: @model
+      .render())
       TrackView = TrackView.extend
         player: @player
         tagName: 'li'

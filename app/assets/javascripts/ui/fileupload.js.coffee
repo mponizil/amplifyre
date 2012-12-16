@@ -36,8 +36,7 @@ define [
       if @model
         @model.trigger('request')
       else
-        # TODO: @collection.createLocal()
-        model = @collection.add().last()
+        model = @collection.add()
         model.trigger('request', model)
 
         # Had to make a fresh model, store the cid for later

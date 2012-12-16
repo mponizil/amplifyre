@@ -9,3 +9,8 @@ define [
     label: 'amplifyre'
 
     urlRoot: -> @urlPrefix() + 'band_sites'
+
+    defaults: ->
+      background_file:
+        url: '/assets/global/dark-loader.gif'
+        bw: url: '/assets/global/dark-loader.gif'
