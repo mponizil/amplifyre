@@ -18,7 +18,7 @@ define [
 
       @views.push(new ProgressBar
         el: @$progress
-        $target: @$bg_inactive.add(@$bg_active)
+        $target: @$el.find('img')
         model: @model
       .render())
       @views.push(new Fileupload

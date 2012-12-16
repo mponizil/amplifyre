@@ -14,7 +14,7 @@ define [
       @model.on('change:background_file', @render, @)
 
     render: ->
-      $(window).off('resize')
+      $(window).off('resize', @resize)
 
       super
 
@@ -23,9 +23,9 @@ define [
       @$bg_active.addClass('hidden') unless @player.get('playing')
 
       @initMeasure => @resize()
-      $(window).on('resize', => @resize())
+      $(window).on('resize', @resize)
 
-      @
+      return this
 
     update: (player, playing) ->
       if playing then @fadeUp()
@@ -37,7 +37,7 @@ define [
     fadeDown: ->
       @$bg_active.fadeOut(1000, 'easeOutSine')
 
-    resize: ->
+    resize: =>
       [windowWidth, windowHeight, windowRatio] = @measureWindow()
 
       if windowRatio > @imgRatio
