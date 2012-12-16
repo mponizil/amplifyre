@@ -11,6 +11,11 @@ define [
       super
       @player or= options.player
 
+    initialize: ->
+      super
+
+      @model.on('change', @render, @)
+
     template: jst
 
     attributes: ->

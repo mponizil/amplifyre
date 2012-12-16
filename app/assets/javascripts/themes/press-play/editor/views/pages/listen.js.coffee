@@ -21,7 +21,7 @@ define [
       super
 
       if not @albums.get(-1)
-        Album.create(id: -1, band_site_id: @band_site.id)
+        Album.createSingles(band_site_id: @band_site.id)
 
       @views.push(new Sortable
         el: @$albums

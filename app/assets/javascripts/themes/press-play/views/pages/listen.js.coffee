@@ -18,7 +18,7 @@ define [
 
       singles = @tracks.find (track) -> track.get('album_id') is -1
       if not @albums.get(-1) and singles
-        Album.create(id: -1, band_site_id: @band_site.id)
+        Album.createSingles(band_site_id: @band_site.id)
 
       @views.push(new List
         el: @$albums
