@@ -3,10 +3,6 @@ define [
   'fileupload'
 ], (Quilt, $) ->
 
-  # Bytes per second, estimated upload speed of server to s3
-  bps = 480
-  start = null
-
   Quilt.attributes.fileupload = (el, options) ->
     new Fileupload(el: el, model: @model, collection: @collection)
 
@@ -37,40 +33,26 @@ define [
       return this
 
     send: (e, data) ->
-      start = +new Date
-
       if @model
         @model.trigger('request')
       else
         # TODO: @collection.createLocal()
         model = @collection.add().last()
         model.trigger('request', model)
+
+        # Had to make a fresh model, store the cid for later
         data.data.cid = model.cid
 
     progress: (e, data) ->
       model = @model or @collection.get(data.data.cid)
-
-      # TODO: cleanup
-      pctSent = parseInt(data.loaded / data.total * 100, 10)
-      if pctSent < 100
-        pct = pctSent
-      else
-        if not data.waitingInterval
-          data.waitingInterval = setInterval(=>
-            @progress(e, data)
-          , 100)
-        elapsed = +new Date - start
-        pctStored = parseInt((bps * elapsed) / data.total * 100, 10)
-        pct = (pctSent + pctStored) / 2
-
+      pct = parseInt(data.loaded / data.total * 100, 10)
       model.trigger('progress', model, pct)
 
     done: (e, data) ->
-      clearInterval(data.waitingInterval) if data.waitingInterval
-
       if @model
         model = @model.set(data.result)
       else
-        model = @collection.get(data.data.cid).set(data.result)
+        model = @collection.get(data.data.cid)
+        model.set(data.result)
 
       model.trigger('sync')
