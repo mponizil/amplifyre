@@ -18,8 +18,7 @@ class Track < ActiveRecord::Base
     self.artist ||= self.band_site.name
     self.position ||= Track.where({ :band_site_id => self.band_site_id, :album_id => self.album_id }).count
     if self.file.try(:file).try(:original_filename)
-      filename = self.file.file.original_filename
-      self.title ||= filename.chomp(File.extname(filename)).cap_words
+      self.title ||= File.get_title(self.file.file.original_filename).cap_words
     else
       self.title ||= 'Track ' + (self.position+1).to_s
     end
