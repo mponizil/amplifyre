@@ -86,3 +86,9 @@ p,
 .splash-action input[type='text'] {
   width: 50%;
 }
+.splash-subaction {
+  @include opacity(0.6);
+  font-size: 11px;
+  text-align: center;
+  a { color: $gold; }
+}

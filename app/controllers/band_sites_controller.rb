@@ -13,6 +13,8 @@ class BandSitesController < ApplicationController
   def dashboard
     @band_site = BandSite.where(:slug => params[:slug])[0]
 
+    authorize! :manage, @band_site
+
     if @band_site
       render
     else
@@ -37,6 +39,8 @@ class BandSitesController < ApplicationController
     @slug = request.subdomain
     @band_site = BandSite.where(:slug => @slug)[0]
 
+    authorize! :manage, @band_site
+
     if @band_site
       @version = 'editor'
       render :layout => @layout
@@ -49,6 +53,8 @@ class BandSitesController < ApplicationController
   # GET /api/v1/band_sites/1
   def show
     @band_site = BandSite.find(params[:id])
+
+    authorize! :manage, @band_site
 
     render json: @band_site
   end
