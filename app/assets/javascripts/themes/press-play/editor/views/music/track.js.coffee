@@ -1,8 +1,9 @@
 define [
-  'ui/destroy'
+  'ui/editable'
   'ui/progress-bar'
+  'ui/destroy'
   'at-pp/views/helper-view'
-], (Destroy, ProgressBar, HelperView) ->
+], (Editable, ProgressBar, Destroy, HelperView) ->
 
   class TrackView extends HelperView
 
@@ -14,11 +15,18 @@ define [
     render: ->
       super
 
+      @views.push(new Editable.TextInput
+        el: @$title
+        model: @model
+        attr: 'title'
+      .render())
+
       @views.push(new ProgressBar
         el: @$progress
         $target: @$el.children('span').add(@$destroy)
         model: @model
       .render())
+
       @views.push(new Destroy
         el: @$destroy
         model: @model
