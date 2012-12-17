@@ -33,10 +33,13 @@ define [
     active: false
 
     events: ->
+      'click': 'stopPropagation'
       'editable:start': 'startEdit'
       'editable:end': 'endEdit'
       'mouseover': 'showBorder'
       'mouseout': 'hideBorder'
+
+    stopPropagation: (e) -> e.stopPropagation()
 
     listenBlur: ->
       $(window).on 'click.page', (e) =>
@@ -57,6 +60,9 @@ define [
       @$el.addClass('editable')
 
       @styleDefault()
+
+      @$el.one('dblclick', => @startEdit())
+      @listenBlur()
 
       return this
 
@@ -82,7 +88,9 @@ define [
       @model.set(@attr, html or text)
       @model.save()
 
-    # Add the "editable-default" class if it's the default value
+      @$el.one('dblclick', => @startEdit())
+
+    # Add the `.editable-default` class if it's the default value
     styleDefault: ->
       if $.trim(@$el.text()) is @defaultVal
         @$el.addClass('editable-default')
@@ -103,16 +111,15 @@ define [
       return unless @$editor
       [@$editor.text(), @$editor.html()]
 
-    showBorder: (e) ->
-      @$el.addClass('editable-hover') unless @active
+    showBorder: (e) -> @$el.addClass('editable-hover') unless @active
 
-    hideBorder: (e) ->
-      @$el.removeClass('editable-hover')
+    hideBorder: (e) -> @$el.removeClass('editable-hover')
 
     destroy: ->
       super
 
       $(window).off('click.page')
+      @$el.off('dblclick')
       @active = false
       @destroyEditor()
 
@@ -133,15 +140,6 @@ define [
         return if $(e.target).closest('#redactor_modal, .redactor_dropdown').length
 
         @endEdit()
-
-    render: ->
-      super
-
-      @$el.one('dblclick', => @startEdit())
-
-      @listenBlur()
-
-      return this
 
     startEdit: ->
       return if not super
@@ -164,9 +162,7 @@ define [
 
     endEdit: ->
       return if not super
-
       @$editor = null
-      @$el.one('dblclick', => @startEdit())
 
     destroyEditor: ->
       return unless @$editor
@@ -175,36 +171,20 @@ define [
       @$editor.destroyEditor()
       [text, html]
 
-    destroy: ->
-      super
-
-      @$el.off('dblclick')
-
   class Editable.TextInput extends Editor
-
-    events: ->
-      _.extend super,
-        'dblclick': 'startEdit'
-
-    render: ->
-      super
-
-      @listenBlur()
-
-      return this
 
     startEdit: ->
       return if not super
 
       @$editor = @$el.attr('contenteditable', true)
-      @$el.on('keydown', (e) => @checkKey(e))
+      @$el.on('keydown', @checkKey)
 
       @$el.focus()
 
     endEdit: ->
       return if not super
 
-      @$el.off('keydown')
+      @$el.off('keydown', @checkKey)
       @$editor = @$el.attr('contenteditable', false)
 
     destroyEditor: ->
@@ -212,30 +192,18 @@ define [
       text = @$editor.text()
       [$.trim(text), null]
 
-    checkKey: (e) ->
-      if e.keyCode is 9
+    checkKey: (e) =>
+      if e.keyCode is 9 # Tab
         e.preventDefault()
         @$el.trigger('editor:next')
-      else if e.keyCode is 13
+      else if e.keyCode is 13 # Enter
         e.stopPropagation()
         @endEdit()
 
     destroy: ->
       super
-
-      @$el.off('keydown')
+      @$el.off('keydown', @checkKey)
 
   class Editable.DateInput extends Editor
-
-    events: ->
-      _.extend super,
-        'dblclick': 'startEdit'
-
-    render: ->
-      super
-
-      @listenBlur()
-
-      return this
 
   return Editable
