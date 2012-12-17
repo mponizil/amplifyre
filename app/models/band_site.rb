@@ -1,6 +1,6 @@
 class BandSite < ActiveRecord::Base
 
-  belongs_to :user
+  has_and_belongs_to_many :user, :join_table => :band_sites_users
   has_many :pages, :dependent => :destroy
   has_many :albums, :dependent => :destroy
   has_many :tracks, :dependent => :destroy
@@ -11,7 +11,7 @@ class BandSite < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  attr_accessible :id, :created_at, :updated_at, :user_id, :slug, :name, :description, :title, :phrase, :background_file
+  attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name, :description, :title, :phrase, :background_file
 
   mount_uploader :background_file, BackgroundUploader
 

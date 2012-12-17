@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729185107) do
+ActiveRecord::Schema.define(:version => 20121217065130) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
   end
 
   create_table "band_sites", :force => true do |t|
-    t.integer  "user_id"
     t.string   "slug"
     t.string   "name"
     t.string   "description"
@@ -66,6 +65,14 @@ ActiveRecord::Schema.define(:version => 20120729185107) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  create_table "band_sites_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "band_site_id"
+  end
+
+  add_index "band_sites_users", ["band_site_id", "user_id"], :name => "index_band_sites_users_on_band_site_id_and_user_id"
+  add_index "band_sites_users", ["user_id", "band_site_id"], :name => "index_band_sites_users_on_user_id_and_band_site_id"
 
   create_table "concerts", :force => true do |t|
     t.integer  "band_site_id"
