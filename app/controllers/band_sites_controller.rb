@@ -63,7 +63,7 @@ class BandSitesController < ApplicationController
   def create
     @band_site = BandSite.new(params[:band_site])
 
-    @band_site.user_id = current_user.id
+    @band_site.user_ids += [current_user.id]
 
     respond_to do |format|
       if @band_site.save
