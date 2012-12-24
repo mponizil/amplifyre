@@ -10,7 +10,7 @@ class AlbumsController < ApplicationController
 
   # POST /api/v1/band_sites/1/albums
   def create
-    @album = @band_sites.albums.new(params[:album])
+    @album = @band_site.albums.new(params[:album])
 
     if @album.save
       render json: @album, status: :created

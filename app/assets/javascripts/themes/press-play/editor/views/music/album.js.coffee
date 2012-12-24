@@ -41,7 +41,7 @@ define [
       @views.push(new Fileupload
         el: @$upload
         collection: @model.tracks()
-        formData: album_id: @model.id
+        formData: 'track[album_id]': @model.id
       .render())
 
       @views.push(new Sortable
