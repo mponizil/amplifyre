@@ -9,6 +9,11 @@ define [
 
   class AlbumView extends HelperView
 
+    initialize: ->
+      super
+
+      @model.on('change:id', @renderNested, @)
+
     inject: ->
       @$el.attr('data-sortable-id', @model.id)
 
@@ -38,6 +43,11 @@ define [
         @$el.addClass('sortable-exclude')
         @$el.removeClass('hidden')
 
+      @renderNested() if @model.id
+
+      return this
+
+    renderNested: ->
       @views.push(new Fileupload
         el: @$upload
         collection: @model.tracks()
@@ -52,5 +62,3 @@ define [
         options:
           connectWith: "[data-ref=tracks][data-album-id!=#{@model.id}]" # [1]
       .render())
-
-      return this
