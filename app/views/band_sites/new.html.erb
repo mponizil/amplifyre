@@ -2,8 +2,8 @@
 
 <%= form_for(@band_site) do |f| %>
   <% if @band_site.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@band_site.errors.count, "error") %> prohibited this band site from being saved:</h2>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@band_site.errors.count, 'error') %> prohibited this band site from being saved:</h2>
 
       <ul>
       <% @band_site.errors.full_messages.each do |msg| %>
@@ -13,15 +13,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class='field'>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :slug %><br />
+  <div class='field'>
+    <%= f.label :slug %> (_____.amplifyre.com)<br />
     <%= f.text_field :slug %>
   </div>
-  <div class="actions">
+  <div class='actions'>
     <%= f.submit %>
   </div>
 <% end %>
