@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  load_and_authorize_resource :band_site
+
   # GET /api/v1/band_sites/1/albums/1
   def show
     @album = Album.find(params[:id])

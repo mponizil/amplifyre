@@ -25,8 +25,7 @@ class Ability
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
-    user ||= User.new
-    if user.new_record?
+    if user.blank?
         can :read, BandSite
     else
         can :manage, BandSite, :id => user.band_site_ids

@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  load_and_authorize_resource :band_site
+
   # GET /api/v1/band_sites/1/pages/1
   def show
     @page = Page.find(params[:id])
