@@ -28,6 +28,9 @@ album = band_site.albums.create({ :title => 'Episodes', :cover_file => File.open
 # Destroy all default tracks
 band_site.tracks.destroy_all
 
+track1 = band_site.tracks.create({ :album_id => 1, :title => 'The Gift Be', :file => File.open('db/seeds/audio/track/1313946157.mp3'), :artist => 'The Loot' })
+track2 = band_site.tracks.create({ :album_id => 1, :title => 'Come Clean', :file => File.open('db/seeds/audio/track/1313946195.mp3'), :artist => 'The Loot' })
+
 social = band_site.socials.create({ :category => 'facebook', :link => 'http://facebook.com/thelootnyc' })
 
 concert = band_site.concerts.create({ :date => '10-03-2012', :venue => 'CultureFix', :details => 'Sexy folk music on the Lower East Side.<br /> Featuring:<br /><br />Raveena Aurora<br />Minnie and Aya<br />Steady Sun<br />Eric Ching<br /><br />Culture Fix<br />9 Clinton Street<br />New York, NY 10002<br />(646) 863-7171<br />culturefixny.com', :photo_file => File.open('db/seeds/images/concert/1329107550.jpg') })
