@@ -20,6 +20,8 @@ define [
 
     bootstrap = JSON.parse($('#bootstrap').html())
 
+    $.ajaxSetup(headers: 'X-CSRF-Token': bootstrap.auth_token)
+
     band_site = BandSite.create(bootstrap.band_site)
     pages = band_site.pages().reset(bootstrap.pages)
 

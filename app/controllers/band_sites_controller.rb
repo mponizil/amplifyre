@@ -3,7 +3,6 @@ class BandSitesController < ApplicationController
   before_filter :get_site_from_subdomain
   layout 'dashboard'
 
-
   # GET /band_sites/new
   def new
     @band_site = BandSite.new
@@ -50,7 +49,7 @@ class BandSitesController < ApplicationController
   end
 
 
-  # GET /api/v1/band_sites/1
+  # GET /band_sites/1
   def show
     @band_site = BandSite.find(params[:id])
 
@@ -59,6 +58,7 @@ class BandSitesController < ApplicationController
     render json: @band_site
   end
 
+  # POST /band_sites
   # POST /api/v1/band_sites
   def create
     @band_site = BandSite.new(params[:band_site])
@@ -76,9 +76,12 @@ class BandSitesController < ApplicationController
     end
   end
 
+  # PUT /band_sites/1
   # PUT /api/v1/band_sites/1
   def update
     @band_site = BandSite.find(params[:id])
+
+    authorize! :manage, @band_site
 
     respond_to do |format|
       if @band_site.update_attributes(params)
@@ -91,9 +94,13 @@ class BandSitesController < ApplicationController
     end
   end
 
+  # DELETE /band_sites/1
   # DELETE /api/v1/band_sites/1
   def destroy
     @band_site = BandSite.find(params[:id])
+
+    authorize! :manage, @band_site
+
     @band_site.destroy
 
     respond_to do |format|

@@ -3,6 +3,7 @@
 <html xmlns=''http'://www.w3.org/1999/xhtml' 'xml':lang='en' lang='en'>
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <%= csrf_meta_tag %>
 
   <!-- og/fb tags -->
   <meta property='og:type' content='website' />
@@ -25,6 +26,7 @@
 
   <script id='bootstrap' type='text/json'>
   {
+    "auth_token": "<%= form_authenticity_token.to_s %>",
     "band_site": <%=raw @band_site.to_json %>,
     "socials": <%=raw @band_site.socials.to_json %>,
     "albums": <%=raw @band_site.albums.to_json %>,
