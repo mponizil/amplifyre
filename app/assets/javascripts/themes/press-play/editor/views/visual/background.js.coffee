@@ -9,7 +9,7 @@ define [
     inject: ->
       @$el.append $('''
         <div class='abs-bot-right' style='z-index:999'>
-          <input type='file' name='background_file' data-ref='upload' />
+          <input type='file' name='band_site[background_file]' data-ref='upload' />
         </div>''')
       @$el.append("<div class='progress' data-ref='progress'><div>")
 

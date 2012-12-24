@@ -3,14 +3,14 @@ class PagesController < ApplicationController
 
   # GET /api/v1/band_sites/1/pages/1
   def show
-    @page = Page.find(params[:id])
+    @page = @band_site.pages.find(params[:id])
 
     render json: @page
   end
 
   # POST /api/v1/band_sites/1/pages
   def create
-    @page = Page.new(params)
+    @page = @band_site.pages.new(params[:page])
 
     if @page.save
       render json: @page, status: :created
@@ -21,9 +21,9 @@ class PagesController < ApplicationController
 
   # PUT /api/v1/band_sites/1/pages/1
   def update
-    @page = Page.find(params[:id])
+    @page = @band_site.pages.find(params[:id])
 
-    if @page.update_attributes(params)
+    if @page.update_attributes(params[:page])
       render json: @page
     else
       render json: @page.errors, status: :unprocessable_entity
@@ -33,7 +33,7 @@ class PagesController < ApplicationController
   # PUT /api/v1/band_sites/1/pages/reorder
   def reorder
     params[:pages].each do |page|
-      @page = Page.find(page[:id])
+      @page = @band_site.pages.find(page[:id])
       @page.update_attributes({ :position => page[:position] })
     end
 
@@ -42,7 +42,7 @@ class PagesController < ApplicationController
 
   # DELETE /api/v1/band_sites/1/pages/1
   def destroy
-    @page = Page.find(params[:id])
+    @page = @band_site.pages.find(params[:id])
     @page.destroy
 
     head :no_content

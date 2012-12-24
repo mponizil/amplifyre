@@ -1,5 +1,5 @@
 define ['supermodel'], (Supermodel) ->
-  
+
   class Model extends Supermodel.Model
 
     urlPrefix: -> '/api/v1/'

@@ -3,14 +3,14 @@ class ConcertsController < ApplicationController
 
   # GET /api/v1/band_sites/1/concerts/1
   def show
-    @concert = Concert.find(params[:id])
+    @concert = @band_site.concerts.find(params[:id])
 
     render json: @concert
   end
 
   # POST /api/v1/band_sites/1/concerts
   def create
-    @concert = Concert.new(params)
+    @concert = @band_site.concerts.new(params[:concert])
 
     if @concert.save
       render json: @concert, status: :created
@@ -21,9 +21,9 @@ class ConcertsController < ApplicationController
 
   # PUT /api/v1/band_sites/1/concerts/1
   def update
-    @concert = Concert.find(params[:id])
+    @concert = @band_site.concerts.find(params[:id])
 
-    if @concert.update_attributes(params)
+    if @concert.update_attributes(params[:concert])
       render json: @concert
     else
       render json: @concert.errors, status: :unprocessable_entity
@@ -32,7 +32,7 @@ class ConcertsController < ApplicationController
 
   # DELETE /api/v1/band_sites/1/concerts/1
   def destroy
-    @concert = Concert.find(params[:id])
+    @concert = @band_site.concerts.find(params[:id])
     @concert.destroy
 
     head :no_content

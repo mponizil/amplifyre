@@ -28,6 +28,7 @@ class Ability
     if user.blank?
         can :read, BandSite
     else
+        can :create, BandSite
         can :manage, BandSite, :id => user.band_site_ids
     end
   end

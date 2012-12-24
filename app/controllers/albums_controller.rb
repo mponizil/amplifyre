@@ -3,14 +3,14 @@ class AlbumsController < ApplicationController
 
   # GET /api/v1/band_sites/1/albums/1
   def show
-    @album = Album.find(params[:id])
+    @album = @band_site.albums.find(params[:id])
 
     render json: @album
   end
 
   # POST /api/v1/band_sites/1/albums
   def create
-    @album = Album.new(params)
+    @album = @band_sites.albums.new(params[:album])
 
     if @album.save
       render json: @album, status: :created
@@ -21,9 +21,9 @@ class AlbumsController < ApplicationController
 
   # PUT /api/v1/band_sites/1/albums/1
   def update
-    @album = Album.find(params[:id])
+    @album = @band_site.albums.find(params[:id])
 
-    if @album.update_attributes(params)
+    if @album.update_attributes(params[:album])
       render json: @album
     else
       render json: @album.errors, status: :unprocessable_entity
@@ -34,7 +34,7 @@ class AlbumsController < ApplicationController
   def reorder
     params[:albums].each do |album|
       if album[:id] > 0
-        @album = Album.find(album[:id])
+        @album = @band_site.albums.find(album[:id])
         @album.update_attributes({ :position => album[:position] })
       end
     end
@@ -44,7 +44,7 @@ class AlbumsController < ApplicationController
 
   # DELETE /api/v1/band_sites/1/albums/1
   def destroy
-    @album = Album.find(params[:id])
+    @album = @band_site.albums.find(params[:id])
     @album.destroy
 
     head :no_content

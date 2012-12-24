@@ -3,14 +3,14 @@ class TracksController < ApplicationController
 
   # GET /api/v1/band_sites/1/tracks/1
   def show
-    @track = Track.find(params[:id])
+    @track = @band_site.tracks.find(params[:id])
 
     render json: @track
   end
 
   # POST /api/v1/band_sites/1/tracks
   def create
-    @track = Track.new(params)
+    @track = @band_site.tracks.new(params[:track])
 
     if @track.save
       render json: @track, status: :created
@@ -21,9 +21,9 @@ class TracksController < ApplicationController
 
   # PUT /api/v1/band_sites/1/tracks/1
   def update
-    @track = Track.find(params[:id])
+    @track = @band_site.tracks.find(params[:id])
 
-    if @track.update_attributes(params)
+    if @track.update_attributes(params[:track])
       render json: @track
     else
       render json: @track.errors, status: :unprocessable_entity
@@ -34,7 +34,7 @@ class TracksController < ApplicationController
   def reorder
     params[:tracks].each do |track|
       if track[:id] > 0
-        @track = Track.find(track[:id])
+        @track = @band_site.tracks.find(track[:id])
         @track.update_attributes({ :album_id => track[:album_id], :position => track[:position] })
       end
     end
@@ -44,7 +44,7 @@ class TracksController < ApplicationController
 
   # DELETE /api/v1/band_sites/1/tracks/1
   def destroy
-    @track = Track.find(params[:id])
+    @track = @band_site.tracks.find(params[:id])
     @track.destroy
 
     head :no_content

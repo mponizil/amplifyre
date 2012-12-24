@@ -13,7 +13,7 @@ define [
       @$scrollpane.append('''
         <div class='album'>
           <div class='album-cover album-create'>
-            <input type='file' class='album-upload' name='cover_file' data-ref='upload' /> +
+            <input type='file' class='album-upload' name='album[cover_file]' data-ref='upload' /> +
           </div>
         </div>''')
 

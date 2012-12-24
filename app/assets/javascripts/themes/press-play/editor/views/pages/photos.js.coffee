@@ -10,7 +10,7 @@ define [
 
       @$el.prepend('''
         <div class='edit-mode'>
-          <input type='file' name='file' data-ref='upload' multiple />
+          <input type='file' name='photo[file]' data-ref='upload' multiple />
         </div>''')
 
     render: ->

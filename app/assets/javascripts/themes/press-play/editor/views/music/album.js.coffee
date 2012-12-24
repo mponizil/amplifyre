@@ -15,7 +15,7 @@ define [
       # For specifying Sortable `connectsWith` [1]
       @$tracks.attr('data-album-id', @model.id)
 
-      @$el.append("<input type='file' name='file' data-ref='upload' multiple />")
+      @$el.append("<input type='file' name='track[file]' data-ref='upload' multiple />")
 
       if @model.id isnt -1
         @$el.append("<div class='delete edit-mode' data-ref='destroy'>X</div>")

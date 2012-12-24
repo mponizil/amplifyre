@@ -3,14 +3,14 @@ class PhotosController < ApplicationController
 
   # GET /api/v1/band_sites/1/photos/1
   def show
-    @photo = Photo.find(params[:id])
+    @photo = @band_site.photos.find(params[:id])
 
     render json: @photo
   end
 
   # POST /api/v1/band_sites/1/photos
   def create
-    @photo = Photo.new(params)
+    @photo = @band_site.photos.new(params[:photo])
 
     if @photo.save
       render json: @photo, status: :created
@@ -21,9 +21,9 @@ class PhotosController < ApplicationController
 
   # PUT /api/v1/band_sites/1/photos/1
   def update
-    @photo = Photo.find(params[:id])
+    @photo = @band_site.photos.find(params[:id])
 
-    if @photo.update_attributes(params)
+    if @photo.update_attributes(params[:photo])
       render json: @photo
     else
       render json: @photo.errors, status: :unprocessable_entity
@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
 
   # DELETE /api/v1/band_sites/1/photos/1
   def destroy
-    @photo = Photo.find(params[:id])
+    @photo = @band_site.photos.find(params[:id])
     @photo.destroy
 
     head :no_content

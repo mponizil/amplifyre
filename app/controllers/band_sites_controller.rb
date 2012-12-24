@@ -84,7 +84,7 @@ class BandSitesController < ApplicationController
     authorize! :manage, @band_site
 
     respond_to do |format|
-      if @band_site.update_attributes(params)
+      if @band_site.update_attributes(params[:band_site])
         format.html { redirect_to :action => 'dashboard', :slug => @band_site.slug }
         format.json { render json: @band_site, status: :ok }
       else
