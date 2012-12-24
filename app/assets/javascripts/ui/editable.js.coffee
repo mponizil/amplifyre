@@ -149,7 +149,6 @@ define [
       @$el.empty().append(@$editor)
       @$editor.redactor
         focus: true
-        convertDivs: false
         buttons:
           ['html', '|', 'formatting', '|', 'bold', 'italic', '|',
            'image', 'video', 'file', 'link', '|',

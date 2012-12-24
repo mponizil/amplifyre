@@ -1,5 +1,5 @@
 <div class='scrollpane' data-ref='scrollpane'>
 
-  <div class='custom-body' data-ref='body' data-attr='body'></div>
+  <div data-ref='body' data-attr='body'></div>
 
 </div>

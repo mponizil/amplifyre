@@ -63,6 +63,9 @@ textarea.editable-hover {
   padding: 5px 0 0 0 !important;
   background-color: transparent !important;
 }
+.scrollpane > .editable > .redactor_box {
+  margin-top: 0;
+}
 
 //
 // Section-specific UI
