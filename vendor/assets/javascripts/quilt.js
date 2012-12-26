@@ -42,7 +42,7 @@
       var el, view, name, attr;
 
       // Destroy old views.
-      while (view = this.views.pop()) if (view.destroy) view.destroy();
+      while (view = this.views.pop()) if (view.dispose) view.dispose();
 
       // Render the template if it exists.
       if (this.template) {
@@ -58,7 +58,7 @@
       var elements = this.$('*').get();
 
       // Execute the handler for each element/attr pair.
-      while (el = elements.pop()) {
+      while (el = elements.shift()) {
 
         var attrs = el.attributes;
         for (var i = 0; i < attrs.length; i++) {
@@ -85,14 +85,14 @@
 
     // Destroy child views and ensure that references to this view are
     // eliminated to prevent memory leaks.
-    destroy: function() {
+    dispose: function() {
 
       // Remove DOM listeners.
       this.undelegateEvents();
 
       // Destroy child views.
       //console.log(this, this.views)
-      _.invoke(this.views, 'destroy');
+      _.invoke(this.views, 'dispose');
 
       // Clean up event handlers.
       if (this.model) this.model.off(null, null, this);

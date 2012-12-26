@@ -52,6 +52,6 @@ define [
       @changePage new CustomView(model: model)
 
     changePage: (view) ->
-      @page?.destroy().remove()
+      @page?.dispose().remove()
       @$el.html((@page = view.render()).el)
       @$el.trigger('page:render')
