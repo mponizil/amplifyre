@@ -1,6 +1,6 @@
 class BandSite < ActiveRecord::Base
 
-  has_and_belongs_to_many :user, :join_table => :band_sites_users
+  has_and_belongs_to_many :users, :join_table => :band_sites_users
   has_many :pages, :dependent => :destroy
   has_many :albums, :dependent => :destroy
   has_many :tracks, :dependent => :destroy
@@ -17,6 +17,10 @@ class BandSite < ActiveRecord::Base
 
   before_validation :set_defaults
   after_create :create_association_defaults
+
+  def other_users(current_user)
+    self.users.reject { |u| found = true if !found && u == current_user }
+  end
 
   private
 

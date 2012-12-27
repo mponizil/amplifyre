@@ -1,8 +1,8 @@
 class CreateUsersBandSitesTable < ActiveRecord::Migration
   def self.up
     create_table :band_sites_users, :id => false do |t|
-        t.references :user
-        t.references :band_site
+      t.references :user
+      t.references :band_site
     end
     add_index :band_sites_users, [:user_id, :band_site_id]
     add_index :band_sites_users, [:band_site_id, :user_id]

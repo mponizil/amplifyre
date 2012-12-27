@@ -1,7 +1,7 @@
 ActiveAdmin.register BandSite do
   form do |f|
     f.inputs "Band Site Details" do
-      f.input :user
+      f.input :users
       f.input :slug
       f.input :name
       f.input :title
