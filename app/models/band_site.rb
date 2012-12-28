@@ -22,6 +22,10 @@ class BandSite < ActiveRecord::Base
     self.users.reject { |u| found = true if !found && u == current_user }
   end
 
+  def to_param
+    self.slug
+  end
+
   private
 
   def set_defaults

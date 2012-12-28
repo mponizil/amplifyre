@@ -1,4 +1,4 @@
-class AlbumsController < ApplicationController
+class Api::V1::AlbumsController < ApplicationController
   load_and_authorize_resource :band_site
 
   # GET /api/v1/band_sites/1/albums/1

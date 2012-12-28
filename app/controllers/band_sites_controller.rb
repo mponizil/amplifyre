@@ -1,6 +1,6 @@
 class BandSitesController < ApplicationController
 
-  before_filter :get_site_from_subdomain
+  before_filter :get_site_from_slug
   layout 'dashboard'
 
   # GET /band_sites/new
@@ -8,12 +8,39 @@ class BandSitesController < ApplicationController
     @band_site = BandSite.new
   end
 
-  # GET /bringtheloot/dashboard
-  def dashboard
-    @band_site = BandSite.where(:slug => params[:slug])[0]
+  # POST /band_sites
+  def create
+    @band_site = BandSite.new(params[:band_site])
+    @band_site.user_ids += [current_user.id]
+    if @band_site.save
+      redirect_to :action => 'dashboard', :slug => @band_site.slug
+    else
+      render action: 'new'
+    end
+  end
 
+  # DELETE /bringtheloot
+  def destroy
     authorize! :manage, @band_site
 
+    @band_site.destroy
+
+    redirect_to user_root_path
+  end
+
+  # GET /bringtheloot/dashboard
+  def dashboard
+    authorize! :manage, @band_site
+    if @band_site
+      render
+    else
+      redirect_to request.protocol + request.domain
+    end
+  end
+
+  # GET /bringtheloot/collaborators
+  def collaborators
+    authorize! :manage, @band_site
     if @band_site
       render
     else
@@ -23,9 +50,6 @@ class BandSitesController < ApplicationController
 
   # GET bringtheloot.amplifyre.com
   def live
-    @slug = request.subdomain
-    @band_site = BandSite.where(:slug => @slug)[0]
-
     if @band_site
       render :layout => @layout
     else
@@ -35,9 +59,6 @@ class BandSitesController < ApplicationController
 
   # GET bringtheloot.amplifyre.com/edit
   def edit_mode
-    @slug = request.subdomain
-    @band_site = BandSite.where(:slug => @slug)[0]
-
     authorize! :manage, @band_site
 
     if @band_site
@@ -48,71 +69,11 @@ class BandSitesController < ApplicationController
     end
   end
 
+private
 
-  # GET /band_sites/1
-  def show
-    @band_site = BandSite.find(params[:id])
-
-    authorize! :manage, @band_site
-
-    render json: @band_site
-  end
-
-  # POST /band_sites
-  # POST /api/v1/band_sites
-  def create
-    @band_site = BandSite.new(params[:band_site])
-
-    @band_site.user_ids += [current_user.id]
-
-    respond_to do |format|
-      if @band_site.save
-        format.html { redirect_to :action => 'dashboard', :slug => @band_site.slug }
-        format.json { render json: @band_site, status: :created, location: @band_site }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @band_site.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /band_sites/1
-  # PUT /api/v1/band_sites/1
-  def update
-    @band_site = BandSite.find(params[:id])
-
-    authorize! :manage, @band_site
-
-    respond_to do |format|
-      if @band_site.update_attributes(params[:band_site])
-        format.html { redirect_to :action => 'dashboard', :slug => @band_site.slug }
-        format.json { render json: @band_site, status: :ok }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @band_site.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /band_sites/1
-  # DELETE /api/v1/band_sites/1
-  def destroy
-    @band_site = BandSite.find(params[:id])
-
-    authorize! :manage, @band_site
-
-    @band_site.destroy
-
-    respond_to do |format|
-      format.html { redirect_to user_root_path }
-      format.json { head :no_content }
-    end
-  end
-
-
-  private
-
-  def get_site_from_subdomain
+  def get_site_from_slug
+    @slug = params[:slug] || request.subdomain || nil
+    @band_site = BandSite.where(:slug => @slug)[0] if @slug
     @layout = 'press-play'
     @version = 'normal'
   end

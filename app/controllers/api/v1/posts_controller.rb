@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Api::V1::PostsController < ApplicationController
   load_and_authorize_resource :band_site
 
   # GET /api/v1/band_sites/1/posts/1
