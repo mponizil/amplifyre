@@ -47,6 +47,7 @@ gem 'requirejs-rails', :git => 'git://github.com/mponizil/requirejs-rails.git'
 # gem 'ruby-debug'
 
 gem 'devise'
+gem 'devise_invitable', '~> 1.0.0'
 gem 'cancan'
 
 gem 'fog', '~> 1.3.1'

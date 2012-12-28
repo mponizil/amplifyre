@@ -1,0 +1,20 @@
+<h1><%= @band_site.title %>: Collaborators</h1>
+
+<ul>
+  <% @band_site.other_users(current_user).each do |user| %>
+  <li>
+    <%= user.email %>
+    <% if user.pending? %>(pending)<% end %>
+    <%= link_to 'Destroy', band_site_collaborator_path(@band_site, user),
+          :method => :delete %>
+  </li>
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'Invite collaborator', new_band_site_invitation_path %>
+
+<br />
+
+<%= link_to 'Back', band_site_dashboard_path %>

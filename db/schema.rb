@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121217065130) do
+ActiveRecord::Schema.define(:version => 20121228030249) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,13 +66,13 @@ ActiveRecord::Schema.define(:version => 20121217065130) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "band_sites_users", :id => false, :force => true do |t|
+  create_table "collaborators", :id => false, :force => true do |t|
     t.integer "user_id"
     t.integer "band_site_id"
   end
 
-  add_index "band_sites_users", ["band_site_id", "user_id"], :name => "index_band_sites_users_on_band_site_id_and_user_id"
-  add_index "band_sites_users", ["user_id", "band_site_id"], :name => "index_band_sites_users_on_user_id_and_band_site_id"
+  add_index "collaborators", ["band_site_id", "user_id"], :name => "index_band_sites_users_on_band_site_id_and_user_id"
+  add_index "collaborators", ["user_id", "band_site_id"], :name => "index_band_sites_users_on_user_id_and_band_site_id"
 
   create_table "concerts", :force => true do |t|
     t.integer  "band_site_id"
@@ -131,21 +131,29 @@ ActiveRecord::Schema.define(:version => 20121217065130) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                                :default => "", :null => false
+    t.string   "encrypted_password",                   :default => ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                        :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
+    t.string   "invitation_token",       :limit => 60
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
+  add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

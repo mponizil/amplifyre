@@ -38,16 +38,6 @@ class BandSitesController < ApplicationController
     end
   end
 
-  # GET /bringtheloot/collaborators
-  def collaborators
-    authorize! :manage, @band_site
-    if @band_site
-      render
-    else
-      redirect_to request.protocol + request.domain
-    end
-  end
-
   # GET bringtheloot.amplifyre.com
   def live
     if @band_site

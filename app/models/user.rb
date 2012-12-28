@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :band_sites, :join_table => :band_sites_users
+
+  has_and_belongs_to_many :band_sites, :join_table => :collaborators
 
   validates :email, :presence => true
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
@@ -17,6 +18,10 @@ class User < ActiveRecord::Base
 
   def to_s
     "#{email}"
+  end
+
+  def pending?
+    !self.invitation_accepted_at && self.invited_by_id
   end
 
   private

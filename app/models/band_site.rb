@@ -1,6 +1,6 @@
 class BandSite < ActiveRecord::Base
 
-  has_and_belongs_to_many :users, :join_table => :band_sites_users
+  has_and_belongs_to_many :users, :join_table => :collaborators
   has_many :pages, :dependent => :destroy
   has_many :albums, :dependent => :destroy
   has_many :tracks, :dependent => :destroy

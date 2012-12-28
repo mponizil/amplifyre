@@ -7,27 +7,22 @@ Amplifyre::Application.routes.draw do
     root :to => 'band_sites#live'
   end
 
+  # JSON api (generally consumed by Backbone app)
   namespace :api do
     namespace :v1 do
       resources :band_sites, :except => [:index, :new, :edit] do
         resources :socials, :except => [:index, :new, :edit]
         resources :albums, :except => [:index, :new, :edit] do
-          collection do
-            put 'reorder'
-          end
+          put 'reorder', :on => :collection
         end
         resources :tracks, :except => [:index, :new, :edit] do
-          collection do
-            put 'reorder'
-          end
+          put 'reorder', :on => :collection
         end
         resources :photos, :except => [:index, :new, :edit]
         resources :posts, :except => [:index, :new, :edit]
         resources :concerts, :except => [:index, :new, :edit]
         resources :pages, :except => [:index, :new, :edit] do
-          collection do
-            put 'reorder'
-          end
+          put 'reorder', :on => :collection
         end
       end
     end
@@ -38,22 +33,26 @@ Amplifyre::Application.routes.draw do
   post 'subscribe' => 'statics#subscribe'
   match 'examples' => 'statics#examples'
 
-  # User dashboard
-  match 'dashboard' => 'users#dashboard', :as => :user_root
-
   # ActiveAdmin
   ActiveAdmin.routes(self)
+
+  # User dashboard
+  match 'dashboard' => 'users#dashboard', :as => :user_root
 
   # Devise
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
+  devise_scope :user do
+    get ':slug/invitation/new' => 'band_sites/invitations#new', :as => :new_band_site_invitation
+    post ':slug/invitation' => 'band_sites/invitations#create', :as => :band_site_invitation
+  end
 
   # Band Site resource
   resources :band_sites, :only => [:new, :create]
-  scope ':slug', :controller => 'band_sites', :as => 'band_site' do
-    match '', :action => 'destroy', :via => :delete
-    match 'dashboard'
-    match 'collaborators'
+  scope ':slug', :as => 'band_site' do
+    delete '' => 'band_sites#destroy'
+    get 'dashboard' => 'band_sites#dashboard'
+    resources :collaborators, :only => [:index, :destroy]
   end
 
   # The priority is based upon order of creation:
