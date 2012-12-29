@@ -1,4 +1,7 @@
 ActiveAdmin.register BandSite do
+  controller do
+    defaults finder: :find_by_slug
+  end
   form do |f|
     f.inputs "Band Site Details" do
       f.input :users
