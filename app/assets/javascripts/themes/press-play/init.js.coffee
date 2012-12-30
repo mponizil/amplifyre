@@ -20,8 +20,6 @@ define [
     View::band_site = HelperView::band_site = band_site
 
     router = new Router(pages: pages)
-    Backbone.history or= new Backbone.History()
-    Backbone.history.options = root: root
 
     new App
       el: $('[data-press-play]')
@@ -31,4 +29,4 @@ define [
       router: router
     .render()
 
-    Backbone.history.start(pushState: true)
+    Backbone.history.start(pushState: true, root: root)
