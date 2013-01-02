@@ -32,6 +32,6 @@ class User < ActiveRecord::Base
 
   def add_to_mail_chimp
     gb = Gibbon.new
-    gb.list_subscribe({:id => '4219443fd7', :email_address => self.email})
+    gb.list_subscribe({:id => '4219443fd7', :email_address => self.email, :double_optin => false, :send_welcome => true})
   end
 end
