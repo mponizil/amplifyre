@@ -8,6 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_self
  *= require_tree ./
 */
@@ -26,22 +27,6 @@ body {
   font-size: 18px;
   color: #f6f6f6;
   line-height: 1.4;
-}
-input[type='text'],
-button {
-  font-size: 18px;
-  color: #f6f6f6;
-  padding: 6px 10px;
-  outline: none;
-  border: 1px solid #181818;
-  @include border-radius(8px);
-  background-color: #fefefe;
-  @include background-image(linear-gradient(#545459, #222225));
-  @include box-shadow(rgba(0,0,0,0.1) 1px 1px 3px 0, rgba(255,255,255,0.4) 0 0 4px inset);
-}
-button {
-  cursor: pointer;
-  @include background-image(linear-gradient(#606060, #323232));
 }
 p,
 .block {
@@ -82,9 +67,6 @@ p,
     font-style: italic;
     color: #f6f6f6;
   }
-}
-.splash-action input[type='text'] {
-  width: 50%;
 }
 .splash-subaction {
   @include opacity(0.6);
