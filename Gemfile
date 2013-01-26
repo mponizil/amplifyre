@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rake', '10.0.2'
-gem 'rails', '3.2.3'
+gem 'rake', '10.0.3'
+gem 'rails', '3.2.11'
 
 
 gem 'sqlite3', :group => :development
@@ -24,6 +24,8 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'turbo-sprockets-rails3'
 end
 
 gem 'jquery-rails'
