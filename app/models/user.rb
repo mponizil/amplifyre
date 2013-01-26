@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
       :id => '4219443fd7',
       :email_address => self.email,
       :double_optin => false,
-      :send_welcome => true,
+      :send_welcome => false,
       :update_existing => true
     })
   end

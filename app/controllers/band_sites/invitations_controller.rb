@@ -1,5 +1,5 @@
 class BandSites::InvitationsController < Devise::InvitationsController
-  before_filter :get_site_from_slug, :only => [:new, :create]
+  before_filter :get_site_from_slug, :only => [:create]
 
   # POST /bringtheloot/invitation
   def create
