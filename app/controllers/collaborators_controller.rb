@@ -14,7 +14,9 @@ class CollaboratorsController < ApplicationController
   # DELETE /bringtheloot/collaborators/1
   def destroy
     authorize! :manage, @band_site
+    user = User.find(params[:id])
     @band_site.user_ids -= [params[:id].to_i]
+    flash[:notice] = '%s has been removed from the project.' % user[:email]
     redirect_to band_site_collaborators_path
   end
 

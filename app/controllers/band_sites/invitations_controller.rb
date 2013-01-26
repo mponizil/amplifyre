@@ -3,6 +3,14 @@ class BandSites::InvitationsController < Devise::InvitationsController
 
   # POST /bringtheloot/invitation
   def create
+    user = User.find_by_email(resource_params[:email])
+
+    if user
+      @band_site.user_ids += [user[:id]]
+      flash[:notice] = '%{email} has been added to the project.' % { :email => user.email }
+      return redirect_to band_site_collaborators_path
+    end
+
     self.resource = resource_class.invite!(resource_params, current_inviter)
 
     if resource.errors.empty?
