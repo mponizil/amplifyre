@@ -5,6 +5,7 @@ class CollaboratorsController < ApplicationController
   def index
     authorize! :manage, @band_site
     if @band_site
+      @collaborator = User.new
       render
     else
       redirect_to request.protocol + request.domain

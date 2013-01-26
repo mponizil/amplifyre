@@ -1,11 +1,12 @@
 <h1><%= @band_site.title %>: Collaborators</h1>
 
+<!-- list collaborators -->
 <ul>
   <% @band_site.other_users(current_user).each do |user| %>
   <li>
     <%= user.email %>
     <% if user.pending? %>(pending)<% end %>
-    <%= link_to 'Destroy', band_site_collaborator_path(@band_site, user),
+    <%= link_to 'Remove', band_site_collaborator_path(@band_site, user),
           :method => :delete %>
   </li>
   <% end %>
@@ -13,8 +14,19 @@
 
 <br />
 
-<%= link_to 'Invite collaborator', new_band_site_invitation_path %>
+<!-- invite / add a collaborator -->
+<%= form_for @collaborator, :url => band_site_invitation_path, :html => {:method => :post} do |f| %>
+
+  <%= hidden_field :band_site, :id %>
+
+<% @collaborator.class.invite_key_fields.each do |field| -%>
+  <p><%= f.label field %><br />
+  <%= f.text_field field %></p>
+<% end -%>
+
+  <p><%= f.submit 'Invite collaborator' %></p>
+<% end %>
 
 <br />
 
-<%= link_to 'Back', band_site_dashboard_path %>
+<%= link_to 'Back to %s Dashboard' % @band_site.title, band_site_dashboard_path %>

@@ -7,7 +7,7 @@ class BandSites::InvitationsController < Devise::InvitationsController
 
     if user
       @band_site.user_ids += [user[:id]]
-      flash[:notice] = '%{email} has been added to the project.' % { :email => user.email }
+      flash[:notice] = I18n.t 'collaborator.added', :email => user.email
       return redirect_to band_site_collaborators_path
     end
 
@@ -25,8 +25,8 @@ class BandSites::InvitationsController < Devise::InvitationsController
 private
 
   def get_site_from_slug
-    @band_site = BandSite.where(:slug => params[:slug])[0]
-    if !@band_site
+    @band_site = BandSite.find_by_slug(params[:slug])
+    if not @band_site
       redirect_to user_root_path
     end
   end
