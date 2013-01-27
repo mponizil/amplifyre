@@ -24,20 +24,26 @@ class User < ActiveRecord::Base
     !self.invitation_accepted_at && self.invited_by_id
   end
 
+  def self.prelaunch_invite!(attributes={})
+    self.invite!(attributes) do |u|
+      u.instructions = :prelaunch_invitation_instructions
+    end
+  end
+
   private
 
-  def set_defaults
-    self.password ||= Devise.friendly_token.first(6)
-  end
+    def set_defaults
+      self.password ||= Devise.friendly_token.first(6)
+    end
 
-  def add_to_mail_chimp
-    gb = Gibbon.new
-    gb.list_subscribe({
-      :id => '4219443fd7',
-      :email_address => self.email,
-      :double_optin => false,
-      :send_welcome => false,
-      :update_existing => true
-    })
-  end
+    def add_to_mail_chimp
+      gb = Gibbon.new
+      gb.list_subscribe({
+        :id => '4219443fd7',
+        :email_address => self.email,
+        :double_optin => false,
+        :send_welcome => false,
+        :update_existing => true
+      })
+    end
 end
