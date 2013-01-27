@@ -1,0 +1,11 @@
+<%= form_for @collaborator, :url => invite_band_site_collaborators_path, :html => {:method => :post} do |f| %>
+
+  <%= hidden_field :band_site, :id %>
+
+<% @collaborator.class.invite_key_fields.each do |field| -%>
+  <%= f.label field, "Collaborator's email address" %>
+  <%= f.text_field field %>
+<% end -%>
+
+  <p><%= f.submit 'Invite collaborator', :class => 'btn' %></p>
+<% end %>

@@ -42,17 +42,15 @@ Amplifyre::Application.routes.draw do
   # Devise
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
-  devise_scope :user do
-    get ':slug/invitation/new' => 'band_sites/invitations#new', :as => :new_band_site_invitation
-    post ':slug/invitation' => 'band_sites/invitations#create', :as => :band_site_invitation
-  end
 
   # Band Site resource
   resources :band_sites, :only => [:new, :create]
   scope ':slug', :as => 'band_site' do
     delete '' => 'band_sites#destroy'
     get 'dashboard' => 'band_sites#dashboard'
-    resources :collaborators, :only => [:index, :destroy]
+    resources :collaborators, :only => [:index, :destroy] do
+      post 'invite', :on => :collection
+    end
   end
 
   # The priority is based upon order of creation:

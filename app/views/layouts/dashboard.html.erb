@@ -9,7 +9,26 @@
 <body>
 
   <div class='container-fluid'>
-  <%= yield %>
+
+    <div class='navbar'>
+      <div class='navbar-inner'>
+        <a class='brand'>Amplifyre</a>
+        <ul class='nav'>
+          <li><%= link_to 'Dashboard', user_root_path %></li>
+        </ul>
+        <ul class='nav pull-right'>
+          <li><%= link_to current_user.email, user_root_path %></li>
+          <li class='divider-vertical'></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class='alert'><%= notice %></p>
+    <p class='alert'><%= alert %></p>
+
+    <%= yield %>
+
   </div>
 
   <script type="text/javascript">

@@ -1,6 +1,5 @@
 <h1><%= @band_site.title %>: Collaborators</h1>
 
-<!-- list collaborators -->
 <ul>
   <% @band_site.other_users(current_user).each do |user| %>
   <li>
@@ -14,18 +13,7 @@
 
 <br />
 
-<!-- invite / add a collaborator -->
-<%= form_for @collaborator, :url => band_site_invitation_path, :html => {:method => :post} do |f| %>
-
-  <%= hidden_field :band_site, :id %>
-
-<% @collaborator.class.invite_key_fields.each do |field| -%>
-  <p><%= f.label field %><br />
-  <%= f.text_field field %></p>
-<% end -%>
-
-  <p><%= f.submit 'Invite collaborator' %></p>
-<% end %>
+<%= render 'invite' %>
 
 <br />
 

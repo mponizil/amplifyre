@@ -7,15 +7,12 @@
   </div>
   <div class='widget-content'>
     <%= band_site.description %><br />
-    <%= link_to view_band_site_path(band_site), :target => '_blank' do %>
-      <i class='icon-share'></i>
-      <%= '%s.%s' % [band_site.slug, request.domain] %>
-    <% end %>
+    <i class='icon-share'></i>
+    <%= link_to '%s.%s' % [band_site.slug, request.domain], view_band_site_path(band_site),
+        :target => '_blank' %>
     <br />
-    <%= link_to edit_band_site_path(band_site), :target => '_blank' do %>
-      <i class='icon-edit'></i>
-      Launch Editor
-    <% end %>
+    <i class='icon-edit'></i>
+    <%= link_to 'Launch Editor', edit_band_site_path(band_site), :target => '_blank' %>
   </div>
 </div>
 <% end %>

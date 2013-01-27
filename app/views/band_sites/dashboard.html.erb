@@ -1,11 +1,20 @@
-<%= link_to 'Back to User Dashboard', user_root_path %>
-
 <h1>Band Dashboard Page: <%= @band_site.slug %></h1>
 
-<p><%= link_to 'View Site', view_band_site_path(@band_site) %></p>
+<i class='icon-share'></i>
+<%= link_to '%s.%s' % [@band_site.slug, request.domain], view_band_site_path(@band_site),
+    :target => '_blank' %>
 
-<p><%= link_to 'Launch Site Editor', edit_band_site_path(@band_site) %></p>
+<br />
 
-<p><%= link_to 'Collaborators', band_site_collaborators_path(@band_site) %></p>
+<i class='icon-edit'></i>
+<%= link_to 'Launch Editor', edit_band_site_path(@band_site), :target => '_blank' %>
 
-<p><%= link_to 'Delete Site', @band_site, confirm: 'Are you sure?', method: :delete %></p>
+<br />
+
+<i class='icon-user'></i>
+<%= link_to 'Collaborators', band_site_collaborators_path(@band_site) %>
+
+<br /><br />
+
+<%= link_to 'Delete Site', @band_site, confirm: 'Are you sure?', method: :delete,
+    :class => 'btn btn-danger' %>
