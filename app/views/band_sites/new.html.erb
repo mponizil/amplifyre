@@ -14,15 +14,15 @@
   <% end %>
 
   <div class='field'>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class='field'>
-    <%= f.label :slug %> (_____.amplifyre.com, lowercase and no spaces please)<br />
+    <%= f.label :slug, 'Slug (_____.amplifyre.com, lowercase and no spaces please)' %>
     <%= f.text_field :slug %>
   </div>
   <div class='actions'>
-    <%= f.submit %>
+    <%= f.submit(:class => 'btn btn-primary') %>
   </div>
 <% end %>
 
