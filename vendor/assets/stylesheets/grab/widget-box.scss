@@ -1,0 +1,33 @@
+@import 'compass/css3';
+
+.widget-box {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border: 1px solid #CDCDCD;
+  margin: 10px 0 20px 0;
+}
+.widget-title {
+  @include background-image(linear-gradient(#fdfdfd, #eaeaea));
+  border-bottom: 1px solid #CDCDCD;
+  color: #666666;
+  text-shadow: 0 1px 0 #ffffff;
+  font-size: 16px;
+  padding: 8px;
+
+  .icon {
+    border-right: 1px solid #cdcdcd;
+    padding: 10px 10px 10px 5px;
+    margin-right: 10px;
+    opacity: .7;
+  }
+}
+.widget-content {
+  position: relative;
+  padding: 10px;
+
+  .form-actions {
+    margin: 20px -10px -10px -10px;
+  }
+  .form-horizontal .form-actions {
+    padding-left: 210px;
+  }
+}
