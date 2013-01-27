@@ -1,19 +1,37 @@
-<h1 style='text-align:center'>Create your band website with Amplifyre (alpha)</h1>
+<div style='width:450px;margin:0 auto;text-align:center;font-family:"Lucida Grande",Helvetica,Arial,sans-serif;'>
 
-<p>
-  Amplifyre has finally reached the Alpha stage, which means all the functionality you
-  need is there, but development is still in progress. <strong>It's up to what what gets
-  built next.</strong>
-</p>
+  <h1>Amplifyre (alpha) is ready for you</h1>
 
-<h3>Redeem your invitation, send your feedback</h3>
+  <p style='margin:20px 0'>
+    <%= link_to 'Activate My Account', accept_invitation_url(@resource,
+        :invitation_token => @resource.invitation_token),
+        :style => 'display:block;width:200px;background-color:#262626;
+                   border:1px solid #000000;color:#c8ba1b;text-align:center;
+                   padding:20px 0;margin:0 auto' %>
+  </p>
 
-<p>Please click through to activate your account and then try to build your own
-custom band website. Bare with us during these early stages, and log your feedback as you
-go. Reply to this email with any and all suggestions (bullet points are great!).</p>
 
-<p><%= link_to 'Accept invitation', accept_invitation_url(@resource,
-    :invitation_token => @resource.invitation_token) %></p>
+  <h3>Amplifyre (alpha)</h3>
 
-<p>If you don't want to accept the invitation, please ignore this email.<br />
-Your account won't be created until you access the link above and set your password.</p>
+  <p>We're finally in the "alpha" stage, which means all the functionality you need is
+  there, but there's still work to be done!</p>
+
+
+  <h3>Take a Stroll, Send your Feedback</h3>
+
+  <p>Give it a go, see what you like, and what you'd like to see improved. Then reply to this
+  email with some bullet points: <strong>it's up to what what gets built next.</strong></p>
+
+  <p style='margin:20px 0'>
+    <%= link_to 'Activate My Account', accept_invitation_url(@resource,
+        :invitation_token => @resource.invitation_token),
+        :style => 'display:block;width:200px;background-color:#262626;
+                   border:1px solid #000000;color:#c8ba1b;text-align:center;
+                   padding:20px 0;margin:0 auto' %>
+  </p>
+
+
+  <p>If you don't want to accept the invitation, please ignore this email.<br />
+  Your account won't be created until you access the link above and set your password.</p>
+
+</div>
