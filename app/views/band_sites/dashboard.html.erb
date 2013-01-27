@@ -7,3 +7,5 @@
 <p><%= link_to 'Launch Site Editor', edit_band_site_path(@band_site) %></p>
 
 <p><%= link_to 'Collaborators', band_site_collaborators_path(@band_site) %></p>
+
+<p><%= link_to 'Delete Site', @band_site, confirm: 'Are you sure?', method: :delete %></p>
