@@ -19,7 +19,6 @@ define [
   'jst!at-pp/templates/app'
   'at-pp/views/ui'
   'at-pp/models/associations'
-  'jplayer'
   'easing'
   'fancybox'
 ], (Backbone, Quilt, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, PagesView, jst) ->
@@ -47,7 +46,6 @@ define [
 
       @player = new Player
         tracks: @tracks
-        jplayer: @$jp_interface
 
       @views.push(new BackgroundView
         el: @$background

@@ -1,21 +1,18 @@
 define [
   'backbone'
-], (Backbone) ->
+  'soundmanager2'
+], (Backbone, soundManager) ->
 
   class Player extends Backbone.Model
 
-    initialize: ({@tracks, @jplayer}) ->
+    initialize: ({@tracks}) ->
       super
 
-      # Initialize jPlayer.
-      @jplayer.jPlayer(
-        ready: => @choose(this, 0)
-        ended: => @set(index: @next())
-        volume: 1
-        swfPath: '/assets/jplayer'
-        # supplied: 'mp3, m4a'
-        supplied: 'mp3'
-      ).css('height', 0)
+      soundManager.setup
+        url: '/assets/soundmanager2'
+        onready: => @choose(this, 0)
+        defaultOptions:
+          onfinish: => @set(index: @next())
 
       @tracks.on('add remove', @reset, @)
       @on('change:index', @choose, @)
@@ -35,9 +32,9 @@ define [
 
     toggle: (player, playing) ->
       if playing
-        @jplayer.jPlayer('play')
+        soundManager.play(@active().id)
       else
-        @jplayer.jPlayer('pause')
+        soundManager.pause(@active().id)
 
     # Retreive the active track according to `index`.
     active: ->
@@ -61,10 +58,12 @@ define [
     setMedia: (track) ->
       return unless track
 
-      @jplayer.jPlayer 'setMedia',
-        # m4a: track.get('file').url
-        mp3: track.get('file').url
+      soundObject = soundManager.createSound
+        id: track.id
+        url: track.get('file').url
+        autoPlay: false
 
       # Keep playing if we were playing.
       if @get('playing')
-        @jplayer.jPlayer('play')
+        soundManager.stopAll()
+        soundObject.play()

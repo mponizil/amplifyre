@@ -17,7 +17,7 @@ paths:
   supermodel: 'supermodel'
   list: 'list'
   jquery_ui: 'jquery-ui'
-  jplayer: 'jplayer/jquery.jplayer.min'
+  soundmanager2: 'soundmanager2/soundmanager2'
   easing: 'jquery.easing.1.3'
   fancybox: 'fancybox/jquery.fancybox'
   'jquery.ui.widget': 'jquery.fileupload/jquery.ui.widget'
@@ -48,9 +48,6 @@ shim:
   list:
     deps: ['quilt']
     exports: 'List'
-  jplayer:
-    deps: ['jquery']
-    exports: '$'
   easing:
     deps: ['jquery']
     exports: '$'
