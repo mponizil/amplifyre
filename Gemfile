@@ -49,7 +49,7 @@ gem 'requirejs-rails', :git => 'git://github.com/mponizil/requirejs-rails.git'
 # gem 'ruby-debug'
 
 gem 'devise'
-gem 'devise_invitable'
+gem 'devise_invitable', github: 'scambra/devise_invitable'
 gem 'cancan'
 
 gem 'fog', '~> 1.3.1'
