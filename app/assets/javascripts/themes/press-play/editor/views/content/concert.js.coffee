@@ -8,8 +8,8 @@ define [
 
     inject: ->
       @$right.append('''
-        <div style='margin-top:10px' class='edit-mode'>
-          <button type='button' class='delete' data-ref='destroy'>Delete Concert</button>
+        <div class='well well-small'>
+          <button type='button' class='btn btn-danger' data-ref='destroy'>Delete Concert</button>
         </div>''')
 
     render: ->

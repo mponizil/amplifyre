@@ -9,7 +9,10 @@ define [
 
     inject: ->
       @$el.attr('data-sortable-id', @model.id)
-      @$el.append("<div class='delete edit-mode' data-ref='destroy'>X</div>")
+      @$el.append('''
+        <div class='remove'>
+          <i class='icon-remove icon-white' data-ref='destroy'></i>
+        </div>''')
       @$el.append("<div data-ref='progress'><div>")
 
     render: ->

@@ -10,6 +10,8 @@ define [
 
       @model.on('change:file', @render, @)
 
+    className: 'span2'
+
     tagName: 'li'
 
     template: jst

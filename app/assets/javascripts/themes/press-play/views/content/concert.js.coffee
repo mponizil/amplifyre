@@ -5,7 +5,8 @@ define [
 
   class ConcertView extends View
 
-    attributes:
-      class: 'concert'
+    className: 'media'
+
+    tagName: 'li'
 
     template: jst

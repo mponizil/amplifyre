@@ -4,8 +4,7 @@ define [
 
   class Page extends View
 
-    attributes:
-      'class': 'white-box page-container'
+    className: 'page-container white-box'
 
     events: ->
       'size:update': 'resize'

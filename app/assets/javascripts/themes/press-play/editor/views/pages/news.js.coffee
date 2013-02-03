@@ -7,7 +7,7 @@ define [
     inject: ->
       super
 
-      @$controls_right.prepend("<button data-new-post>New Post</button>")
+      @$controls_right.prepend("<button type='button' class='btn' data-new-post>New Post</button>")
 
     events:
       'click [data-new-post]': 'newPost'

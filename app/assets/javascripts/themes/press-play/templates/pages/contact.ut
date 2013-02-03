@@ -20,7 +20,7 @@
       </tr>
       <tr>
         <td colspan='2' align='right'>
-          <button class='send'>Send</button>
+          <button type='button' class='btn'>Send</button>
           <img src='/assets/global/ajax-loader.gif' class='loader' />
           <div class='result'></div>
         </td>

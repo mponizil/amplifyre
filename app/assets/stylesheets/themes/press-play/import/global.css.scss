@@ -91,16 +91,7 @@ body { overflow: hidden; }
 .scrollpane {
   max-height: 300px;
   overflow-y: auto;
-  padding: 2px;
-}
-
-//=== Thumbs
-// Images inside of links inside of .thumbs have 4px borders with a hover state
-.thumbs a img {
-  border: 4px solid #000;
-}
-.thumbs a:hover img {
-  border: 4px solid #06bcff;
+  padding: 10px;
 }
 
 //=== Music Album
@@ -135,37 +126,4 @@ body { overflow: hidden; }
   .date, .title, .body {
     margin-bottom: 6px;
   }
-}
-
-//=== Concert
-// A concert post with a time, date, and venue on the left, and thumbnail image on the right
-.concert {
-  @include clearfix;
-  border-top: 2px solid #06bcff;
-  position: relative;
-  padding-top: 4px;
-  margin-top: 10px;
-}
-.concert-left {
-  float: left;
-  width: 450px;
-
-  .time {
-    margin-bottom: 4px;
-    font-style: italic;
-  }
-  .date {
-    font-size: 36px;
-    font-weight: bold;
-    font-family: Impact, 'Arial Black', Arial, sans-serif;
-    line-height: normal;
-  }
-  .venue {
-    margin-bottom: 4px;
-    font-weight: bold;
-  }
-}
-.concert-right {
-  float: right;
-  width: 88px;
 }

@@ -1,9 +1,5 @@
 @import "compass/css3";
 
-.delete {
-  cursor: pointer;
-  &:hover, &.edit-mode:hover { background-color: #e00000; }
-}
 .sortable,
 .sortable li a, {
   cursor: move;
@@ -14,17 +10,34 @@
 .progress-inner {
   background-color: #06bcff;
 }
+.remove {
+  cursor: pointer;
+  width: 14px;
+  height: 17px;
+  padding: 1px 4px 4px 4px;
+  @include border-radius(10px);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #da4f49;
+  *background-color: #bd362f;
+  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+  background-repeat: repeat-x;
+  border-color: #bd362f #bd362f #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.well {
+  margin-bottom: 0;
+}
 
 //
 // Editable
 //
 
-.edit-mode {
-  padding: 4px;
-  border: 1px solid #919191;
-  background-color: #e7f9ff;
-  @include box-shadow(rgba(0,0,0,0.3) 0 0 4px inset);
-}
 .editable {
   outline: none;
 }
@@ -77,17 +90,10 @@ textarea.editable-hover {
 .album {
   position: relative;
 
-  .delete {
-    font-size: 12px;
-    line-height: normal;
-    background-color: white;
+  .remove {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding-top: 2px;
-    width: 16px;
-    height: 14px;
-    text-align: center;
+    top: -7px;
+    right: -7px;
   }
 }
 

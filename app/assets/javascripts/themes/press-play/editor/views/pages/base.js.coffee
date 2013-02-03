@@ -7,12 +7,12 @@ define [
 
     inject: ->
       @$el.prepend('''
-        <div class='clearfix edit-mode' data-ref='controls'>
-          <div class='left' data-ref='controls_left'>
+        <div class='well well-small clearfix' data-ref='controls'>
+          <div class='pull-left' data-ref='controls_left'>
             <h2 data-attr='title' data-editable='text-input'></h2>
           </div>
-          <div class='right' data-ref='controls_right'>
-            <button class='delete' data-destroy>Delete Page</button>
+          <div class='pull-right' data-ref='controls_right'>
+            <button type='button' class='btn btn-danger' data-destroy>Delete Page</button>
           </div>
         </div>''')
       @cache()

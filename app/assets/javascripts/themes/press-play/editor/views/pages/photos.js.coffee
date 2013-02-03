@@ -8,8 +8,8 @@ define [
     inject: ->
       super
 
-      @$el.prepend('''
-        <div class='edit-mode'>
+      @$el.append('''
+        <div class='well well-small'>
           <input type='file' name='photo[file]' data-ref='upload' multiple />
         </div>''')
 
