@@ -10,7 +10,7 @@ class BandSite < ActiveRecord::Base
   has_many :socials, :dependent => :destroy
 
   validates :name, :presence => true
-  validates :slug, :uniqueness => true
+  validates :slug, :uniqueness => true, :length => { :in => 2..16 }
 
   attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name, :description, :title, :phrase, :background_file
 
