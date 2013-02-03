@@ -5,7 +5,7 @@ define [
 
   class SocialView extends Quilt.View
 
-    template: -> '''<ul class='horizontal-list'></ul>'''
+    template: -> '''<ul class='nav'></ul>'''
 
     render: ->
       super

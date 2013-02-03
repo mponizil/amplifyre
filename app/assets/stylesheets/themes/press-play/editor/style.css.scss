@@ -4,7 +4,8 @@
   cursor: pointer;
   &:hover, &.edit-mode:hover { background-color: #e00000; }
 }
-.sortable {
+.sortable,
+.sortable li a, {
   cursor: move;
 }
 .sortable-exclude {
@@ -70,20 +71,6 @@ textarea.editable-hover {
 //
 // Section-specific UI
 //
-
-.pp-top-bar {
-  .dropdown {
-    width: 60px;
-    text-align: center;
-  }
-  .dropdown-content {
-    margin-top: 2px;
-  }
-  .black-bar {
-    width: 60px;
-    padding: 10px;
-  }
-}
 
 .page-photos li,
 .page-listen li,

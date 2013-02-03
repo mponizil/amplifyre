@@ -1,79 +1,7 @@
-body, html {
-  height: 100%;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
-  font-size: 15px;
-  line-height: 1.45em;
-  color: #000;
-  background-color: #000;
-  overflow: hidden;
-}
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 6px 0;
-}
-h1 {
-  font-size: 40px;
-  font-family: 'Oswald', Helvetica, Arial, sans-serif;
-}
-a {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-a:hover,
-a.active {
-  color: #06bcff;
-}
-a img {
-  border: none;
-}
-ul, li {
-  margin: 0;
-  padding: 0;
-}
-input[type='text'],
-select {
-  font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
-  width: 100%;
-  font-size: 15px;
-  padding: 4px;
-  border: 1px solid #DDD;
-  outline: none;
-}
-input[type='submit'],
-button {
-  font-size: 15px;
-  padding: 4px;
-  outline: none;
-}
-textarea {
-  font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif;
-  width: 100%;
-  height: 120px;
-  font-size: 15px;
-  padding: 4px;
-  border: 1px solid #DDD;
-  outline: none;
-}
-button {
-  font-size: 14px;
-  padding: 4px;
-}
-td {
-  vertical-align: top;
-}
-p {
-  margin: 0 0 15px 0;
-}
+body, html { height: 100%; }
+body { overflow: hidden; }
 
-.clearfix { @include clearfix; }
-.left { float: left; }
-.right { float: right; }
-.hidden { display: none; }
-.invisible { opacity: 0; }
+.transparent { opacity: 0; }
 
 // Little things
 .subtitle {
@@ -94,11 +22,11 @@ p {
   margin: 0 auto;
 }
 
-//=== Container
-// Plain old relatively-positioned container
-.container {
-  position: relative;
-  margin: 0 auto;
+//=== Background
+// Responsive background image / whateva
+.background {
+  position: static;
+  z-index: 1;
 }
 
 //=== Abs Mid Mid
@@ -117,20 +45,11 @@ p {
   right: 0;
 }
 
-//=== Abs Right
-// For when it's gotta be on the right
-.abs-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 //=== Symmetry
 // A 3-div hack for centering block elements without a specific width
 .symmetry {
   width: 100%;
   position: absolute;
-  bottom: 0;
 }
 .symmetry-float {
   float: left;
@@ -141,45 +60,6 @@ p {
   float: left;
   position: relative;
   left: -50%;
-}
-
-//=== Horizontal List
-// Float-left list items
-.horizontal-list {
-  @include clearfix;
-
-  > li {
-    margin: 0 5px;
-    list-style: none;
-    float: left;
-    position: relative;
-  }
-}
-
-//=== Dropdown
-// Dropdown menus
-.dropdown {
-  position: relative;
-  z-index: 10;
-
-  .dropdown-toggle {
-    position: relative;
-  }
-  .dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 10;
-    list-style: none;
-  }
-}
-
-//=== Black Bar
-// A nice black horizontal bar that stretches 100%
-.black-bar {
-  font-family: 'Oswald', Arial, serif;
-  @include background-image(linear-gradient(#000, #1f1f1f));
-  @include box-shadow(0 0 10px #000);
 }
 
 //=== Black Banner

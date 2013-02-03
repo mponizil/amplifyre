@@ -41,7 +41,7 @@ define [
         .render())
       else
         @$el.addClass('sortable-exclude')
-        @$el.removeClass('hidden')
+        @$el.removeClass('hide')
 
       @renderNested() if @model.id
 

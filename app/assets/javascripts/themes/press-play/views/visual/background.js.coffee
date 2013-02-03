@@ -20,7 +20,7 @@ define [
 
       @$bgs = @$('[data-ref^=bg_]')
 
-      @$bg_active.addClass('hidden') unless @player.get('playing')
+      @$bg_active.addClass('hide') unless @player.get('playing')
 
       @initMeasure => @resize()
       $(window).on('resize', @resize)

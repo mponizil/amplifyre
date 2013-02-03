@@ -1,11 +1,14 @@
 <li class='dropdown' data-dropdown='hover'>
-  <a class='dropdown-toggle' data-dropdown-toggle>+ New</a>
-  <ul class='dropdown-content' data-dropdown-content>
-    <li class='black-bar' data-new-page='news'><a>News</a></li>
-    <li class='black-bar' data-new-page='photos'><a>Photos</a></li>
-    <li class='black-bar' data-new-page='listen'><a>Music</a></li>
-    <li class='black-bar' data-new-page='tour'><a>Tour</a></li>
-    <li class='black-bar' data-new-page='contact'><a>Contact</a></li>
-    <li class='black-bar' data-new-page='custom'><a>Custom</a></li>
+  <a href='javascript:void(0)' class='dropdown-toggle' data-dropdown-toggle>
+    Create
+    <b class='caret'></b>
+  </a>
+  <ul class='dropdown-menu' data-dropdown-content>
+    <li data-new-page='news'><a href='javascript:void(0)'>News</a></li>
+    <li data-new-page='photos'><a href='javascript:void(0)'>Photos</a></li>
+    <li data-new-page='listen'><a href='javascript:void(0)'>Music</a></li>
+    <li data-new-page='tour'><a href='javascript:void(0)'>Tour</a></li>
+    <li data-new-page='contact'><a href='javascript:void(0)'>Contact</a></li>
+    <li data-new-page='custom'><a href='javascript:void(0)'>Custom</a></li>
   </ul>
 </li>

@@ -22,10 +22,10 @@ define [
     render: ->
       super
 
-      @$play_pause.addClass('invisible')
-      @$pause.addClass('hidden')
-      @$prev.addClass('invisible')
-      @$next.addClass('invisible')
+      @$play_pause.addClass('transparent')
+      @$pause.addClass('hide')
+      @$prev.addClass('transparent')
+      @$next.addClass('transparent')
 
       @$('[data-ref=play_pause], [data-ref=prev], [data-ref=next]').hover(
         -> $(this).animate(opacity: 1)
@@ -48,4 +48,4 @@ define [
       @$play.fadeIn()
 
     route: (e) ->
-      @$el.toggleClass('hidden', e is 'route:slug')
+      @$el.toggleClass('hide', e is 'route:slug')

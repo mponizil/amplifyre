@@ -22,7 +22,7 @@ define [
     router = new Router(pages: pages)
 
     new App
-      el: $('[data-press-play]')
+      el: $('#pp-template')
       model: band_site
       pages: pages
       bootstrap: bootstrap

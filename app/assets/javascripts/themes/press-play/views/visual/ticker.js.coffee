@@ -19,8 +19,8 @@ define [
     render: ->
       super
 
-      @$ticker.addClass('hidden')
-      @$phrase.removeClass('hidden')
+      @$ticker.addClass('hide')
+      @$phrase.removeClass('hide')
 
       return this
 
@@ -57,8 +57,8 @@ define [
           @counter++
 
     playing: (next) =>
-      @$phrase.addClass('hidden')
-      @$ticker.removeClass('hidden')
+      @$phrase.addClass('hide')
+      @$ticker.removeClass('hide')
 
       if @counter % 2 is 0
         @$ticker.html(@player.active().get('title'))
@@ -68,7 +68,7 @@ define [
       next()
 
     paused: (next) =>
-      @$phrase.removeClass('hidden')
-      @$ticker.addClass('hidden')
+      @$phrase.removeClass('hide')
+      @$ticker.addClass('hide')
 
       next()

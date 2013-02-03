@@ -28,7 +28,7 @@ define [
         $el = $(el)
         category = $el.data().newPage
         used = @collection.find (page) -> category is page.get('category')
-        $el.toggleClass('hidden', !!used and category isnt 'custom')
+        $el.toggleClass('hide', !!used and category isnt 'custom')
 
     newPage: (e) ->
       @$('[data-dropdown]').trigger('dropdown:hide')

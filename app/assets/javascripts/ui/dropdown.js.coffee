@@ -50,7 +50,7 @@ define [
 
     toggle: (e) ->
       e?.stopPropagation()
-      if @$content.hasClass('hidden')
+      if @$content.hasClass('hide')
         @show()
       else
         @hide()
@@ -63,10 +63,17 @@ define [
       , 300
 
     hide: =>
-      @$content.addClass('hidden')
+      # For compat. with bootstrap
+      @$el.removeClass('open')
+
+      @$content.addClass('hide')
 
     show: ->
       current?.hide()
       current = this
-      @$content.removeClass('hidden')
+
+      # For compat. with bootstrap
+      @$el.addClass('open')
+
+      @$content.removeClass('hide')
       @wantsShowing = true

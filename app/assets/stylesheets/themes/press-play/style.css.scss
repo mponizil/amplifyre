@@ -1,4 +1,4 @@
-@import "compass/css3";
+@import 'compass/css3';
 
 @mixin clearfix {
   zoom:1;
@@ -13,10 +13,10 @@
   }
 }
 
-@import "import/global";
+@import 'import/global';
 
-@import "import/music";
+@import 'import/music';
 
-@import "import/skeleton";
+@import 'import/skeleton';
 
-@import "import/pages";
+@import 'import/pages';

@@ -1,19 +1,21 @@
 <!-- background image goodness -->
-<div class='pp-background' data-ref='background'></div>
+<div class='background' data-ref='background'></div>
 
 <!-- begin amplifyre website -->
-<div class='container pp-container'>
+<div class='foreground'>
 
-  <div class='black-bar pp-top-bar' data-ref='top_bar'>
+  <div class='navbar navbar-inverse' data-ref='top_bar'>
+    <div class='navbar-inner'>
 
-    <!-- navigation -->
-    <div class='symmetry'><div class='symmetry-float' data-ref='navigation'>
-    </div></div>
+      <!-- navigation -->
+      <div class='symmetry'><div class='symmetry-float'>
+        <div class='symmetry-inner' data-ref='navigation'></div>
+      </div></div>
 
-    <!-- social media -->
-    <div class='abs-right' data-ref='social'>
+      <!-- social media -->
+      <div class='pull-right' data-ref='social'></div>
+
     </div>
-
   </div>
 
   <div data-ref='page'>
@@ -22,7 +24,7 @@
   <!-- music player goodness -->
   <div class='pp-music-player' data-ref='music'></div>
 
-  <div class='symmetry'><div class='symmetry-float'>
+  <div class='symmetry pp-bottom-banner'><div class='symmetry-float'>
     <div class='symmetry-inner black-banner' data-ref='black_banner'>
 
       <h1 data-attr='name' data-editable='text-input'></h1>
