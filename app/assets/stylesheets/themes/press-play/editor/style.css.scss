@@ -87,7 +87,7 @@ textarea.editable-hover {
 
 .page-photos li,
 .page-listen li,
-.album {
+.page-listen .album {
   position: relative;
 
   .remove {
@@ -111,7 +111,8 @@ textarea.editable-hover {
     border-color: #06bcff;
   }
 }
-.album-upload {
+input[type='file'].album-upload {
+  display: block;
   cursor: pointer;
   position: absolute;
   top: -8px;

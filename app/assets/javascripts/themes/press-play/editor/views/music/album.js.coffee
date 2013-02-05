@@ -23,11 +23,11 @@ define [
       @$el.append("<input type='file' name='track[file]' data-ref='upload' multiple />")
 
       if @model.id isnt -1
-        @$el.append('''
+        @$el.prepend('''
           <div class='remove'>
             <i class='icon-remove icon-white' data-ref='destroy'></i>
           </div>''')
-        @$el.append("<div data-ref='progress'><div>")
+        @$el.prepend("<div data-ref='progress'><div>")
 
     render: ->
       super

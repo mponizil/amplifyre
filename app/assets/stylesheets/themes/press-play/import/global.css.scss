@@ -95,29 +95,24 @@ body { overflow: hidden; }
 }
 
 //=== Music Album
-.album {
-  float: left;
-  width: 220px;
-  margin: 0 20px 20px 0;
-
-  .album-cover {
-    width: 150px;
-    margin: 0 auto 20px auto;
-  }
-  .album-tracks {
-    background: rgba(0,0,0,0.2);
-  }
-  .album-track {
-    padding: 4px;
-    list-style: none;
-    position: relative;
-    color: #000;
-    font-style: italic;
-    cursor: pointer;
-  }
-  .album-track:hover {
-    background: rgba(255,255,255,0.4);
-  }
+.album-cover {
+  width: 150px;
+  margin: 0 auto 20px auto;
+}
+.album-tracks {
+  background: rgba(0,0,0,0.2);
+  margin: 0;
+}
+.album-track {
+  padding: 4px;
+  list-style: none;
+  position: relative;
+  color: #000;
+  font-style: italic;
+  cursor: pointer;
+}
+.album-track:hover {
+  background: rgba(255,255,255,0.4);
 }
 
 //=== News Post

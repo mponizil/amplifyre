@@ -1,4 +1,4 @@
-<div class='scrollpane page-listen' data-ref='scrollpane'>
+<div class='scrollpane page-listen row-fluid' data-ref='scrollpane'>
 
   <div data-ref='albums' data-fancybox></div>
 

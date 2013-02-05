@@ -10,7 +10,7 @@ define [
 
       @model.on('change:file', @render, @)
 
-    className: 'span2'
+    className: 'thumbnail'
 
     tagName: 'li'
 

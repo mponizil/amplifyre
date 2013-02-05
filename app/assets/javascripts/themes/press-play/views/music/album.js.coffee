@@ -14,8 +14,7 @@ define [
 
     template: jst
 
-    attributes: ->
-      'class': 'album'
+    className: 'album span3'
 
     render: ->
       super
@@ -27,7 +26,7 @@ define [
       TrackView = TrackView.extend
         player: @player
         tagName: 'li'
-        attributes: class: 'album-track'
+        className: 'album-track'
       @views.push(new List
         el: @$tracks
         view: TrackView

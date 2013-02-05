@@ -1,4 +1,4 @@
-<div class='album-cover thumbs' data-ref='cover'>
+<div class='album-cover thumbnail' data-ref='cover'>
 </div>
 
 <ul class='album-tracks' data-ref='tracks'>
