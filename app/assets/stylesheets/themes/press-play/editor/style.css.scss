@@ -1,5 +1,8 @@
 @import "compass/css3";
 
+//
+// Sortable
+//
 .sortable,
 .sortable li a, {
   cursor: move;
@@ -10,6 +13,10 @@
 .progress-inner {
   background-color: #06bcff;
 }
+
+//
+// Bootstrap stuff
+//
 .remove {
   cursor: pointer;
   width: 14px;
@@ -32,6 +39,8 @@
 }
 .well {
   margin-bottom: 0;
+  background-color: rgba(245, 245, 245, 0.4);
+  border-color: #999;
 }
 
 //
