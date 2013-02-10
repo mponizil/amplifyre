@@ -1,12 +1,12 @@
 define [
   'quilt'
   'list'
-  'at-pp/views/pages/base'
+  'at-pp/views/pages/base/white-box'
   'help!at-pp/views/visual/photo'
   'jst!at-pp/templates/pages/photos'
-], (Quilt, List, PageView, PhotoView, jst) ->
+], (Quilt, List, WhiteBoxPage, PhotoView, jst) ->
 
-  class PhotosView extends PageView
+  class PhotosPage extends WhiteBoxPage
 
     template: jst
 

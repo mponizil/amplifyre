@@ -1,9 +1,9 @@
 define [
-  'at-pp/views/pages/base'
+  'at-pp/views/pages/base/white-box'
   'jst!at-pp/templates/pages/contact'
-], (PageView, jst) ->
+], (WhiteBoxPage, jst) ->
 
-  class ContactView extends PageView
+  class ContactPage extends WhiteBoxPage
 
     template: jst
 

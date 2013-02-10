@@ -1,11 +1,11 @@
 define [
   'list'
-  'at-pp/views/pages/base'
+  'at-pp/views/pages/base/white-box'
   'help!at-pp/views/content/concert'
   'jst!at-pp/templates/pages/tour'
-], (List, PageView, ConcertView, jst) ->
+], (List, WhiteBoxPage, ConcertView, jst) ->
 
-  class TourView extends PageView
+  class TourPage extends WhiteBoxPage
 
     template: jst
 

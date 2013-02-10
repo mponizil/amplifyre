@@ -2,7 +2,7 @@ define [
   'at-pp/views/view'
 ], (View) ->
 
-  class Page extends View
+  class WhiteBoxPage extends View
 
     className: 'page-container white-box'
 

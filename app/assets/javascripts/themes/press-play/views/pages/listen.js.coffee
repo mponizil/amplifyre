@@ -1,12 +1,12 @@
 define [
   'list'
   'at-pp/models/album'
-  'at-pp/views/pages/base'
+  'at-pp/views/pages/base/plain'
   'help!at-pp/views/music/album'
   'jst!at-pp/templates/pages/listen'
-], (List, Album, PageView, AlbumView, jst) ->
+], (List, Album, PlainPage, AlbumView, jst) ->
 
-  class ListenView extends PageView
+  class ListenPage extends PlainPage
 
     constructor: ({@player, @albums, @tracks}) ->
       super

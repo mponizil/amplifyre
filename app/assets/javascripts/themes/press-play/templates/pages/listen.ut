@@ -1,5 +1,3 @@
-<div class='scrollpane page-listen row-fluid' data-ref='scrollpane'>
-
-  <div data-ref='albums' data-fancybox></div>
+<div class='page-listen row-fluid' data-ref='albums' data-fancybox>
 
 </div>
