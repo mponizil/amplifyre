@@ -9,4 +9,5 @@ define [
   'ui/editable'
   'ui/progress-bar'
   'ui/fancybox'
+  'ui/mirage'
 ], ->

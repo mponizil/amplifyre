@@ -1,4 +1,16 @@
-@import "compass/css3";
+@import 'compass/css3';
+@mixin clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
 
 //
 // Sortable
@@ -37,10 +49,19 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
-.well {
+.well-editor {
+  @include clearfix;
   margin-bottom: 0;
   background-color: rgba(245, 245, 245, 0.4);
   border-color: #999;
+}
+.fat-container {
+  .well-editor {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 250px;
+  }
 }
 
 //

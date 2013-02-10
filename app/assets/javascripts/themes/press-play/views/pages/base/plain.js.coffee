@@ -4,4 +4,4 @@ define [
 
   class PlainPage extends View
 
-    className: 'page-container'
+    className: 'fat-container'

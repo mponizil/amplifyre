@@ -14,7 +14,13 @@
   position: absolute;
   top: 12%;
   left: 50%;
+  margin-left: -400px;
+}
+.page-container.white-box {
   margin-left: -420px;
+}
+.fat-container {
+  position: relative;
 }
 
 .navbar {

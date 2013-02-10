@@ -1,10 +1,17 @@
 .page-listen {
+  @include clearfix;
+
   .thumbnail {
+    width: 450px;
+    margin: 0 auto;
     border-color: #666;
     background-color: rgba(0, 0, 0, 0.3);
     &:hover {
       border-color: #ddd;
       background-color: rgba(255, 255, 255, 0.3);
     }
+  }
+  .album {
+    float: left;
   }
 }

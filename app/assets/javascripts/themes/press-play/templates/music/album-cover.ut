@@ -1,3 +1,0 @@
-<a href='<%= o.model.get('cover_file').url %>' data-fancybox-group='group'>
-  <img src='<%= o.model.get('cover_file').lrg_thumb.url %>' alt='<%= o.model.get('title') %>' title='<%= o.model.get('title') %>' />
-</a>

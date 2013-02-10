@@ -1,7 +1,8 @@
 define [
+  'lib/crack-rock'
   'at-pp/views/view'
   'jst!at-pp/templates/visual/background'
-], (View, jst) ->
+], (CrackRock, View, jst) ->
 
   class BackgroundView extends View
 
@@ -38,33 +39,22 @@ define [
       @$bg_active.fadeOut(1000, 'easeOutSine')
 
     resize: =>
-      [windowWidth, windowHeight, windowRatio] = @measureWindow()
+      [windowWidth, windowHeight] = @measureWindow()
 
-      if windowRatio > @imgRatio
-        @forcedWidth = windowWidth
-        widthRatio = windowWidth / @imgWidth
-        @forcedHeight = @imgHeight * widthRatio
-      else
-        @forcedHeight = windowHeight
-        heightRatio = windowHeight / @imgHeight
-        @forcedWidth = @imgWidth * heightRatio
+      [forcedWidth, forcedHeight] = @image.resizeToFill(windowWidth, windowHeight)
 
-      @$bgs.children('img').width(@forcedWidth).height(@forcedHeight)
+      @$bgs.children('img').width(forcedWidth).height(forcedHeight)
 
-      marginTop = -@forcedHeight / 2
-      marginLeft = -@forcedWidth / 2
+      marginTop = -forcedHeight / 2
+      marginLeft = -forcedWidth / 2
       @$bgs.css('margin-top': marginTop, 'margin-left': marginLeft)
 
     initMeasure: (next) ->
-      [windowWidth, windowHeight, windowRatio] = @measureWindow()
+      [windowWidth, windowHeight] = @measureWindow()
       @$bg_active.children('img').load (e) =>
-        @imgWidth = e.target.width
-        @imgHeight = e.target.height
-        @imgRatio = @imgWidth / @imgHeight
+        @image = new CrackRock(width: e.target.width, height: e.target.height)
         next()
 
     measureWindow: ->
       $window = $(window)
-      windowWidth = $window.width()
-      windowHeight = $window.height()
-      [$window.width(), $window.height(), windowWidth / windowHeight]
+      [$window.width(), $window.height()]

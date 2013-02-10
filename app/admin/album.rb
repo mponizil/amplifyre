@@ -3,7 +3,7 @@ ActiveAdmin.register Album do
     f.inputs "Album Details" do
       f.input :band_site
       f.input :title
-      f.input :cover
+      f.input :cover_file
     end
     f.buttons
   end

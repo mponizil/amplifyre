@@ -27,4 +27,14 @@ define [
         eventName: 'album'
       .render())
 
+      @align(); $(window).on('resize', @align)
+
       return this
+
+    align: (e) =>
+      windowWidth = $(window).width()
+      marginLeft = windowWidth / 2 - 460 / 2
+      @$('.album').css('margin-left', marginLeft)
+
+      albumCount = @$('.album').length
+      @$el.css('width', albumCount * (marginLeft + 460))

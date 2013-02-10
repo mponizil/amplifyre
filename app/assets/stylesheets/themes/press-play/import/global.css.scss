@@ -22,6 +22,21 @@ body { overflow: hidden; }
   margin: 0 auto;
 }
 
+//=== Mirage
+// Make multiple layers move so it looks 3d
+.mirage {
+  position: relative;
+  overflow: hidden;
+  .mirage-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  img {
+    max-width: none;
+  }
+}
+
 //=== Background
 // Responsive background image / whateva
 .background {
@@ -95,10 +110,6 @@ body { overflow: hidden; }
 }
 
 //=== Music Album
-.album-cover {
-  width: 150px;
-  margin: 0 auto 20px auto;
-}
 .album-tracks {
   background: rgba(0,0,0,0.2);
   margin: 0;

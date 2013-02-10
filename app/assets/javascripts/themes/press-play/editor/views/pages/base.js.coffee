@@ -7,7 +7,7 @@ define [
 
     inject: ->
       @$el.prepend('''
-        <div class='well well-small clearfix' data-ref='controls'>
+        <div class='well well-small well-editor' data-ref='controls'>
           <div class='pull-left' data-ref='controls_left'>
             <h2 data-attr='title' data-editable='text-input'></h2>
           </div>
