@@ -5,10 +5,9 @@ define [
 
   class MusicView extends Quilt.View
 
-    initialize: ({@router, @player}) ->
+    initialize: ({@player}) ->
       super
 
-      @router.on('all', @route, @)
       @player.on('change:playing', @update, @)
 
     template: jst
@@ -46,6 +45,3 @@ define [
     pause: ->
       @$pause.fadeOut()
       @$play.fadeIn()
-
-    route: (e) ->
-      @$el.toggleClass('hide', e is 'route:slug')

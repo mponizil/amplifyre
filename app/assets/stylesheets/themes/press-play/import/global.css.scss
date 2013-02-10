@@ -109,23 +109,6 @@ body { overflow: hidden; }
   padding: 10px;
 }
 
-//=== Music Album
-.album-tracks {
-  background: rgba(0,0,0,0.2);
-  margin: 0;
-}
-.album-track {
-  padding: 4px;
-  list-style: none;
-  position: relative;
-  color: #000;
-  font-style: italic;
-  cursor: pointer;
-}
-.album-track:hover {
-  background: rgba(255,255,255,0.4);
-}
-
 //=== News Post
 // A news post with a date, title, and body
 .news-post {

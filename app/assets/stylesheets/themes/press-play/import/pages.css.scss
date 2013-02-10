@@ -1,7 +1,25 @@
 .page-listen {
   @include clearfix;
 
+  .album {
+    float: left;
+    position: relative;
+  }
+  .album-flap {
+    float: left;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    color: #fafafa;
+    width: 100px;
+  }
+  .album-flap-left {
+    @include border-left-radius(5px);
+  }
+  .album-flap-right {
+    @include border-right-radius(5px);
+  }
   .thumbnail {
+    float: left;
     width: 450px;
     margin: 0 auto;
     border-color: #666;
@@ -11,7 +29,20 @@
       background-color: rgba(255, 255, 255, 0.3);
     }
   }
-  .album {
-    float: left;
+
+  .album-tracks {
+    background: rgba(0,0,0,0.2);
+    margin: 0;
+  }
+  .album-track {
+    padding: 4px;
+    list-style: none;
+    position: relative;
+    color: #000;
+    font-style: italic;
+    cursor: pointer;
+  }
+  .album-track:hover {
+    background: rgba(255,255,255,0.4);
   }
 }

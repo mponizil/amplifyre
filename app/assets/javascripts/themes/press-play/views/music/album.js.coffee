@@ -1,10 +1,12 @@
 define [
+  'underscore'
   'list'
   'ui/mirage'
   'at-pp/views/view'
+  'at-pp/views/music/music'
   'help!at-pp/views/music/track'
   'jst!at-pp/templates/music/album'
-], (List, Mirage, View, TrackView, jst) ->
+], (_, List, Mirage, View, MusicView, TrackView, jst) ->
 
   container =
     width: 960
@@ -30,7 +32,8 @@ define [
 
     constructor: (options) ->
       super
-      @player or= options.player
+
+      _.extend(@, _.pick(options, 'player'))
 
     template: jst
 
@@ -53,6 +56,12 @@ define [
           template: -> "<img src='#{ @model.get('cover_file').url }' alt='#{ @model.get('title') }' title='#{ @model.get('title') }' />"
           model: @model
         .render())
+
+      @views.push(new MusicView
+        el: @$music
+        router: @router
+        player: @player
+      .render())
 
       TrackView = TrackView.extend
         player: @player

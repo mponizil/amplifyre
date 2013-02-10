@@ -33,8 +33,8 @@ define [
 
     align: (e) =>
       windowWidth = $(window).width()
-      marginLeft = windowWidth / 2 - 460 / 2
+      marginLeft = windowWidth / 2 - 700 / 2
       @$('.album').css('margin-left', marginLeft)
 
       albumCount = @$('.album').length
-      @$el.css('width', albumCount * (marginLeft + 460))
+      @$el.css('width', albumCount * (marginLeft + 700))

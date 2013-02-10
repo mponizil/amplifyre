@@ -35,10 +35,12 @@ define [
       @posts = @model.posts().reset(@bootstrap.posts)
       @concerts = @model.concerts().reset(@bootstrap.concerts)
 
+      @router.on('all', @route, @)
+
     template: jst
 
     events:
-      'route a': 'route'
+      'route a': 'navigate'
       'page:render': 'resize'
 
     render: ->
@@ -64,7 +66,6 @@ define [
       @views.push(new MusicView
         el: @$music
         collection: @tracks
-        router: @router
         player: @player
       .render())
       @views.push(new TickerView
@@ -84,8 +85,11 @@ define [
 
       return this
 
-    route: (e, fragment) ->
+    navigate: (e, fragment) ->
       @router.navigate(fragment, true)
+
+    route: (e) ->
+      @$music.toggleClass('hide', e is 'route:slug')
 
     resize: ->
       top = @$black_banner.offset().top - 60

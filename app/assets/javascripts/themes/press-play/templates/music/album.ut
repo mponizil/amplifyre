@@ -1,6 +1,16 @@
+<div class='pp-music-player' data-ref='music'></div>
+
+<div class='album-flap album-flap-left'>
+  <h3>Good Evening</h3>
+  <p>Steady Sun</p>
+  <p>Introducing the greatest album to hit your eardrumbs since sliced bread ...</p>
+</div>
+
 <div class='thumbnail'>
   <div data-ref='cover'></div>
 </div>
 
-<ul class='album-tracks' data-ref='tracks'>
-</ul>
+<div class='album-flap album-flap-right'>
+  <ul class='album-tracks' data-ref='tracks'>
+  </ul>
+</div>
