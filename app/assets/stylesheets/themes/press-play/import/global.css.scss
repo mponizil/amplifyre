@@ -8,12 +8,12 @@ body { overflow: hidden; }
   font-size: 10px;
 }
 .highlight {
-  background-color: #06bcff;
+  background-color: $master-color;
 }
 .hr {
   width: 100%;
   height: 2px;
-  background-color: #06bcff !important;
+  background-color: $master-color !important;
   margin: 10px 0;
 }
 .loader {
@@ -81,7 +81,7 @@ body { overflow: hidden; }
 // Slim little black banner with centered text and rounded top corners
 .black-banner {
   background: rgba(0,0,0,0.8);
-  border-bottom: 2px solid #06bcff;
+  border-bottom: 2px solid $master-color;
   @include box-shadow(0 0 10px #000);
   @include border-radius(20px 20px 0 0);
   text-align: center;

@@ -25,7 +25,7 @@ $master-color: rgba(128, 125, 75, 0.8);
   cursor: default;
 }
 .progress-inner {
-  background-color: #06bcff;
+  background-color: $master-color;
 }
 
 //
@@ -153,7 +153,7 @@ textarea.editable-hover {
   font-size: 72px;
   color: #4C4C4C;
   &:hover {
-    border-color: #06bcff;
+    border-color: $master-color;
   }
 }
 input[type='file'].album-upload {
