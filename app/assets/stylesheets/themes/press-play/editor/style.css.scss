@@ -30,6 +30,7 @@
 // Bootstrap stuff
 //
 .remove {
+  z-index: 2010;
   cursor: pointer;
   width: 14px;
   height: 17px;
@@ -124,6 +125,18 @@ textarea.editable-hover {
     position: absolute;
     top: -7px;
     right: -7px;
+  }
+}
+.page-listen .album {
+  .remove {
+    top: auto;
+    bottom: -7px;
+  }
+  .album-tracks .remove {
+    top: 50%;
+    bottom: auto;
+    right: 0;
+    margin-top: -11px;
   }
 }
 

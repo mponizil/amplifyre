@@ -11,7 +11,7 @@ define [
       super
 
       @$albums.append('''
-        <div class='album span3'>
+        <div class='album'>
           <div class='album-cover album-create'>
             <input type='file' class='album-upload' name='album[cover_file]' data-ref='upload' /> +
           </div>

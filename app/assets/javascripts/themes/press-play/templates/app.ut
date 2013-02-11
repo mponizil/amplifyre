@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div data-ref='page'>
+  <div class='page' data-ref='page'>
   </div>
 
   <!-- music player goodness -->

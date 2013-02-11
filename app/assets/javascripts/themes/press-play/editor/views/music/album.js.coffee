@@ -20,14 +20,14 @@ define [
       # For specifying Sortable `connectsWith` [1]
       @$tracks.attr('data-album-id', @model.id)
 
-      @$el.append("<input type='file' name='track[file]' data-ref='upload' multiple />")
+      @$tracks.append("<input type='file' name='track[file]' data-ref='upload' multiple />")
 
       if @model.id isnt -1
-        @$el.prepend('''
+        @$cover_wrap.prepend('''
           <div class='remove'>
             <i class='icon-remove icon-white' data-ref='destroy'></i>
           </div>''')
-        @$el.prepend("<div data-ref='progress'><div>")
+        @$cover_wrap.prepend("<div data-ref='progress'><div>")
 
     render: ->
       super
@@ -35,7 +35,7 @@ define [
       if @model.id isnt -1
         @views.push(new ProgressBar
           el: @$progress
-          $target: @$cover
+          $target: @$cover_wrap
           model: @model
         .render())
         @views.push(new Destroy

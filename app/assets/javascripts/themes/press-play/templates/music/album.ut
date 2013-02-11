@@ -6,7 +6,7 @@
   <p>Introducing the greatest album to hit your eardrumbs since sliced bread ...</p>
 </div>
 
-<div class='thumbnail'>
+<div class='album-cover' data-ref='cover_wrap'>
   <div data-ref='cover'></div>
 </div>
 

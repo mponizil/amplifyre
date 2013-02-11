@@ -10,7 +10,7 @@
     background: rgba(0, 0, 0, 0.8);
     padding: 10px;
     color: #fafafa;
-    width: 100px;
+    width: 150px;
   }
   .album-flap-left {
     @include border-left-radius(5px);
@@ -18,16 +18,11 @@
   .album-flap-right {
     @include border-right-radius(5px);
   }
-  .thumbnail {
+  .album-cover {
+    position: relative;
     float: left;
     width: 450px;
-    margin: 0 auto;
-    border-color: #666;
-    background-color: rgba(0, 0, 0, 0.3);
-    &:hover {
-      border-color: #ddd;
-      background-color: rgba(255, 255, 255, 0.3);
-    }
+    @include box-shadow(rgba(0, 0, 0, 0.6) 0 0 9px 2px);
   }
 
   .album-tracks {
@@ -38,7 +33,6 @@
     padding: 4px;
     list-style: none;
     position: relative;
-    color: #000;
     font-style: italic;
     cursor: pointer;
   }

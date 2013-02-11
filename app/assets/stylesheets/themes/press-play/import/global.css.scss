@@ -85,11 +85,11 @@ body { overflow: hidden; }
   @include box-shadow(0 0 10px #000);
   @include border-radius(20px 20px 0 0);
   text-align: center;
-  padding: 20px;
+  padding: 10% 10px;
   color: #fff;
   min-width: 300px;
   line-height: normal;
-  h1 { text-transform: uppercase; }
+  h1 { margin: 0; }
 }
 
 //=== White Box
@@ -115,4 +115,12 @@ body { overflow: hidden; }
   .date, .title, .body {
     margin-bottom: 6px;
   }
+}
+
+@media (max-width: 767px) {
+
+  .black-banner {
+    padding: 4% 10px;
+  }
+
 }
