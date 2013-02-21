@@ -1,9 +1,8 @@
 <div class='pp-playback' data-ref='playback'></div>
 
 <div class='album-flap album-flap-left'>
-  <h4>Good Evening</h4>
-  <p>Steady Sun</p>
-  <p>Introducing the greatest album to hit your eardrumbs since sliced bread ...</p>
+  <h4 data-attr='title'></h4>
+  <p data-attr='description'></p>
 </div>
 
 <div class='album-cover' data-ref='cover_wrap'>
