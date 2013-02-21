@@ -13,7 +13,7 @@ define [
   'help!at-pp/views/visual/background'
   'help!at-pp/views/links/navigation'
   'at-pp/views/links/social'
-  'at-pp/views/music/music'
+  'at-pp/views/music/player/main'
   'help!at-pp/views/visual/ticker'
   'at-pp/views/pages'
   'jst!at-pp/templates/app'
@@ -21,7 +21,7 @@ define [
   'at-pp/models/associations'
   'easing'
   'fancybox'
-], (Backbone, Quilt, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, MusicView, TickerView, PagesView, jst) ->
+], (Backbone, Quilt, Player, BandSite, Socials, Albums, Tracks, Photos, Posts, Concerts, Pages, BackgroundView, NavigationView, SocialView, PlayerView, TickerView, PagesView, jst) ->
 
   class App extends Quilt.View
 
@@ -63,8 +63,8 @@ define [
         el: @$social
         collection: @socials
       .render())
-      @views.push(new MusicView
-        el: @$music
+      @views.push(new PlayerView
+        el: @$player
         collection: @tracks
         player: @player
       .render())
@@ -89,10 +89,10 @@ define [
       @router.navigate(fragment, true)
 
     route: (e) ->
-      @$music.toggleClass('hide', e is 'route:slug')
+      @$player.toggleClass('hide', e is 'route:slug')
 
     resize: ->
-      top = @$black_banner.offset().top - 60
+      top = @$marquee.offset().top - 60
       bottom = @$top_bar.offset().top + @$top_bar.height() + 20
       max_height = top - bottom
 

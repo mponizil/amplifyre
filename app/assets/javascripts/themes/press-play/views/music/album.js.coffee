@@ -3,10 +3,10 @@ define [
   'list'
   'ui/mirage'
   'at-pp/views/view'
-  'at-pp/views/music/music'
+  'at-pp/views/music/player/playback'
   'help!at-pp/views/music/track'
   'jst!at-pp/templates/music/album'
-], (_, List, Mirage, View, MusicView, TrackView, jst) ->
+], (_, List, Mirage, View, PlaybackView, TrackView, jst) ->
 
   container =
     width: 960
@@ -26,6 +26,11 @@ define [
     width: 960,
     height: 400,
     top: 579
+  }, {
+    url: '/assets/album/mirage_files/steadysun/textwork.png',
+    width: 343,
+    height: 346,
+    top: 270
   }]
 
   class AlbumView extends View
@@ -57,9 +62,9 @@ define [
           model: @model
         .render())
 
-      @views.push(new MusicView
-        el: @$music
-        router: @router
+      @views.push(new PlaybackView
+        el: @$playback
+        collection: @model.tracks()
         player: @player
       .render())
 

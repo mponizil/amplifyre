@@ -2,9 +2,9 @@ define [
   'at-pp/views/view'
 ], (View) ->
 
-  class WhiteBoxPage extends View
+  class ContentBoxPage extends View
 
-    className: 'page-container white-box'
+    className: 'page-container content-box'
 
     events: ->
       'size:update': 'resize'

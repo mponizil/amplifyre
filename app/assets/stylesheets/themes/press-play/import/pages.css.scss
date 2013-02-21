@@ -6,11 +6,11 @@
     position: relative;
   }
   .album-flap {
-    float: left;
-    background: rgba(0, 0, 0, 0.8);
     padding: 10px;
+    float: left;
+    width: 170px;
+    background: rgba(0, 0, 0, 0.8);
     color: #fafafa;
-    width: 150px;
   }
   .album-flap-left {
     @include border-left-radius(5px);
@@ -37,6 +37,6 @@
     cursor: pointer;
   }
   .album-track:hover {
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
   }
 }

@@ -1,8 +1,8 @@
 define [
-  'at-pp/views/pages/base/white-box'
+  'at-pp/views/pages/base/content-box'
   'jst!at-pp/templates/pages/custom'
-], (WhiteBoxPage, jst) ->
+], (ContentBoxPage, jst) ->
 
-  class CustomPage extends WhiteBoxPage
+  class CustomPage extends ContentBoxPage
 
     template: jst

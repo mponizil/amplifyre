@@ -1,9 +1,9 @@
 define [
   'quilt'
-  'jst!at-pp/templates/music/music'
+  'jst!at-pp/templates/music/player/playback'
 ], (Quilt, jst) ->
 
-  class MusicView extends Quilt.View
+  class PlaybackView extends Quilt.View
 
     initialize: ({@player}) ->
       super
@@ -13,23 +13,21 @@ define [
     template: jst
 
     events:
-      'click [data-ref=prev]': -> @player.set(index: @player.prev())
-      'click [data-ref=next]': -> @player.set(index: @player.next())
       'click [data-ref=play]': -> @player.set(playing: true)
       'click [data-ref=pause]': -> @player.set(playing: false)
 
     render: ->
       super
 
-      @$play_pause.addClass('transparent')
+      @$el.addClass('transparent')
       @$pause.addClass('hide')
-      @$prev.addClass('transparent')
-      @$next.addClass('transparent')
 
-      @$('[data-ref=play_pause], [data-ref=prev], [data-ref=next]').hover(
+      @$el.hover(
         -> $(this).animate(opacity: 1)
         -> $(this).animate(opacity: 0)
       )
+
+      @update(@player, @player.get('playing'))
 
       return this
 
@@ -38,10 +36,9 @@ define [
       else @pause()
 
     play: ->
-      # Sometimes it doesn't wanna hide.
-      @$play.fadeOut -> $(this).hide()
+      @$play.fadeOut => @$play.hide()
       @$pause.fadeIn()
 
     pause: ->
-      @$pause.fadeOut()
+      @$pause.fadeOut => @$pause.hide()
       @$play.fadeIn()

@@ -1,7 +1,7 @@
-<div class='pp-music-player' data-ref='music'></div>
+<div class='pp-playback' data-ref='playback'></div>
 
 <div class='album-flap album-flap-left'>
-  <h3>Good Evening</h3>
+  <h4>Good Evening</h4>
   <p>Steady Sun</p>
   <p>Introducing the greatest album to hit your eardrumbs since sliced bread ...</p>
 </div>

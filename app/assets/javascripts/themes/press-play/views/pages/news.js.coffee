@@ -1,5 +1,5 @@
 define [
-  'at-pp/views/pages/base/white-box'
+  'at-pp/views/pages/base/content-box'
   'help!at-pp/views/content/post'
   'jst!at-pp/templates/pages/news'
 ], (PageView, PostView, jst) ->

@@ -1,8 +1,0 @@
-<div class='pp-play-pause' data-ref='play_pause'>
-  <div class='pp-play' data-ref='play'><img src='/assets/controls/play.png' /></div>
-  <div class='pp-pause' data-ref='pause'><img src='/assets/controls/pause.png' /></div>
-</div>
-<div class='pp-next-prev' data-ref='next_prev'>
-  <div class='pp-prev' data-ref='prev'><img src='/assets/controls/prev.png' /></div>
-  <div class='pp-next' data-ref='next'><img src='/assets/controls/next.png' /></div>
-</div>

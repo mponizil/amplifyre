@@ -77,28 +77,27 @@ body { overflow: hidden; }
   left: -50%;
 }
 
-//=== Black Banner
-// Slim little black banner with centered text and rounded top corners
-.black-banner {
-  background: rgba(0,0,0,0.8);
-  border-bottom: 2px solid $master-color;
+//=== Marquee
+// Our main man, front and center with rounded top corners
+.marquee {
+  background: rgba(0, 0, 0, 0.8);
   @include box-shadow(0 0 10px #000);
+  color: #f4f4f4;
   @include border-radius(20px 20px 0 0);
   text-align: center;
   padding: 10% 10px;
-  color: #fff;
   min-width: 300px;
   line-height: normal;
   h1 { margin: 0; }
 }
 
-//=== White Box
-// A gentle white box
-.white-box {
+//=== Content Box
+// A gentle content box
+.content-box {
   @include box-shadow(0 0 6px rgba(206, 206, 206, 0.9));
   border: 1px solid #ebebeb;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(244, 244, 244, 0.95);
 }
 
 //=== Scrollpane
@@ -119,7 +118,7 @@ body { overflow: hidden; }
 
 @media (max-width: 767px) {
 
-  .black-banner {
+  .marquee {
     padding: 4% 10px;
   }
 

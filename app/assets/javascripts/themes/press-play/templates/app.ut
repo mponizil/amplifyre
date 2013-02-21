@@ -4,7 +4,7 @@
 <!-- begin amplifyre website -->
 <div class='foreground'>
 
-  <div class='navbar navbar-inverse' data-ref='top_bar'>
+  <div class='navbar' data-ref='top_bar'>
     <div class='navbar-inner'>
 
       <!-- navigation -->
@@ -22,10 +22,10 @@
   </div>
 
   <!-- music player goodness -->
-  <div class='pp-music-player' data-ref='music'></div>
+  <div class='pp-music-player' data-ref='player'></div>
 
-  <div class='symmetry pp-bottom-banner'><div class='symmetry-float'>
-    <div class='symmetry-inner black-banner' data-ref='black_banner'>
+  <div class='symmetry pp-bottom-marquee'><div class='symmetry-float'>
+    <div class='symmetry-inner marquee' data-ref='marquee'>
 
       <h1 data-attr='name' data-editable='text-input'></h1>
 
