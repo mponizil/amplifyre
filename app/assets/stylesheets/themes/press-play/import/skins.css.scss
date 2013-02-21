@@ -13,7 +13,12 @@
 }
 .pp-color-dark {
   .navbar-inner {
-    @extend .navbar-inverse;
+    @include background-image(linear-gradient(#222222, #111111));
+  }
+  .nav > li > a {
+    color: #999999;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    &:hover { color: #ffffff; }
   }
   .album-flap {
     background: rgba(0, 0, 0, 0.8);
@@ -28,7 +33,6 @@
 .pp-color-earth {
   .navbar-inner {
     @include background-image(linear-gradient(#3c3c3c, #262626));
-    border: none;
     border-bottom: 1px solid #906e3a;
   }
   .nav > li > a {

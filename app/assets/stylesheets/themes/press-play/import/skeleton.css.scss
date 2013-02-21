@@ -36,6 +36,8 @@
   .navbar-inner {
     padding: 0;
     @include border-radius(0);
+    border: none;
+    border-bottom: 1px solid $master-color;
   }
   .nav {
     margin-right: 0;
