@@ -1,4 +1,4 @@
-class Name
+class NameDotCom
   include HTTParty
   base_uri 'api.dev.name.com'
   format :json
