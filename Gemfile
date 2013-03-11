@@ -48,6 +48,8 @@ gem 'requirejs-rails', :git => 'git://github.com/mponizil/requirejs-rails.git'
 # To use debugger
 # gem 'ruby-debug'
 
+gem 'httparty'
+
 gem 'devise'
 gem 'devise_invitable', github: 'scambra/devise_invitable'
 gem 'cancan'
