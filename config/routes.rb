@@ -54,6 +54,11 @@ Amplifyre::Application.routes.draw do
     end
   end
 
+  # Custom domain names
+  resources :domain_names, :only => [:new, :create, :delete] do
+    get 'search', :on => :collection
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

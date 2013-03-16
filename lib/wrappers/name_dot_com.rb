@@ -14,12 +14,22 @@ class NameDotCom
     response = self.class.get('/api/domain/list').parsed_response
   end
 
-  def search(keyword, tlds=['.com'])
+  def search(keyword, tlds=[])
+    puts tlds
     response = self.class.post('/api/domain/check', :body => {
       :keyword => keyword,
       :tlds => tlds,
       :services => ['availability']
     }.to_json).parsed_response
+
+    if response['result']['code'] == 100
+      domains_data = response['domains']
+      domains_data.keys.select do |domain|
+        domains_data[domain]['avail']
+      end
+    else
+      []
+    end
   end
 
   def purchase(domain_name)
@@ -32,7 +42,7 @@ class NameDotCom
       dns_responses = self.set_dns(domain_name)
       { :response => response, :dns_response => dns_responses }
     else
-      response
+      { :response => response }
     end
   end
 
