@@ -1,9 +1,9 @@
 class DomainNamesController < ApplicationController
-  before_filter :init_name_dot_com
   layout 'dashboard'
 
   # POST /domain_names
   def create
+    @name = NameDotCom.new
     purchase = @name.purchase(params[:domain_name])
 
     if purchase[:response]['result']['code'] == 100
@@ -20,13 +20,8 @@ class DomainNamesController < ApplicationController
 
   # GET /domain_names/search
   def search
+    @name = NameDotCom.new
     results = @name.search(params[:keyword], [params[:tld]])
     render json: results
-  end
-
-  private
-
-  def init_name_dot_com
-    @name = NameDotCom.new('mponizil36-ote', '5e94bbf993c3d88ea756b2b30a50950e4fdfb5e3')
   end
 end

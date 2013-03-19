@@ -1,12 +1,19 @@
 class NameDotCom
   include HTTParty
-  base_uri 'api.dev.name.com'
+  base_uri APP_CONFIG['name_dot_com_base_uri']
   format :json
 
-  def initialize(username, api_token)
+  class << self
+    attr_accessor :username, :api_token
+  end
+
+  def initialize(username=nil, api_token=nil)
+    @username = username || self.class.username || APP_CONFIG['name_dot_com_username']
+    @api_token = api_token || self.class.api_token || APP_CONFIG['name_dot_com_api_token']
+
     self.class.headers({
-      'Api-Username' => username,
-      'Api-Token' => api_token
+      'Api-Username' => @username,
+      'Api-Token' => @api_token
     })
   end
 
@@ -15,7 +22,6 @@ class NameDotCom
   end
 
   def search(keyword, tlds=[])
-    puts tlds
     response = self.class.post('/api/domain/check', :body => {
       :keyword => keyword,
       :tlds => tlds,

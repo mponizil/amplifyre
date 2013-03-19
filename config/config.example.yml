@@ -1,0 +1,14 @@
+development:
+  name_dot_com_base_uri: api.dev.name.com
+  name_dot_com_username: username
+  name_dot_com_api_token: api_token
+
+test:
+  name_dot_com_base_uri: api.dev.name.com
+  name_dot_com_username: username
+  name_dot_com_api_token: api_token
+
+production:
+  name_dot_com_base_uri: api.name.com
+  name_dot_com_username: username
+  name_dot_com_api_token: api_token

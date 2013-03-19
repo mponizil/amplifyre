@@ -23,5 +23,5 @@
 
 .DS_Store
 
-local
-app/assets/images/themes/turntable/tmp
+/local
+/config/config.yml
