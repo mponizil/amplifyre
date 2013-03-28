@@ -1,6 +1,6 @@
 define [
-  'at-pp/models/collection'
-  'at-pp/models/concert'
+  'themes/common/models/collection'
+  'themes/common/models/concert'
 ], (Collection, Concert) ->
 
   class Concerts extends Collection

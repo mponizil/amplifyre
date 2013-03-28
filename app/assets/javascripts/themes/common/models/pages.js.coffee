@@ -1,6 +1,6 @@
 define [
-  'at-pp/models/collection'
-  'at-pp/models/page'
+  'themes/common/models/collection'
+  'themes/common/models/page'
 ], (Collection, Page) ->
 
   class Pages extends Collection

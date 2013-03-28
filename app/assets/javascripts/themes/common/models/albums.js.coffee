@@ -1,6 +1,6 @@
 define [
-  'at-pp/models/collection'
-  'at-pp/models/album'
+  'themes/common/models/collection'
+  'themes/common/models/album'
 ], (Collection, Album) ->
 
   class Albums extends Collection

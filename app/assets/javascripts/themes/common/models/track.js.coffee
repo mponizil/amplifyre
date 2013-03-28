@@ -1,5 +1,5 @@
 define [
-  'at-pp/models/model'
+  'themes/common/models/model'
 ], (Model) ->
 
   class Track extends Model

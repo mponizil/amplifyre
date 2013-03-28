@@ -1,6 +1,6 @@
 define [
-  'at-pp/models/collection'
-  'at-pp/models/social'
+  'themes/common/models/collection'
+  'themes/common/models/social'
 ], (Collection, Social) ->
 
   class Socials extends Collection

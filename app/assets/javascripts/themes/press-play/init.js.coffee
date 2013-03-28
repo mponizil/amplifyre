@@ -1,8 +1,8 @@
 define [
   'jquery'
   'backbone'
-  'at-pp/router'
-  'at-pp/models/band_site'
+  'themes/common/router'
+  'themes/common/models/band_site'
   'at-pp/views/view'
   'at-pp/views/helper-view'
   'at-pp/views/app'
