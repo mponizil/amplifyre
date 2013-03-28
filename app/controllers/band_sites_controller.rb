@@ -64,7 +64,7 @@ private
   def get_site_from_slug
     @slug = params[:slug] || request.subdomain || nil
     @band_site = BandSite.where(:slug => @slug)[0] if @slug
-    @layout = 'themes/steady-sun'
+    @layout = "themes/#{@band_site[:theme]}"
     @version = 'normal'
   end
 

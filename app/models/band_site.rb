@@ -12,7 +12,8 @@ class BandSite < ActiveRecord::Base
   validates :name, :presence => true
   validates :slug, :uniqueness => true, :length => { :in => 2..16 }
 
-  attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name, :description, :title, :phrase, :background_file, :skin_color, :skin_style
+  attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name,
+    :description, :title, :phrase, :background_file, :theme, :skin_color, :skin_style
 
   mount_uploader :background_file, BackgroundUploader
 
