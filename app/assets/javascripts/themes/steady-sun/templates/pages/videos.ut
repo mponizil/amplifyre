@@ -1,8 +1,8 @@
 <div class='gallery-row row-fluid'>
   <div class='thumbnail'>
     <a href='#'>
-      <img src='images/videos/thumbnails/video1.png' />
-      <div class='controls-play'><img src='images/controls-play.png' /></div>
+      <img src='/assets/themes/steady-sun/videos/thumbnails/video1.png' />
+      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
     </a>
     <div class='thumbnail-details'>
       <h3>Eyes Wide</h3>
@@ -15,8 +15,8 @@
 <div class='gallery-row row-fluid'>
   <div class='thumbnail span5'>
     <a href='#'>
-      <img src='images/videos/thumbnails/video2.png' />
-      <div class='controls-play'><img src='images/controls-play.png' /></div>
+      <img src='/assets/themes/steady-sun/videos/thumbnails/video2.png' />
+      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
     </a>
     <div class='thumbnail-details'>
       <h3>God Only Knows</h3>
@@ -25,8 +25,8 @@
   </div>
   <div class='thumbnail span5 offset2'>
     <a href='#'>
-      <img src='images/videos/thumbnails/video3.png' />
-      <div class='controls-play'><img src='images/controls-play.png' /></div>
+      <img src='/assets/themes/steady-sun/videos/thumbnails/video3.png' />
+      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
     </a>
     <div class='thumbnail-details'>
       <h3>Breathe</h3>
@@ -38,8 +38,8 @@
 <div class='gallery-row row-fluid'>
   <div class='thumbnail span5'>
     <a href='#'>
-      <img src='images/videos/thumbnails/video4.png' />
-      <div class='controls-play'><img src='images/controls-play.png' /></div>
+      <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
+      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
     </a>
     <div class='thumbnail-details'>
       <h3>God Only Knows</h3>
@@ -48,8 +48,8 @@
   </div>
   <div class='thumbnail span5 offset2'>
     <a href='#'>
-      <img src='images/videos/thumbnails/video4.png' />
-      <div class='controls-play'><img src='images/controls-play.png' /></div>
+      <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
+      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
     </a>
     <div class='thumbnail-details'>
       <h3>Breathe</h3>

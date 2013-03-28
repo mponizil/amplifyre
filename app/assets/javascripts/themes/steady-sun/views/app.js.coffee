@@ -2,10 +2,11 @@ define [
   'themes/common/views/app'
   'themes/common/models/player'
   'help!themes/common/views/links/navigation'
+  'themes/common/views/music/player/playback'
   'at-ss/views/pages'
   'jst!at-ss/templates/app'
   'at-ss/views/ui'
-], (CommonApp, Player, NavigationView, PagesView, jst) ->
+], (CommonApp, Player, NavigationView, PlaybackView, PagesView, jst) ->
 
   class App extends CommonApp
 
@@ -14,12 +15,16 @@ define [
     render: ->
       super
 
-      @player = new Player {@tracks}
-
       @views.push(new NavigationView
         el: @$navigation
         collection: @pages
         router: @router
+      .render())
+
+      @views.push(new PlaybackView
+        el: @$playback
+        collection: @tracks
+        player: @player
       .render())
 
       @views.push(new PagesView
