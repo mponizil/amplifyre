@@ -24,7 +24,7 @@ define [
 
       @player = new Player {@tracks}
 
-      @router.on('all', @route, @)
+      @router.on('route', @route, @)
 
     events:
       'route a': 'navigate'

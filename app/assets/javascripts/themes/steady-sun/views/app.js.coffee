@@ -35,3 +35,7 @@ define [
       .render())
 
       return this
+
+    route: (router, slug) ->
+      page = @pages.find (page) -> page.get('slug') is slug[0]
+      @$player_mini.toggleClass('hide', page.get('category') is 'listen')
