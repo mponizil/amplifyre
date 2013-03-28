@@ -46,7 +46,12 @@ Amplifyre::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += ['active_admin.js', 'dashboard/index.js', 'landing/index.js', 'prelaunch/index.js', 'active_admin.css', 'dashboard/index.css', 'landing/index.css', 'themes/press-play/index.css', 'themes/press-play/editor/index.css', 'prelaunch/index.css']
+  config.assets.precompile += ['active_admin.js', 'dashboard/index.js', 'landing/index.js',
+    'prelaunch/index.js', 'active_admin.css', 'dashboard/index.css', 'landing/index.css',
+    'prelaunch/index.css']
+
+  config.assets.precompile += ['themes/press-play/index.css', 'themes/press-play/editor/index.css',
+    'themes/steady-sun/index.css', 'themes/steady-sun/editor/index.css']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
