@@ -54,7 +54,7 @@ gem 'cancan'
 
 gem 'fog', '~> 1.3.1'
 
-gem 'activeadmin'
+gem 'activeadmin', '0.4.4'
 gem 'meta_search',    '>= 1.1.0.pre'
 
 gem 'rmagick'
