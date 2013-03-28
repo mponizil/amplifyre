@@ -1,6 +1,6 @@
 define [
   'ui/sortable'
-  'at-pp/views/helper-view'
+  'themes/common/views/helper-view'
   'at-pp/editor/views/links/page-categories'
 ], (Sortable, HelperView, PageCategoriesView) ->
 

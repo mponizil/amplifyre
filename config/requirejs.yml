@@ -8,26 +8,35 @@ modules:
           pattern: 'at-pp',
           replace: 'at-pp/editor'
         }
+  - name: 'themes/steady-sun/main'
+  - name: 'themes/steady-sun/editor/main'
+    helpers:
+      - {
+          label: 'editor',
+          pattern: 'at-ss',
+          replace: 'at-ss/editor'
+        }
 paths:
   'at-pp': 'themes/press-play'
-  jquery: 'jquery'
-  underscore: 'underscore'
-  backbone: 'backbone'
-  quilt: 'quilt'
-  supermodel: 'supermodel'
-  list: 'list'
-  jquery_ui: 'jquery-ui'
-  soundmanager2: 'soundmanager2/soundmanager2'
-  easing: 'jquery.easing.1.3'
-  fancybox: 'fancybox/jquery.fancybox'
+  'at-ss': 'themes/steady-sun'
+  'jquery': 'jquery'
+  'underscore': 'underscore'
+  'backbone': 'backbone'
+  'quilt': 'quilt'
+  'supermodel': 'supermodel'
+  'list': 'list'
+  'jquery_ui': 'jquery-ui'
+  'soundmanager2': 'soundmanager2/soundmanager2'
+  'easing': 'jquery.easing.1.3'
+  'fancybox': 'fancybox/jquery.fancybox'
   'jquery.ui.widget': 'jquery.fileupload/jquery.ui.widget'
-  iframe_transport: 'jquery.fileupload/jquery.iframe-transport'
-  fileupload: 'jquery.fileupload/jquery.fileupload'
-  redactor: 'redactor'
-  moment: 'moment'
-  text: 'text'
-  jst: 'jst'
-  help: 'help'
+  'iframe_transport': 'jquery.fileupload/jquery.iframe-transport'
+  'fileupload': 'jquery.fileupload/jquery.fileupload'
+  'redactor': 'redactor'
+  'moment': 'moment'
+  'text': 'text'
+  'jst': 'jst'
+  'help': 'help'
 shim:
   underscore:
     exports: '_'

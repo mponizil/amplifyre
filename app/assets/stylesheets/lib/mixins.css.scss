@@ -1,0 +1,28 @@
+@mixin icon($url, $width: 14px, $height: 14px) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: $height;
+  vertical-align: middle;
+  background-image: image-url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@mixin icon-medium {
+  margin-top: -4px;
+  margin-right: 5px;
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}

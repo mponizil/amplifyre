@@ -1,7 +1,7 @@
 define [
   'ui/fileupload'
   'ui/progress-bar'
-  'at-pp/views/helper-view'
+  'themes/common/views/helper-view'
 ], (Fileupload, ProgressBar, HelperView) ->
 
   class BackgroundView extends HelperView

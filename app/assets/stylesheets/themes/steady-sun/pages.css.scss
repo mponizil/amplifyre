@@ -1,0 +1,51 @@
+#music-page .content {
+  .featured {
+    position: relative;
+    width: 66%;
+  }
+  .featured-details {
+    width: 66%;
+  }
+  .featured-details-left {
+    li { margin-bottom: 10px; }
+  }
+  .featured-details-divider {
+    padding-top: 5%;
+  }
+  .featured-details-right {
+    padding-top: 13%;
+    li { margin-bottom: 15px; }
+  }
+}
+
+#photos-page .content {
+  text-align: center;
+
+  .gallery-cluster {
+    margin-bottom: 40px;
+    img { height: 180px; }
+  }
+}
+
+#videos-page .content {
+  .gallery-row {
+    margin-bottom: 20px;
+  }
+  img { width: 100%; }
+  .thumbnail {
+    margin-bottom: 10px;
+    a { margin-bottom: 10px; }
+  }
+  .thumbnail-details {
+    position: relative;
+    text-align: center;
+  }
+}
+
+#column-right {
+  .thumbnail {
+    max-width: 128px;
+    max-height: 128px;
+    float: right;
+  }
+}

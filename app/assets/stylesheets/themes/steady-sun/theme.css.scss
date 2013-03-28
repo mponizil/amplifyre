@@ -1,0 +1,135 @@
+.btn {
+  display: inline-block;
+  padding: 8px 20px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #e7e7e7;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #181515;
+  border: none;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active {
+  color: #181515;
+  background-color: #ecc569;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.featured {
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+.featured-details {
+  margin: 0 auto;
+}
+
+.media {
+  @include clearfix;
+  &:last-child { margin-bottom: 20px; }
+  .media-body {
+    float: left;
+    margin-bottom: 20px;
+  }
+}
+
+.gallery-cluster {
+  a {
+    display: inline-block;
+    margin: 10px;
+  }
+}
+
+.thumbnail {
+  position: relative;
+  a {
+    position: relative;
+    display: block;
+    line-height: 1;
+  }
+}
+
+.detail {
+  font-size: 12px;
+  font-style: italic;
+  text-transform: none;
+}
+
+.well {
+  padding: 25px 15px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-left: 3px solid #545454;
+  @include box-shadow(rgba(0, 0, 0, 0.14) 0 0 7px inset);
+}
+
+.nav {
+  font-size: 25px;
+  margin-left: 10px;
+
+  li { margin-bottom: 20px; }
+  a {
+    display: block;
+    padding-left: 14px;
+    line-height: 20px;
+  }
+  a:hover,
+  li.active a {
+    padding-left: 10px;
+    border-left: 4px solid rgba(211, 158, 32, 0.4);
+  }
+}
+
+.controls-playback,
+.controls-play,
+.controls-pause {
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.controls-play,
+.controls-pause {
+  @include filter(drop-shadow(3px 3px 32px rgba(0, 0, 0, 1)));
+}
+.controls-playback,
+.controls-play {
+  width: 67px;
+  height: 77px;
+  margin-top: -38px;
+  margin-left: -33px;
+}
+.controls-pause {
+  width: 38px;
+  height: 72px;
+  margin-top: -36px;
+  margin-left: -19px;
+}
+
+.thumbnail {
+  .controls-playback,
+  .controls-play {
+    width: 38px;
+    height: 44px;
+    margin-top: -22px;
+    margin-left: -19px;
+  }
+  .controls-pause {
+    width: 22px;
+    height: 44px;
+    margin-top: -21px;
+    margin-left: -11px;
+  }
+}

@@ -1,0 +1,1 @@
+<a data-fragment='<%= o.model.get('slug') %>'><%= o.model.get('title') %></a>

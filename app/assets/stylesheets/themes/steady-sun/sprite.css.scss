@@ -1,0 +1,28 @@
+.divider-floral-vertical {
+  background-image: image-url('themes/steady-sun/divider-floral-vertical.png');
+  width: 51px;
+  height: 171px;
+  margin: 0 auto;
+}
+.divider-floral-horizontal {
+  background-image: image-url('themes/steady-sun/divider-floral-horizontal.png');
+  width: 130px;
+  height: 60px;
+  margin: 0 auto 30px auto;
+}
+.icon-apple-logo {
+  @include icon('themes/steady-sun/icon-apple-logo.png', 32px, 32px);
+  @include icon-medium;
+}
+.icon-bandcamp-logo {
+  @include icon('themes/steady-sun/icon-bandcamp-logo.png', 32px, 18px);
+  @include icon-medium;
+}
+.icon-camera {
+  @include icon('themes/steady-sun/icon-camera.png', 30px, 26px);
+  @include icon-medium;
+}
+.icon-camcorder {
+  @include icon('themes/steady-sun/icon-camcorder.png', 30px, 26px);
+  @include icon-medium;
+}

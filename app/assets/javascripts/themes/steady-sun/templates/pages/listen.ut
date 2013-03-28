@@ -1,0 +1,18 @@
+<div class='featured' data-ref='featured'></div>
+
+<div class='featured-details row-fluid'>
+
+  <ul class='featured-details-left text-center span5' data-ref='tracks'></ul>
+
+  <div class='featured-details-divider span2'><div class='divider-floral-vertical'></div></div>
+
+  <ul class='featured-details-right span4 offset1'>
+    <li>
+      <i class='icon-apple-logo'></i> iTunes
+    </li>
+    <li>
+      <i class='icon-bandcamp-logo'></i> Bandcamp
+    </li>
+  </ul>
+
+</div>

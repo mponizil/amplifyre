@@ -136,7 +136,7 @@
       tpl: {
         wrap     : '<div class="fancybox-wrap" tabIndex="-1"><div class="fancybox-skin"><div class="fancybox-outer"><div class="fancybox-inner"></div></div></div></div>',
         image    : '<img class="fancybox-image" src="{href}" alt="" />',
-        iframe   : '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen' + ($.browser.msie ? ' allowtransparency="true"' : '') + '></iframe>',
+        iframe   : '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>',
         error    : '<p class="fancybox-error">The requested content cannot be loaded.<br/>Please try again later.</p>',
         closeBtn : '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a>',
         next     : '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
@@ -1780,14 +1780,7 @@
       this.overlay.width(width).height('100%');
 
       // jQuery does not return reliable result for IE
-      if ($.browser.msie) {
-        offsetWidth = Math.max(document.documentElement.offsetWidth, document.body.offsetWidth);
-
-        if (D.width() > offsetWidth) {
-          width = D.width();
-        }
-
-      } else if (D.width() > W.width()) {
+      if (D.width() > W.width()) {
         width = D.width();
       }
 
@@ -1886,10 +1879,6 @@
           target = F.skin;
 
           title.appendTo('body');
-
-          if ($.browser.msie) {
-            title.width( title.width() );
-          }
 
           title.wrapInner('<span class="child"></span>');
 

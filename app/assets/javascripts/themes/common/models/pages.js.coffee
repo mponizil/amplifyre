@@ -13,4 +13,4 @@ define [
 
     comparator: (page) -> page.get('position')
 
-    allCategories: ['news', 'photos', 'listen', 'tour', 'contact', 'custom']
+    allCategories: ['news', 'photos', 'videos', 'listen', 'tour', 'contact', 'custom']

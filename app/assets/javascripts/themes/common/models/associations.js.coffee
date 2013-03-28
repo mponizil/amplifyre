@@ -8,13 +8,15 @@ define [
   'themes/common/models/pages'
   'themes/common/models/photo'
   'themes/common/models/photos'
+  'themes/common/models/video'
+  'themes/common/models/videos'
   'themes/common/models/post'
   'themes/common/models/posts'
   'themes/common/models/social'
   'themes/common/models/socials'
   'themes/common/models/track'
   'themes/common/models/tracks'
-], (Album, Albums, BandSite, Concert, Concerts, Page, Pages, Photo, Photos, Post, Posts, Social, Socials, Track, Tracks) ->
+], (Album, Albums, BandSite, Concert, Concerts, Page, Pages, Photo, Photos, Video, Videos, Post, Posts, Social, Socials, Track, Tracks) ->
 
   BandSite.has()
     .many('albums',
@@ -35,6 +37,10 @@ define [
     )
     .many('photos',
       collection: Photos
+      inverse: 'band_site'
+    )
+    .many('videos',
+      collection: Videos
       inverse: 'band_site'
     )
     .many('posts',
@@ -82,6 +88,12 @@ define [
     .one('band_site',
       model: BandSite
       inverse: 'photos'
+    )
+
+  Video.has()
+    .one('band_site',
+      model: BandSite
+      inverse: 'videos'
     )
 
   Post.has()

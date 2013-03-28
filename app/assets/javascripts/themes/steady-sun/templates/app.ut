@@ -1,0 +1,20 @@
+<div class='container' id='music-page'>
+
+  <div class='row-fluid'>
+
+    <div class='span2'>
+      <ul class='nav nav-stacked' data-ref='navigation'></ul>
+    </div>
+
+    <div class='content span8' data-ref='page'></div>
+
+    <div class='span2' id='column-right'>
+      <div class='thumbnail'>
+        <img src='/assets/themes/steady-sun/album.png' width='100%' height='100%' />
+        <div data-ref='playback'></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,3 @@
+<a href='<%= o.model.get('file').url %>' data-fancybox-group='group'>
+  <img src='<%= o.model.get('file').sm_thumb.url %>' />
+</a>

@@ -1,0 +1,7 @@
+.clearfix { @include clearfix; }
+.text-center { text-align: center; }
+.pull-right-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
