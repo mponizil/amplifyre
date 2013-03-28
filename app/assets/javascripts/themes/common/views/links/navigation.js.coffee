@@ -17,7 +17,7 @@ define [
 
       @views.push(new List
         el: @$nav
-        view: NavItem
+        view: (NavItem.extend tagName: 'li')
         collection: @collection
       .render())
 

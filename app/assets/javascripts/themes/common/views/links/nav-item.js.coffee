@@ -5,6 +5,4 @@ define [
 
   class NavItem extends View
 
-    tagName: 'li'
-
     template: jst
