@@ -7,9 +7,6 @@ define [
   'jst!at-ss/templates/music/album'
 ], (_, List, Mirage, View, PlaybackView, jst) ->
 
-  container =
-    width: 960
-    height: 960
   layers = [{
     url: '/assets/album/mirage_files/steadysun/wallpaper.png',
     width: 960,
@@ -29,7 +26,8 @@ define [
     url: '/assets/album/mirage_files/steadysun/textwork.png',
     width: 343,
     height: 346,
-    top: 270
+    top: 270,
+    skip: true
   }]
 
   class AlbumView extends View
@@ -46,7 +44,7 @@ define [
       @views.push(new Mirage
         el: @$cover
         model: @model
-        container: container
+        maxDimensions: width: 960, height: 960
         layers: layers
       .render())
 
