@@ -18,7 +18,7 @@ define [
         tagName: 'a'
         attributes: ->
           'href': @model.get('file').url
-          'data-fancybox-group': 'group'
+          'data-fancybox-group': 'photos'
 
       @views.push(new List
         el: @$photos

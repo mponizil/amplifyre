@@ -1,63 +1,67 @@
-<div class='gallery-row row-fluid'>
-  <div class='thumbnail'>
-    <a href='#'>
-      <img src='/assets/themes/steady-sun/videos/thumbnails/video1.png' />
-      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
-    </a>
-    <div class='thumbnail-details'>
-      <h3>Eyes Wide</h3>
-      <span class='detail'>3/25/2013</span>
-      <span class='pull-right-absolute detail'>Produced by Caleb Barrett &amp; Ethan Christy</span>
-    </div>
-  </div>
-</div>
+<div data-fancybox='video'>
 
-<div class='gallery-row row-fluid'>
-  <div class='thumbnail span5'>
-    <a href='#'>
-      <img src='/assets/themes/steady-sun/videos/thumbnails/video2.png' />
-      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
-    </a>
-    <div class='thumbnail-details'>
-      <h3>God Only Knows</h3>
-      <span class='detail'>3/25/2013</span>
+  <div class='gallery-row row-fluid'>
+    <div class='thumbnail'>
+      <a href='http://www.youtube.com/embed/CSJ0foS-c_M?autoplay=1' data-fancybox-group='videos'>
+        <img src='/assets/themes/steady-sun/videos/thumbnails/video1.png' />
+        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+      </a>
+      <div class='thumbnail-details'>
+        <h3>Eyes Wide</h3>
+        <span class='detail'>3/24/2013</span>
+        <span class='pull-right-absolute detail'>Produced by Caleb Barrett &amp; Ethan Christy</span>
+      </div>
     </div>
   </div>
-  <div class='thumbnail span5 offset2'>
-    <a href='#'>
-      <img src='/assets/themes/steady-sun/videos/thumbnails/video3.png' />
-      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
-    </a>
-    <div class='thumbnail-details'>
-      <h3>Breathe</h3>
-      <span class='detail'>3/25/2013</span>
-    </div>
-  </div>
-</div>
 
-<div class='gallery-row row-fluid'>
-  <div class='thumbnail span5'>
-    <a href='#'>
-      <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
-      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
-    </a>
-    <div class='thumbnail-details'>
-      <h3>God Only Knows</h3>
-      <span class='detail'>3/25/2013</span>
+  <div class='gallery-row row-fluid'>
+    <div class='thumbnail span5'>
+      <a href='http://www.youtube.com/embed/KBSzJcwQU4U?autoplay=1' data-fancybox-group='videos'>
+        <img src='/assets/themes/steady-sun/videos/thumbnails/video2.png' />
+        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+      </a>
+      <div class='thumbnail-details'>
+        <h3>God Only Knows</h3>
+        <span class='detail'>12/8/2012</span>
+      </div>
+    </div>
+    <div class='thumbnail span5 offset2'>
+      <a href='http://www.youtube.com/embed/-LarypHRhHc?autoplay=1' data-fancybox-group='videos'>
+        <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
+        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+      </a>
+      <div class='thumbnail-details'>
+        <h3>A Riddle</h3>
+        <span class='detail'>2/19/2012</span>
+      </div>
     </div>
   </div>
-  <div class='thumbnail span5 offset2'>
-    <a href='#'>
-      <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
-      <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
-    </a>
-    <div class='thumbnail-details'>
-      <h3>Breathe</h3>
-      <span class='detail'>3/25/2013</span>
+
+<!--   <div class='gallery-row row-fluid'>
+    <div class='thumbnail span5'>
+      <a href='http://www.youtube.com/embed/-LarypHRhHc?autoplay=1' data-fancybox-group='videos'>
+        <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
+        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+      </a>
+      <div class='thumbnail-details'>
+        <h3>A Riddle</h3>
+        <span class='detail'>2/19/2012</span>
+      </div>
     </div>
-  </div>
+    <div class='thumbnail span5 offset2'>
+      <a href='http://www.youtube.com/embed/2TyAF3gCp58?autoplay=1' data-fancybox-group='videos'>
+        <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
+        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+      </a>
+      <div class='thumbnail-details'>
+        <h3>Breathe</h3>
+        <span class='detail'>4/25/2012</span>
+      </div>
+    </div>
+  </div> -->
+
 </div>
 
 <div class='text-center'>
-  <i class='icon-camcorder'></i> <a href='#'>Complete Archive</a>
+  <i class='icon-camcorder'></i> <a href='http://www.google.com/search?q=steady+sun+youtube' target='_blank'>Complete Archive</a>
 </div>
