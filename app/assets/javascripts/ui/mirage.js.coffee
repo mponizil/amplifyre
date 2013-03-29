@@ -18,41 +18,42 @@ define [
       # Make a CrackRock version of this image for easy manip
       layer.crackRock = new CrackRock(layer) for layer in @layers
 
-      $(window).on('resize', _.debounce (=> @measure()), 200)
-      $(window).on('mousemove', @align)
-
-    measure: =>
-      @windowWidth = $(window).width()
-      @render()
+      $(window).on("resize.delegateEvents#{@cid}", _.debounce (=> @render()), 200)
+      $(window).on("mousemove.delegateEvents#{@cid}", @align)
 
     render: ->
       super
 
+      @measure()
+
       # Defer so we can use $parent's dimensions.
-      _.defer =>
-
-        # Use width for both dimensions because parent doesn't always have a height.
-        @$parent = @$el.parent()
-        [@width, @height, @scale] = @maxDimensions.resizeToFit(@$parent.width(), @$parent.width())
-
-        @$el.addClass('mirage')
-        # So we can use `overflow: hidden`
-        @$el.css({ @width, @height })
-
-        for image in @layers
-          top = @scale * image.top
-          # Scale the layers 20% larger than they need to be
-          largerScale = @scale + @scale * 0.2
-          [width, height] = image.crackRock.resizeToScale(largerScale)
-          marginLeft = - (width - @width) / 2
-          @$el.append "
-            <div class='mirage-layer' style='top: #{ top }px;' data-mirage-layer='#{ image.crackRock.id }'>
-              <img src='#{ image.url }' style='width: #{ width }px;
-                                               height: #{ height }px;
-                                               margin-left: #{ marginLeft }px' />
-            </div>"
+      _.defer => @fit()
 
       return this
+
+    measure: => @windowWidth = $(window).width()
+
+    fit: ->
+      # Use width for both dimensions because parent doesn't always have a height.
+      @$parent = @$el.parent()
+      [@width, @height, @scale] = @maxDimensions.resizeToFit(@$parent.width(), @$parent.width())
+
+      @$el.addClass('mirage')
+      # So we can use `overflow: hidden`
+      @$el.css({ @width, @height })
+
+      for image in @layers
+        top = @scale * image.top
+        # Scale the layers 20% larger than they need to be
+        largerScale = @scale + @scale * 0.2
+        [width, height] = image.crackRock.resizeToScale(largerScale)
+        marginLeft = - (width - @width) / 2
+        @$el.append "
+          <div class='mirage-layer' style='top: #{ top }px;' data-mirage-layer='#{ image.crackRock.id }'>
+            <img src='#{ image.url }' style='width: #{ width }px;
+                                             height: #{ height }px;
+                                             margin-left: #{ marginLeft }px' />
+          </div>"
 
     align: (e) =>
       x = e.pageX
@@ -67,3 +68,8 @@ define [
         depth = 2 * (0.5 - i / (@layers.length - 1))
         marginLeft = maxShift * depth * offsetPct
         $layer.css('margin-left', "#{ marginLeft }%")
+
+    dispose: ->
+      $(window).off("resize.delegateEvents#{@cid}")
+      $(window).off("mousemove.delegateEvents#{@cid}")
+      super
