@@ -22,6 +22,8 @@
   .featured-details-right {
     li { margin-bottom: 15px; }
   }
+  .icon-volume-on { display: none; }
+  .active .icon-volume-on { display: inline-block; }
 }
 
 #photos-page .content {

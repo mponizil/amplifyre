@@ -10,6 +10,10 @@
   height: 60px;
   margin: 0 auto 30px auto;
 }
+.icon-volume-on {
+  @include icon('themes/steady-sun/icon-volume-on.png', 21px, 23px);
+  @include icon-medium;
+}
 .icon-apple-logo {
   @include icon('themes/steady-sun/icon-apple-logo.png', 32px, 32px);
   @include icon-medium;
