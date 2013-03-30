@@ -1,17 +1,26 @@
 <div class='featured' data-ref='featured'></div>
 
-<div class='featured-details row-fluid'>
+<div class='featured-details'>
 
-  <ul class='featured-details-left span5' data-ref='tracks'></ul>
-
-  <div class='featured-details-divider span2'><div class='divider-floral-vertical'></div></div>
-
-  <div class='text-center'><h3>Purchase the album</h3></div>
-
-  <ul class='featured-details-right span4 offset1'>
-    <li>
-      <i class='icon-bandcamp-logo'></i> Bandcamp
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <td width='43%'>
+        <ul class='featured-details-left text-center' data-ref='tracks'></ul>
+      </td>
+      <td width='14%'>
+        <div class='featured-details-divider'><div class='divider-floral-vertical'></div></div>
+      </td>
+      <td width='43%'>
+        <div class='featured-details-right'>
+          <h4>Purchase the album</h4>
+          <ul>
+            <li>
+              <i class='icon-bandcamp-logo'></i> Bandcamp
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
 
 </div>

@@ -5,6 +5,13 @@
   }
   .featured-details {
     width: 66%;
+    h4 {
+      margin-bottom: 20px;
+    }
+    td {
+      padding: 10px 20px;
+      vertical-align: middle;
+    }
   }
   .featured-details-left {
     li { margin-bottom: 10px; }
@@ -13,7 +20,6 @@
     padding-top: 5%;
   }
   .featured-details-right {
-    padding-top: 13%;
     li { margin-bottom: 15px; }
   }
 }
