@@ -11,6 +11,7 @@ ActiveAdmin.register BandSite do
       f.input :description
       f.input :phrase
       f.input :theme
+      f.input :subscribers
       f.input :skin_color
       f.input :skin_style
     end

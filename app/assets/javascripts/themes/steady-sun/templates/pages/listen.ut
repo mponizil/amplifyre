@@ -2,14 +2,13 @@
 
 <div class='featured-details row-fluid'>
 
-  <ul class='featured-details-left text-center span5' data-ref='tracks'></ul>
+  <ul class='featured-details-left span5' data-ref='tracks'></ul>
 
   <div class='featured-details-divider span2'><div class='divider-floral-vertical'></div></div>
 
+  <div class='text-center'><h3>Purchase the album</h3></div>
+
   <ul class='featured-details-right span4 offset1'>
-    <li>
-      <i class='icon-apple-logo'></i> iTunes
-    </li>
     <li>
       <i class='icon-bandcamp-logo'></i> Bandcamp
     </li>

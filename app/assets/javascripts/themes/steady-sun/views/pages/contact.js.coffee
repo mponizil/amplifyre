@@ -1,7 +1,8 @@
 define [
   'at-ss/views/pages/base/plain'
+  'themes/common/views/forms/subscribe'
   'jst!at-ss/templates/pages/contact'
-], (PlainPage, jst) ->
+], (PlainPage, SubscribeView, jst) ->
 
   class ContactPage extends PlainPage
 
@@ -9,5 +10,12 @@ define [
 
     render: ->
       super
-      $('.container:first').attr('id', 'custom-page')
+
+      $('.container:first').attr('id', 'contact-page')
+
+      @views.push(new SubscribeView
+        el: @$subscribe
+        model: @band_site
+      .render())
+
       return this

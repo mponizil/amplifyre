@@ -11,6 +11,7 @@ Amplifyre::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :band_sites, :except => [:index, :new, :edit] do
+        put 'subscribe' => 'band_sites#subscribe'
         resources :socials, :except => [:index, :new, :edit]
         resources :albums, :except => [:index, :new, :edit] do
           put 'reorder', :on => :collection

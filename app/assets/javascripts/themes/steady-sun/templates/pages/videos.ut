@@ -4,7 +4,7 @@
     <div class='thumbnail'>
       <a href='http://www.youtube.com/embed/CSJ0foS-c_M?autoplay=1' data-fancybox-group='videos'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video1.png' />
-        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play' data-hover><img src='/assets/themes/steady-sun/controls-play.png' /></div>
       </a>
       <div class='thumbnail-details'>
         <h3>Eyes Wide</h3>
@@ -18,7 +18,7 @@
     <div class='thumbnail span5'>
       <a href='http://www.youtube.com/embed/KBSzJcwQU4U?autoplay=1' data-fancybox-group='videos'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video2.png' />
-        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play' data-hover><img src='/assets/themes/steady-sun/controls-play.png' /></div>
       </a>
       <div class='thumbnail-details'>
         <h3>God Only Knows</h3>
@@ -28,7 +28,7 @@
     <div class='thumbnail span5 offset2'>
       <a href='http://www.youtube.com/embed/-LarypHRhHc?autoplay=1' data-fancybox-group='videos'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
-        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play' data-hover><img src='/assets/themes/steady-sun/controls-play.png' /></div>
       </a>
       <div class='thumbnail-details'>
         <h3>A Riddle</h3>
@@ -60,8 +60,4 @@
     </div>
   </div> -->
 
-</div>
-
-<div class='text-center'>
-  <i class='icon-camcorder'></i> <a href='http://www.google.com/search?q=steady+sun+youtube' target='_blank'>Complete Archive</a>
 </div>

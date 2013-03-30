@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328065734) do
+ActiveRecord::Schema.define(:version => 20130330000745) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -119,6 +119,13 @@ ActiveRecord::Schema.define(:version => 20130328065734) do
     t.integer  "band_site_id"
     t.string   "category"
     t.string   "link"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "subscribers", :force => true do |t|
+    t.integer  "band_site_id"
+    t.string   "email"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

@@ -46,4 +46,13 @@ class Api::V1::BandSitesController < ApplicationController
     head :no_content
   end
 
+  # PUT /api/v1/band_sites/1/subscribe
+  def subscribe
+    @band_site = BandSite.find(params[:id])
+
+    subscriber = @band_site.subscribers.create(:email => params[:email])
+
+    render json: {:email => subscriber[:email]}, status: :ok
+  end
+
 end

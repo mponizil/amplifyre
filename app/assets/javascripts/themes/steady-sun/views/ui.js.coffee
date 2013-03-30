@@ -10,4 +10,5 @@ define [
   'ui/progress-bar'
   'ui/fancybox'
   'ui/mirage'
+  'ui/hover'
 ], ->

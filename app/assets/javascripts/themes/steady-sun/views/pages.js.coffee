@@ -52,10 +52,10 @@ define [
         collection: @band_site.concerts()
 
     contact: (model) ->
-      @changePage new ContactView(model: model)
+      @changePage new ContactView({model, @band_site})
 
     custom: (model) ->
-      @changePage new CustomView(model: model)
+      @changePage new CustomView({model})
 
     changePage: (view) ->
       @page?.dispose().remove()

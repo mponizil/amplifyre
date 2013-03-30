@@ -1,15 +1,9 @@
 <div class='page-header'>
   <h1>Follow Steady Sun</h1>
-  The movement has only begun. Add us to your feed of choice so you don't miss it.
 </div>
-
-<div class='divider-floral-horizontal'></div>
 
 <div class='well'>
   <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fsteadysunmusic&amp;send=false&amp;layout=standard&amp;width=737&amp;show_faces=true&amp;font=lucida+grande&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=507770885939186" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100%; height:61px;" allowTransparency="true"></iframe>
 </div>
 
-<div class='well form-inline text-center'>
-  <input type='text' name='email' class='input-xxlarge' placeholder='enter your email to receive occasional updates' />
-  <button type='button' class='btn'>Subscribe</button>
-</div>
+<div class='well text-center' data-ref='subscribe'></div>

@@ -10,6 +10,10 @@ define [
 
     urlRoot: -> @urlPrefix() + 'band_sites'
 
+    subscribe: (attrs, options) ->
+      options.url = @url() + '/subscribe'
+      @save(attrs, options)
+
     defaults: ->
       background_file:
         url: '/assets/global/dark-loader.gif'
