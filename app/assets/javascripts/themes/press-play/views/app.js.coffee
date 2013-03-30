@@ -65,8 +65,7 @@ define [
       .render())
       @views.push(new PlayerView
         el: @$player
-        collection: @tracks
-        player: @player
+        model: @player
       .render())
       @views.push(new TickerView
         el: @$ticker

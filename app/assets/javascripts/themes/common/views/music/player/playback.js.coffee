@@ -5,16 +5,15 @@ define [
 
   class PlaybackView extends Quilt.View
 
-    initialize: ({@player}) ->
+    constructor: ->
       super
-
-      @player.on('change:playing', @update, @)
+      @model.on('change:playing', @update, @)
 
     template: jst
 
     events:
-      'click [data-ref=play]': -> @player.set(playing: true)
-      'click [data-ref=pause]': -> @player.set(playing: false)
+      'click [data-ref=play]': -> @model.set(playing: true)
+      'click [data-ref=pause]': -> @model.set(playing: false)
 
     render: ->
       super
@@ -27,11 +26,11 @@ define [
         -> $(this).animate(opacity: 0)
       )
 
-      @update(@player, @player.get('playing'))
+      @update(@model, @model.get('playing'))
 
       return this
 
-    update: (player, playing) ->
+    update: (model, playing) ->
       if playing then @play()
       else @pause()
 

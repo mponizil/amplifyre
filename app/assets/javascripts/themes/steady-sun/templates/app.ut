@@ -12,6 +12,7 @@
       <div class='thumbnail' data-ref='player_mini'>
         <img src='/assets/themes/steady-sun/album.png' width='100%' height='100%' />
         <div data-ref='playback'></div>
+        <marquee data-ref='ticker' scrollamount='3'></marquee>
       </div>
     </div>
 

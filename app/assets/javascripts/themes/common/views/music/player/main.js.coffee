@@ -7,9 +7,6 @@ define [
 
   class PlayerView extends Quilt.View
 
-    initialize: ({@player}) ->
-      super
-
     template: jst
 
     render: ->
@@ -17,13 +14,11 @@ define [
 
       @views.push(new PlaybackView
         el: @$playback
-        collection: @collection
-        player: @player
+        model: @model
       .render())
       @views.push(new ScannerView
         el: @$scanner
-        collection: @collection
-        player: @player
+        model: @model
       .render())
 
       return this

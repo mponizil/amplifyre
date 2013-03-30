@@ -50,8 +50,7 @@ define [
 
       @views.push(new PlaybackView
         el: @$playback
-        collection: @model.tracks()
-        player: @player
+        model: @player
       .render())
 
       return this

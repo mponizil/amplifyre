@@ -3,10 +3,11 @@ define [
   'themes/common/models/player'
   'help!themes/common/views/links/navigation'
   'themes/common/views/music/player/playback'
+  'themes/common/views/music/player/ticker'
   'at-ss/views/pages'
   'jst!at-ss/templates/app'
   'at-ss/views/ui'
-], (CommonApp, Player, NavigationView, PlaybackView, PagesView, jst) ->
+], (CommonApp, Player, NavigationView, PlaybackView, TickerView, PagesView, jst) ->
 
   class App extends CommonApp
 
@@ -23,8 +24,11 @@ define [
 
       @views.push(new PlaybackView
         el: @$playback
-        collection: @tracks
-        player: @player
+        model: @player
+      .render())
+      @views.push(new TickerView
+        el: @$ticker
+        model: @player
       .render())
 
       @views.push(new PagesView

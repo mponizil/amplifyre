@@ -5,14 +5,11 @@ define [
 
   class ScannerView extends Quilt.View
 
-    initialize: ({@player}) ->
-      super
-
     template: jst
 
     events:
-      'click [data-ref=prev]': -> @player.set(index: @player.prev())
-      'click [data-ref=next]': -> @player.set(index: @player.next())
+      'click [data-ref=prev]': -> @model.set(index: @model.prev())
+      'click [data-ref=next]': -> @model.set(index: @model.next())
 
     render: ->
       super
