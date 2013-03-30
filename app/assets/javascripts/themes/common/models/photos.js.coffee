@@ -8,3 +8,5 @@ define [
     model: -> Photo.create(arguments...)
 
     url: -> super + 'band_sites/' + @owner.id + '/photos'
+
+    comparator: (photo) -> photo.get('position')
