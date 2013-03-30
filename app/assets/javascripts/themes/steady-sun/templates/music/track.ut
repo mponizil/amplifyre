@@ -1,2 +1,2 @@
 <i class='icon-volume-on' data-ref='playing'></i>
-<a href='#' data-ref='title' data-attr='title'></a>
+<a href='javascript:void(0)' data-ref='title' data-attr='title'></a>
