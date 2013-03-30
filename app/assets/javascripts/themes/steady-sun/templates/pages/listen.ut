@@ -15,7 +15,8 @@
           <h4>Purchase the album</h4>
           <ul>
             <li>
-              <i class='icon-bandcamp-logo'></i> Bandcamp
+              <i class='icon-bandcamp-logo'></i>
+              <a href='http://steadysun.bandcamp.com/' target='_blank'>Bandcamp</a>
             </li>
           </ul>
         </div>
