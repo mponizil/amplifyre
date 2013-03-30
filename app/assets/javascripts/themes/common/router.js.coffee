@@ -23,11 +23,12 @@ define [
       ':slug': 'slug'
 
     home: ->
-      @trigger('page:change', @band_site.get('homepage'))
+      page = @pages.find (page) => page.get('category') is @band_site.get('homepage')
+      @navigate(page.get('slug'), {trigger: true, replace: true})
 
     slug: (slug) ->
       page = @pages.find (page) -> page.get('slug') is slug
       if not page
-        @navigate('home', { trigger: true, replace: true })
+        @navigate('home', {trigger: true, replace: true})
       else
         @trigger('page:change', page.get('category'), page)
