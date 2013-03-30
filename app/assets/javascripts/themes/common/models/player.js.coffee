@@ -66,4 +66,4 @@ define [
       # Keep playing if we were playing.
       if @get('playing')
         soundManager.stopAll()
-        soundObject.play()
+        _.defer => soundObject.play() # HACK: woo defer!
