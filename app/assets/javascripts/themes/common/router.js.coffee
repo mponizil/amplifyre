@@ -4,7 +4,7 @@ define [
 
   class Router extends Backbone.Router
 
-    constructor: ({@pages}) ->
+    constructor: ({@band_site, @pages}) ->
       super
 
     initialize: ->
@@ -18,12 +18,12 @@ define [
       , @)
 
     routes:
-      '': 'index'
-      'home': 'index'
+      '': 'home'
+      'home': 'home'
       ':slug': 'slug'
 
-    index: ->
-      @trigger('page:change', 'index')
+    home: ->
+      @trigger('page:change', @band_site.get('homepage'))
 
     slug: (slug) ->
       page = @pages.find (page) -> page.get('slug') is slug

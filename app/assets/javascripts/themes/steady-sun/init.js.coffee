@@ -19,7 +19,7 @@ define [
 
     View::band_site = HelperView::band_site = band_site
 
-    router = new Router(pages: pages)
+    router = new Router {band_site, pages}
 
     new App
       el: $('#ss-template')
