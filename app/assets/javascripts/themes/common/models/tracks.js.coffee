@@ -12,7 +12,7 @@ define [
 
     name: 'tracks'
 
-    comparator: (album) -> album.get('position')
+    comparator: (track) -> track.get('position')
 
     band_site_id: ->
       if @owner instanceof BandSite
