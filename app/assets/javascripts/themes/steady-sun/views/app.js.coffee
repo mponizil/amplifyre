@@ -41,6 +41,8 @@ define [
 
       return this
 
+    # TODO: cleanup
     route: (router, slug) ->
       page = @pages.find (page) -> page.get('slug') is slug[0]
-      @$player_mini.toggleClass('hide', page.get('category') is 'listen')
+      category = page?.get('category') or @model.get('homepage')
+      @$player_mini.toggleClass('hide', category is 'listen')
