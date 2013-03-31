@@ -34,10 +34,6 @@ class BandSite < ActiveRecord::Base
     self.slug
   end
 
-  def ga
-    self[:ga] || 'UA-36251718-1'
-  end
-
   private
 
   def set_defaults
