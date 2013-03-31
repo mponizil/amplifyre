@@ -1,7 +1,7 @@
 <form data-subscribe>
   <div class='form-inline'>
-    <input type='text' name='email' class='input-xxlarge' placeholder='enter your email to receive occasional updates' data-ref='email' />
+    <input type='text' name='email' class='input-xxlarge' placeholder='enter your email to receive occasional updates' data-ref='email' data-focus />
     <button type='submit' class='btn'>Subscribe</button>
   </div>
-  <span data-ref='confirm'></span>
+  <div class='alert' data-ref='alert'></div>
 </form>

@@ -12,16 +12,26 @@ define [
 
     render: ->
       super
-      @$confirm.hide()
+      @$alert.hide()
       return this
 
     subscribe: (e) ->
       e.preventDefault()
-      @$confirm.hide()
+      @$alert.hide()
       email = @$email.val()
-      @model.subscribe {email}, {@complete}
 
-    complete: =>
-      @$confirm.html("Thanks, we'll be in touch!")
-      @$confirm.fadeIn('slow')
-      @$email.val('').focus()
+      if email and email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i)
+        @model.subscribe {email}, {@success}
+      else
+        @error()
+
+    error: ->
+      @alert("Please enter a valid email address to subscribe.")
+
+    success: =>
+      @alert("Thanks, we'll be in touch!")
+
+    alert: (message) ->
+      @$alert.html(message)
+      @$alert.fadeIn('slow')
+      @$email.focus()

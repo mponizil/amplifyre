@@ -11,4 +11,5 @@ define [
   'ui/fancybox'
   'ui/mirage'
   'ui/hover'
+  'ui/focus'
 ], ->

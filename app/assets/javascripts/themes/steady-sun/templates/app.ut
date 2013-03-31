@@ -2,9 +2,7 @@
 
   <div class='row-fluid'>
 
-    <div class='span2'>
-      <ul class='nav nav-stacked' data-ref='navigation'></ul>
-    </div>
+    <div class='span2' data-ref='navigation'></div>
 
     <div class='content span8' data-ref='page'></div>
 
