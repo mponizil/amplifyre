@@ -51,6 +51,7 @@ define [
       @views.push(new PlaybackView
         el: @$playback
         model: @player
+        $source: @$el
       .render())
 
       return this

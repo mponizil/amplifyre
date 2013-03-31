@@ -3,7 +3,7 @@ define [
   'list'
   'ui/mirage'
   'at-pp/views/view'
-  'at-pp/views/music/player/playback'
+  'themes/common/views/music/player/playback'
   'help!at-pp/views/music/track'
   'jst!at-pp/templates/music/album'
 ], (_, List, Mirage, View, PlaybackView, TrackView, jst) ->
@@ -64,8 +64,7 @@ define [
 
       @views.push(new PlaybackView
         el: @$playback
-        collection: @model.tracks()
-        player: @player
+        model: @player
       .render())
 
       TrackView = TrackView.extend

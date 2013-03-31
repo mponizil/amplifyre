@@ -1,4 +1,4 @@
-.pp-playback {
+.controls-playback {
   width: 209px;
   height: 250px;
   position: absolute;
@@ -8,23 +8,25 @@
   cursor: pointer;
   z-index: 2;
 }
-.pp-play {
+.controls-play {
   width: 209px;
   height: 250px;
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -104px;
+  background-image: image-url('themes/press-play/controls-play.png');
 }
-.pp-pause {
+.controls-pause {
   width: 142px;
   height: 262px;
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -71px;
+  background-image: image-url('themes/press-play/controls-pause.png');
 }
-.pp-scanner {
+.controls-scanner {
   width: 833px;
   height: 250px;
   position: absolute;
@@ -34,19 +36,21 @@
   cursor: pointer;
   z-index: 1;
 }
-.pp-prev {
+.controls-prev {
   width: 282px;
   height: 248px;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
+  background-image: image-url('themes/press-play/controls-prev.png');
 }
-.pp-next {
+.controls-next {
   width: 282px;
   height: 248px;
   position: absolute;
   top: 0;
   right: 0;
   opacity: 0;
+  background-image: image-url('themes/press-play/controls-next.png');
 }

@@ -30,3 +30,10 @@
   @include icon('themes/steady-sun/icon-camcorder.png', 30px, 26px);
   @include icon-medium;
 }
+
+.controls-play {
+  background-image: image-url('themes/steady-sun/controls-play.png');
+}
+.controls-pause {
+  background-image: image-url('themes/steady-sun/controls-pause.png');
+}

@@ -2,9 +2,9 @@
 
   <div class='gallery-row row-fluid'>
     <div class='thumbnail'>
-      <a href='http://www.youtube.com/embed/CSJ0foS-c_M?autoplay=1' data-fancybox-group='videos'>
+      <a href='http://www.youtube.com/embed/CSJ0foS-c_M?autoplay=1' data-fancybox-group='videos' data-hover='1'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video1.png' />
-        <div class='controls-play' data-hover><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play' data-hover-target='1'></div>
       </a>
       <div class='thumbnail-details'>
         <h3>Eyes Wide</h3>
@@ -16,9 +16,9 @@
 
   <div class='gallery-row row-fluid'>
     <div class='thumbnail span5'>
-      <a href='http://www.youtube.com/embed/KBSzJcwQU4U?autoplay=1' data-fancybox-group='videos'>
+      <a href='http://www.youtube.com/embed/KBSzJcwQU4U?autoplay=1' data-fancybox-group='videos' data-hover='2'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video2.png' />
-        <div class='controls-play' data-hover><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play' data-hover-target='2'></div>
       </a>
       <div class='thumbnail-details'>
         <h3>God Only Knows</h3>
@@ -26,9 +26,9 @@
       </div>
     </div>
     <div class='thumbnail span5 offset2'>
-      <a href='http://www.youtube.com/embed/-LarypHRhHc?autoplay=1' data-fancybox-group='videos'>
+      <a href='http://www.youtube.com/embed/-LarypHRhHc?autoplay=1' data-fancybox-group='videos' data-hover='3'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
-        <div class='controls-play' data-hover><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play' data-hover-target='3'></div>
       </a>
       <div class='thumbnail-details'>
         <h3>A Riddle</h3>
@@ -39,9 +39,9 @@
 
 <!--   <div class='gallery-row row-fluid'>
     <div class='thumbnail span5'>
-      <a href='http://www.youtube.com/embed/-LarypHRhHc?autoplay=1' data-fancybox-group='videos'>
+      <a href='http://www.youtube.com/embed/-LarypHRhHc?autoplay=1' data-fancybox-group='videos' data-hover='4'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
-        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play'></div>
       </a>
       <div class='thumbnail-details'>
         <h3>A Riddle</h3>
@@ -49,9 +49,9 @@
       </div>
     </div>
     <div class='thumbnail span5 offset2'>
-      <a href='http://www.youtube.com/embed/2TyAF3gCp58?autoplay=1' data-fancybox-group='videos'>
+      <a href='http://www.youtube.com/embed/2TyAF3gCp58?autoplay=1' data-fancybox-group='videos' data-hover='5'>
         <img src='/assets/themes/steady-sun/videos/thumbnails/video4.png' />
-        <div class='controls-play'><img src='/assets/themes/steady-sun/controls-play.png' /></div>
+        <div class='controls-play'></div>
       </a>
       <div class='thumbnail-details'>
         <h3>Breathe</h3>

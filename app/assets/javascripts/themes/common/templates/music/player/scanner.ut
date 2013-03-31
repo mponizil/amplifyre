@@ -1,2 +1,2 @@
-<div class='controls-prev' data-ref='prev'><img src='/assets/themes/steady-sun/controls-prev.png' /></div>
-<div class='controls-next' data-ref='next'><img src='/assets/themes/steady-sun/controls-next.png' /></div>
+<div class='controls-prev' data-ref='prev'></div>
+<div class='controls-next' data-ref='next'></div>

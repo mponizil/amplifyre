@@ -25,6 +25,7 @@ define [
       @views.push(new PlaybackView
         el: @$playback
         model: @player
+        $source: @$player_mini
       .render())
       @views.push(new TickerView
         el: @$ticker

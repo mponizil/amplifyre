@@ -1,11 +1,11 @@
 define [
-  'quilt'
+  'ui/hover'
   'jst!themes/common/templates/music/player/playback'
-], (Quilt, jst) ->
+], (Hover, jst) ->
 
-  class PlaybackView extends Quilt.View
+  class PlaybackView extends Hover
 
-    constructor: ->
+    constructor: (options) ->
       super
       @model.on('change:playing', @update, @)
 
@@ -17,14 +17,6 @@ define [
 
     render: ->
       super
-
-      @$el.addClass('transparent')
-      @$pause.addClass('hide')
-
-      @$el.hover(
-        -> $(this).animate(opacity: 1)
-        -> $(this).animate(opacity: 0)
-      )
 
       @update(@model, @model.get('playing'))
 

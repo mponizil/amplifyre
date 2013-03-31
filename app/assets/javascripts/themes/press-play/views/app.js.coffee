@@ -13,7 +13,7 @@ define [
   'help!at-pp/views/visual/background'
   'help!at-pp/views/links/navigation'
   'at-pp/views/links/social'
-  'at-pp/views/music/player/main'
+  'themes/common/views/music/player/main'
   'help!at-pp/views/visual/ticker'
   'at-pp/views/pages'
   'jst!at-pp/templates/app'
