@@ -15,7 +15,7 @@ class BandSite < ActiveRecord::Base
 
   attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name,
     :description, :title, :phrase, :background_file, :theme, :skin_color, :skin_style,
-    :homepage, :subscribers, :ga
+    :homepage, :subscribers
 
   mount_uploader :background_file, BackgroundUploader
 
