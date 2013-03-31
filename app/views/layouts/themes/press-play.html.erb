@@ -53,17 +53,7 @@
 
   <div id='pp-template' class='pp-template <%= @band_site.skin_classes %>'></div>
 
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251718-1']);
-    _gaq.push(['_setDomainName', 'amplifyre.com']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  <%= render 'layouts/themes/ga' %>
 
 </body>
 </html>

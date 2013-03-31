@@ -15,6 +15,7 @@ ActiveAdmin.register BandSite do
       f.input :skin_style
       f.input :homepage
       f.input :subscribers
+      f.input :ga
     end
     f.buttons
   end

@@ -15,7 +15,7 @@ class BandSite < ActiveRecord::Base
 
   attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name,
     :description, :title, :phrase, :background_file, :theme, :skin_color, :skin_style,
-    :homepage, :subscribers
+    :homepage, :subscribers, :ga
 
   mount_uploader :background_file, BackgroundUploader
 
@@ -32,6 +32,10 @@ class BandSite < ActiveRecord::Base
 
   def to_param
     self.slug
+  end
+
+  def ga
+    self[:ga] || 'UA-36251718-1'
   end
 
   private

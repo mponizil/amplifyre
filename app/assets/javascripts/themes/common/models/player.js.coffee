@@ -58,6 +58,9 @@ define [
     setMedia: (track) ->
       return unless track
 
+      # TODO: analytics.js
+      _gaq.push(['_trackEvent', 'Music', 'Play', "#{track.id} #{track.get('title')}"]) if _gaq
+
       soundObject = soundManager.createSound
         id: track.id
         url: track.get('file').url
