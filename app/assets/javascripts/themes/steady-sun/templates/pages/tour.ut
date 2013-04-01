@@ -2,10 +2,10 @@
   <h1>Next Show</h1>
   <div class='media'>
     <div class='media-body'>
-      <h3 class='media-heading'>3/30/2013 - Webster Hall</h3>
-      <span>10pm, $10, 19+</span>
+      <h3 class='media-heading'>4/3/2013 - Bareburger</h3>
+      <span>8pm, $5, acoustic set</span>
     </div>
-    <div class='pull-right'><a class='btn'>Tix &amp; Info</a></div>
+    <div class='pull-right'><a class='btn' href='https://www.facebook.com/events/451414438269969' target='_blank'>Tix &amp; Info</a></div>
   </div>
 </div>
 
@@ -13,24 +13,9 @@
   <h1>Future Shows</h1>
   <div class='media'>
     <div class='media-body'>
-      <h3 class='media-heading'>3/30/2013 - Webster Hall</h3>
-      <span>10pm, $10, 19+</span>
+      <h3 class='media-heading'>4/25/2013 - Shea Stadium</h3>
     </div>
-    <div class='pull-right'><a class='btn'>Tix &amp; Info</a></div>
-  </div>
-  <div class='media'>
-    <div class='media-body'>
-      <h3 class='media-heading'>3/30/2013 - Webster Hall</h3>
-      <span>10pm, $10, 19+</span>
-    </div>
-    <div class='pull-right'><a class='btn'>Tix &amp; Info</a></div>
-  </div>
-  <div class='media'>
-    <div class='media-body'>
-      <h3 class='media-heading'>3/30/2013 - Webster Hall</h3>
-      <span>10pm, $10, 19+</span>
-    </div>
-    <div class='pull-right'><a class='btn'>Tix &amp; Info</a></div>
+    <!-- <div class='pull-right'><a class='btn'>Tix &amp; Info</a></div> -->
   </div>
 </div>
 
