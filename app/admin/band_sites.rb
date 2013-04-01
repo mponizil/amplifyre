@@ -10,6 +10,7 @@ ActiveAdmin.register BandSite do
       f.input :title
       f.input :description
       f.input :phrase
+      f.input :background_file
       f.input :theme
       f.input :skin_color
       f.input :skin_style

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_url(path)
-    if path.match('http://')
+    if path.starts_with?('http')
       path
     else
       request.protocol + request.host + path
