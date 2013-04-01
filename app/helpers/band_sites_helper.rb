@@ -4,7 +4,11 @@ module BandSitesHelper
     if request.domain.starts_with?('amplifyre')
       request.protocol + band_site.slug + '.' + request.domain
     else
-      request.protocol + request.domain
+      if request.subdomain.present?
+        request.protocol + request.subdomain + '.' + request.domain
+      else
+        request.protocol + request.domain
+      end
     end
   end
 
@@ -12,7 +16,11 @@ module BandSitesHelper
     if request.domain.starts_with?('amplifyre')
       request.protocol + band_site.slug + '.' + request.domain + '/edit'
     else
-      request.protocol + request.domain
+      if request.subdomain.present?
+        request.protocol + request.subdomain + '.' + request.domain + '/edit'
+      else
+        request.protocol + request.domain
+      end
     end
   end
 
