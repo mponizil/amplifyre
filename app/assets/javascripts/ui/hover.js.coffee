@@ -23,8 +23,6 @@ define [
     render: ->
       super
 
-      @$target.css(opacity: 0)
-
       @$source.hover(
         => @fadeIn()
         => @fadeOut()
