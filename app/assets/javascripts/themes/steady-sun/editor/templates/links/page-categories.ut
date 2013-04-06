@@ -8,6 +8,7 @@
     <li data-new-page='photos'><a href='javascript:void(0)'>Photos</a></li>
     <li data-new-page='listen'><a href='javascript:void(0)'>Music</a></li>
     <li data-new-page='tour'><a href='javascript:void(0)'>Tour</a></li>
+    <li data-new-page='follow'><a href='javascript:void(0)'>Follow</a></li>
     <li data-new-page='contact'><a href='javascript:void(0)'>Contact</a></li>
     <li data-new-page='custom'><a href='javascript:void(0)'>Custom</a></li>
   </ul>

@@ -5,9 +5,10 @@ define [
   'help!at-ss/views/pages/photos'
   'help!at-ss/views/pages/videos'
   'help!at-ss/views/pages/tour'
+  'help!at-ss/views/pages/follow'
   'help!at-ss/views/pages/contact'
   'help!at-ss/views/pages/custom'
-], (Quilt, NewsView, ListenView, PhotosView, VideosView, TourView, ContactView, CustomView) ->
+], (Quilt, NewsView, ListenView, PhotosView, VideosView, TourView, FollowView, ContactView, CustomView) ->
 
   class Pages extends Quilt.View
 
@@ -50,6 +51,9 @@ define [
       @changePage new TourView
         model: model
         collection: @band_site.concerts()
+
+    follow: (model) ->
+      @changePage new FollowView({model, @band_site})
 
     contact: (model) ->
       @changePage new ContactView({model, @band_site})

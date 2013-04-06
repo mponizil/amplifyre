@@ -13,9 +13,4 @@ define [
 
       $('.container:first').attr('id', 'contact-page')
 
-      @views.push(new SubscribeView
-        el: @$subscribe
-        model: @band_site
-      .render())
-
       return this
