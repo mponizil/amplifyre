@@ -1,25 +1,25 @@
 stubModules: ['jst', 'text']
 modules:
-  # - name: 'themes/press-play/main'
-  #   insertRequire: ['themes/press-play/main']
-  # - name: 'themes/press-play/editor/main'
-  #   insertRequire: ['themes/press-play/editor/main']
-  #   helpers:
-  #     - {
-  #         label: 'editor',
-  #         pattern: 'at-pp',
-  #         replace: 'at-pp/editor'
-  #       }
+  - name: 'themes/press-play/main'
+    insertRequire: ['themes/press-play/main']
+  - name: 'themes/press-play/editor/main'
+    insertRequire: ['themes/press-play/editor/main']
+    helpers:
+      - {
+          label: 'editor',
+          pattern: 'at-pp',
+          replace: 'at-pp/editor'
+        }
   - name: 'themes/steady-sun/main'
     insertRequire: ['themes/steady-sun/main']
-  # - name: 'themes/steady-sun/editor/main'
-  #   insertRequire: ['themes/steady-sun/editor/main']
-  #   helpers:
-  #     - {
-  #         label: 'editor',
-  #         pattern: 'at-ss',
-  #         replace: 'at-ss/editor'
-  #       }
+  - name: 'themes/steady-sun/editor/main'
+    insertRequire: ['themes/steady-sun/editor/main']
+    helpers:
+      - {
+          label: 'editor',
+          pattern: 'at-ss',
+          replace: 'at-ss/editor'
+        }
 paths:
   'at-pp': 'themes/press-play'
   'at-ss': 'themes/steady-sun'
