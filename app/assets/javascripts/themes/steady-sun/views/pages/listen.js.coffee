@@ -1,7 +1,7 @@
 define [
   'list'
   'at-ss/views/pages/base/plain'
-  'at-ss/views/music/album'
+  'help!at-ss/views/music/album'
   'at-ss/views/music/track'
   'jst!at-ss/templates/pages/listen'
 ], (List, PlainPage, AlbumView, TrackView, jst) ->
