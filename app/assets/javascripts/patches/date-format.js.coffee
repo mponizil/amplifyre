@@ -1,10 +1,10 @@
 define [
   'quilt'
   'moment'
-  'ui/attr'
+  'patches/attr'
 ], (Quilt, moment, Attr) ->
 
-  Quilt.attributes.dateFormat = (el, options) ->
+  Quilt.patches.dateFormat = (el, options) ->
     attr = @$el.data().attr or 'created_at'
     new DateFormat
       el: el

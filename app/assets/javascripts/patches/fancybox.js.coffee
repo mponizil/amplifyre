@@ -10,7 +10,7 @@ define [
     default: settings
     video: _.extend {}, settings, type: 'iframe'
 
-  Quilt.attributes.fancybox = (el, options) ->
+  Quilt.patches.fancybox = (el, options) ->
     options or= 'default'
     settings = presets[options] or presets.default
     new Fancybox({ el, settings })

@@ -2,7 +2,7 @@ define [
   'quilt'
 ], (Quilt) ->
 
-  Quilt.attributes.hover = (el, options) ->
+  Quilt.patches.hover = (el, options) ->
     $target = $(el).parent().find("[data-hover-target=#{options}]")
     new Hover {el, $target}
 

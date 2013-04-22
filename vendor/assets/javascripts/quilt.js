@@ -12,6 +12,9 @@
   // Find dashes in attribute names.
   var undasher = /-([a-z]|[0-9])/ig;
 
+  // Identify data attributes.
+  var dataAttr = /^data-/;
+
   // Camel case data attributes.
   var camel = function(match, letter) {
     return (letter + '').toUpperCase();
@@ -36,13 +39,12 @@
     },
 
     // After executing the template function, search the view for relevant
-    // attributes, match them with handlers and execute them.  If a handler
+    // patches, match them with handlers and execute them.  If a handler
     // returns a view, store it for clean up.
     render: function() {
-      var el, view, name, attr;
 
-      // Destroy old views.
-      while (view = this.views.pop()) if (view.dispose) view.dispose();
+      // Dispose of old views.
+      _.invoke(this.views, 'dispose');
 
       // Render the template if it exists.
       if (this.template) {
@@ -58,22 +60,25 @@
       var elements = this.$('*').get();
 
       // Execute the handler for each element/attr pair.
-      while (el = elements.shift()) {
-
+      for (var i = 0; i < elements.length; i++) {
+        var el = elements[i];
         var attrs = el.attributes;
-        for (var i = 0; i < attrs.length; i++) {
+
+        for (var j = 0; j < attrs.length; j++) {
 
           // Bail unless we have a data attribute.
-          if ((name = attrs[i].name).indexOf('data-') !== 0) continue;
+          var name = attrs[j].name;
+          if (!dataAttr.test(name)) continue;
 
           // Camel case and strip "data-".
-          name = name.replace(/^data-/, '').replace(undasher, camel);
+          name = name.replace(dataAttr, '').replace(undasher, camel);
 
-          // Bail on non-quilt attributes.
-          if (!(attr = Quilt.attributes[name])) continue;
+          // Bail on attributes with no corresponding patch.
+          var attr = Quilt.patches[name];
+          if (!attr) continue;
 
           // Execute the handler.
-          view = attr.call(this, el, $(el).data(name));
+          var view = attr.call(this, el, $(el).data(name));
 
           // Render the view if appropriate.
           if (view instanceof View) this.views.push(view.render());
@@ -83,35 +88,181 @@
       return this;
     },
 
-    // Destroy child views and ensure that references to this view are
-    // eliminated to prevent memory leaks.
+    // Dispose of child views.
     dispose: function() {
-
-      // Remove DOM listeners.
+      this.stopListening();
       this.undelegateEvents();
-
-      // Destroy child views.
-      //console.log(this, this.views)
       _.invoke(this.views, 'dispose');
-
-      // Clean up event handlers.
-      if (this.model) this.model.off(null, null, this);
-      if (this.collection) this.collection.off(null, null, this);
-
       return this;
     }
 
   });
 
-
-  // Attribute handlers should be specified in camel case.  The arguments to
+  // # Quilt.patches
+  //
+  // Patch handlers should be specified in camel case.  The arguments to
   // each handler will be a DOM element and the value of the data attribute.
   // The handler will be called with the parent view as context.
   //
-  //    Quilt.attributes.exampleAttr = function(element, options) {
-  //      // Called for elements with a "data-example-attr" attribute.
-  //    };
+  //     Quilt.patches.exampleAttr = function(element, options) {
+  //       // Called for elements with a "data-example-attr" attribute.
+  //     };
   //
-  Quilt.attributes = {};
+  var patches = Quilt.patches = {};
+
+  // # Show
+  //
+  // Listen for changes to an attribute and show the element if the value is
+  // truthy, hiding it otherwise.
+
+  var Show = Quilt.View.extend({
+
+    initialize: function(options) {
+      this.attr = options.attr;
+      this.listenTo(this.model, 'change:' + this.attr, this.render);
+    },
+
+    render: function() {
+      var value = this.model.get(this.attr);
+      this.$el.toggleClass('hide', this.invert ? !!value : !value);
+      return this;
+    }
+
+  });
+
+  patches.show = function(el, attr) {
+    return new Show({
+      el: el,
+      attr: attr,
+      model: this.model
+    });
+  };
+
+  // # Hide
+  //
+  // Listen for changes to an attribute and hide the element if the value is
+  // truthy, showing it otherwise.
+
+  var Hide = Show.extend({invert: true});
+
+  patches.hide = function(el, attr) {
+    return new Hide({
+      el: el,
+      attr: attr,
+      model: this.model
+    });
+  };
+
+  // # Html
+  //
+  // Listen for changes to an attribute, updating the element's content with
+  // it's value.
+
+  var Html = Quilt.View.extend({
+
+    initialize: function(options) {
+      this.attr = options.attr;
+      this.listenTo(this.model, 'change:' + this.attr, this.render);
+    },
+
+    render: function() {
+      var value = this.model[this.escape ? 'escape' : 'get'](this.attr);
+      this.$el.html(this.model.get(this.attr));
+      return this;
+    }
+
+  });
+
+  patches.html = function(el, attr) {
+    return new Html({
+      el: el,
+      attr: attr,
+      model: this.model
+    });
+  };
+
+  // # Escape
+  //
+  // Listen for changes to an attribute, updating the element's content with
+  // it's escaped value.
+
+  var Escape = Html.extend({escape: true});
+
+  patches.escape = function(el, attr) {
+    return new Escape({
+      el: el,
+      attr: attr,
+      model: this.model
+    });
+  };
+
+  // # Attrs
+  //
+  // Listen for changes to attributes and update the element's attributes
+  // accordingly.
+
+  var Attrs = Quilt.View.extend({
+
+    accessor: 'attr',
+
+    initialize: function(options) {
+      this.attrs = options.attrs;
+
+      for (var attr in this.attrs) {
+        var name = this.attrs[attr];
+
+        // Set initial value.
+        this.$el[this.accessor](attr, this.model.get(name));
+
+        // Listen for changes on each.
+        this.listenTo(this.model, 'change:' + name, function(model, value) {
+          this.$el[this.accessor](attr, value);
+        });
+      }
+    },
+
+    render: function() {
+      return this;
+    }
+
+  });
+
+  patches.attrs = function(el, attrs) {
+    return new Attrs({
+      el: el,
+      attrs: attrs,
+      model: this.model
+    });
+  };
+
+  // # Props
+  //
+  // Listen for changes to attributes and update the element's properties
+  // accordingly.
+
+  var Props = Attrs.extend({accessor: 'prop'});
+
+  patches.props = function(el, props) {
+    return new Props({
+      el: el,
+      attrs: props,
+      model: this.model
+    });
+  };
+
+  // # Css
+  //
+  // Listen for changes to attributes and update the element's style
+  // accordingly.
+
+  var Css = Attrs.extend({accessor: 'css'});
+
+  patches.css = function(el, css) {
+    return new Css({
+      el: el,
+      attrs: css,
+      model: this.model
+    });
+  };
 
 })();

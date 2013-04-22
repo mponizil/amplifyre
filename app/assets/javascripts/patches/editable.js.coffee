@@ -8,7 +8,7 @@ define [
     for attr of dataAttrs
       return dataAttrs[attr] if /attr$/i.test(attr)
 
-  Quilt.attributes.editable = (el, options) ->
+  Quilt.patches.editable = (el, options) ->
     camel = (match, letter) -> (letter + '').toUpperCase()
     type = options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
     attr = attrFinder($(el).data())

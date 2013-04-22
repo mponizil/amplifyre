@@ -16,7 +16,7 @@ define [
   # "dropdown:toggle", "dropdown:hide", or "dropdown:show" on the element with
   # the "data-dropdown" attribute.
 
-  Quilt.attributes.dropdown = (el, options) ->
+  Quilt.patches.dropdown = (el, options) ->
 
     new Dropdown(el: el, listenOn: options)
 

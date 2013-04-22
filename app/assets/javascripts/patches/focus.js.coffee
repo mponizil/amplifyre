@@ -3,5 +3,5 @@ define [
   'quilt'
 ], (_, Quilt) ->
 
-  Quilt.attributes.focus = (el) ->
+  Quilt.patches.focus = (el) ->
     _.defer -> $(el).focus()

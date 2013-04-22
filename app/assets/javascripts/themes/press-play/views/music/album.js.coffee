@@ -1,7 +1,7 @@
 define [
   'underscore'
   'list'
-  'ui/mirage'
+  'patches/mirage'
   'at-pp/views/view'
   'themes/common/views/music/player/playback'
   'help!at-pp/views/music/track'

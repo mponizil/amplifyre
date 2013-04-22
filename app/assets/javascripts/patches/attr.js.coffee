@@ -3,7 +3,7 @@ define [
 ], (Quilt) ->
 
   # Set and update the current element's content based on an attribute.
-  Quilt.attributes.attr = (el, options) ->
+  Quilt.patches.attr = (el, options) ->
     new Attr
       el: el
       attr: options

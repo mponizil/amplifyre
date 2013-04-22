@@ -1,6 +1,6 @@
 define [
-  'ui/destroy'
-  'ui/progress-bar'
+  'patches/destroy'
+  'patches/progress-bar'
   'themes/common/views/helper-view'
 ], (Destroy, ProgressBar, HelperView) ->
 

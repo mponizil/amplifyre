@@ -1,5 +1,5 @@
 define [
-  'ui/sortable'
+  'patches/sortable'
   'themes/common/views/helper-view'
   'at-ss/editor/views/links/page-categories'
 ], (Sortable, HelperView, PageCategoriesView) ->

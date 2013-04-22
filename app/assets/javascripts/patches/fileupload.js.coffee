@@ -3,7 +3,7 @@ define [
   'fileupload'
 ], (Quilt, $) ->
 
-  Quilt.attributes.fileupload = (el, options) ->
+  Quilt.patches.fileupload = (el, options) ->
     new Fileupload(el: el, model: @model, collection: @collection)
 
   class Fileupload extends Quilt.View

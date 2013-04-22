@@ -1,6 +1,6 @@
 define [
-  'ui/editable'
-  'ui/destroy'
+  'patches/editable'
+  'patches/destroy'
   'themes/common/views/helper-view'
 ], (Editable, Destroy, HelperView) ->
 

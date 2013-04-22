@@ -4,7 +4,7 @@ define [
 ], ($, Quilt) ->
 
   # Activate items based on current url.
-  Quilt.attributes.nav = (el, options) ->
+  Quilt.patches.nav = (el, options) ->
     new Nav el: el
 
   class Nav extends Quilt.View

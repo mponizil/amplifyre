@@ -6,7 +6,7 @@ define [
   'themes/common/views/music/player/ticker'
   'at-ss/views/pages'
   'jst!at-ss/templates/app'
-  'at-ss/views/ui'
+  'at-ss/views/patches'
 ], (CommonApp, Player, NavigationView, PlaybackView, TickerView, PagesView, jst) ->
 
   class App extends CommonApp

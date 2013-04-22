@@ -4,7 +4,7 @@ define [
 ], (Quilt, Backbone) ->
 
   # Set an appropriate href with root.  Trigger "route" on click.
-  Quilt.attributes.fragment = (el, options) ->
+  Quilt.patches.fragment = (el, options) ->
     new Fragment
       el: el
       fragment: options

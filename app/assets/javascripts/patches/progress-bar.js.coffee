@@ -3,7 +3,7 @@ define [
   'quilt'
 ], ($, Quilt) ->
 
-  Quilt.attributes.progressBar = (el, options) ->
+  Quilt.patches.progressBar = (el, options) ->
     new ProgressBar(el: el, model: @model)
 
   class ProgressBar extends Quilt.View

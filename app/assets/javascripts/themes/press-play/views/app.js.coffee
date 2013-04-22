@@ -17,7 +17,7 @@ define [
   'help!at-pp/views/visual/ticker'
   'at-pp/views/pages'
   'jst!at-pp/templates/app'
-  'at-pp/views/ui'
+  'at-pp/views/patches'
   'themes/common/models/associations'
   'easing'
   'fancybox'

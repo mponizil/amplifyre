@@ -1,5 +1,5 @@
 define [
-  'ui/editable'
+  'patches/editable'
   'at-ss/editor/views/pages/base/main'
 ], (Editable, EditPage) ->
 

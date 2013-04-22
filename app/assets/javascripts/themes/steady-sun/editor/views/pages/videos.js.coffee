@@ -1,5 +1,5 @@
 define [
-  'ui/fileupload'
+  'patches/fileupload'
   'at-ss/editor/views/pages/base/main'
 ], (Fileupload, EditPage) ->
 

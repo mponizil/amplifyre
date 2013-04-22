@@ -1,5 +1,5 @@
 define [
-  'ui/hover'
+  'patches/hover'
   'jst!themes/common/templates/music/player/playback'
 ], (Hover, jst) ->
 

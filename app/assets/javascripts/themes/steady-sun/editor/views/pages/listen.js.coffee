@@ -1,7 +1,7 @@
 define [
   'themes/common/models/album'
-  'ui/fileupload'
-  'ui/sortable'
+  'patches/fileupload'
+  'patches/sortable'
   'at-ss/editor/views/pages/base/main'
 ], (Album, Fileupload, Sortable, EditPage) ->
 

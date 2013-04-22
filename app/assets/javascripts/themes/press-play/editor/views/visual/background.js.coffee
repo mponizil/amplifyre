@@ -1,6 +1,6 @@
 define [
-  'ui/fileupload'
-  'ui/progress-bar'
+  'patches/fileupload'
+  'patches/progress-bar'
   'themes/common/views/helper-view'
 ], (Fileupload, ProgressBar, HelperView) ->
 

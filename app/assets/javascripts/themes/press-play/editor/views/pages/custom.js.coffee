@@ -1,5 +1,5 @@
 define [
-  'ui/editable'
+  'patches/editable'
   'at-pp/editor/views/pages/base'
 ], (Editable, EditPageView) ->
 

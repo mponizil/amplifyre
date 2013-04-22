@@ -1,9 +1,9 @@
 define [
   'quilt'
-  'ui/destroy'
-  'ui/fileupload'
-  'ui/progress-bar'
-  'ui/sortable'
+  'patches/destroy'
+  'patches/fileupload'
+  'patches/progress-bar'
+  'patches/sortable'
   'themes/common/views/helper-view'
 ], (Quilt, Destroy, Fileupload, ProgressBar, Sortable, HelperView) ->
 

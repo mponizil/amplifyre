@@ -3,7 +3,7 @@ define [
 ], (Quilt) ->
 
   # Destroy a model on click.
-  Quilt.attributes.destroy = (el, options) ->
+  Quilt.patches.destroy = (el, options) ->
     new Destroy(el: el, model: @model)
 
   class Destroy extends Quilt.View

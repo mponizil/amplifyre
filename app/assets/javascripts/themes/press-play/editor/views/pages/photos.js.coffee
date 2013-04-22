@@ -1,5 +1,5 @@
 define [
-  'ui/fileupload'
+  'patches/fileupload'
   'at-pp/editor/views/pages/base'
 ], (Fileupload, EditPageView) ->
 

@@ -1,5 +1,5 @@
 define [
-  'ui/editable'
+  'patches/editable'
   'themes/common/views/helper-view'
 ], (Editable, HelperView) ->
 
