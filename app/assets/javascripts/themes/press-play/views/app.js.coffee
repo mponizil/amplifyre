@@ -35,7 +35,7 @@ define [
       @posts = @model.posts().reset(@bootstrap.posts)
       @concerts = @model.concerts().reset(@bootstrap.concerts)
 
-      @router.on('all', @route, @)
+      @router.on('route', @route, @)
 
     template: jst
 
@@ -87,8 +87,8 @@ define [
     navigate: (e, fragment) ->
       @router.navigate(fragment, true)
 
-    route: (e) ->
-      @$player.toggleClass('hide', e is 'route:slug')
+    route: (router, slug) ->
+      @$player.toggleClass('hide', slug.length)
 
     resize: ->
       top = @$marquee.offset().top - 60
