@@ -1,9 +1,9 @@
 define [
   'ui/fileupload'
-  'at-ss/editor/views/pages/base'
-], (Fileupload, EditPageView) ->
+  'at-ss/editor/views/pages/base/main'
+], (Fileupload, EditPage) ->
 
-  class PhotosView extends EditPageView
+  class EditPhotosPage extends EditPage
 
     inject: ->
       super

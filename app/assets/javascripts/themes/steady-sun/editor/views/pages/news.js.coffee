@@ -1,8 +1,8 @@
 define [
-  'at-ss/editor/views/pages/base'
-], (EditPageView) ->
+  'at-ss/editor/views/pages/base/main'
+], (EditPage) ->
 
-  class NewsView extends EditPageView
+  class EditNewsPage extends EditPage
 
     inject: ->
       super

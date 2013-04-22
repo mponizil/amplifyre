@@ -1,9 +1,9 @@
 define [
   'ui/editable'
-  'at-ss/editor/views/pages/base'
-], (Editable, EditPageView) ->
+  'at-ss/editor/views/pages/base/main'
+], (Editable, EditPage) ->
 
-  class CustomView extends EditPageView
+  class EditCustomPage extends EditPage
 
     render: ->
       super

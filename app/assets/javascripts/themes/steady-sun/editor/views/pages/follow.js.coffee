@@ -1,5 +1,5 @@
 define [
-  'at-ss/editor/views/pages/base'
-], (EditPageView) ->
+  'at-ss/editor/views/pages/base/main'
+], (EditPage) ->
 
-  class FollowView extends EditPageView
+  class EditFollowPage extends EditPage
