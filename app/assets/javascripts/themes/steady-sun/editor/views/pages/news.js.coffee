@@ -7,7 +7,11 @@ define [
     inject: ->
       super
 
-      @$controls_right.prepend("<button type='button' class='btn' data-new-post>New Post</button>")
+      @$el.prepend('''
+        <div class='well well-editor'>
+          <button type='button' class='btn' data-new-post>New Post</button>
+        </div>
+      ''')
 
     events:
       'click [data-new-post]': 'newPost'
@@ -16,7 +20,7 @@ define [
     newPost: (e) ->
       e.stopPropagation()
 
-      @$news.one 'added', (e, $post) =>
+      @$posts.one 'added', (e, $post) =>
         $post.find('[data-attr]:first').trigger('editable:start')
       @collection.create()
 

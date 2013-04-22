@@ -6,12 +6,12 @@ define [
 
     initialize: ->
       super
-
       @cache()
+
+    inject: ->
+      return
 
     render: ->
-      @inject?()
-
+      @inject()
       @cache()
-
       return this

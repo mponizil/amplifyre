@@ -1,5 +1,5 @@
 define [
-  'quilt'
+  'themes/common/views/view'
   'themes/common/models/player'
   'help!themes/common/views/links/navigation'
   'themes/common/views/music/player/playback'
@@ -7,9 +7,9 @@ define [
   'themes/common/models/associations'
   'easing'
   'fancybox'
-], (Quilt, Player, NavigationView, PlaybackView, PagesView) ->
+], (View, Player, NavigationView, PlaybackView, PagesView) ->
 
-  class App extends Quilt.View
+  class App extends View
 
     initialize: ({@pages, @bootstrap, @router}) ->
       super

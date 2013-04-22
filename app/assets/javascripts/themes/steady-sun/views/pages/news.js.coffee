@@ -1,7 +1,8 @@
 define [
   'at-ss/views/pages/base/plain'
+  'themes/common/views/content/post'
   'jst!at-ss/templates/pages/news'
-], (PlainPage, jst) ->
+], (PlainPage, PostView, jst) ->
 
   class NewsView extends PlainPage
 
@@ -9,5 +10,13 @@ define [
 
     render: ->
       super
+
       $('.container:first').attr('id', 'news-page')
+
+      @views.push(new List
+        el: @$posts
+        view: PostView
+        collection: @collection
+      .render())
+
       return this
