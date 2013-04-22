@@ -131,7 +131,7 @@ define [
         return unless @$editor
 
         # If target is not inside body, we must be clicking a removed element
-        return unless $('body').find(e.target).length
+        return unless $('html')[0] is $(e.target)[0] or $('html').find(e.target).length
 
         # Return if we're clicking inside @$el
         return if $(e.target).closest(@$el).length
