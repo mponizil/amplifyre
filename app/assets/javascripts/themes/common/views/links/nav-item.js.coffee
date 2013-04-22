@@ -5,4 +5,8 @@ define [
 
   class NavItem extends View
 
+    initialize: ->
+      super
+      @model.on('change:slug change:title', @render, @)
+
     template: jst
