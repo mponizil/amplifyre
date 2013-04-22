@@ -1,10 +1,14 @@
 define [
-  'themes/common/models/collection'
+  'lib/superset'
   'themes/common/models/concert'
-], (Collection, Concert) ->
+], (Superset, Concert) ->
 
-  class Concerts extends Collection
+  class Concerts extends Superset
 
     model: -> Concert.create(arguments...)
 
     url: -> super + 'band_sites/' + @owner.id + '/concerts'
+
+    subsets:
+
+      future: (concert) -> @indexOf(concert) > 0

@@ -5,7 +5,7 @@ define [
 ], (Quilt, moment, Attr) ->
 
   Quilt.patches.dateFormat = (el, options) ->
-    attr = @$el.data().attr or 'created_at'
+    attr = $(el).data().dateAttr or 'created_at'
     new DateFormat
       el: el
       model: @model
@@ -19,5 +19,6 @@ define [
 
     render: ->
       value = @model.get(@attr)
-      @$el.html(moment(value).format(@format))
+      formatted = moment(value).format(@format)
+      @$el.html(formatted)
       return this

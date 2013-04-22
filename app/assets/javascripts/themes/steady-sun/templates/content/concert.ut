@@ -1,7 +1,13 @@
 <div class='media'>
   <div class='media-body'>
-    <h3 class='media-heading'>3/30/2013 - Webster Hall</h3>
-    <span>10pm, $10, 19+</span>
+    <h3 class='media-heading'>
+      <span data-date-attr='date' data-date-format='M/DD/YYYY'></span>
+      -
+      <span data-attr='venue'></span>
+    </h3>
+    <span data-attr='details'></span>
   </div>
-  <div class='pull-right'><a class='btn'>Tix &amp; Info</a></div>
+  <div class='pull-right'>
+    <a class='btn' target='_blank' data-attrs='{"href":"link"}'>Tix &amp; Info</a>
+  </div>
 </div>
