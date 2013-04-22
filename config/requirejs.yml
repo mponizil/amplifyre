@@ -17,7 +17,7 @@ modules:
     helpers:
       - {
           label: 'editor',
-          pattern: 'at-ss',
+          pattern: '(at-ss)|(themes/common)',
           replace: 'at-ss/editor'
         }
 paths:

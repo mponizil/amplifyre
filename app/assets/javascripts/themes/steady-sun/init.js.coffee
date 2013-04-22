@@ -4,7 +4,7 @@ define [
   'themes/common/router'
   'themes/common/models/band_site'
   'at-ss/views/view'
-  'at-ss/views/helper-view'
+  'themes/common/views/helper-view'
   'at-ss/views/app'
 ], ($, Backbone, Router, BandSite, View, HelperView, App) ->
 

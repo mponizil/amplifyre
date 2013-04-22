@@ -1,13 +1,9 @@
 require.config
-  helpers: [{
+  helpers: [
     label: 'editor'
-    pattern: 'at-ss'
+    pattern: '(at-ss)|(themes/common)'
     replace: 'at-ss/editor'
-  }, {
-    label: 'editor'
-    pattern: 'themes/common'
-    replace: 'at-ss/editor'
-  }]
+  ]
 
 define [
   'jquery'
