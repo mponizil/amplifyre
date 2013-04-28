@@ -1,6 +1,7 @@
 define [
   'quilt'
   'jquery'
+  'lib/jquery-trim-html'
   'redactor'
 ], (Quilt, $) ->
 
@@ -86,25 +87,25 @@ define [
 
       @$el.one('dblclick', @startEdit)
 
-    trimmed: -> $.trim(@$el.text())
+    isDefault: -> $.trim(@$el.text()) is @defaultVal
 
     styleDefault: ->
-      if @trimmed() is @defaultVal
+      if @isDefault()
         @$el.addClass('editable-default')
 
     clearDefault: ->
-      @$el.text("") if @trimmed() is @defaultVal
+      @$el.html("") if @isDefault()
       @$el.removeClass('editable-default')
 
     restoreDefault: (text, html) ->
-      if $.trim(text) is ""
+      if text is ""
         @$el.html(text = html = @defaultVal)
         @$el.addClass('editable-default')
       return [text, html]
 
     destroyEditor: ->
       return unless @$editor
-      [@$editor.text(), @$editor.html()]
+      [$.trim(@$editor.text()), $.trimHTML(@$editor.html())]
 
     dispose: ->
       super
@@ -147,8 +148,7 @@ define [
         allowedTags:
           ['span', 'div', 'a', 'br', 'p', 'b', 'i', 'u', 'img', 'video',
            'audio', 'object', 'embed', 'param', 'ul', 'ol', 'li', 'hr',
-           'pre', 'strong', 'em', 'table', 'tr', 'td', 'th', 'tbody',
-           'thead', 'tfoot', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+           'pre', 'strong', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'iframe']
 
     endEdit: ->
       return if not super
@@ -156,9 +156,15 @@ define [
 
     destroyEditor: ->
       return unless @$editor
-      text = @$editor.getText()
-      html = @$editor.getCode()
+
+      text = $.trim(@$editor.getText())
+      html = $.trimHTML(@$editor.getCode())
+
+      # Redactor#destroyEditor popuplates @$editor with the resulting html,
+      # but does not trim it. So lets do that for it.
       @$editor.destroyEditor()
+      @$el.html(html)
+
       [text, html]
 
   class Editable.TextInput extends Editor
@@ -179,8 +185,7 @@ define [
 
     destroyEditor: ->
       return unless @$editor
-      text = @$editor.text()
-      [$.trim(text), null]
+      [$.trim(@$editor.text()), null]
 
     checkKey: (e) =>
       if e.keyCode is 9 # Tab
