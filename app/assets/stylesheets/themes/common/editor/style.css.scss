@@ -1,0 +1,67 @@
+@import 'themes/common/variables';
+
+@import 'compass/css3';
+
+@import 'lib/mixins';
+
+//
+// Sortable
+//
+
+.sortable,
+.sortable li a, {
+  cursor: move;
+}
+.sortable-exclude {
+  cursor: default;
+}
+.progress-inner {
+  background-color: $master-color;
+}
+
+//
+// Editable
+//
+
+.editable {
+  outline: none;
+}
+.editable-default {
+  color: #999;
+  font-style: italic;
+}
+.editable-active {
+  @include box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 0);
+  outline: 1px solid rgba(100, 100, 100, 0.3);
+}
+textarea.editable-hover {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+[contenteditable].editable-hover,
+.editable-hover {
+  outline: 1px dashed rgba(100, 100, 100, 0.5);
+}
+
+//
+// Redactor styles
+//
+
+.redactor_box {
+  border: none;
+  margin-top: -38px;
+}
+.redactor_box, .redactor_box textarea {
+  background-color: transparent;
+}
+.redactor_editor, .redactor_editor:focus {
+  padding: 5px 0 0 0 !important;
+  background-color: transparent !important;
+}
+.scrollpane > .editable > .redactor_box {
+  margin-top: 0;
+}

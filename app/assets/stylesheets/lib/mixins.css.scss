@@ -26,3 +26,8 @@
     clear: both;
   }
 }
+@mixin gradient($top, $bottom) {
+  background-color: $bottom;
+  @include background-image(filter-gradient($top, $bottom));
+  @include background-image(linear-gradient($top, $bottom));
+}

@@ -1,5 +1,9 @@
 @import 'compass/css3';
 
-@import '../../../lib/mixins';
+@import 'lib/mixins';
 
-.well-editor { @include clearfix; }
+@import 'themes/common/editor/style';
+
+.well-editor {
+  @include clearfix;
+}

@@ -1,55 +1,25 @@
 @import 'compass/css3';
-@mixin clearfix {
-  zoom:1;
-  &:before, &:after {
-    content: '\0020';
-    display: block;
-    height: 0;
-    overflow: hidden;
-  }
-  &:after {
-    clear: both;
-  }
-}
-@import '../import/variables';
+@import 'lib/mixins';
+@import 'themes/press-play/import/variables';
 
-//
-// Sortable
-//
-.sortable,
-.sortable li a, {
-  cursor: move;
-}
-.sortable-exclude {
-  cursor: default;
-}
-.progress-inner {
-  background-color: $master-color;
-}
+@import 'themes/common/editor/style';
 
 //
 // Bootstrap stuff
 //
+
 .remove {
   z-index: 2010;
   cursor: pointer;
   width: 14px;
   height: 17px;
   padding: 1px 4px 4px 4px;
-  @include border-radius(10px);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #da4f49;
-  *background-color: #bd362f;
-  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
-  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
   background-repeat: repeat-x;
   border-color: #bd362f #bd362f #802420;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  @include border-radius(10px);
+  @include text-shadow(0 -1px 0 rgba(0, 0, 0, 0.25));
+  @include gradient(#ee5f5b, #bd362f);
 }
 .well-editor {
   @include clearfix;
@@ -64,53 +34,6 @@
     left: 20px;
     width: 250px;
   }
-}
-
-//
-// Editable
-//
-
-.editable {
-  outline: none;
-}
-.editable-default {
-  color: #999;
-  font-style: italic;
-}
-.editable-active {
-  @include box-shadow(rgba(0, 0, 0, 0.4) 0 0 5px 0);
-  outline: 1px solid rgba(100, 100, 100, 0.3);
-}
-textarea.editable-hover {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border: none;
-  outline: none;
-}
-[contenteditable].editable-hover,
-.editable-hover {
-  outline: 1px dashed rgba(100, 100, 100, 0.5);
-}
-
-//
-// Redactor styles
-//
-
-.redactor_box {
-  border: none;
-  margin-top: -38px;
-}
-.redactor_box, .redactor_box textarea {
-  background-color: transparent;
-}
-.redactor_editor, .redactor_editor:focus {
-  padding: 5px 0 0 0 !important;
-  background-color: transparent !important;
-}
-.scrollpane > .editable > .redactor_box {
-  margin-top: 0;
 }
 
 //
