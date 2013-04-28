@@ -1,5 +1,5 @@
 define [
-  'lib/crack-rock'
+  'util/crack-rock'
   'at-pp/views/view'
   'jst!at-pp/templates/visual/background'
 ], (CrackRock, View, jst) ->

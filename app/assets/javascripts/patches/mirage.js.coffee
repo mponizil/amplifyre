@@ -1,7 +1,7 @@
 define [
   'jquery'
   'quilt'
-  'lib/crack-rock'
+  'util/crack-rock'
 ], ($, Quilt, CrackRock) ->
 
   maxWidth = 800
