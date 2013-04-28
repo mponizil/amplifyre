@@ -4,18 +4,17 @@ define [
   'redactor'
 ], (Quilt, $) ->
 
-  attrFinder = (dataAttrs) ->
-    for attr of dataAttrs
-      return dataAttrs[attr] if /attr$/i.test(attr)
+  upper = (match, letter) -> "#{letter}".toUpperCase()
+  camelize = (str) -> str.replace(/^([a-z])/i, upper).replace(/-([a-z])/ig, upper)
+
+  # Return the value of the data attribute that ends with `attr`.
+  findAttr = (dataAttrs) ->
+    return dataAttrs[attr] for attr of dataAttrs when /attr$/i.test(attr)
 
   Quilt.patches.editable = (el, options) ->
-    camel = (match, letter) -> (letter + '').toUpperCase()
-    type = options.replace(/^([a-z])/i, camel).replace(/-([a-z])/ig, camel)
-    attr = attrFinder($(el).data())
-    new Editable[type]
-      el: el
-      model: @model
-      attr: attr
+    type = camelize(options)
+    attr = findAttr($(el).data())
+    new Editable[type]({el, @model, attr})
 
   Editable = {}
 
@@ -27,8 +26,7 @@ define [
     initialize: ->
       super
 
-      attr = @$el.data('attr')
-      @defaultVal = _.result(@model, 'defaults')?[attr] or 'Sample ' + @model.label
+      @defaultVal = _.result(@model, 'defaults')?[@attr] or "Sample #{@model.label}"
 
     active: false
 
@@ -36,8 +34,6 @@ define [
       'click': 'stopPropagation'
       'editable:start': 'startEdit'
       'editable:end': 'endEdit'
-      'mouseover': 'showBorder'
-      'mouseout': 'hideBorder'
 
     stopPropagation: (e) -> e.stopPropagation()
 
@@ -61,12 +57,12 @@ define [
 
       @styleDefault()
 
-      @$el.one('dblclick', => @startEdit())
+      @$el.one('dblclick', @startEdit)
       @listenBlur()
 
       return this
 
-    startEdit: ->
+    startEdit: =>
       return if @active
 
       @clearDefault()
@@ -88,21 +84,20 @@ define [
       @model.set(@attr, html or text)
       @model.save()
 
-      @$el.one('dblclick', => @startEdit())
+      @$el.one('dblclick', @startEdit)
 
-    # Add the `.editable-default` class if it's the default value
+    trimmed: -> $.trim(@$el.text())
+
     styleDefault: ->
-      if $.trim(@$el.text()) is @defaultVal
+      if @trimmed() is @defaultVal
         @$el.addClass('editable-default')
 
-    # Clear value if it's the default
     clearDefault: ->
-      @$el.text('') if $.trim(@$el.text()) is @defaultVal
+      @$el.text("") if @trimmed() is @defaultVal
       @$el.removeClass('editable-default')
 
-    # Restore default value if it was left empty
     restoreDefault: (text, html) ->
-      if $.trim(text) is ''
+      if $.trim(text) is ""
         @$el.html(text = html = @defaultVal)
         @$el.addClass('editable-default')
       return [text, html]
@@ -111,11 +106,7 @@ define [
       return unless @$editor
       [@$editor.text(), @$editor.html()]
 
-    showBorder: (e) -> @$el.addClass('editable-hover') unless @active
-
-    hideBorder: (e) -> @$el.removeClass('editable-hover')
-
-    destroy: ->
+    dispose: ->
       super
 
       $(window).off('click.page')
@@ -199,7 +190,7 @@ define [
         e.stopPropagation()
         @endEdit()
 
-    destroy: ->
+    dispose: ->
       super
       @$el.off('keydown', @checkKey)
 
