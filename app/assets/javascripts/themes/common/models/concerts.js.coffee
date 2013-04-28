@@ -1,6 +1,6 @@
 define [
   'moment'
-  'util/superset'
+  'lib/superset'
   'themes/common/models/concert'
 ], (moment, Superset, Concert) ->
 
