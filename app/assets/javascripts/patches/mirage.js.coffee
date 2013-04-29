@@ -24,6 +24,9 @@ define [
     render: ->
       super
 
+      # Empty to remove previous layers.
+      @$el.empty()
+
       @measure()
 
       # Defer so we can use $parent's dimensions.

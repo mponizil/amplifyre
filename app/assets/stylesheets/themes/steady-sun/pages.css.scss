@@ -1,10 +1,11 @@
 #music-page .content {
   .featured {
-    position: relative;
     width: 66%;
   }
-  .featured-details {
-    width: 66%;
+  .album {
+    position: relative;
+  }
+  .album-details {
     h4 {
       margin-bottom: 20px;
     }
@@ -13,13 +14,13 @@
       vertical-align: middle;
     }
   }
-  .featured-details-left {
+  .album-details-left {
     li { margin-bottom: 10px; }
   }
-  .featured-details-divider {
+  .album-details-divider {
     padding-top: 5%;
   }
-  .featured-details-right {
+  .album-details-right {
     li { margin-bottom: 15px; }
   }
   .icon-volume-on { display: none; }

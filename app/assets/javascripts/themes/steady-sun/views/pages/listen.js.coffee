@@ -2,9 +2,8 @@ define [
   'list'
   'at-ss/views/pages/base/plain'
   'help!at-ss/views/music/album'
-  'at-ss/views/music/track'
   'jst!at-ss/templates/pages/listen'
-], (List, PlainPage, AlbumView, TrackView, jst) ->
+], (List, PlainPage, AlbumView, jst) ->
 
   class ListenPage extends PlainPage
 
@@ -21,14 +20,6 @@ define [
       @views.push(new AlbumView
         el: @$featured
         model: @albums.at(0)
-        player: @player
-      .render())
-
-      trackView = TrackView.extend {tagName: 'li', @player}
-      @views.push(new List
-        el: @$tracks
-        view: trackView
-        collection: @tracks
         player: @player
       .render())
 

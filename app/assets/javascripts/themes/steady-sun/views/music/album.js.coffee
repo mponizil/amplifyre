@@ -1,11 +1,16 @@
+# # help!viws/music/album.js.coffee
+#
+# Displays one album of this band.
+
 define [
   'underscore'
   'list'
   'patches/mirage'
   'at-ss/views/view'
   'themes/common/views/music/player/playback'
+  'at-ss/views/music/track'
   'jst!at-ss/templates/music/album'
-], (_, List, Mirage, View, PlaybackView, jst) ->
+], (_, List, Mirage, View, PlaybackView, TrackView, jst) ->
 
   layers = [{
     url: '/assets/album/mirage_files/steadysun/wallpaper.png',
@@ -51,6 +56,13 @@ define [
       @views.push(new PlaybackView
         el: @$playback
         model: @player
+      .render())
+
+      trackView = TrackView.extend {tagName: 'li', @player}
+      @views.push(new List
+        el: @$tracks
+        view: trackView
+        collection: @model.tracks()
       .render())
 
       return this

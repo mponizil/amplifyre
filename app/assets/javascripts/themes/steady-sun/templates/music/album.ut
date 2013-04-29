@@ -1,2 +1,34 @@
-<div data-ref='cover'></div>
-<div data-ref='playback'></div>
+<div class='album'>
+  <div data-ref='cover'></div>
+  <div data-ref='playback'></div>
+</div>
+
+<div class='album-details'>
+
+  <table>
+    <tr>
+      <td width='43%'>
+        <ul class='album-details-left text-center' data-ref='tracks'></ul>
+      </td>
+      <td width='14%'>
+        <div class='album-details-divider'><div class='divider-floral-vertical'></div></div>
+      </td>
+      <td width='43%'>
+        <div class='album-details-right'>
+          <h4>Purchase the album</h4>
+          <ul>
+            <li>
+              <i class='icon-bandcamp-logo'></i>
+              <a href='http://steadysun.bandcamp.com/' target='_blank'>Bandcamp</a>
+            </li>
+            <li>
+              <i class='icon-minitribe-logo'></i>
+              <a href='http://www.aminitribe.com/records.html' target='_blank'>Mini Market</a>
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+</div>
