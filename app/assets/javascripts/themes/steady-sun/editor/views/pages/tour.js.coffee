@@ -7,7 +7,7 @@ define [
     inject: ->
       super
 
-      @$el.append('''
+      @$controls_left.append('''
         <button type='button' class='btn' data-new-concert>New Concert</button>
       ''')
 
@@ -18,9 +18,9 @@ define [
     newConcert: (e) ->
       e.stopPropagation()
 
-      @$calendar.one 'added', (e, $concert) =>
+      @$next_show.one 'added', (e, $concert) =>
         $concert.find('[data-attr]:first').trigger('editable:start')
-      @collection.create()
+      @collection.add()
 
     tabNext: (e) ->
       $(e.target).trigger('editable:end')

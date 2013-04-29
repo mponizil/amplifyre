@@ -1,10 +1,14 @@
 define [
+  'underscore'
   'moment'
   'lib/superset'
+  'themes/common/models/collection'
   'themes/common/models/concert'
-], (moment, Superset, Concert) ->
+], (_, moment, Superset, Collection, Concert) ->
 
-  class Concerts extends Superset
+  class Concerts extends Collection
+
+    _.defaults this::, Superset::
 
     model: -> Concert.create(arguments...)
 

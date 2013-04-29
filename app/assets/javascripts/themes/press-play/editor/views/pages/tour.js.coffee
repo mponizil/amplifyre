@@ -18,7 +18,7 @@ define [
 
       @$calendar.one 'added', (e, $concert) =>
         $concert.find('[data-attr]:first').trigger('editable:start')
-      @collection.create()
+      @collection.add()
 
     tabNext: (e) ->
       $(e.target).trigger('editable:end')

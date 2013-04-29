@@ -30,12 +30,10 @@ define [
 
   class Superset extends Backbone.Collection
 
-    initialize: ->
-      super
+    subset: (label, filter) ->
       @_subsets or= {}
       @subsets or= {}
 
-    subset: (label, filter) ->
       if _.isFunction(label)
         filter = label
         label = +new Date

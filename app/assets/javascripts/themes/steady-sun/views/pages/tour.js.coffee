@@ -1,11 +1,15 @@
 define [
   'list'
   'at-ss/views/pages/base/plain'
-  'at-ss/views/content/concert'
+  'help!at-ss/views/content/concert'
   'jst!at-ss/templates/pages/tour'
 ], (List, PlainPage, ConcertView, jst) ->
 
   class TourPage extends PlainPage
+
+    initialize: ->
+      super
+      @listenTo(@collection, 'sort', @render)
 
     template: jst
 

@@ -8,9 +8,8 @@ define [
 
     inject: ->
       @$right.append('''
-        <div class='well well-small'>
-          <button type='button' class='btn btn-danger' data-ref='destroy'>Delete Concert</button>
-        </div>''')
+        <button type='button' class='btn btn-danger' data-ref='destroy'>Delete Concert</button>
+        ''')
 
     render: ->
       super
