@@ -8,7 +8,7 @@
   <table>
     <tr>
       <td width='43%'>
-        <ul class='album-details-left text-center' data-ref='tracks'></ul>
+        <ul class='album-details-left tracks' data-ref='tracks'></ul>
       </td>
       <td width='14%'>
         <div class='album-details-divider'><div class='divider-floral-vertical'></div></div>

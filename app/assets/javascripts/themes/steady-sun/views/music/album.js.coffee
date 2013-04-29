@@ -8,7 +8,7 @@ define [
   'patches/mirage'
   'at-ss/views/view'
   'themes/common/views/music/player/playback'
-  'at-ss/views/music/track'
+  'help!at-ss/views/music/track'
   'jst!at-ss/templates/music/album'
 ], (_, List, Mirage, View, PlaybackView, TrackView, jst) ->
 

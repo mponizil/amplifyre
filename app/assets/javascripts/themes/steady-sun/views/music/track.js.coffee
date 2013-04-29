@@ -1,3 +1,7 @@
+# # help!viws/music/track.js.coffee
+#
+# Displays one track.
+
 define [
   'at-ss/views/view'
   'jst!at-ss/templates/music/track'
