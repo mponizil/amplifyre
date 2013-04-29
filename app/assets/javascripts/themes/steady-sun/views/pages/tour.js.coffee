@@ -9,7 +9,8 @@ define [
 
     initialize: ->
       super
-      @listenTo(@collection, 'sort', @render)
+      render = _.bind(_.debounce(@render, 50), @)
+      @listenTo(@collection, 'add remove sort', render)
 
     template: jst
 

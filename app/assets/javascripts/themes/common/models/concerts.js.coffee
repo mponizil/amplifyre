@@ -10,6 +10,10 @@ define [
 
     _.defaults this::, Superset::
 
+    initialize: ->
+      super
+      @on('change:date', @sort, @)
+
     model: -> Concert.create(arguments...)
 
     url: -> super + 'band_sites/' + @owner.id + '/concerts'

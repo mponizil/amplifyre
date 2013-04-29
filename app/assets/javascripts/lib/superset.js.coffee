@@ -31,14 +31,11 @@ define [
   class Superset extends Backbone.Collection
 
     subset: (label, filter) ->
-      @_subsets or= {}
       @subsets or= {}
 
       if _.isFunction(label)
         filter = label
         label = +new Date
-
-      return @_subsets[label].collection if @_subsets[label]
 
       filter or= @subsets[label]
       if not _.isFunction(filter)
@@ -49,7 +46,7 @@ define [
       # TOBRAD: using `@constructor` means the sub-collection will have the same prototype
       # as it's parent (with all the same subset methods available...)
       collection = new @constructor(@filter(filter))
-      @_subsets[label] = new Subset({superset: @, collection, filter})
+      new Subset({superset: @, collection, filter})
 
       return collection
 

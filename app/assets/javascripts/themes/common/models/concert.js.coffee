@@ -1,6 +1,7 @@
 define [
+  'moment'
   'themes/common/models/model'
-], (Model) ->
+], (moment, Model) ->
 
   class Concert extends Model
 
@@ -9,7 +10,7 @@ define [
     label: 'concert date'
 
     defaults: ->
-      date: (new Date()).toISOString()
+      date: moment().format('YYYY-MM-DD')
       venue: 'Concert venue...'
       details: 'Concert details...'
       photo_file:

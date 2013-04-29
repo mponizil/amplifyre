@@ -1,9 +1,10 @@
 define [
   'quilt'
   'jquery'
+  'moment'
   'lib/jquery-trim-html'
   'redactor'
-], (Quilt, $) ->
+], (Quilt, $, moment) ->
 
   upper = (match, letter) -> "#{letter}".toUpperCase()
   camelize = (str) -> str.replace(/^([a-z])/i, upper).replace(/-([a-z])/ig, upper)
@@ -199,6 +200,12 @@ define [
       super
       @$el.off('keydown', @checkKey)
 
-  class Editable.DateInput extends Editor
+  class Editable.DateInput extends Editable.TextInput
+
+    destroyEditor: ->
+      return unless @$editor
+      value = $.trim(@$editor.text())
+      date = moment(value).format('YYYY-MM-DD')
+      [date, null]
 
   return Editable
