@@ -8,19 +8,6 @@
 // Bootstrap stuff
 //
 
-.remove {
-  z-index: 2010;
-  cursor: pointer;
-  width: 14px;
-  height: 17px;
-  padding: 1px 4px 4px 4px;
-  background-repeat: repeat-x;
-  border-color: #bd362f #bd362f #802420;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  @include border-radius(10px);
-  @include text-shadow(0 -1px 0 rgba(0, 0, 0, 0.25));
-  @include gradient(#ee5f5b, #bd362f);
-}
 .well-editor {
   @include clearfix;
   margin-bottom: 0;
@@ -44,12 +31,6 @@
 .page-listen li,
 .page-listen .album {
   position: relative;
-
-  .remove {
-    position: absolute;
-    top: -7px;
-    right: -7px;
-  }
 }
 .page-listen .album {
   .remove {

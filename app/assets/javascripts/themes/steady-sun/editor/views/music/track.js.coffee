@@ -11,7 +11,7 @@ define [
       @$el.attr('data-sortable-id', @model.id)
       @$el.append('''
         <div class='remove'>
-          <i class='icon-remove icon-white' data-ref='destroy'></i>
+          <i class='icon-remove icon-white' data-ref='destroy'>&times;</i>
         </div>''')
       @$el.append("<div data-ref='progress'><div>")
 

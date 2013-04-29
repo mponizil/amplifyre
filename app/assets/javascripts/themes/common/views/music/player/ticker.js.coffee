@@ -13,6 +13,8 @@ define [
       "#{o.model.active().get('title')} - #{o.model.active().get('artist')}"
 
     render: ->
+      return this unless @model.active()
+
       super
       @toggle()
       return this
