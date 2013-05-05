@@ -5,6 +5,11 @@ define [
   'jst!at-ss/templates/pages/tour'
 ], (List, PlainPage, ConcertView, jst) ->
 
+  noConcertsJst = -> """
+    <div class='media'>
+      <div class='media-body'>Check back soon.</div>
+    </div>"""
+
   class TourPage extends PlainPage
 
     initialize: ->
@@ -19,10 +24,13 @@ define [
 
       $('.container:first').attr('id', 'tour-page')
 
-      @views.push(new ConcertView
-        el: @$next_show_container
-        model: @collection.at(0)
-      .render())
+      if @collection.length
+        @views.push(new ConcertView
+          el: @$next_show_container
+          model: @collection.at(0)
+        .render())
+      else
+        @$next_show_container.html(noConcertsJst())
 
       @views.push(new List
         el: @$future_shows_container
