@@ -14,12 +14,7 @@ define [
 
       $('.container:first').attr('id', 'photos-page')
 
-      photoView = PhotoView.extend
-        tagName: 'a'
-        attributes: ->
-          'href': @model.get('file').url
-          'data-fancybox-group': 'photos'
-
+      photoView = PhotoView.extend(className: 'gallery-item')
       @views.push(new List
         el: @$photos
         view: photoView

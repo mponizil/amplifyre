@@ -9,6 +9,7 @@ define [
     label: 'photo'
 
     defaults: ->
-      file:
+      file: do ->
         url: '/assets/global/dark-loader.gif'
-        sm_thumb: url: '/assets/global/dark-loader.gif'
+        sm_thumb: do -> url: '/assets/global/dark-loader.gif'
+        lrg_thumb: do -> url: '/assets/global/dark-loader.gif'

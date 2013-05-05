@@ -5,4 +5,8 @@ define [
 
   class PhotoView extends View
 
+    initialize: ->
+      super
+      @listenTo(@model, 'change:file', @render)
+
     template: jst
