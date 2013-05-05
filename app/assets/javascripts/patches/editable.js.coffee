@@ -147,9 +147,9 @@ define [
            'image', 'video', 'file', 'link', '|',
            'fontcolor', 'backcolor', '|', 'alignment']
         allowedTags:
-          ['span', 'div', 'a', 'br', 'p', 'b', 'i', 'u', 'img', 'video',
-           'audio', 'object', 'embed', 'param', 'ul', 'ol', 'li', 'hr',
-           'pre', 'strong', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'iframe']
+          ['span', 'a', 'br', 'p', 'b', 'i', 'u', 'img', 'video',
+           'audio', 'object', 'embed', 'param', 'ul', 'ol', 'li',
+           'strong', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'iframe']
 
     endEdit: ->
       return if not super
@@ -161,7 +161,7 @@ define [
       text = $.trim(@$editor.getText())
       html = $.trimHTML(@$editor.getCode())
 
-      # Redactor#destroyEditor popuplates @$editor with the resulting html,
+      # Redactor#destroyEditor populates @$editor with the resulting html,
       # but does not trim it. So lets do that for it.
       @$editor.destroyEditor()
       @$el.html(html)
