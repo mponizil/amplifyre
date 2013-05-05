@@ -69,8 +69,10 @@ private
     end
 
     @band_site = BandSite.find_by_slug(@slug)
-    @layout = "themes/#{@band_site[:theme]}"
-    @version = 'normal'
+    if @band_site
+      @layout = "themes/#{@band_site[:theme]}"
+      @version = 'normal'
+    end
   end
 
   def site_layout
