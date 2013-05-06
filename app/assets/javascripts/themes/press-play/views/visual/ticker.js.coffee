@@ -61,9 +61,9 @@ define [
       @$ticker.removeClass('hide')
 
       if @counter % 2 is 0
-        @$ticker.html(@player.active().get('title'))
+        @$ticker.html(@player.active.get('title'))
       else
-        @$ticker.html(@player.active().get('artist'))
+        @$ticker.html(@player.active.get('artist'))
 
       next()
 

@@ -10,10 +10,10 @@ define [
       @model.on('change:playing', @update, @)
 
     template: (o) ->
-      "#{o.model.active().get('title')} - #{o.model.active().get('artist')}"
+      "#{o.model.active.get('title')} - #{o.model.active.get('artist')}"
 
     render: ->
-      return this unless @model.active()
+      return this unless @model.active
 
       super
       @toggle()

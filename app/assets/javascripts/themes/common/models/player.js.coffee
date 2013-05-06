@@ -18,43 +18,39 @@ define [
       @on('change:index', @choose, @)
       @on('change:playing', @toggle, @)
 
-    defaults:
+    defaults: ->
       index: 0
       playing: false
 
     reset: ->
-      @choose(this, @get('index'))
       @set(playing: false)
+      @set(index: 0)
 
     choose: (player, index) ->
-      track = @tracks.at(index)
-      @setMedia(track)
+      @active = @tracks.at(index)
+      @setMedia(@active)
 
     toggle: (player, playing) ->
       if playing
-        soundManager.play(@active().id)
+        soundManager.play(@active.id)
       else
-        soundManager.pause(@active().id)
-
-    # Retreive the active track according to `index`.
-    active: ->
-      @tracks.at(@get('index'))
+        soundManager.pause(@active.id)
 
     # Get the previous index.
     prev: ->
       index = @get('index')
       index -= 1
       index = @tracks.length-1 unless index >= 0
-      index
+      return index
 
     # Get the next index.
     next: ->
       index = @get('index')
       index += 1
       index = 0 unless index < @tracks.length
-      index
+      return index
 
-    # Tell jPlayer what to play.
+    # Tell SoundManager what to play.
     setMedia: (track) ->
       return unless track
 
