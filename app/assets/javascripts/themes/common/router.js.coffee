@@ -26,7 +26,7 @@ define [
       if @band_site.get('homepage') is 'index'
         @trigger('page:change', 'index')
       else
-        page = @pages.find (page) => page.get('category') is @band_site.get('homepage')
+        page = @pages.homepage()
         @navigate(page.get('slug'), {trigger: true, replace: true})
 
     slug: (slug) ->

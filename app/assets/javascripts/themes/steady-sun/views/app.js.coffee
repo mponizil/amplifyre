@@ -43,6 +43,6 @@ define [
 
     # TODO: cleanup
     route: (router, slug) ->
-      page = @pages.find (page) -> page.get('slug') is slug[0]
-      category = page?.get('category') or @model.get('homepage')
+      page = @pages.findWhere(slug: slug[0])
+      category = page?.get('category') or @pages.homepage().get('category')
       @$player_mini.toggleClass('hide', category is 'listen')
