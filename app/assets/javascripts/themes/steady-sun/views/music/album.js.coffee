@@ -4,13 +4,12 @@
 
 define [
   'underscore'
-  'list'
   'patches/mirage'
   'at-ss/views/view'
   'themes/common/views/music/player/playback'
-  'help!at-ss/views/music/track'
+  'help!at-ss/views/music/tracks'
   'jst!at-ss/templates/music/album'
-], (_, List, Mirage, View, PlaybackView, TrackView, jst) ->
+], (_, Mirage, View, PlaybackView, TracksView, jst) ->
 
   layers = [{
     url: '/assets/album/mirage_files/steadysun/wallpaper.png',
@@ -58,11 +57,11 @@ define [
         model: @player
       .render())
 
-      trackView = TrackView.extend {tagName: 'li', @player}
-      @views.push(new List
+      @views.push(new TracksView
         el: @$tracks
-        view: trackView
         collection: @model.tracks()
+        album: @model
+        player: @player
       .render())
 
       return this
