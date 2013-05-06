@@ -1,7 +1,8 @@
 define [
   'patches/fileupload'
+  'patches/sortable'
   'themes/common/views/helper-view'
-], (Fileupload, HelperView) ->
+], (Fileupload, Sortable, HelperView) ->
 
   class TracksView extends HelperView
 
@@ -15,6 +16,13 @@ define [
         el: @$upload
         collection: @collection
         formData: 'track[album_id]': @album.id
+      .render())
+
+      @views.push(new Sortable
+        el: @$el
+        collection: @collection
+        parentRef: album_id: @album.id
+        label: 'tracks'
       .render())
 
       return this

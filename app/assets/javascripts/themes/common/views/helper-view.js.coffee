@@ -8,10 +8,16 @@ define [
       super
       @cache()
 
-    inject: ->
-      return
+    # Before rendering this view,
+    # *alter* existing dom,
+    alter: -> return
+
+    # and then
+    # *inject* new dom.
+    inject: -> return
 
     render: ->
+      @alter()
       @inject()
       @cache()
       return this

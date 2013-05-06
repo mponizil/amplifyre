@@ -7,8 +7,14 @@ define [
 
   class TrackView extends HelperView
 
-    inject: ->
+    initialize: ->
+      super
+      @listenTo(@model, 'change:id', @alter)
+
+    alter: ->
       @$el.attr('data-sortable-id', @model.id)
+
+    inject: ->
       @$el.append('''
         <div class='remove'>
           <i class='icon-remove icon-white' data-ref='destroy'>&times;</i>
