@@ -4,7 +4,7 @@ define [
 ], (Quilt, $) ->
 
   Quilt.patches.sortable = (el, options) ->
-    new Sortable(el: el, collection: @collection, label: options)
+    new Sortable({ el, @collection, label: options })
 
   class Sortable extends Quilt.View
 
@@ -52,7 +52,7 @@ define [
 
       @collection.reorder()
 
-    destroy: ->
+    dispose: ->
       # @$el.sortable('destroy')
 
       super

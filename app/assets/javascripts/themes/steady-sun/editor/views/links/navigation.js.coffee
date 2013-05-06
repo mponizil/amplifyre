@@ -13,7 +13,7 @@ define [
       super
 
       @views.push(new Sortable
-        el: @$custom_nav
+        el: @$nav
         collection: @collection
         label: 'pages'
       .render())
