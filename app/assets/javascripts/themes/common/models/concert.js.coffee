@@ -1,6 +1,6 @@
 define [
   'moment'
-  'themes/common/models/model'
+  'at-common/models/model'
 ], (moment, Model) ->
 
   class Concert extends Model

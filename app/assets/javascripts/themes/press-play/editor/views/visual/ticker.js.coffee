@@ -1,6 +1,6 @@
 define [
   'patches/editable'
-  'themes/common/views/helper-view'
+  'at-common/views/helper-view'
 ], (Editable, HelperView) ->
 
   class TickerView extends HelperView

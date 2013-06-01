@@ -1,5 +1,5 @@
 define [
-  'at-pp/views/view'
+  'at-common/views/view'
   'jst!at-pp/templates/music/track'
 ], (View, jst) ->
 

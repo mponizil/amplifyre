@@ -1,10 +1,10 @@
 define [
   'jquery'
   'backbone'
-  'themes/common/router'
-  'themes/common/models/band_site'
-  'at-pp/views/view'
-  'themes/common/views/helper-view'
+  'at-common/router'
+  'at-common/models/band_site'
+  'at-common/views/view'
+  'at-common/views/helper-view'
   'at-pp/views/app'
 ], ($, Backbone, Router, BandSite, View, HelperView, App) ->
 

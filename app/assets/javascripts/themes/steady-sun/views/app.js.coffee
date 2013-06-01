@@ -1,9 +1,9 @@
 define [
-  'themes/common/views/app'
-  'themes/common/models/player'
+  'at-common/views/app'
+  'at-common/models/player'
   'help!themes/common/views/links/navigation'
-  'themes/common/views/music/player/playback'
-  'themes/common/views/music/player/ticker'
+  'at-common/views/music/player/playback'
+  'at-common/views/music/player/ticker'
   'at-ss/views/pages'
   'jst!at-ss/templates/app'
   'at-ss/views/patches'

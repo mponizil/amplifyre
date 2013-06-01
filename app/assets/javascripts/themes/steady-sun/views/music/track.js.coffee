@@ -3,7 +3,7 @@
 # Displays one track.
 
 define [
-  'at-ss/views/view'
+  'at-common/views/view'
   'jst!at-ss/templates/music/track'
 ], (View, jst) ->
 

@@ -5,8 +5,8 @@
 define [
   'underscore'
   'patches/mirage'
-  'at-ss/views/view'
-  'themes/common/views/music/player/playback'
+  'at-common/views/view'
+  'at-common/views/music/player/playback'
   'help!at-ss/views/music/tracks'
   'jst!at-ss/templates/music/album'
 ], (_, Mirage, View, PlaybackView, TracksView, jst) ->

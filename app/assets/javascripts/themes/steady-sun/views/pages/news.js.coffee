@@ -1,6 +1,6 @@
 define [
   'at-ss/views/pages/base/plain'
-  'themes/common/views/content/post'
+  'at-common/views/content/post'
   'jst!at-ss/templates/pages/news'
 ], (PlainPage, PostView, jst) ->
 

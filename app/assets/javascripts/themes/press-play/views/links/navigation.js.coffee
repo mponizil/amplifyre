@@ -1,6 +1,6 @@
 define [
   'list'
-  'at-pp/views/view'
+  'at-common/views/view'
   'help!at-pp/views/links/nav-item'
   'jst!at-pp/templates/links/navigation'
 ], (List, View, NavItem, jst) ->

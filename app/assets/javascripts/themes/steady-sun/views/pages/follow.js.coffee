@@ -1,6 +1,6 @@
 define [
   'at-ss/views/pages/base/plain'
-  'themes/common/views/forms/subscribe'
+  'at-common/views/forms/subscribe'
   'jst!at-ss/templates/pages/follow'
 ], (PlainPage, SubscribeView, jst) ->
 

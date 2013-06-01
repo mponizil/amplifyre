@@ -1,7 +1,7 @@
 define [
   'quilt'
-  'themes/common/views/music/player/playback'
-  'themes/common/views/music/player/scanner'
+  'at-common/views/music/player/playback'
+  'at-common/views/music/player/scanner'
   'jst!themes/common/templates/music/player/main'
 ], (Quilt, PlaybackView, ScannerView, jst) ->
 

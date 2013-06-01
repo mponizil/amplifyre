@@ -1,5 +1,5 @@
 define [
-  'at-ss/views/view'
+  'at-common/views/view'
   'jst!at-ss/templates/content/concert'
 ], (View, jst) ->
 

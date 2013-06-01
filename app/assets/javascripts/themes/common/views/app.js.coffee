@@ -1,10 +1,10 @@
 define [
-  'themes/common/views/view'
-  'themes/common/models/player'
+  'at-common/views/view'
+  'at-common/models/player'
   'help!themes/common/views/links/navigation'
-  'themes/common/views/music/player/playback'
-  'themes/common/views/pages'
-  'themes/common/models/associations'
+  'at-common/views/music/player/playback'
+  'at-common/views/pages'
+  'at-common/models/associations'
   'easing'
   'fancybox'
 ], (View, Player, NavigationView, PlaybackView, PagesView) ->

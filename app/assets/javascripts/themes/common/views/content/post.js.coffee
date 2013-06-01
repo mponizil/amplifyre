@@ -1,5 +1,5 @@
 define [
-  'themes/common/views/view'
+  'at-common/views/view'
   'jst!themes/common/templates/content/post'
 ], (View, jst) ->
 

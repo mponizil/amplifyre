@@ -1,6 +1,6 @@
 define [
   'list'
-  'at-ss/views/view'
+  'at-common/views/view'
   'help!at-ss/views/music/track'
 ], (List, View, TrackView) ->
 

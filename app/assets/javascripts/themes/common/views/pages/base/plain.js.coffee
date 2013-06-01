@@ -1,5 +1,5 @@
 define [
-  'themes/common/views/view'
+  'at-common/views/view'
 ], (View) ->
 
   class PlainPage extends View

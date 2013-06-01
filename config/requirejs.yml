@@ -21,6 +21,7 @@ modules:
           replace: 'at-ss/editor'
         }
 paths:
+  'at-common': 'themes/common'
   'at-pp': 'themes/press-play'
   'at-ss': 'themes/steady-sun'
   'jquery': 'jquery'

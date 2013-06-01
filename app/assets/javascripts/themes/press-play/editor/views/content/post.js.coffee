@@ -1,7 +1,7 @@
 define [
   'patches/editable'
   'patches/destroy'
-  'themes/common/views/helper-view'
+  'at-common/views/helper-view'
 ], (Editable, Destroy, HelperView) ->
 
   class PostView extends HelperView

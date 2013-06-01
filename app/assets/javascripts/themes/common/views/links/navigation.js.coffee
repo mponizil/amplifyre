@@ -1,6 +1,6 @@
 define [
   'list'
-  'themes/common/views/view'
+  'at-common/views/view'
   'help!themes/common/views/links/nav-item'
   'jst!themes/common/templates/links/navigation'
 ], (List, View, NavItem, jst) ->

@@ -2,8 +2,8 @@ define [
   'underscore'
   'list'
   'patches/mirage'
-  'at-pp/views/view'
-  'themes/common/views/music/player/playback'
+  'at-common/views/view'
+  'at-common/views/music/player/playback'
   'help!at-pp/views/music/track'
   'jst!at-pp/templates/music/album'
 ], (_, List, Mirage, View, PlaybackView, TrackView, jst) ->

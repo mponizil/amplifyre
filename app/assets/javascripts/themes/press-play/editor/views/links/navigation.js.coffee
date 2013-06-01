@@ -1,6 +1,6 @@
 define [
   'patches/sortable'
-  'themes/common/views/helper-view'
+  'at-common/views/helper-view'
   'at-pp/editor/views/links/page-categories'
 ], (Sortable, HelperView, PageCategoriesView) ->
 

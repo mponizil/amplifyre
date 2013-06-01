@@ -1,7 +1,7 @@
 define [
   'patches/fileupload'
   'patches/progress-bar'
-  'themes/common/views/helper-view'
+  'at-common/views/helper-view'
 ], (Fileupload, ProgressBar, HelperView) ->
 
   class BackgroundView extends HelperView

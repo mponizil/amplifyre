@@ -1,6 +1,6 @@
 define [
-  'themes/common/models/collection'
-  'themes/common/models/post'
+  'at-common/models/collection'
+  'at-common/models/post'
 ], (Collection, Post) ->
 
   class Posts extends Collection

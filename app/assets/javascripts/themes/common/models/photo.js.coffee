@@ -1,5 +1,5 @@
 define [
-  'themes/common/models/model'
+  'at-common/models/model'
 ], (Model) ->
 
   class Photo extends Model

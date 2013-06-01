@@ -1,6 +1,6 @@
 define [
-  'themes/common/models/collection'
-  'themes/common/models/video'
+  'at-common/models/collection'
+  'at-common/models/video'
 ], (Collection, Video) ->
 
   class Videos extends Collection

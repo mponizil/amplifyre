@@ -1,7 +1,7 @@
 define [
-  'themes/common/models/band_site'
-  'themes/common/models/collection'
-  'themes/common/models/track'
+  'at-common/models/band_site'
+  'at-common/models/collection'
+  'at-common/models/track'
 ], (BandSite, Collection, Track) ->
 
   class Tracks extends Collection

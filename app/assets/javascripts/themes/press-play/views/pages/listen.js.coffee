@@ -1,6 +1,6 @@
 define [
   'list'
-  'themes/common/models/album'
+  'at-common/models/album'
   'at-pp/views/pages/base/plain'
   'help!at-pp/views/music/album'
   'jst!at-pp/templates/pages/listen'

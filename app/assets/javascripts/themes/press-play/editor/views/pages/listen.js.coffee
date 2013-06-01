@@ -1,5 +1,5 @@
 define [
-  'themes/common/models/album'
+  'at-common/models/album'
   'patches/fileupload'
   'patches/sortable'
   'at-pp/editor/views/pages/base'
