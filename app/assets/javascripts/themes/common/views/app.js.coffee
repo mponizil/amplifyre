@@ -1,13 +1,10 @@
 define [
   'at-common/views/view'
   'at-common/models/player'
-  'help!at-common/views/links/navigation'
-  'at-common/views/music/player/playback'
-  'at-common/views/pages'
   'at-common/models/associations'
   'easing'
   'fancybox'
-], (View, Player, NavigationView, PlaybackView, PagesView) ->
+], (View, Player) ->
 
   class App extends View
 

@@ -1,7 +1,7 @@
 define [
   'list'
   'at-common/views/view'
-  'help!at-common/views/links/nav-item'
+  'at-common/views/links/nav-item'
   'jst!at-common/templates/links/navigation'
 ], (List, View, NavItem, jst) ->
 

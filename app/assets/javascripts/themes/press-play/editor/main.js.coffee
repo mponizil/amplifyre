@@ -1,8 +1,8 @@
 require.config
   helpers: [
     label: 'editor'
-    pattern: 'at-pp'
-    replace: 'at-pp/editor'
+    pattern: '(at-pp|at-common)'
+    replace: '$1/editor'
   ]
 
 define [
