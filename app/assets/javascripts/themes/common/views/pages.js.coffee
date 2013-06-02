@@ -1,13 +1,13 @@
 define [
   'quilt'
-  'at-common/views/pages/news'
-  'at-common/views/pages/listen'
-  'at-common/views/pages/photos'
-  'at-common/views/pages/videos'
-  'at-common/views/pages/tour'
-  'at-common/views/pages/follow'
-  'at-common/views/pages/contact'
-  'at-common/views/pages/custom'
+  'help!at-common/views/pages/news'
+  'help!at-common/views/pages/listen'
+  'help!at-common/views/pages/photos'
+  'help!at-common/views/pages/videos'
+  'help!at-common/views/pages/tour'
+  'help!at-common/views/pages/follow'
+  'help!at-common/views/pages/contact'
+  'help!at-common/views/pages/custom'
 ], (Quilt, NewsView, ListenView, PhotosView, VideosView, TourView, FollowView, ContactView, CustomView) ->
 
   class Pages extends Quilt.View
@@ -53,13 +53,13 @@ define [
         collection: @band_site.concerts()
 
     follow: (model) ->
-      @changePage new FollowView(model: model)
+      @changePage new FollowView({model, @band_site})
 
     contact: (model) ->
-      @changePage new ContactView(model: model)
+      @changePage new ContactView({model, @band_site})
 
     custom: (model) ->
-      @changePage new CustomView(model: model)
+      @changePage new CustomView({model})
 
     changePage: (view) ->
       @page?.dispose().remove()

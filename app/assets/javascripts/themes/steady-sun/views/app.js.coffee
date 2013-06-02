@@ -4,7 +4,7 @@ define [
   'help!at-common/views/links/navigation'
   'at-common/views/music/player/playback'
   'at-common/views/music/player/ticker'
-  'at-ss/views/pages'
+  'at-common/views/pages'
   'jst!at-ss/templates/app'
   'at-ss/views/patches'
 ], (CommonApp, Player, NavigationView, PlaybackView, TickerView, PagesView, jst) ->
