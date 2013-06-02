@@ -1,7 +1,7 @@
 define [
   'at-common/views/view'
   'at-common/models/player'
-  'help!themes/common/views/links/navigation'
+  'help!at-common/views/links/navigation'
   'at-common/views/music/player/playback'
   'at-common/views/pages'
   'at-common/models/associations'

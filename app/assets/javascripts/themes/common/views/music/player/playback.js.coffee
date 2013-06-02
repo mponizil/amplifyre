@@ -1,6 +1,6 @@
 define [
   'patches/hover'
-  'jst!themes/common/templates/music/player/playback'
+  'jst!at-common/templates/music/player/playback'
 ], (Hover, jst) ->
 
   class PlaybackView extends Hover

@@ -2,7 +2,7 @@ define [
   'quilt'
   'at-common/views/music/player/playback'
   'at-common/views/music/player/scanner'
-  'jst!themes/common/templates/music/player/main'
+  'jst!at-common/templates/music/player/main'
 ], (Quilt, PlaybackView, ScannerView, jst) ->
 
   class PlayerView extends Quilt.View
