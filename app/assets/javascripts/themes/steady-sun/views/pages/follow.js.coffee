@@ -1,17 +1,17 @@
 define [
-  'themes/steady-sun/views/pages/base/plain'
+  'themes/steady-sun/views/pages/base/bare'
   'themes/common/views/forms/subscribe'
   'jst!themes/steady-sun/templates/pages/follow'
-], (PlainPage, SubscribeView, jst) ->
+], (BarePage, SubscribeView, jst) ->
 
-  class FollowPage extends PlainPage
+  class FollowPage extends BarePage
 
     template: jst
 
+    category: 'follow'
+
     render: ->
       super
-
-      $('.container:first').attr('id', 'follow-page')
 
       @views.push(new SubscribeView
         el: @$subscribe

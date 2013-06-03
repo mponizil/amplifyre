@@ -1,18 +1,18 @@
 define [
   'list'
-  'themes/steady-sun/views/pages/base/plain'
+  'themes/steady-sun/views/pages/base/bare'
   'help!themes/steady-sun/views/visual/photo'
   'jst!themes/steady-sun/templates/pages/photos'
-], (List, PlainPage, PhotoView, jst) ->
+], (List, BarePage, PhotoView, jst) ->
 
-  class PhotosPage extends PlainPage
+  class PhotosPage extends BarePage
 
     template: jst
 
+    category: 'photos'
+
     render: ->
       super
-
-      $('.container:first').attr('id', 'photos-page')
 
       photoView = PhotoView.extend(className: 'gallery-item')
       @views.push(new List

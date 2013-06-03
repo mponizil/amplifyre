@@ -1,15 +1,10 @@
 define [
-  'themes/steady-sun/views/pages/base/plain'
+  'themes/steady-sun/views/pages/base/bare'
   'jst!themes/steady-sun/templates/pages/contact'
-], (PlainPage, jst) ->
+], (BarePage, jst) ->
 
-  class ContactPage extends PlainPage
+  class ContactPage extends BarePage
 
     template: jst
 
-    render: ->
-      super
-
-      $('.container:first').attr('id', 'contact-page')
-
-      return this
+    category: 'context'

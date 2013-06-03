@@ -1,14 +1,11 @@
 define [
   'list'
-  'themes/steady-sun/views/pages/base/plain'
+  'themes/steady-sun/views/pages/base/bare'
   'jst!themes/steady-sun/templates/pages/videos'
-], (List, PlainPage, jst) ->
+], (List, BarePage, jst) ->
 
-  class VideosPage extends PlainPage
+  class VideosPage extends BarePage
 
     template: jst
 
-    render: ->
-      super
-      $('.container:first').attr('id', 'videos-page')
-      return this
+    category: 'videos'

@@ -1,21 +1,21 @@
 define [
   'list'
-  'themes/steady-sun/views/pages/base/plain'
+  'themes/steady-sun/views/pages/base/bare'
   'help!themes/steady-sun/views/music/album'
   'jst!themes/steady-sun/templates/pages/listen'
-], (List, PlainPage, AlbumView, jst) ->
+], (List, BarePage, AlbumView, jst) ->
 
-  class ListenPage extends PlainPage
+  class ListenPage extends BarePage
 
     constructor: ({@player, @albums, @tracks}) ->
       super
 
     template: jst
 
+    category: 'music'
+
     render: ->
       super
-
-      $('.container:first').attr('id', 'music-page')
 
       @views.push(new AlbumView
         el: @$featured

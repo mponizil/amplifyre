@@ -1,16 +1,16 @@
 define [
   'list'
-  'themes/steady-sun/views/pages/base/plain'
+  'themes/steady-sun/views/pages/base/bare'
   'help!themes/steady-sun/views/content/concert'
   'jst!themes/steady-sun/templates/pages/tour'
-], (List, PlainPage, ConcertView, jst) ->
+], (List, BarePage, ConcertView, jst) ->
 
   noConcertsJst = -> """
     <div class='media'>
       <div class='media-body'>Check back soon.</div>
     </div>"""
 
-  class TourPage extends PlainPage
+  class TourPage extends BarePage
 
     initialize: ->
       super
@@ -19,10 +19,10 @@ define [
 
     template: jst
 
+    category: 'tour'
+
     render: ->
       super
-
-      $('.container:first').attr('id', 'tour-page')
 
       if @collection.length
         @views.push(new ConcertView

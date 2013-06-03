@@ -1,8 +1,8 @@
 define [
   'themes/common/views/view'
-  'jst!themes/steady-sun/templates/visual/photo'
+  'jst!themes/steady-sun/templates/visual/video'
 ], (View, jst) ->
 
-  class PhotoView extends View
+  class VideoView extends View
 
     template: jst

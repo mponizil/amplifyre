@@ -1,17 +1,17 @@
 define [
-  'themes/steady-sun/views/pages/base/plain'
+  'themes/steady-sun/views/pages/base/bare'
   'themes/common/views/content/post'
   'jst!themes/steady-sun/templates/pages/news'
-], (PlainPage, PostView, jst) ->
+], (BarePage, PostView, jst) ->
 
-  class NewsView extends PlainPage
+  class NewsView extends BarePage
 
     template: jst
 
+    category: 'news'
+
     render: ->
       super
-
-      $('.container:first').attr('id', 'news-page')
 
       @views.push(new List
         el: @$posts
