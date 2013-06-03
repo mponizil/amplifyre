@@ -1,8 +1,8 @@
 define [
-  'themes/common/views/pages/base/plain'
-], (PlainPage) ->
+  'themes/common/views/pages/base/bare'
+], (BarePage) ->
 
-  class ListenPage extends PlainPage
+  class ListenPage extends BarePage
 
     constructor: ({@player, @albums, @tracks}) ->
       super

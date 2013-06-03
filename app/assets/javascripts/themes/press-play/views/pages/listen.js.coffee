@@ -1,12 +1,12 @@
 define [
   'list'
   'themes/common/models/album'
-  'themes/press-play/views/pages/base/plain'
+  'themes/press-play/views/pages/base/bare'
   'help!themes/press-play/views/music/album'
   'jst!themes/press-play/templates/pages/listen'
-], (List, Album, PlainPage, AlbumView, jst) ->
+], (List, Album, BarePage, AlbumView, jst) ->
 
-  class ListenPage extends PlainPage
+  class ListenPage extends BarePage
 
     constructor: ({@player, @albums, @tracks}) ->
       super

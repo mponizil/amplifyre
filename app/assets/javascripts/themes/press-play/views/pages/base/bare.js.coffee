@@ -2,6 +2,6 @@ define [
   'themes/common/views/view'
 ], (View) ->
 
-  class PlainPage extends View
+  class BarePage extends View
 
     className: 'fat-container'

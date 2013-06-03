@@ -1,5 +1,5 @@
 define [
-  'themes/common/views/pages/base/plain'
-], (PlainPage) ->
+  'themes/common/views/pages/base/bare'
+], (BarePage) ->
 
-  class PhotosPage extends PlainPage
+  class PhotosPage extends BarePage
