@@ -1,6 +1,6 @@
 define [
-  'at-common/views/view'
-  'jst!at-pp/templates/music/track'
+  'themes/common/views/view'
+  'jst!themes/press-play/templates/music/track'
 ], (View, jst) ->
 
   class TrackView extends View

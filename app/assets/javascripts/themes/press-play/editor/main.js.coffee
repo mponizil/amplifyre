@@ -1,13 +1,13 @@
 require.config
   helpers: [
     label: 'editor'
-    pattern: '(at-pp|at-common)'
+    pattern: '(themes/press-play|themes/common)'
     replace: '$1/editor'
   ]
 
 define [
   'jquery'
-  'at-pp/init'
+  'themes/press-play/init'
 ], ($, init) ->
 
   $ -> init('/edit/')

@@ -1,8 +1,8 @@
 define [
-  'at-common/models/album'
+  'themes/common/models/album'
   'patches/fileupload'
   'patches/sortable'
-  'at-pp/editor/views/pages/base'
+  'themes/press-play/editor/views/pages/base'
 ], (Album, Fileupload, Sortable, EditPageView) ->
 
   class ListenView extends EditPageView

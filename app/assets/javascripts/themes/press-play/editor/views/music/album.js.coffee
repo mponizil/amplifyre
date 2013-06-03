@@ -4,7 +4,7 @@ define [
   'patches/fileupload'
   'patches/progress-bar'
   'patches/sortable'
-  'at-common/views/helper-view'
+  'themes/common/views/helper-view'
 ], (Quilt, Destroy, Fileupload, ProgressBar, Sortable, HelperView) ->
 
   class AlbumView extends HelperView

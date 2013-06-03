@@ -1,7 +1,7 @@
 define [
-  'at-ss/views/pages/base/plain'
-  'at-common/views/content/post'
-  'jst!at-ss/templates/pages/news'
+  'themes/steady-sun/views/pages/base/plain'
+  'themes/common/views/content/post'
+  'jst!themes/steady-sun/templates/pages/news'
 ], (PlainPage, PostView, jst) ->
 
   class NewsView extends PlainPage

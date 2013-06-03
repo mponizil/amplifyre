@@ -1,9 +1,9 @@
 define [
   'quilt'
   'list'
-  'at-pp/views/pages/base/content-box'
-  'help!at-pp/views/visual/photo'
-  'jst!at-pp/templates/pages/photos'
+  'themes/press-play/views/pages/base/content-box'
+  'help!themes/press-play/views/visual/photo'
+  'jst!themes/press-play/templates/pages/photos'
 ], (Quilt, List, ContentBoxPage, PhotoView, jst) ->
 
   class PhotosPage extends ContentBoxPage

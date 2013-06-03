@@ -1,7 +1,7 @@
 define [
   'list'
-  'at-ss/views/pages/base/plain'
-  'jst!at-ss/templates/pages/videos'
+  'themes/steady-sun/views/pages/base/plain'
+  'jst!themes/steady-sun/templates/pages/videos'
 ], (List, PlainPage, jst) ->
 
   class VideosPage extends PlainPage

@@ -1,6 +1,6 @@
 define [
-  'at-ss/views/pages/base/plain'
-  'jst!at-ss/templates/pages/custom'
+  'themes/steady-sun/views/pages/base/plain'
+  'jst!themes/steady-sun/templates/pages/custom'
 ], (PlainPage, jst) ->
 
   class CustomPage extends PlainPage

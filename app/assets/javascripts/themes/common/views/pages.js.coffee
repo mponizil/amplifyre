@@ -1,13 +1,13 @@
 define [
   'quilt'
-  'help!at-common/views/pages/news'
-  'help!at-common/views/pages/listen'
-  'help!at-common/views/pages/photos'
-  'help!at-common/views/pages/videos'
-  'help!at-common/views/pages/tour'
-  'help!at-common/views/pages/follow'
-  'help!at-common/views/pages/contact'
-  'help!at-common/views/pages/custom'
+  'help!themes/common/views/pages/news'
+  'help!themes/common/views/pages/listen'
+  'help!themes/common/views/pages/photos'
+  'help!themes/common/views/pages/videos'
+  'help!themes/common/views/pages/tour'
+  'help!themes/common/views/pages/follow'
+  'help!themes/common/views/pages/contact'
+  'help!themes/common/views/pages/custom'
 ], (Quilt, NewsView, ListenView, PhotosView, VideosView, TourView, FollowView, ContactView, CustomView) ->
 
   class Pages extends Quilt.View

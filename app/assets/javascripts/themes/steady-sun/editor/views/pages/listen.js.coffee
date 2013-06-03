@@ -1,8 +1,8 @@
 define [
-  'at-common/models/album'
+  'themes/common/models/album'
   'patches/fileupload'
   'patches/sortable'
-  'at-ss/editor/views/pages/base/main'
+  'themes/steady-sun/editor/views/pages/base/main'
 ], (Album, Fileupload, Sortable, EditPage) ->
 
   class EditListenPage extends EditPage

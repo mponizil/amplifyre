@@ -1,6 +1,6 @@
 define [
-  'at-common/models/collection'
-  'at-common/models/album'
+  'themes/common/models/collection'
+  'themes/common/models/album'
 ], (Collection, Album) ->
 
   class Albums extends Collection

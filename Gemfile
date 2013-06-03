@@ -31,7 +31,7 @@ gem 'turbo-sprockets-rails3'
 gem 'jquery-rails'
 
 gem 'requirejs-rails', :git => 'git://github.com/mponizil/requirejs-rails.git'
-# gem 'requirejs-rails', :path => '~/dev/ruby/rails/requirejs-rails'
+# gem 'requirejs-rails', :path => '~/Workspaces/OpenSource/requirejs-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

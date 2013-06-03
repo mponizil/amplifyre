@@ -1,5 +1,5 @@
 define [
-  'at-common/views/pages/base/plain'
+  'themes/common/views/pages/base/plain'
 ], (PlainPage) ->
 
   class CustomPage extends PlainPage

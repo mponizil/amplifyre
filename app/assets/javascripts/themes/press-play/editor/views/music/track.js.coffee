@@ -2,7 +2,7 @@ define [
   'patches/editable'
   'patches/progress-bar'
   'patches/destroy'
-  'at-common/views/helper-view'
+  'themes/common/views/helper-view'
 ], (Editable, ProgressBar, Destroy, HelperView) ->
 
   class TrackView extends HelperView

@@ -1,6 +1,6 @@
 define [
   'patches/editable'
-  'at-pp/editor/views/pages/base'
+  'themes/press-play/editor/views/pages/base'
 ], (Editable, EditPageView) ->
 
   class CustomView extends EditPageView

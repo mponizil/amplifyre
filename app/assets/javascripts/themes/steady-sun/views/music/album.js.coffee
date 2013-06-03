@@ -5,10 +5,10 @@
 define [
   'underscore'
   'patches/mirage'
-  'at-common/views/view'
-  'at-common/views/music/player/playback'
-  'help!at-ss/views/music/tracks'
-  'jst!at-ss/templates/music/album'
+  'themes/common/views/view'
+  'themes/common/views/music/player/playback'
+  'help!themes/steady-sun/views/music/tracks'
+  'jst!themes/steady-sun/templates/music/album'
 ], (_, Mirage, View, PlaybackView, TracksView, jst) ->
 
   layers = [{

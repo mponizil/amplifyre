@@ -3,8 +3,8 @@
 # Displays one track.
 
 define [
-  'at-common/views/view'
-  'jst!at-ss/templates/music/track'
+  'themes/common/views/view'
+  'jst!themes/steady-sun/templates/music/track'
 ], (View, jst) ->
 
   class TrackView extends View

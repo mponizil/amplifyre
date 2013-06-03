@@ -1,7 +1,7 @@
 define [
   'patches/editable'
   'patches/destroy'
-  'at-common/views/helper-view'
+  'themes/common/views/helper-view'
 ], (Editable, Destroy, HelperView) ->
 
   class ConcertView extends HelperView

@@ -1,8 +1,8 @@
 define [
   'list'
-  'at-ss/views/pages/base/plain'
-  'help!at-ss/views/visual/photo'
-  'jst!at-ss/templates/pages/photos'
+  'themes/steady-sun/views/pages/base/plain'
+  'help!themes/steady-sun/views/visual/photo'
+  'jst!themes/steady-sun/templates/pages/photos'
 ], (List, PlainPage, PhotoView, jst) ->
 
   class PhotosPage extends PlainPage

@@ -1,8 +1,8 @@
 define [
   'list'
-  'at-ss/views/pages/base/plain'
-  'help!at-ss/views/content/concert'
-  'jst!at-ss/templates/pages/tour'
+  'themes/steady-sun/views/pages/base/plain'
+  'help!themes/steady-sun/views/content/concert'
+  'jst!themes/steady-sun/templates/pages/tour'
 ], (List, PlainPage, ConcertView, jst) ->
 
   noConcertsJst = -> """

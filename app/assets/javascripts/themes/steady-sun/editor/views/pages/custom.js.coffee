@@ -1,6 +1,6 @@
 define [
   'patches/editable'
-  'at-ss/editor/views/pages/base/main'
+  'themes/steady-sun/editor/views/pages/base/main'
 ], (Editable, EditPage) ->
 
   class EditCustomPage extends EditPage

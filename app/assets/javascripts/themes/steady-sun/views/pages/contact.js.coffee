@@ -1,6 +1,6 @@
 define [
-  'at-ss/views/pages/base/plain'
-  'jst!at-ss/templates/pages/contact'
+  'themes/steady-sun/views/pages/base/plain'
+  'jst!themes/steady-sun/templates/pages/contact'
 ], (PlainPage, jst) ->
 
   class ContactPage extends PlainPage

@@ -1,6 +1,6 @@
 define [
   'patches/fileupload'
-  'at-pp/editor/views/pages/base'
+  'themes/press-play/editor/views/pages/base'
 ], (Fileupload, EditPageView) ->
 
   class PhotosView extends EditPageView

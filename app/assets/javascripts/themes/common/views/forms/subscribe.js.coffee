@@ -1,6 +1,6 @@
 define [
-  'at-common/views/view'
-  'jst!at-common/templates/forms/subscribe'
+  'themes/common/views/view'
+  'jst!themes/common/templates/forms/subscribe'
 ], (View, jst) ->
 
   class SubscribeView extends View

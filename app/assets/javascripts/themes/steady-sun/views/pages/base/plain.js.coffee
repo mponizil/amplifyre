@@ -1,6 +1,6 @@
 define [
   'underscore'
-  'at-common/views/view'
+  'themes/common/views/view'
 ], (_, View) ->
 
   class PlainPage extends View

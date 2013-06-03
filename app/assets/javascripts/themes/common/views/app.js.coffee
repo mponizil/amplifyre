@@ -1,7 +1,7 @@
 define [
-  'at-common/views/view'
-  'at-common/models/player'
-  'at-common/models/associations'
+  'themes/common/views/view'
+  'themes/common/models/player'
+  'themes/common/models/associations'
   'easing'
   'fancybox'
 ], (View, Player) ->

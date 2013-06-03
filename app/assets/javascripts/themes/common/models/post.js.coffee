@@ -1,5 +1,5 @@
 define [
-  'at-common/models/model'
+  'themes/common/models/model'
 ], (Model) ->
 
   class Post extends Model

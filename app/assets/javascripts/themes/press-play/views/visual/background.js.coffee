@@ -1,7 +1,7 @@
 define [
   'lib/crack-rock'
-  'at-common/views/view'
-  'jst!at-pp/templates/visual/background'
+  'themes/common/views/view'
+  'jst!themes/press-play/templates/visual/background'
 ], (CrackRock, View, jst) ->
 
   class BackgroundView extends View

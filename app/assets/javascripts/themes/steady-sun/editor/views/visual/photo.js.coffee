@@ -1,7 +1,7 @@
 define [
   'patches/destroy'
   'patches/progress-bar'
-  'at-common/views/helper-view'
+  'themes/common/views/helper-view'
 ], (Destroy, ProgressBar, HelperView) ->
 
   class PhotoView extends HelperView

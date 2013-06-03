@@ -1,6 +1,6 @@
 define [
-  'at-common/models/collection'
-  'at-common/models/photo'
+  'themes/common/models/collection'
+  'themes/common/models/photo'
 ], (Collection, Photo) ->
 
   class Photos extends Collection

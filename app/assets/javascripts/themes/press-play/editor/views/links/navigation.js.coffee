@@ -1,7 +1,7 @@
 define [
   'patches/sortable'
-  'at-common/views/helper-view'
-  'at-pp/editor/views/links/page-categories'
+  'themes/common/views/helper-view'
+  'themes/press-play/editor/views/links/page-categories'
 ], (Sortable, HelperView, PageCategoriesView) ->
 
   class EditNavigation extends HelperView

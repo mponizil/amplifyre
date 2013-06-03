@@ -1,6 +1,6 @@
 define [
   'jquery'
-  'at-pp/init'
+  'themes/press-play/init'
 ], ($, init) ->
 
   $ -> init('/')

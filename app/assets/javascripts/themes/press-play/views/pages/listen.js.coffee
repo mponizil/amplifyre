@@ -1,9 +1,9 @@
 define [
   'list'
-  'at-common/models/album'
-  'at-pp/views/pages/base/plain'
-  'help!at-pp/views/music/album'
-  'jst!at-pp/templates/pages/listen'
+  'themes/common/models/album'
+  'themes/press-play/views/pages/base/plain'
+  'help!themes/press-play/views/music/album'
+  'jst!themes/press-play/templates/pages/listen'
 ], (List, Album, PlainPage, AlbumView, jst) ->
 
   class ListenPage extends PlainPage

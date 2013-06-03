@@ -1,7 +1,7 @@
 define [
   'list'
-  'at-common/views/view'
-  'help!at-ss/views/music/track'
+  'themes/common/views/view'
+  'help!themes/steady-sun/views/music/track'
 ], (List, View, TrackView) ->
 
   class Tracks extends View

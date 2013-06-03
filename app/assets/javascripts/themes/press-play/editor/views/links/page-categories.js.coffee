@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'jst!at-pp/editor/templates/links/page-categories'
+  'jst!themes/press-play/editor/templates/links/page-categories'
 ], (Quilt, jst) ->
 
   class PageCategories extends Quilt.View

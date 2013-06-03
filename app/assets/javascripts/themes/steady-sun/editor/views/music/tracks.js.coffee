@@ -1,7 +1,7 @@
 define [
   'patches/fileupload'
   'patches/sortable'
-  'at-common/views/helper-view'
+  'themes/common/views/helper-view'
 ], (Fileupload, Sortable, HelperView) ->
 
   class TracksView extends HelperView

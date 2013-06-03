@@ -1,5 +1,5 @@
 define [
-  'at-common/views/helper-view'
+  'themes/common/views/helper-view'
 ], (HelperView) ->
 
   class AlbumView extends HelperView

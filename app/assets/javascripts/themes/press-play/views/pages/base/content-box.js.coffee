@@ -1,5 +1,5 @@
 define [
-  'at-common/views/view'
+  'themes/common/views/view'
 ], (View) ->
 
   class ContentBoxPage extends View

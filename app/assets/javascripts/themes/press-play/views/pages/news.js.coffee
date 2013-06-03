@@ -1,7 +1,7 @@
 define [
-  'at-pp/views/pages/base/content-box'
-  'help!at-pp/views/content/post'
-  'jst!at-pp/templates/pages/news'
+  'themes/press-play/views/pages/base/content-box'
+  'help!themes/press-play/views/content/post'
+  'jst!themes/press-play/templates/pages/news'
 ], (PageView, PostView, jst) ->
 
   class NewsView extends PageView

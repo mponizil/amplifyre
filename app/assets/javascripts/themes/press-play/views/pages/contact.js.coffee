@@ -1,6 +1,6 @@
 define [
-  'at-pp/views/pages/base/content-box'
-  'jst!at-pp/templates/pages/contact'
+  'themes/press-play/views/pages/base/content-box'
+  'jst!themes/press-play/templates/pages/contact'
 ], (ContentBoxPage, jst) ->
 
   class ContactPage extends ContentBoxPage

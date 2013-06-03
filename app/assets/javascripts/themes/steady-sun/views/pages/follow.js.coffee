@@ -1,7 +1,7 @@
 define [
-  'at-ss/views/pages/base/plain'
-  'at-common/views/forms/subscribe'
-  'jst!at-ss/templates/pages/follow'
+  'themes/steady-sun/views/pages/base/plain'
+  'themes/common/views/forms/subscribe'
+  'jst!themes/steady-sun/templates/pages/follow'
 ], (PlainPage, SubscribeView, jst) ->
 
   class FollowPage extends PlainPage

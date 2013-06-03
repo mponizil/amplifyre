@@ -2,8 +2,8 @@ define [
   'underscore'
   'moment'
   'lib/superset'
-  'at-common/models/collection'
-  'at-common/models/concert'
+  'themes/common/models/collection'
+  'themes/common/models/concert'
 ], (_, moment, Superset, Collection, Concert) ->
 
   class Concerts extends Collection

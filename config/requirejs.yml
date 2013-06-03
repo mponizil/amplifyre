@@ -1,7 +1,4 @@
 paths:
-  'at-common': 'themes/common'
-  'at-pp': 'themes/press-play'
-  'at-ss': 'themes/steady-sun'
   'jquery': 'jquery'
   'underscore': 'underscore'
   'backbone': 'backbone'
@@ -60,24 +57,11 @@ modules:
     insertRequire: ['themes/press-play/main']
   - name: 'themes/press-play/editor/main'
     insertRequire: ['themes/press-play/editor/main']
-
-    # Needed here for build time and in `editor/main` for dev time.
-    helpers:
-      - {
-          label: 'editor',
-          pattern: '(at-pp|at-common)',
-          replace: '$1/editor'
-        }
+    mainConfigFile: './tmp/assets/themes/press-play/editor/main.js'
 
   - name: 'themes/steady-sun/main'
     insertRequire: ['themes/steady-sun/main']
+    mainConfigFile: './tmp/assets/themes/steady-sun/main.js'
   - name: 'themes/steady-sun/editor/main'
     insertRequire: ['themes/steady-sun/editor/main']
-
-    # Needed here for build time and in `editor/main` for dev time.
-    helpers:
-      - {
-          label: 'editor',
-          pattern: '(at-ss|at-common)',
-          replace: '$1/editor'
-        }
+    mainConfigFile: './tmp/assets/themes/steady-sun/editor/main.js'

@@ -1,6 +1,6 @@
 define [
-  'at-common/views/view'
-  'jst!at-common/templates/content/post'
+  'themes/common/views/view'
+  'jst!themes/common/templates/content/post'
 ], (View, jst) ->
 
   class PostView extends View

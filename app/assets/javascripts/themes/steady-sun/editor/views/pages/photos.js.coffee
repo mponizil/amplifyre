@@ -1,6 +1,6 @@
 define [
   'patches/fileupload'
-  'at-ss/editor/views/pages/base/main'
+  'themes/steady-sun/editor/views/pages/base/main'
 ], (Fileupload, EditPage) ->
 
   class EditPhotosPage extends EditPage

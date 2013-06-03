@@ -1,6 +1,6 @@
 define [
-  'at-common/views/view'
-  'jst!at-pp/templates/visual/ticker'
+  'themes/common/views/view'
+  'jst!themes/press-play/templates/visual/ticker'
 ], (View, jst) ->
 
   class TickerView extends View

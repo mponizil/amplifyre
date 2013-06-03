@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'jst!at-common/templates/music/player/scanner'
+  'jst!themes/common/templates/music/player/scanner'
 ], (Quilt, jst) ->
 
   class ScannerView extends Quilt.View

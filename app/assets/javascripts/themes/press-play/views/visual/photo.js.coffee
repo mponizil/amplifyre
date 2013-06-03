@@ -1,6 +1,6 @@
 define [
-  'at-common/views/view'
-  'jst!at-pp/templates/visual/photo'
+  'themes/common/views/view'
+  'jst!themes/press-play/templates/visual/photo'
 ], (View, jst) ->
 
   class PhotoView extends View
