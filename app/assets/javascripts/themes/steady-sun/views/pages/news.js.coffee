@@ -1,6 +1,6 @@
 define [
   'themes/steady-sun/views/pages/base/bare'
-  'themes/common/views/content/post'
+  'themes/default/views/content/post'
   'jst!themes/steady-sun/templates/pages/news'
 ], (BarePage, PostView, jst) ->
 

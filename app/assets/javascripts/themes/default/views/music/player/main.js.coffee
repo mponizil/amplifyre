@@ -1,11 +1,11 @@
 define [
   'quilt'
-  'themes/common/views/music/player/playback'
-  'themes/common/views/music/player/scanner'
-  'jst!themes/common/templates/music/player/main'
-], (Quilt, PlaybackView, ScannerView, jst) ->
+  'themes/default/views/music/player/playback'
+  'themes/default/views/music/player/scanner'
+  'jst!themes/default/templates/music/player/main'
+], ({View}, PlaybackView, ScannerView, jst) ->
 
-  class PlayerView extends Quilt.View
+  class PlayerView extends View
 
     template: jst
 

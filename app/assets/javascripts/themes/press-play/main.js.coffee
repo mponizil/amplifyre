@@ -1,6 +1,6 @@
 define [
   'jquery'
-  'themes/press-play/init'
-], ($, init) ->
+  'themes/common/app'
+], ($, App) ->
 
-  $ -> init('/')
+  $ -> new App $('#pp-template'), '/'

@@ -1,10 +1,10 @@
 define [
   'patches/sortable'
   'themes/common/views/helper-view'
-  'themes/common/editor/views/links/page-categories'
+  'themes/default/editor/views/links/page-categories'
 ], (Sortable, HelperView, PageCategoriesView) ->
 
-  class EditNavigation extends HelperView
+  class EditNavigationView extends HelperView
 
     inject: ->
       @$el.append("<ul class='nav' data-ref='new_page'></ul>")

@@ -1,8 +1,8 @@
 define [
   'list'
   'themes/common/views/view'
-  'themes/common/views/links/nav-item'
-  'jst!themes/common/templates/links/navigation'
+  'themes/default/views/links/nav-item'
+  'jst!themes/default/templates/links/navigation'
 ], (List, View, NavItem, jst) ->
 
   class NavigationView extends View

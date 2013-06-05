@@ -1,6 +1,6 @@
 define [
   'themes/steady-sun/views/pages/base/bare'
-  'themes/common/views/forms/subscribe'
+  'themes/default/views/forms/subscribe'
   'jst!themes/steady-sun/templates/pages/follow'
 ], (BarePage, SubscribeView, jst) ->
 

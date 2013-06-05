@@ -1,9 +1,9 @@
 define [
   'quilt'
-  'jst!themes/common/editor/templates/links/page-categories'
-], (Quilt, jst) ->
+  'jst!themes/default/editor/templates/links/page-categories'
+], ({View}, jst) ->
 
-  class PageCategories extends Quilt.View
+  class PageCategoriesView extends View
 
     constructor: ({@router}) ->
       super

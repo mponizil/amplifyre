@@ -7,7 +7,7 @@ require.config
 
 define [
   'jquery'
-  'themes/press-play/init'
-], ($, init) ->
+  'themes/common/app'
+], ($, App) ->
 
-  $ -> init('/edit/')
+  $ -> new App $('#pp-template'), '/edit/'

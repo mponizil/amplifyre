@@ -1,31 +1,33 @@
 require.config
   helpers: [
     label: 'editor'
-    pattern: '(themes/steady-sun|themes/common)'
+    pattern: '(themes/steady-sun|themes/default)'
     replace: '$1/editor'
   ]
   map:
     '*':
-      'themes/common/views/pages/news': 'themes/steady-sun/views/pages/news'
-      'themes/common/views/pages/listen': 'themes/steady-sun/views/pages/listen'
-      'themes/common/views/pages/photos': 'themes/steady-sun/views/pages/photos'
-      'themes/common/views/pages/videos': 'themes/steady-sun/views/pages/videos'
-      'themes/common/views/pages/tour': 'themes/steady-sun/views/pages/tour'
-      'themes/common/views/pages/follow': 'themes/steady-sun/views/pages/follow'
-      'themes/common/views/pages/contact': 'themes/steady-sun/views/pages/contact'
-      'themes/common/views/pages/custom': 'themes/steady-sun/views/pages/custom'
-      'themes/common/editor/views/pages/news': 'themes/steady-sun/editor/views/pages/news'
-      'themes/common/editor/views/pages/listen': 'themes/steady-sun/editor/views/pages/listen'
-      'themes/common/editor/views/pages/photos': 'themes/steady-sun/editor/views/pages/photos'
-      'themes/common/editor/views/pages/videos': 'themes/steady-sun/editor/views/pages/videos'
-      'themes/common/editor/views/pages/tour': 'themes/steady-sun/editor/views/pages/tour'
-      'themes/common/editor/views/pages/follow': 'themes/steady-sun/editor/views/pages/follow'
-      'themes/common/editor/views/pages/contact': 'themes/steady-sun/editor/views/pages/contact'
-      'themes/common/editor/views/pages/custom': 'themes/steady-sun/editor/views/pages/custom'
+      'themes/default/views/app': 'themes/steady-sun/views/app'
+      'themes/default/views/pages/news': 'themes/steady-sun/views/pages/news'
+      'themes/default/views/pages/listen': 'themes/steady-sun/views/pages/listen'
+      'themes/default/views/pages/photos': 'themes/steady-sun/views/pages/photos'
+      'themes/default/views/pages/videos': 'themes/steady-sun/views/pages/videos'
+      'themes/default/views/pages/tour': 'themes/steady-sun/views/pages/tour'
+      'themes/default/views/pages/follow': 'themes/steady-sun/views/pages/follow'
+      'themes/default/views/pages/contact': 'themes/steady-sun/views/pages/contact'
+      'themes/default/views/pages/custom': 'themes/steady-sun/views/pages/custom'
+      'themes/default/editor/views/app': 'themes/steady-sun/editor/views/app'
+      'themes/default/editor/views/pages/news': 'themes/steady-sun/editor/views/pages/news'
+      'themes/default/editor/views/pages/listen': 'themes/steady-sun/editor/views/pages/listen'
+      'themes/default/editor/views/pages/photos': 'themes/steady-sun/editor/views/pages/photos'
+      'themes/default/editor/views/pages/videos': 'themes/steady-sun/editor/views/pages/videos'
+      'themes/default/editor/views/pages/tour': 'themes/steady-sun/editor/views/pages/tour'
+      'themes/default/editor/views/pages/follow': 'themes/steady-sun/editor/views/pages/follow'
+      'themes/default/editor/views/pages/contact': 'themes/steady-sun/editor/views/pages/contact'
+      'themes/default/editor/views/pages/custom': 'themes/steady-sun/editor/views/pages/custom'
 
 define [
   'jquery'
-  'themes/steady-sun/init'
-], ($, init) ->
+  'themes/default/app'
+], ($, App) ->
 
-  $ -> init('/edit/')
+  $ -> new App $('#ss-template'), '/edit/'

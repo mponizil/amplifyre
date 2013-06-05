@@ -1,6 +1,6 @@
 define [
-  'themes/common/views/view'
-], (View) ->
+  'quilt'
+], ({View}) ->
 
   class TickerView extends View
 

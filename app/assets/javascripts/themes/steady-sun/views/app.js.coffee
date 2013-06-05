@@ -1,15 +1,14 @@
 define [
   'themes/common/views/app'
-  'themes/common/models/player'
-  'help!themes/common/views/links/navigation'
-  'themes/common/views/music/player/playback'
-  'themes/common/views/music/player/ticker'
-  'themes/common/views/pages'
+  'help!themes/default/views/links/navigation'
+  'themes/default/views/music/player/playback'
+  'themes/default/views/music/player/ticker'
+  'themes/default/views/pages'
   'jst!themes/steady-sun/templates/app'
   'themes/steady-sun/views/patches'
-], (CommonApp, Player, NavigationView, PlaybackView, TickerView, PagesView, jst) ->
+], (AppView, NavigationView, PlaybackView, TickerView, PagesView, jst) ->
 
-  class App extends CommonApp
+  class SteadySunAppView extends AppView
 
     template: jst
 
