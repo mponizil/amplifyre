@@ -2,14 +2,13 @@
 
 @import 'lib/mixins';
 
-@import 'import/variables';
+@import 'config/fonts';
+@import 'config/variables';
 
-@import 'import/global';
+@import 'tools/utility';
 
-@import 'import/music';
+@import 'layout/music';
+@import 'layout/skeleton';
+@import 'layout/pages';
 
-@import 'import/skeleton';
-
-@import 'import/pages';
-
-@import 'import/skins';
+@import 'app/skins';
