@@ -1,5 +1,6 @@
-.pp-color-light {
+.pp-light {
   .navbar-inner {
+    border-color: #d4d4d4;
   }
   .album-flap {
     background: rgba(244, 244, 244, 0.8);
@@ -11,8 +12,9 @@
     color: #1e1e1e;
   }
 }
-.pp-color-dark {
+.pp-dark {
   .navbar-inner {
+    border-color: #252525;
     @include background-image(linear-gradient(#222222, #111111));
   }
   .nav > li > a {

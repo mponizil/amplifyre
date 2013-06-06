@@ -3,9 +3,9 @@ define [
   'help!themes/press-play/views/visual/background'
   'help!themes/press-play/views/links/navigation'
   'themes/press-play/views/links/social'
-  'themes/common/views/music/player/main'
+  'themes/default/views/music/player/main'
   'help!themes/press-play/views/visual/ticker'
-  'themes/press-play/views/pages'
+  'themes/default/views/pages'
   'jst!themes/press-play/templates/app'
   'themes/press-play/views/patches'
 ], (AppView, BackgroundView, NavigationView, SocialView, PlayerView, TickerView, PagesView, jst) ->
@@ -60,7 +60,7 @@ define [
       @router.navigate(fragment, true)
 
     route: (router, slug) ->
-      @$player.toggleClass('hide', slug.length)
+      @$player.toggleClass('hide', !!slug.length)
 
     resize: ->
       top = @$marquee.offset().top - 60

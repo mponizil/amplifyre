@@ -3,7 +3,7 @@ define [
   'list'
   'patches/mirage'
   'themes/common/views/view'
-  'themes/common/views/music/player/playback'
+  'themes/default/views/music/player/playback'
   'help!themes/press-play/views/music/track'
   'jst!themes/press-play/templates/music/album'
 ], (_, List, Mirage, View, PlaybackView, TrackView, jst) ->
