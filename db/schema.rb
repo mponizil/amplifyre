@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422043435) do
+ActiveRecord::Schema.define(:version => 20130606032109) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,8 +65,6 @@ ActiveRecord::Schema.define(:version => 20130422043435) do
     t.string   "background_file"
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
-    t.string   "skin_color",      :default => "dark"
-    t.string   "skin_style",      :default => "smooth"
     t.string   "theme",           :default => "press-play"
     t.string   "homepage",        :default => "index"
     t.string   "ga",              :default => "UA-36251718-1"

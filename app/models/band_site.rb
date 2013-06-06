@@ -14,8 +14,7 @@ class BandSite < ActiveRecord::Base
   validates :slug, :uniqueness => true, :length => { :in => 2..16 }
 
   attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name,
-    :description, :title, :phrase, :background_file, :theme, :skin_color, :skin_style,
-    :homepage, :subscribers
+    :description, :title, :phrase, :background_file, :theme, :homepage, :subscribers
 
   mount_uploader :background_file, BackgroundUploader
 
@@ -24,10 +23,6 @@ class BandSite < ActiveRecord::Base
 
   def other_users(current_user)
     self.users.reject { |u| found = true if !found && u == current_user }
-  end
-
-  def skin_classes
-    'pp-color-%s pp-style-%s' % [self.skin_color, self.skin_style]
   end
 
   def to_param
