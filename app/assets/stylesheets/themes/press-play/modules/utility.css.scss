@@ -22,21 +22,6 @@ body { overflow: hidden; }
   margin: 0 auto;
 }
 
-//=== Mirage
-// Make multiple layers move so it looks 3d
-.mirage {
-  position: relative;
-  overflow: hidden;
-  .mirage-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  img {
-    max-width: none;
-  }
-}
-
 //=== Background
 // Responsive background image / whateva
 .background {
@@ -58,23 +43,6 @@ body { overflow: hidden; }
   position: absolute;
   bottom: 0;
   right: 0;
-}
-
-//=== Symmetry
-// A 3-div hack for centering block elements without a specific width
-.symmetry {
-  width: 100%;
-  position: absolute;
-}
-.symmetry-float {
-  float: left;
-  position: relative;
-  left: 50%;
-}
-.symmetry-inner {
-  float: left;
-  position: relative;
-  left: -50%;
 }
 
 //=== Marquee

@@ -7,7 +7,7 @@ define [
   'help!themes/press-play/views/visual/ticker'
   'themes/default/views/pages'
   'jst!themes/press-play/templates/app'
-  'themes/press-play/views/patches'
+  'themes/default/views/patches'
 ], (AppView, BackgroundView, NavigationView, SocialView, PlayerView, TickerView, PagesView, jst) ->
 
   class PressPlayAppView extends AppView

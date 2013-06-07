@@ -1,13 +1,13 @@
 define [
-  'patches/hover'
+  'quilt'
   'jst!themes/default/templates/music/player/playback'
-], (Hover, jst) ->
+], ({View}, jst) ->
 
-  class PlaybackView extends Hover
+  class PlaybackView extends View
 
-    constructor: (options) ->
+    constructor: (options={}) ->
       super
-      @model.on('change:playing', @update, @)
+      @listenTo(@model, 'change:playing', @update)
 
     template: jst
 

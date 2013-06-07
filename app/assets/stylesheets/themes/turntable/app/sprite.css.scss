@@ -1,0 +1,28 @@
+.divider-earbuds {
+  width: 523px;
+  height: 33px;
+  background-image: image-url('themes/turntable/divider-earbuds.png');
+}
+.record {
+  background-image: image-url('themes/turntable/record.png');
+  background-position: center center;
+  background-size: 100%;
+  @include border-radius(50%);
+}
+.controls-play {
+  @include svg-stretch('themes/turntable/play-button.svg');
+}
+.controls-pause {
+  @include svg-stretch('themes/turntable/pause-button.svg');
+}
+.tape-scrap {
+  @include svg-stretch('themes/turntable/tape-scrap.svg');
+}
+.icon-purchase {
+  @include icon('themes/turntable/icon-purchase.png', 18px, 11px);
+  @include icon-medium;
+}
+.icon-download {
+  @include icon('themes/turntable/icon-download.png', 18px, 16px);
+  @include icon-medium;
+}

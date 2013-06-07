@@ -1,0 +1,17 @@
+<div class='lip'></div>
+
+<div class='symmetry'><div class='symmetry-float'>
+  <div class='symmetry-inner' data-ref='navigation'>
+  </div>
+</div></div>
+
+<div class='divider divider-earbuds'></div>
+
+<div id='page-home'>
+  <div data-ref='page'></div>
+
+  <!-- homepage -->
+  <div class='controls' data-ref='playback'></div>
+  <h1 data-html='name'></h1>
+
+</div>

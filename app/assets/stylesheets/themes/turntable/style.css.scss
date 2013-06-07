@@ -1,5 +1,6 @@
 // Compass.
 
+@import 'compass/reset';
 @import 'compass/css3';
 
 
@@ -11,13 +12,10 @@
 @import 'modules/vendor';
 
 
-// Press Play.
-
-@import 'config/variables';
-@import 'modules/utility';
+// Turntable.
 
 @import 'app/fonts';
-@import 'app/music';
-@import 'app/skeleton';
+@import 'app/sprite';
+@import 'app/elements';
+@import 'app/theme';
 @import 'app/pages';
-@import 'app/skins';

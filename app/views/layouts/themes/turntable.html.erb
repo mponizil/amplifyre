@@ -1,0 +1,15 @@
+<% content_for :application do %>
+  <% if @version == 'normal' %>
+  <%= stylesheet_link_tag    'themes/turntable/index', :media => 'all' %>
+  <%= requirejs_include_tag  'themes/turntable/main' %>
+  <% elsif @version == 'editor' %>
+  <%= stylesheet_link_tag    'themes/turntable/editor/index', :media => 'all' %>
+  <%= requirejs_include_tag  'themes/turntable/editor/main' %>
+  <% end %>
+<% end %>
+
+<% content_for :body do %>
+  <div id='tt-template'></div>
+<% end %>
+
+<%= render :template => 'layouts/theme' %>

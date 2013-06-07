@@ -1,7 +1,26 @@
 .clearfix { @include clearfix; }
+
+.text-left { text-align: left; }
 .text-center { text-align: center; }
+.text-right { text-align: right; }
+
 .pull-right-absolute {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.symmetry {
+  width: 100%;
+  @include clearfix;
+}
+.symmetry-float {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+.symmetry-inner {
+  float: left;
+  position: relative;
+  left: -50%;
 }

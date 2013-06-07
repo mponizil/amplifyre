@@ -1,0 +1,42 @@
+#page-home {
+  text-align: center;
+}
+#page-tracks {
+  .content {
+    background-image: image-url('themes/turntable/tmp/album-cover.png');
+  }
+  .content-inner {
+    width: 130px;
+    height: 394px;
+    margin: 40px 190px;
+    padding: 40px 35px 60px 55px;
+  }
+  h4 {
+    margin-left: 25px;
+    margin-bottom: 30%;
+  }
+  .content-featured {
+    font-size: 26px;
+    margin-bottom: 30%;
+    li { line-height: 1; }
+  }
+  .content-details {
+    margin-left: 10px;
+    li { line-height: 1.4; }
+  }
+}
+#page-photos {
+  .content {
+    padding-top: 10px;
+    height: 565px;
+  }
+}
+#page-videos {
+  .content {
+    padding-top: 40px;
+    height: 535px;
+  }
+  .row-fluid {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,15 @@
+<div class='container'>
+
+  <div class='row-fluid'>
+
+    <div class='span2' data-ref='navigation'></div>
+
+    <div class='span8 content' data-ref='page'></div>
+
+    <div class='span2'>
+      <div data-ref='playback'></div>
+    </div>
+
+  </div>
+
+</div>

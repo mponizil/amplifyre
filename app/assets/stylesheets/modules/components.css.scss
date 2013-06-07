@@ -11,3 +11,17 @@
     max-width: none;
   }
 }
+
+.gallery-cluster {
+  text-align: center;
+}
+.gallery-item {
+  margin: 10px;
+  &, a { display: inline-block; }
+}
+
+.lip {
+  width: 100%;
+  height: 5px;
+  margin-bottom: 10px;
+}

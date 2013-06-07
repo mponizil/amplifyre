@@ -1,11 +1,11 @@
 define [
   'themes/common/views/app'
   'help!themes/default/views/links/navigation'
-  'themes/default/views/music/player/playback'
+  'themes/default/views/music/player/playback-hover'
   'themes/default/views/music/player/ticker'
   'themes/default/views/pages'
   'jst!themes/steady-sun/templates/app'
-  'themes/steady-sun/views/patches'
+  'themes/default/views/patches'
 ], (AppView, NavigationView, PlaybackView, TickerView, PagesView, jst) ->
 
   class SteadySunAppView extends AppView

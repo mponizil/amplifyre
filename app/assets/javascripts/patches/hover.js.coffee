@@ -8,7 +8,7 @@ define [
 
   class Hover extends Quilt.View
 
-    constructor: (options) ->
+    constructor: (options={}) ->
       super
 
       if options.$target
@@ -21,13 +21,10 @@ define [
         @$source = @$target = @$el
 
     render: ->
-      super
-
       @$source.hover(
         => @fadeIn()
         => @fadeOut()
       )
-
       return this
 
     fadeIn: ->

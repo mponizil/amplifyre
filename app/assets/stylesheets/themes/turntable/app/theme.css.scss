@@ -1,0 +1,48 @@
+.lip {
+  background-color: #244679;
+}
+
+.nav {
+  font-size: 26px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  li {
+    margin: 0 5px;
+  }
+  a {
+    color: #000000;
+    &:hover { color: #f4f4f4; }
+  }
+  li:hover, li.active {
+    background-color: #327dee;
+    a { background: none; }
+  }
+}
+
+.divider-earbuds {
+  margin: 0 auto;
+}
+
+.controls {
+  width: 240px;
+  height: 240px;
+  margin: 5% auto 0 auto;
+  cursor: pointer;
+  position: relative;
+  > * { @include absolute(0, 0, 0, 0); }
+}
+
+.content {
+  width: 575px;
+  height: 575px;
+  border: 2px solid #000;
+  margin: 0 auto;
+}
+
+.gallery-item a {
+  border: 6px solid rgba(255, 255, 255, 0.65);
+  &:hover {
+    border-color: rgba(50, 125, 238, 0.65);
+    @include box-shadow(rgba(0, 0, 0, 0.25) 2px 2px 27px);
+  }
+}

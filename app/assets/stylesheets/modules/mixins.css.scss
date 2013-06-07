@@ -26,8 +26,27 @@
     clear: both;
   }
 }
+
 @mixin gradient($top, $bottom) {
   background-color: $bottom;
   @include background-image(filter-gradient($top, $bottom));
   @include background-image(linear-gradient($top, $bottom));
+}
+
+@mixin svg-stretch($url) {
+  background: image-url($url) no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin position($position: relative, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  @include position(absolute, $top, $right, $bottom, $left);
 }
