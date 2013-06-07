@@ -14,7 +14,7 @@ class BandSite < ActiveRecord::Base
   validates :slug, :uniqueness => true, :length => { :in => 2..16 }
 
   attr_accessible :id, :user_ids, :created_at, :updated_at, :user_id, :slug, :name,
-    :description, :title, :phrase, :background_file, :theme, :homepage, :subscribers
+    :description, :title, :phrase, :background_file, :theme, :homepage, :subscribers, :ga
 
   mount_uploader :background_file, BackgroundUploader
 

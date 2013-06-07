@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <%= csrf_meta_tag %>
+
+  <!-- og/fb tags -->
+  <meta property='og:type' content='website' />
+  <meta property='og:url' content='<%= view_band_site_path @band_site %>' />
+  <meta property='og:image' content='<%= full_url @band_site.background_file.url %>' />
+  <meta property='og:site_name' content='<%= @band_site.title %>' />
+  <meta property='og:title' content='<%= @band_site.title %>' />
+  <meta property='fb:admins' content='831670161' />
+  <!-- end og/fb tags -->
+
+  <!-- meta tags -->
+  <meta name='title' content='<%= @band_site.title %>' />
+  <meta name='description' content='<%= @band_site.phrase %>' />
+  <link rel='image_src' href='<%= full_url @band_site.background_file.url %>' />
+  <!-- end meta tags -->
+
+  <title><%= @band_site.title %></title>
+
+  <link rel='shortcut icon' href='/assets/favicon/10.png'>
+
+  <script id='bootstrap' type='text/json'>
+  {
+    "auth_token": "<%= form_authenticity_token.to_s %>",
+    "band_site": <%=raw @band_site.to_json %>,
+    "socials": <%=raw @band_site.socials.to_json %>,
+    "albums": <%=raw @band_site.albums.to_json %>,
+    "tracks": <%=raw @band_site.tracks.to_json %>,
+    "photos": <%=raw @band_site.photos.to_json %>,
+    "posts": <%=raw @band_site.posts.to_json %>,
+    "concerts": <%=raw @band_site.concerts.to_json %>,
+    "pages": <%=raw @band_site.pages.to_json %>
+  }
+  </script>
+
+  <%= yield :application %>
+
+</head>
+
+<body>
+
+  <%= yield :body %>
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '<%= @band_site.ga %>']);
+  _gaq.push(['_setDomainName', window.location.hostname]);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+
+</body>
+</html>
