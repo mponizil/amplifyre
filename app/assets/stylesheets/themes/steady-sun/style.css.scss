@@ -1,14 +1,21 @@
+// Compass.
+
 @import 'compass/reset';
 @import 'compass/css3';
 
+
+// Amplifyre.
+
+@import 'modules/mixins';
+@import 'modules/utility';
+@import 'modules/components';
+@import 'modules/vendor';
+
+
+// Steady Sun.
+
 @import url(http://fonts.googleapis.com/css?family=Alegreya);
-
-@import '../../lib/mixins';
-@import '../../lib/util';
-@import '../../lib/modules';
-@import '../../lib/vendor';
-
-@import 'sprite';
-@import 'elements';
-@import 'theme';
-@import 'pages';
+@import 'app/sprite';
+@import 'app/elements';
+@import 'app/theme';
+@import 'app/pages';

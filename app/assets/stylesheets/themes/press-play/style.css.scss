@@ -1,14 +1,20 @@
+// Compass.
+
 @import 'compass/css3';
 
-@import 'lib/mixins';
 
-@import 'config/fonts';
+// Amplifyre.
+
+@import 'modules/mixins';
+
+
+// Press Play.
+
 @import 'config/variables';
+@import 'modules/utility';
 
-@import 'tools/utility';
-
-@import 'layout/music';
-@import 'layout/skeleton';
-@import 'layout/pages';
-
+@import 'app/fonts';
+@import 'app/music';
+@import 'app/skeleton';
+@import 'app/pages';
 @import 'app/skins';
