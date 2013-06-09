@@ -6,7 +6,7 @@ require.config
   ]
   map:
     '*':
-      # Overrides.
+      # Views.
       'themes/default/views/app': 'themes/steady-sun/views/app'
       'themes/default/views/pages/news': 'themes/steady-sun/views/pages/news'
       'themes/default/views/pages/listen': 'themes/steady-sun/views/pages/listen'
@@ -14,9 +14,11 @@ require.config
       'themes/default/views/pages/videos': 'themes/steady-sun/views/pages/videos'
       'themes/default/views/pages/tour': 'themes/steady-sun/views/pages/tour'
       'themes/default/views/pages/follow': 'themes/steady-sun/views/pages/follow'
+
+      # Templates.
       'themes/default/templates/pages/contact': 'themes/steady-sun/templates/pages/contact'
 
-      # Editor overrides.
+      # Editor views.
       'themes/default/editor/views/app': 'themes/steady-sun/editor/views/app'
       'themes/default/editor/views/pages/news': 'themes/steady-sun/editor/views/pages/news'
       'themes/default/editor/views/pages/listen': 'themes/steady-sun/editor/views/pages/listen'

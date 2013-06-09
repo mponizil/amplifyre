@@ -6,6 +6,7 @@ require.config
   ]
   map:
     '*':
+      # Views.
       'themes/default/views/app': 'themes/press-play/views/app'
       'themes/default/views/pages/news': 'themes/press-play/views/pages/news'
       'themes/default/views/pages/listen': 'themes/press-play/views/pages/listen'
@@ -13,6 +14,11 @@ require.config
       'themes/default/views/pages/tour': 'themes/press-play/views/pages/tour'
       'themes/default/views/pages/contact': 'themes/press-play/views/pages/contact'
       'themes/default/views/pages/custom': 'themes/press-play/views/pages/custom'
+
+      # Templates.
+      'themes/default/templates/pages/landing': 'themes/press-play/templates/pages/landing'
+
+      # Editor views.
       'themes/default/editor/views/app': 'themes/press-play/editor/views/app'
       'themes/default/editor/views/pages/news': 'themes/press-play/editor/views/pages/news'
       'themes/default/editor/views/pages/listen': 'themes/press-play/editor/views/pages/listen'
