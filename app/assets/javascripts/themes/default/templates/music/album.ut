@@ -1,0 +1,4 @@
+<div data-ref='cover'></div>
+<h3 data-html='title'></h3>
+<p data-html='description'></p>
+<ul data-ref='tracks'></ul>

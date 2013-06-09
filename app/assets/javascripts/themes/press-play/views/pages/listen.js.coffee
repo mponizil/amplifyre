@@ -22,9 +22,8 @@ define [
 
       @views.push(new List
         el: @$albums
-        view: AlbumView.extend(player: @player)
+        view: AlbumView.extend({ @player, className: 'album' })
         collection: @albums
-        eventName: 'album'
       .render())
 
       @align(); $(window).on('resize', @align)

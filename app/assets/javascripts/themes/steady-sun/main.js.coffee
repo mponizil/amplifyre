@@ -3,6 +3,7 @@ require.config
     '*':
       # Views.
       'themes/default/views/app': 'themes/steady-sun/views/app'
+      'themes/default/views/pages/base/bare': 'themes/steady-sun/views/pages/base/bare'
       'themes/default/views/pages/news': 'themes/steady-sun/views/pages/news'
       'themes/default/views/pages/listen': 'themes/steady-sun/views/pages/listen'
       'themes/default/views/pages/photos': 'themes/steady-sun/views/pages/photos'

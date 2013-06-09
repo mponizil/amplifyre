@@ -1,0 +1,1 @@
+<img src='<%= this.model.get('cover_file').url %>' data-attrs='{"alt":"title","title":"title"}' />

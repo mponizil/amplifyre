@@ -1,7 +1,7 @@
 define [
-  'themes/steady-sun/views/pages/base/bare'
-  'help!themes/steady-sun/views/music/album'
-  'jst!themes/steady-sun/templates/pages/listen'
+  'themes/turntable/views/pages/base/bare'
+  'help!themes/default/views/music/album'
+  'jst!themes/turntable/templates/pages/listen'
 ], (BarePage, AlbumView, jst) ->
 
   class ListenPage extends BarePage
@@ -17,7 +17,7 @@ define [
       super
 
       @views.push(new AlbumView
-        el: @$featured
+        el: @$album
         model: @albums.at(0)
         player: @player
       .render())
