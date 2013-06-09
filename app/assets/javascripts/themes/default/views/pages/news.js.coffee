@@ -3,3 +3,5 @@ define [
 ], (BarePage) ->
 
   class NewsView extends BarePage
+
+    category: 'news'

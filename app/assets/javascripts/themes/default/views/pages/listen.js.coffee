@@ -6,3 +6,5 @@ define [
 
     constructor: ({@player, @albums, @tracks}) ->
       super
+
+    category: 'listen'

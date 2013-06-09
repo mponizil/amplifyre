@@ -1,11 +1,10 @@
 define [
   'themes/common/views/app'
   'help!themes/default/views/links/navigation'
-  'themes/default/views/music/player/playback'
   'themes/default/views/pages'
   'jst!themes/default/templates/app'
   'themes/default/views/patches'
-], (AppView, NavigationView, PlaybackView, PagesView, jst) ->
+], (AppView, NavigationView, PagesView, jst) ->
 
   class DefaultAppView extends AppView
 
@@ -18,11 +17,6 @@ define [
         el: @$navigation
         collection: @pages
         router: @router
-      .render())
-
-      @views.push(new PlaybackView
-        el: @$playback
-        model: @player
       .render())
 
       @views.push(new PagesView

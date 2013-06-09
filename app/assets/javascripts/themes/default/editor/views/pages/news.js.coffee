@@ -1,5 +1,5 @@
 define [
-  'themes/steady-sun/editor/views/pages/base/main'
+  'themes/default/editor/views/pages/base/main'
 ], (EditPage) ->
 
   class EditNewsPage extends EditPage

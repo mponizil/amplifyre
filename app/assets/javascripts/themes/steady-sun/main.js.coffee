@@ -8,8 +8,7 @@ require.config
       'themes/default/views/pages/videos': 'themes/steady-sun/views/pages/videos'
       'themes/default/views/pages/tour': 'themes/steady-sun/views/pages/tour'
       'themes/default/views/pages/follow': 'themes/steady-sun/views/pages/follow'
-      'themes/default/views/pages/contact': 'themes/steady-sun/views/pages/contact'
-      'themes/default/views/pages/custom': 'themes/steady-sun/views/pages/custom'
+      'themes/default/templates/pages/contact': 'themes/steady-sun/templates/pages/contact'
 
 define [
   'jquery'

@@ -3,3 +3,5 @@ define [
 ], (BarePage) ->
 
   class TourPage extends BarePage
+
+    category: 'tour'

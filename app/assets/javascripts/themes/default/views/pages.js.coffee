@@ -1,6 +1,6 @@
 define [
-  'themes/common/views/view'
   'themes/common/views/pages'
+  'help!themes/default/views/pages/landing'
   'help!themes/default/views/pages/news'
   'help!themes/default/views/pages/listen'
   'help!themes/default/views/pages/photos'
@@ -9,12 +9,14 @@ define [
   'help!themes/default/views/pages/follow'
   'help!themes/default/views/pages/contact'
   'help!themes/default/views/pages/custom'
-], (View, PagesView, NewsView, ListenView, PhotosView, VideosView, TourView, FollowView, ContactView, CustomView) ->
+], (PagesView, LandingView, NewsView, ListenView, PhotosView, VideosView, TourView, FollowView, ContactView, CustomView) ->
 
   class DefaultPagesView extends PagesView
 
-    index: ->
-      @changePage new View
+    landing: ->
+      @changePage new LandingView
+        model: @band_site
+        player: @player
 
     news: (model) ->
       @changePage new NewsView

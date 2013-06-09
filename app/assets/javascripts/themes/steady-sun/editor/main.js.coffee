@@ -6,6 +6,7 @@ require.config
   ]
   map:
     '*':
+      # Overrides.
       'themes/default/views/app': 'themes/steady-sun/views/app'
       'themes/default/views/pages/news': 'themes/steady-sun/views/pages/news'
       'themes/default/views/pages/listen': 'themes/steady-sun/views/pages/listen'
@@ -13,8 +14,9 @@ require.config
       'themes/default/views/pages/videos': 'themes/steady-sun/views/pages/videos'
       'themes/default/views/pages/tour': 'themes/steady-sun/views/pages/tour'
       'themes/default/views/pages/follow': 'themes/steady-sun/views/pages/follow'
-      'themes/default/views/pages/contact': 'themes/steady-sun/views/pages/contact'
-      'themes/default/views/pages/custom': 'themes/steady-sun/views/pages/custom'
+      'themes/default/templates/pages/contact': 'themes/steady-sun/templates/pages/contact'
+
+      # Editor overrides.
       'themes/default/editor/views/app': 'themes/steady-sun/editor/views/app'
       'themes/default/editor/views/pages/news': 'themes/steady-sun/editor/views/pages/news'
       'themes/default/editor/views/pages/listen': 'themes/steady-sun/editor/views/pages/listen'
@@ -22,8 +24,6 @@ require.config
       'themes/default/editor/views/pages/videos': 'themes/steady-sun/editor/views/pages/videos'
       'themes/default/editor/views/pages/tour': 'themes/steady-sun/editor/views/pages/tour'
       'themes/default/editor/views/pages/follow': 'themes/steady-sun/editor/views/pages/follow'
-      'themes/default/editor/views/pages/contact': 'themes/steady-sun/editor/views/pages/contact'
-      'themes/default/editor/views/pages/custom': 'themes/steady-sun/editor/views/pages/custom'
 
 define [
   'jquery'

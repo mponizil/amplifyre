@@ -3,3 +3,5 @@ define [
 ], (BarePage) ->
 
   class PhotosPage extends BarePage
+
+    category: 'photos'

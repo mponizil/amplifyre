@@ -1,6 +1,6 @@
 define [
   'patches/fileupload'
-  'themes/steady-sun/editor/views/pages/base/main'
+  'themes/default/editor/views/pages/base/main'
 ], (Fileupload, EditPage) ->
 
   class EditVideosPage extends EditPage

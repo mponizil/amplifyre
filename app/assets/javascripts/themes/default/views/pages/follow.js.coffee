@@ -3,3 +3,5 @@ define [
 ], (BarePage) ->
 
   class FollowPage extends BarePage
+
+    category: 'follow'

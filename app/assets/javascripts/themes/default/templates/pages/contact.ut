@@ -1,0 +1,29 @@
+<div class='content'>
+  <form name='email_form' data-email-form>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td><input type='text' name='name' /></td>
+      </tr>
+      <tr>
+        <td>E-mail</td>
+        <td><input type='text' name='email' /></td>
+      </tr>
+      <tr>
+        <td>Subject</td>
+        <td><input type='text' name='subject' /></td>
+      </tr>
+      <tr>
+        <td>Message</td>
+        <td><textarea name='message'></textarea></td>
+      </tr>
+      <tr>
+        <td colspan='2' align='right'>
+          <button type='button' class='btn'>Send</button>
+          <img src='/assets/global/ajax-loader.gif' class='loader' />
+          <div class='result'></div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

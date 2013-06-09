@@ -22,7 +22,11 @@
 
   <title><%= @band_site.title %></title>
 
-  <link rel='shortcut icon' href='/assets/favicon/10.png'>
+  <% if content_for?(:favicon) %>
+    <%= yield :favicon %>
+  <% else %>
+    <link rel='shortcut icon' href='/assets/favicon/10.png'>
+  <% end %>
 
   <script id='bootstrap' type='text/json'>
   {

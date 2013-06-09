@@ -1,3 +1,7 @@
+<% content_for :favicon do %>
+<link rel='shortcut icon' href='/assets/favicon/3.png'>
+<% end %>
+
 <% content_for :application do %>
   <% if @version == 'normal' %>
   <%= stylesheet_link_tag    'themes/steady-sun/index', :media => 'all' %>
