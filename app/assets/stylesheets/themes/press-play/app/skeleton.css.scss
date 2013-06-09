@@ -33,6 +33,8 @@
   position: relative;
   z-index: 2;
 
+  // Symmetry stretches width 100% but doesn't need the entire thing.
+  .symmetry { position: absolute; }
   .navbar-inner {
     padding: 0;
     border-width: 0 0 1px 0;
@@ -44,5 +46,6 @@
 }
 
 .pp-bottom-marquee {
+  position: absolute;
   bottom: 0;
 }
