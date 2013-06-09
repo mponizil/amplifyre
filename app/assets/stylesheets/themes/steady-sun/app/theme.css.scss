@@ -104,7 +104,7 @@
     line-height: 20px;
   }
   a:hover,
-  a.active {
+  li.active a {
     padding-left: 10px;
     border-left: 4px solid rgba(211, 158, 32, 0.4);
   }

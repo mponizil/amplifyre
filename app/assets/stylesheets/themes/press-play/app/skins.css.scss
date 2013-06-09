@@ -17,10 +17,21 @@
     border-color: #252525;
     @include background-image(linear-gradient(#222222, #111111));
   }
-  .nav > li > a {
-    color: #999999;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    &:hover { color: #ffffff; }
+  .nav {
+    > li > a {
+      color: #999999;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      &:hover {
+        color: #ffffff;
+        background-color: transparent;
+      }
+    }
+    .active a,
+    .active a:hover,
+    .active a:focus {
+      color: #ffffff;
+      background-color: #111111;
+    }
   }
   .album-flap {
     background: rgba(0, 0, 0, 0.8);

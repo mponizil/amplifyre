@@ -18,5 +18,9 @@ define [
       _.each(@$('[data-fragment]'), @toggle, @)
 
     toggle: (a) ->
-      active = $(a).data().fragment is @history.fragment
-      $(a).toggleClass('active', active)
+      $a = $(a)
+      active = $a.data().fragment is @history.fragment
+
+      $li = $a.parent('li')
+      $el = if $li.length then $li else $a
+      $el.toggleClass('active', active)
