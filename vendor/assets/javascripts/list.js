@@ -13,9 +13,6 @@
       if (options && options.view) {
         this.view = options.view;
       }
-      if (options && options.eventName) {
-        this.eventName = options.eventName;
-      }
 
       this.collection
         .on('add', this.add, this)
@@ -64,8 +61,7 @@
       if (previous) previous.$el.after(view.el);
       else this.$el.prepend(view.el);
 
-      this.$el.trigger('added', [view.$el]);
-      if (this.eventName) this.$el.trigger('added:' + this.eventName, [view.$el]);
+      this.$el.trigger('add', [view.$el]);
     },
 
     // Destroy the removed model's view and remove it from the DOM.

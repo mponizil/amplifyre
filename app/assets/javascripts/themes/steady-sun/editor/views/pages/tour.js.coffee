@@ -18,7 +18,7 @@ define [
     newConcert: (e) ->
       e.stopPropagation()
 
-      @$next_show.one 'added', (e, $concert) =>
+      @$next_show.one 'add', (e, $concert) =>
         $concert.find('[data-attr]:first').trigger('editable:start')
       @collection.add()
 

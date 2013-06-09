@@ -16,7 +16,7 @@ define [
     newConcert: (e) ->
       e.stopPropagation()
 
-      @$calendar.one 'added', (e, $concert) =>
+      @$calendar.one 'add', (e, $concert) =>
         $concert.find('[data-attr]:first').trigger('editable:start')
       @collection.add()
 

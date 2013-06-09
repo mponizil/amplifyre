@@ -16,7 +16,7 @@ define [
     newPost: (e) ->
       e.stopPropagation()
 
-      @$news.one 'added', (e, $post) =>
+      @$news.one 'add', (e, $post) =>
         $post.find('[data-attr]:first').trigger('editable:start')
       @collection.create()
 
