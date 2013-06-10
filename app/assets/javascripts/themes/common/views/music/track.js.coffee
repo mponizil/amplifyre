@@ -4,8 +4,7 @@
 
 define [
   'themes/common/views/view'
-  'jst!themes/steady-sun/templates/music/track'
-], (View, jst) ->
+], (View) ->
 
   class TrackView extends View
 
@@ -14,8 +13,6 @@ define [
 
       @player.on('change:index', @update, @)
       @player.on('change:playing', @update, @)
-
-    template: jst
 
     events:
       'click': 'play'

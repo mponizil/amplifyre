@@ -7,7 +7,7 @@ define [
   'patches/mirage'
   'themes/common/views/view'
   'themes/default/views/music/player/playback-hover'
-  'help!themes/steady-sun/views/music/tracks'
+  'help!themes/default/views/music/tracks'
   'jst!themes/steady-sun/templates/music/album'
 ], (_, Mirage, View, PlaybackView, TracksView, jst) ->
 

@@ -1,10 +1,8 @@
 define [
   'underscore'
-  'list'
   'themes/common/views/view'
-  'themes/default/views/music/track'
-  'jst!themes/default/templates/music/album'
-], (_, List, View, TrackView, jst) ->
+  'help!themes/default/views/music/tracks'
+], (_, View, TracksView) ->
 
   class AlbumView extends View
 
@@ -12,21 +10,14 @@ define [
       _.extend(@, _.pick(options, 'player'))
       super
 
-    initialize: ->
-      super
-      @trackView = TrackView.extend({ @player, tagName: 'li' })
-
-    template: jst
-
-    trackView: TrackView
-
     render: ->
       super
 
-      @views.push(new List
+      @views.push(new TracksView
         el: @$tracks
         collection: @model.tracks()
-        view: @trackView
+        album: @model
+        player: @player
       .render())
 
       return this

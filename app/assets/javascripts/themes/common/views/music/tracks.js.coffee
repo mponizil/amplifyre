@@ -1,21 +1,23 @@
 define [
   'list'
   'themes/common/views/view'
-  'help!themes/steady-sun/views/music/track'
+  'help!themes/default/views/music/track'
 ], (List, View, TrackView) ->
 
-  class Tracks extends View
+  class TracksView extends View
 
     constructor: ({@album, @player}) ->
+      @trackView = TrackView.extend({ tagName: 'li', @player })
       super
+
+    trackView: TrackView
 
     render: ->
       super
 
-      trackView = TrackView.extend {tagName: 'li', @player}
       @views.push(new List
         el: @$el
-        view: trackView
+        view: @trackView
         collection: @collection
       .render())
 

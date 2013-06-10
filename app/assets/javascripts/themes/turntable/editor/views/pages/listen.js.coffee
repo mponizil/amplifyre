@@ -1,5 +1,5 @@
 define [
-  'themes/default/editor/views/pages/base/main'
+  'themes/common/editor/views/pages/base/main'
 ], (EditPage) ->
 
   class EditListenPage extends EditPage

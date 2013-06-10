@@ -4,7 +4,7 @@ define [
   'themes/common/views/helper-view'
 ], (Fileupload, Sortable, HelperView) ->
 
-  class TracksView extends HelperView
+  class EditTracksView extends HelperView
 
     inject: ->
       @$el.append("<input type='file' name='track[file]' data-ref='upload' multiple />")
