@@ -1,5 +1,5 @@
 <div class='scrollpane page-news' data-ref='scrollpane'>
 
-  <div data-ref='news'></div>
+  <div data-ref='posts'></div>
 
 </div>

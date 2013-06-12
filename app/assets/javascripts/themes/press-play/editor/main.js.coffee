@@ -20,7 +20,6 @@ require.config
 
       # Editor views.
       'themes/default/editor/views/app': 'themes/press-play/editor/views/app'
-      'themes/default/editor/views/pages/news': 'themes/press-play/editor/views/pages/news'
       'themes/default/editor/views/pages/listen': 'themes/press-play/editor/views/pages/listen'
       'themes/default/editor/views/pages/photos': 'themes/press-play/editor/views/pages/photos'
       'themes/default/editor/views/pages/tour': 'themes/press-play/editor/views/pages/tour'

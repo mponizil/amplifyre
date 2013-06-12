@@ -1,6 +1,6 @@
 define [
   'themes/press-play/views/pages/base/content-box'
-  'help!themes/press-play/views/content/post'
+  'help!themes/default/views/content/post'
   'jst!themes/press-play/templates/pages/news'
 ], (PageView, PostView, jst) ->
 
@@ -12,7 +12,7 @@ define [
       super
 
       @views.push(new List
-        el: @$news
+        el: @$posts
         view: PostView
         collection: @collection
       .render())

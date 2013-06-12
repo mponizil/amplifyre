@@ -8,7 +8,6 @@ require.config
     '*':
       # Views.
       'themes/default/views/app': 'themes/steady-sun/views/app'
-      'themes/default/views/pages/news': 'themes/steady-sun/views/pages/news'
       'themes/default/views/pages/listen': 'themes/steady-sun/views/pages/listen'
       'themes/default/views/pages/photos': 'themes/steady-sun/views/pages/photos'
       'themes/default/views/pages/videos': 'themes/steady-sun/views/pages/videos'
@@ -16,11 +15,11 @@ require.config
       'themes/default/views/pages/follow': 'themes/steady-sun/views/pages/follow'
 
       # Templates.
+      'themes/default/templates/pages/news': 'themes/steady-sun/templates/pages/news'
       'themes/default/templates/pages/contact': 'themes/steady-sun/templates/pages/contact'
 
       # Editor views.
       'themes/default/editor/views/app': 'themes/steady-sun/editor/views/app'
-      'themes/default/editor/views/pages/news': 'themes/steady-sun/editor/views/pages/news'
       'themes/default/editor/views/pages/listen': 'themes/steady-sun/editor/views/pages/listen'
       'themes/default/editor/views/pages/photos': 'themes/steady-sun/editor/views/pages/photos'
       'themes/default/editor/views/pages/videos': 'themes/steady-sun/editor/views/pages/videos'
