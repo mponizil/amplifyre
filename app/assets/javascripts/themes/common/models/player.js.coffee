@@ -22,19 +22,21 @@ define [
       index: 0
       playing: false
 
+    active: -> @_active
+
     reset: ->
       @set(playing: false)
       @set(index: 0)
 
     choose: (player, index) ->
-      @active = @tracks.at(index)
-      @setMedia(@active)
+      @_active = @tracks.at(index)
+      @setMedia(@_active)
 
     toggle: (player, playing) ->
       if playing
-        soundManager.play(@active.id)
+        soundManager.play(@_active.id)
       else
-        soundManager.pause(@active.id)
+        soundManager.pause(@_active.id)
 
     # Get the previous index.
     prev: ->

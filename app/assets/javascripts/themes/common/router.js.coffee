@@ -27,11 +27,11 @@ define [
       if homepage
         @navigate(homepage.get('slug'), {trigger: true, replace: true})
       else
-        @trigger('page:change', 'landing')
+        @trigger('page:change', null, 'landing', 'default')
 
     slug: (slug) ->
       page = @pages.findWhere({ slug })
       if page
-        @trigger('page:change', page.get('category'), page)
+        @trigger('page:change', page, page.get('category'), page.get('slug'))
       else
         @navigate('home', {trigger: true, replace: true})

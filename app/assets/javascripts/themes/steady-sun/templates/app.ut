@@ -4,13 +4,13 @@
 
     <div class='span2' data-ref='navigation'></div>
 
-    <div class='content span8' data-ref='page'></div>
+    <div class='span8 content' data-ref='page'></div>
 
     <div class='span2' id='column-right'>
       <div class='thumbnail' data-ref='player_mini'>
         <img src='/assets/themes/steady-sun/album.png' width='100%' height='100%' />
-        <div data-ref='playback'></div>
-        <marquee data-ref='ticker' scrollamount='3'></marquee>
+        <div data-ref='playback_mini'></div>
+        <marquee scrollamount='3' data-ref='ticker'></marquee>
       </div>
     </div>
 

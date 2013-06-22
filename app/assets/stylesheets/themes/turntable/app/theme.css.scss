@@ -2,6 +2,17 @@
   background-color: #244679;
 }
 
+.corner-tr {
+  width: 96px;
+  top: 24px;
+  right: 24px;
+  .controls {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 10px;
+  }
+}
+
 .nav {
   font-size: 26px;
   text-transform: uppercase;

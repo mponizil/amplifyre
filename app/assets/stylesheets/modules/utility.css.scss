@@ -1,15 +1,17 @@
 .clearfix { @include clearfix; }
 
+// # Text align
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
-.pull-right-absolute {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+// # Corners and edges
+// Absolute alignment.
+.corner-tr { @include absolute($top: 0, $right: 0); }
+.edge-r { @include absolute($top: 0); }
 
+// # Symmetry
+// Variable-width block center alignment.
 .symmetry {
   width: 100%;
   @include clearfix;

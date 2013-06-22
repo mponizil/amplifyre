@@ -6,30 +6,27 @@ define [
 
     constructor: ->
       super
-      @model.on('change:index', @update, @)
-      @model.on('change:playing', @update, @)
+      @model.on('change:index', @swap, @)
+      @model.on('change:playing', @render, @)
 
-    template: (o) ->
-      "#{o.model.active.get('title')} - #{o.model.active.get('artist')}"
+    template: ->
+      if active = @model.active()
+        "#{ active.get('title') } - #{ active.get('artist') }"
+      else
+        ""
 
     render: ->
-      return this unless @model.active
-
       super
       @toggle()
       return this
 
-    update: ->
-      if @model.hasChanged('index')
-        @swap()
-      else if @model.hasChanged('playing')
-        @toggle()
-
     swap: ->
       @$el.fadeOut =>
-        @$el.html @template {@model}
+        @$el.html @template()
         @$el.fadeIn()
 
     toggle: ->
-      if @model.get('playing') then @$el.fadeIn()
-      else @$el.fadeOut()
+      if @model.get('playing')
+        @$el.fadeIn()
+      else
+        @$el.fadeOut()

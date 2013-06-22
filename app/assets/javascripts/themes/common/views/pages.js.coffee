@@ -10,8 +10,8 @@ define [
     initialize: ->
       super
 
-      @router.on('page:change', (page, model) ->
-        @[page]?(model)
+      @router.on('page:change', (page, category, slug) ->
+        @[category]?(page)
       , @)
 
     changePage: (view) ->

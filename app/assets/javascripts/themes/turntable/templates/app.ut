@@ -5,6 +5,11 @@
   </div>
 </div></div>
 
+<div class='corner-tr' data-ref='player_mini'>
+  <div class='controls' data-ref='playback_mini'></div>
+  <marquee scrollamount='3' data-ref='ticker'></marquee>
+</div>
+
 <div class='divider divider-earbuds'></div>
 
 <div data-ref='container'>

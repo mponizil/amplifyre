@@ -18,14 +18,10 @@
     </div>
   </div>
 
-  <div class='page' data-ref='page'>
-  </div>
-
-  <!-- music player goodness -->
-  <div class='pp-music-player' data-ref='player'></div>
+  <div class='page' data-ref='page'></div>
 
   <div class='symmetry pp-bottom-marquee'><div class='symmetry-float'>
-    <div class='symmetry-inner marquee' data-ref='marquee'>
+    <div class='symmetry-inner marquee' data-ref='ticker'>
 
       <h1 data-attr='name' data-editable='text-input'></h1>
 

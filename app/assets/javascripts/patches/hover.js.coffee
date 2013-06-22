@@ -2,6 +2,9 @@ define [
   'quilt'
 ], (Quilt) ->
 
+  # # data-hover
+  #
+  # Fade in `$target` when mousing over `$source`.
   Quilt.patches.hover = (el, options) ->
     $target = $(el).parent().find("[data-hover-target=#{options}]")
     new Hover {el, $target}

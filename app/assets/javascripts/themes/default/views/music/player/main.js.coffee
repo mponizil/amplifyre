@@ -1,6 +1,6 @@
 define [
   'quilt'
-  'themes/default/views/music/player/playback'
+  'themes/default/views/music/player/playback-hover'
   'themes/default/views/music/player/scanner'
   'jst!themes/default/templates/music/player/main'
 ], ({View}, PlaybackView, ScannerView, jst) ->

@@ -27,7 +27,7 @@ define [
       return this
 
     update: (player) ->
-      track = player.active
+      track = player.active()
       playing = @model is track and player.get('playing')
       @toggle(playing)
 

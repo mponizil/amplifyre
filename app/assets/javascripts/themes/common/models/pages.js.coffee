@@ -14,6 +14,6 @@ define [
     comparator: (page) -> page.get('position')
 
     allCategories: ['news', 'photos', 'videos', 'listen', 'tour', 'follow', 'contact',
-                    'custom']
+      'custom']
 
     homepage: -> @findWhere(slug: @owner.get('homepage'))
