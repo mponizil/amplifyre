@@ -1,6 +1,6 @@
 define [
   'themes/common/views/view'
-  'jst!themes/steady-sun/templates/visual/photo'
+  'jst!themes/default/templates/visual/photo'
 ], (View, jst) ->
 
   class PhotoView extends View
