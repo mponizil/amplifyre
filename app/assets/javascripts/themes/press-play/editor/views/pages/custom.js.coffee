@@ -1,9 +1,9 @@
 define [
   'patches/editable'
   'themes/press-play/editor/views/pages/base'
-], (Editable, EditPageView) ->
+], (Editable, EditPage) ->
 
-  class CustomView extends EditPageView
+  class EditCustomPage extends EditPage
 
     render: ->
       super

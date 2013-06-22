@@ -1,5 +1,5 @@
 define [
   'themes/press-play/editor/views/pages/base'
-], (EditPageView) ->
+], (EditPage) ->
 
-  class ContactView extends EditPageView
+  class EditContactPage extends EditPage

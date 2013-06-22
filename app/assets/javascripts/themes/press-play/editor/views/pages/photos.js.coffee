@@ -1,9 +1,9 @@
 define [
   'patches/fileupload'
   'themes/press-play/editor/views/pages/base'
-], (Fileupload, EditPageView) ->
+], (Fileupload, EditPage) ->
 
-  class PhotosView extends EditPageView
+  class EditPhotosPage extends EditPage
 
     inject: ->
       super

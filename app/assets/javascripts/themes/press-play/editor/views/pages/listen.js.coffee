@@ -3,9 +3,9 @@ define [
   'patches/fileupload'
   'patches/sortable'
   'themes/press-play/editor/views/pages/base'
-], (Album, Fileupload, Sortable, EditPageView) ->
+], (Album, Fileupload, Sortable, EditPage) ->
 
-  class ListenView extends EditPageView
+  class EditListenPage extends EditPage
 
     inject: ->
       super

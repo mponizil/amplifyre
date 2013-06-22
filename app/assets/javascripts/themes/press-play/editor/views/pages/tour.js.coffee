@@ -1,8 +1,8 @@
 define [
   'themes/press-play/editor/views/pages/base'
-], (EditPageView) ->
+], (EditPage) ->
 
-  class TourView extends EditPageView
+  class EditTourPage extends EditPage
 
     inject: ->
       super
