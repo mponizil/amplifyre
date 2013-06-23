@@ -1,0 +1,4 @@
+<div class='media-group' data-ref='concerts'>
+  <h3>Next Show</h3>
+  <div data-ref='concerts'></div>
+</div>

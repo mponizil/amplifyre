@@ -1,7 +1,7 @@
 define [
   'list'
   'themes/steady-sun/views/pages/base/bare'
-  'help!themes/steady-sun/views/content/concert'
+  'help!themes/default/views/content/concert'
   'jst!themes/steady-sun/templates/pages/tour'
 ], (List, BarePage, ConcertView, jst) ->
 
@@ -26,18 +26,18 @@ define [
 
       if @collection.length
         @views.push(new ConcertView
-          el: @$next_show_container
+          el: @$next
           model: @collection.at(0)
         .render())
       else
-        @$next_show_container.html(noConcertsJst())
+        @$next.html(noConcertsJst())
 
       @views.push(new List
-        el: @$future_shows_container
+        el: @$concerts
         view: ConcertView
         collection: @collection.subset('future')
       .render())
 
-      @$future_shows.toggleClass('hide', @collection.length < 2)
+      @$future_concerts.toggleClass('hide', @collection.length < 2)
 
       return this

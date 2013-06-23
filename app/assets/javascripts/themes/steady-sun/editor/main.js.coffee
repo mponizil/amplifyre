@@ -2,7 +2,7 @@ require.config
   helpers: [
     label: 'editor'
     pattern: '(themes/steady-sun|themes/default)'
-    replace: '$1/editor'
+    replace: 'themes/default/editor'
   ]
   map:
     '*':
@@ -12,6 +12,7 @@ require.config
       'themes/default/views/pages/videos': 'themes/steady-sun/views/pages/videos'
       'themes/default/views/pages/tour': 'themes/steady-sun/views/pages/tour'
       'themes/default/views/pages/follow': 'themes/steady-sun/views/pages/follow'
+      'themes/default/views/music/album': 'themes/steady-sun/views/music/album'
 
       # Templates.
       'themes/default/templates/pages/news': 'themes/steady-sun/templates/pages/news'
@@ -22,7 +23,6 @@ require.config
       'themes/default/editor/views/app': 'themes/steady-sun/editor/views/app'
       'themes/default/editor/views/pages/listen': 'themes/steady-sun/editor/views/pages/listen'
       'themes/default/editor/views/pages/videos': 'themes/steady-sun/editor/views/pages/videos'
-      'themes/default/editor/views/pages/tour': 'themes/steady-sun/editor/views/pages/tour'
       'themes/default/editor/views/pages/follow': 'themes/steady-sun/editor/views/pages/follow'
 
 define [

@@ -1,6 +1,6 @@
 define [
   'themes/steady-sun/views/pages/base/bare'
-  'help!themes/steady-sun/views/music/album'
+  'help!themes/default/views/music/album'
   'jst!themes/steady-sun/templates/pages/listen'
 ], (BarePage, AlbumView, jst) ->
 

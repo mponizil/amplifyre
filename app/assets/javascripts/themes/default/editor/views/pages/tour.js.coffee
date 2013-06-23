@@ -7,9 +7,7 @@ define [
     inject: ->
       super
 
-      @$controls_left.append('''
-        <button type='button' class='btn' data-new-concert>New Concert</button>
-      ''')
+      @$controls_left.append("<button type='button' class='btn' data-new-concert>New Concert</button>")
 
     events:
       'click [data-new-concert]': 'newConcert'
@@ -18,7 +16,7 @@ define [
     newConcert: (e) ->
       e.stopPropagation()
 
-      @$next_show.one 'add', (e, $concert) =>
+      @$concerts.one 'add', (e, $concert) =>
         $concert.find('[data-attr]:first').trigger('editable:start')
       @collection.add()
 

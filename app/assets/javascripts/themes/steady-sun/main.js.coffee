@@ -8,6 +8,7 @@ require.config
       'themes/default/views/pages/videos': 'themes/steady-sun/views/pages/videos'
       'themes/default/views/pages/tour': 'themes/steady-sun/views/pages/tour'
       'themes/default/views/pages/follow': 'themes/steady-sun/views/pages/follow'
+      'themes/default/views/music/album': 'themes/steady-sun/views/music/album'
 
       # Templates.
       'themes/default/templates/pages/news': 'themes/steady-sun/templates/pages/news'

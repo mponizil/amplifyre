@@ -1,11 +1,11 @@
-<div class='media-group' data-ref='next_show'>
+<div class='media-group' data-ref='next_concert'>
   <h1>Next Show</h1>
-  <div data-ref='next_show_container'></div>
+  <div data-ref='next'></div>
 </div>
 
-<div class='media-group' data-ref='future_shows'>
+<div class='media-group' data-ref='future_concerts'>
   <h1>Future Shows</h1>
-  <div data-ref='future_shows_container'></div>
+  <div data-ref='concerts'></div>
 </div>
 
 <img src='/assets/themes/steady-sun/map.png' width='100%' height='100%' />
