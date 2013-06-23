@@ -1,4 +1,4 @@
 <ul class='nav nav-pills' data-nav>
-  <li><a data-fragment='home'>Home</a></li>
+  <li><a data-fragment=''>Home</a></li>
 </ul>
 <ul class='nav nav-pills' data-ref='nav' data-nav></ul>

@@ -1,6 +1,5 @@
-<h4>episodes</h4>
-<ol class='content-featured' data-ref='tracks'>
-</ol>
+<h4 data-attr='title' data-ref='title'></h4>
+<ol class='content-featured' data-ref='tracks'></ol>
 <ul class='content-details unstyled'>
   <li>
     <i class='icon-purchase'></i>

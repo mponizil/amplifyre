@@ -1,5 +1,17 @@
 define [
+  'patches/editable'
   'themes/common/views/helper-view'
-], (HelperView) ->
+], (Editable, HelperView) ->
 
   class AlbumView extends HelperView
+
+    render: ->
+      super
+
+      @views.push(new Editable.TextInput
+        el: @$title
+        model: @model
+        attr: 'title'
+      .render())
+
+      return this
