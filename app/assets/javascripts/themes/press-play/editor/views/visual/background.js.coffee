@@ -7,10 +7,10 @@ define [
   class BackgroundView extends HelperView
 
     inject: ->
-      @$el.append $('''
+      @$el.append """
         <div class='abs-bot-right' style='z-index:999'>
           <input type='file' name='band_site[background_file]' data-ref='upload' />
-        </div>''')
+        </div>"""
       @$el.append("<div class='progress' data-ref='progress'><div>")
 
     render: ->

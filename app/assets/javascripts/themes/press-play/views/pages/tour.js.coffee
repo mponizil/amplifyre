@@ -1,7 +1,7 @@
 define [
   'list'
   'themes/press-play/views/pages/base/content-box'
-  'help!themes/press-play/views/content/concert'
+  'help!themes/default/views/content/concert'
   'jst!themes/press-play/templates/pages/tour'
 ], (List, ContentBoxPage, ConcertView, jst) ->
 

@@ -7,11 +7,10 @@ define [
     inject: ->
       super
 
-      @$el.prepend('''
+      @$el.prepend """
         <div class='well well-editor'>
           <button type='button' class='btn' data-new-post>New Post</button>
-        </div>
-      ''')
+        </div>"""
 
     events:
       'click [data-new-post]': 'newPost'
@@ -22,7 +21,7 @@ define [
 
       @$posts.one 'add', (e, $post) =>
         $post.find('[data-attr]:first').trigger('editable:start')
-      @collection.create()
+      @collection.add()
 
     tabNext: (e) ->
       $(e.target).trigger('editable:end')

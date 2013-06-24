@@ -10,6 +10,7 @@ require.config
       'themes/default/views/pages/tour': 'themes/press-play/views/pages/tour'
       'themes/default/views/pages/contact': 'themes/press-play/views/pages/contact'
       'themes/default/views/pages/custom': 'themes/press-play/views/pages/custom'
+      'themes/default/views/content/concert': 'themes/press-play/views/content/concert'
       'themes/default/views/music/player/ticker': 'themes/press-play/views/music/player/ticker'
 
       # Templates.

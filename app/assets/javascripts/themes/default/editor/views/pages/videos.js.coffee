@@ -8,10 +8,10 @@ define [
     inject: ->
       super
 
-      @$el.append('''
+      @$el.append """
         <div class='well well-small'>
           <input type='file' name='video[file]' data-ref='upload' multiple />
-        </div>''')
+        </div>"""
 
     render: ->
       super

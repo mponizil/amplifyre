@@ -10,12 +10,12 @@ define [
     inject: ->
       super
 
-      @$albums.append('''
+      @$albums.append """
         <div class='album'>
           <div class='album-cover album-create'>
             <input type='file' class='album-upload' name='album[cover_file]' data-ref='upload' /> +
           </div>
-        </div>''')
+        </div>"""
 
     render: ->
       super

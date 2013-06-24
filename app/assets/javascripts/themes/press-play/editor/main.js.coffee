@@ -2,7 +2,7 @@ require.config
   helpers: [
     label: 'editor'
     pattern: '(themes/press-play|themes/default)'
-    replace: '$1/editor'
+    replace: 'themes/default/editor'
   ]
   map:
     '*':
@@ -15,6 +15,7 @@ require.config
       'themes/default/views/pages/tour': 'themes/press-play/views/pages/tour'
       'themes/default/views/pages/contact': 'themes/press-play/views/pages/contact'
       'themes/default/views/pages/custom': 'themes/press-play/views/pages/custom'
+      'themes/default/views/content/concert': 'themes/press-play/views/content/concert'
       'themes/default/views/music/player/ticker': 'themes/press-play/views/music/player/ticker'
 
       # Templates.
@@ -23,12 +24,9 @@ require.config
 
       # Editor views.
       'themes/default/editor/views/app': 'themes/press-play/editor/views/app'
-      'themes/default/editor/views/pages/landing': 'themes/press-play/editor/views/pages/landing'
       'themes/default/editor/views/pages/listen': 'themes/press-play/editor/views/pages/listen'
-      'themes/default/editor/views/pages/photos': 'themes/press-play/editor/views/pages/photos'
       'themes/default/editor/views/pages/tour': 'themes/press-play/editor/views/pages/tour'
-      'themes/default/editor/views/pages/contact': 'themes/press-play/editor/views/pages/contact'
-      'themes/default/editor/views/pages/custom': 'themes/press-play/editor/views/pages/custom'
+      'themes/default/editor/views/visual/background': 'themes/press-play/editor/views/visual/background'
       'themes/default/editor/views/music/player/ticker': 'themes/press-play/editor/views/music/player/ticker'
 
 define [
