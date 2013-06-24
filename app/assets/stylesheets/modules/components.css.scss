@@ -25,3 +25,18 @@
   height: 5px;
   margin-bottom: 10px;
 }
+
+.dropdown {
+  position: relative;
+  z-index: 10;
+  .dropdown-toggle {
+    position: relative;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    list-style: none;
+  }
+}

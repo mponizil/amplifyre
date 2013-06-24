@@ -1,7 +1,6 @@
 <li class='dropdown' data-dropdown='hover'>
   <a href='javascript:void(0)' class='dropdown-toggle' data-dropdown-toggle>
-    <i class='icon-white icon-plus'></i>
-    Create
+    &#43; Create
   </a>
   <ul class='dropdown-menu' data-dropdown-content>
     <li data-new-page='news'><a href='javascript:void(0)'>News</a></li>

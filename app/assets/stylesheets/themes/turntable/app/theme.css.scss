@@ -13,20 +13,42 @@
   }
 }
 
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 26px;
+  text-transform: uppercase;
+  color: #f4f4f4;
+  background-color: #327dee;
+  padding: 0 12px;
+  border: 0;
+  &:hover {
+    color: #fdfdfd;
+    background-color: #111111;
+  }
+}
+.btn-danger {
+  background-color: #ee3232;
+}
+
 .nav {
   font-size: 26px;
   text-transform: uppercase;
   margin-bottom: 10px;
   li {
-    margin: 0 5px;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
   }
   a {
     color: #000000;
-    &:hover { color: #f4f4f4; }
+    padding: 0 12px;
+    background-color: #fdfdfd;
+    vertical-align: middle;
   }
-  li:hover, li.active {
+  li > a:hover, li.active > a {
+    color: #f4f4f4;
     background-color: #327dee;
-    a { background: none; }
   }
 }
 .symmetry .nav {
