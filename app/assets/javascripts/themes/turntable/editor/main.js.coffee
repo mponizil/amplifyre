@@ -2,7 +2,7 @@ require.config
   helpers: [
     label: 'editor'
     pattern: '(themes/turntable|themes/default)'
-    replace: '$1/editor'
+    replace: 'themes/default/editor'
   ]
   map:
     '*':
@@ -16,6 +16,9 @@ require.config
       'themes/default/templates/pages/landing': 'themes/turntable/templates/pages/landing'
       'themes/default/templates/pages/photos': 'themes/turntable/templates/pages/photos'
       'themes/default/templates/links/navigation': 'themes/turntable/templates/links/navigation'
+
+      # Editor views.
+      'themes/default/editor/views/music/album': 'themes/turntable/editor/views/music/album'
 
 define [
   'jquery'

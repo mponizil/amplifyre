@@ -18,10 +18,10 @@ define [
       @model.on('progress', @update, @)
       @model.on('sync', @hide, @)
 
-    template: -> '''
+    template: -> """
       <div class='progress-outer'>
         <div class='progress-inner' data-ref='bar'></div>
-      </div>'''
+      </div>"""
 
     render: ->
       super
@@ -29,12 +29,12 @@ define [
       return this
 
     show: ->
-      @$target.addClass('hidden')
-      @$el.removeClass('hidden')
+      @$target.addClass('hide')
+      @$el.removeClass('hide')
 
     hide: ->
-      @$el.addClass('hidden')
-      @$target.removeClass('hidden')
+      @$el.addClass('hide')
+      @$target.removeClass('hide')
 
     update: (model, pct) ->
-      @$bar.animate(width: pct + '%')
+      @$bar.animate(width: "#{ pct }%")
