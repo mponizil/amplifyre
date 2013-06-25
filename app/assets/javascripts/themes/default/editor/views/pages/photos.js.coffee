@@ -7,11 +7,7 @@ define [
 
     inject: ->
       super
-
-      @$el.append """
-        <div class='well well-small'>
-          <input type='file' name='photo[file]' data-ref='upload' multiple />
-        </div>"""
+      @$el.append("<input type='file' name='photo[file]' data-ref='upload' multiple />")
 
     render: ->
       super

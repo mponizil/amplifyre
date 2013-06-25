@@ -1,0 +1,17 @@
+@import 'themes/common/editor/style';
+
+// # Editor theme
+.remove {
+  color: #000000;
+  background-color: #fdfdfd;
+  @include box-shadow(rgba(0, 0, 0, 0.2) 1px 1px 1px);
+  &:hover {
+    color: #fdfdfd;
+    background-color: #ee3232;
+  }
+}
+
+// # Override/extend
+.gallery-item .remove {
+  border: 0;
+}

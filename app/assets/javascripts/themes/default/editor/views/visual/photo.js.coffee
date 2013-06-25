@@ -7,10 +7,7 @@ define [
   class PhotoView extends HelperView
 
     inject: ->
-      @$el.append('''
-        <div class='remove'>
-          <i class='icon-remove icon-white' data-ref='destroy'></i>
-        </div>''')
+      @$el.append("<a class='remove' data-ref='destroy'>&times;</a>")
       @$el.append("<div class='progress' data-ref='progress'><div>")
 
     render: ->

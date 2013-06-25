@@ -6,7 +6,7 @@ define [
   class EditPage extends HelperView
 
     inject: ->
-      @$el.prepend('''
+      @$el.prepend """
         <div class='well well-editor' data-ref='controls'>
           <div class='pull-left' data-ref='controls_left'>
             <h2 data-attr='title' data-editable='text-input'></h2>
@@ -14,7 +14,7 @@ define [
           <div class='pull-right' data-ref='controls_right'>
             <button type='button' class='btn btn-danger' data-destroy>Delete Page</button>
           </div>
-        </div>''')
+        </div>"""
       @cache()
 
     render: ->

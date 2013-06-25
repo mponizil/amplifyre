@@ -2,33 +2,28 @@
 
 @import 'modules/mixins';
 
-//
-// Bootstrap override / extension
-//
-
-.remove {
-  z-index: 2010;
-  position: absolute;
-  top: 1px;
-  right: -7px;
-  color: #fff;
-  cursor: pointer;
-  line-height: 13px;
-  width: 8px;
-  height: 11px;
-  padding: 1px 4px 4px 4px;
-  background-repeat: repeat-x;
-  border-color: #bd362f #bd362f #802420;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  @include border-radius(10px);
-  @include text-shadow(0 -1px 0 rgba(0, 0, 0, 0.25));
-  @include gradient(#ee5f5b, #bd362f);
+// # Override/extend
+.gallery-item {
+  position: relative;
 }
 
-//
-// Sortable
-//
+// # Editor-specific
+.remove {
+  cursor: pointer;
+  color: #000000;
+  background-color: #fdfdfd;
+  padding: 5px;
+  line-height: 8px;
+  @include box-shadow(rgba(0, 0, 0, 0.2) 1px 1px 1px);
+  @include absolute($top: -5px, $right: -5px);
+  @include border-radius(50%);
+  &:hover {
+    color: #fdfdfd;
+    background-color: #ee3232;
+  }
+}
 
+// # Sortable
 .sortable,
 .sortable li a, {
   cursor: move;
@@ -37,13 +32,10 @@
   cursor: default;
 }
 .progress-inner {
-  background-color: $master-color;
+  background-color: #cfcfcf;
 }
 
-//
-// Editable
-//
-
+// # Editable
 .editable {
   outline: none;
 }
@@ -68,10 +60,7 @@ textarea.editable-hover {
   outline: 1px dashed rgba(100, 100, 100, 0.5);
 }
 
-//
-// Redactor styles
-//
-
+// # Redactor
 .redactor_box {
   border: none;
   margin-top: -38px;
