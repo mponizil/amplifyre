@@ -62,10 +62,12 @@ class BandSitesController < ApplicationController
 private
 
   def get_site_from_slug
-    if request.domain.starts_with?('amplifyre')
-      @slug = params[:slug] || request.subdomain
-    else
-      @slug = request.domain.split('.')[0]
+    if request.domain
+      if request.domain.starts_with?('amplifyre')
+        @slug = params[:slug] || request.subdomain
+      else
+        @slug = request.domain.split('.')[0]
+      end
     end
 
     @band_site = BandSite.find_by_slug(@slug)
