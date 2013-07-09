@@ -26,13 +26,8 @@
 .media {
   @include clearfix;
   &:last-child { margin-bottom: 20px; }
-  .media-content {
-    float: left;
-    margin-bottom: 20px;
-  }
-  .media-actions {
-    float: right;
-  }
+  .media-content { float: left; }
+  .media-actions { float: right; }
 }
 
 // # Lip
