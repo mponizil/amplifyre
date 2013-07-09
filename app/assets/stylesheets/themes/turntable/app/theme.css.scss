@@ -106,3 +106,33 @@
 .media {
   font-family: Arial, sans-serif;
 }
+
+// # Calendar
+.calendar {
+  margin: 0 auto 20px auto;
+  th {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  td {
+    padding: 8px;
+    a {
+      font-size: 24px;
+      line-height: 20px;
+      display: inline-block;
+      text-align: center;
+      width: 34px;
+      height: 18px;
+      padding: 10px 0;
+      color: #f4f4f4;
+      background-color: #232323;
+      @include border-radius(3px);
+    }
+    &.active a,
+    a:hover {
+      background-color: #327dee;
+    }
+  }
+}

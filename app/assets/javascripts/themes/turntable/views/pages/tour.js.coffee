@@ -33,7 +33,7 @@ define [
         @$next.html(noConcertsJst())
 
       @views.push(new List
-        el: @$concerts
+        el: @$future
         view: ConcertView
         collection: @collection.subset('future')
       .render())
