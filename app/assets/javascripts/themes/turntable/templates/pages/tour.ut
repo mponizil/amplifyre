@@ -1,27 +1,15 @@
 <div class='content' data-ref='concerts'>
 
   <div class='media-featured' data-ref='next_concert'>
-    <h2>Next Show</h2>
+    <div class='text-center'>
+      <h2>Next Show</h2>
+    </div>
     <div data-ref='next'></div>
   </div>
 
   <div class='divider-dots'><i></i><i></i><i></i></div>
 
-  <table class='calendar' data-ref='future_dates'>
-    <tr>
-      <th colspan='2'>June</th>
-      <th colspan='2'>July</th>
-      <th colspan='2'>August</th>
-    </tr>
-    <tr>
-      <td class='active'><a>17</a></td>
-      <td><a>26</a></td>
-      <td><a>9</a></td>
-      <td><a>12</a></td>
-      <td><a>1</a></td>
-      <td><a>30</a></td>
-    </tr>
-  </table>
+  <div data-ref='future_calendar'></div>
 
   <div class='media-group' data-ref='future_concerts'>
 
