@@ -4,6 +4,7 @@ require.config
       # Views.
       'themes/default/views/pages/base/bare': 'themes/turntable/views/pages/base/bare'
       'themes/default/views/pages/listen': 'themes/turntable/views/pages/listen'
+      'themes/default/views/pages/tour': 'themes/turntable/views/pages/tour'
       'themes/default/views/music/album': 'themes/turntable/views/music/album'
 
       # Templates.

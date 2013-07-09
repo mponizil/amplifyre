@@ -1,4 +1,4 @@
-<h4 data-attr='title' data-ref='title'></h4>
+<h3 data-attr='title' data-ref='title'></h3>
 <ol class='content-featured' data-ref='tracks'></ol>
 <ul class='content-details unstyled'>
   <li>

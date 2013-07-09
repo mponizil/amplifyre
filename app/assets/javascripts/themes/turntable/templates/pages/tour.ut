@@ -1,0 +1,15 @@
+<div class='content'>
+
+  <div class='media-featured' data-ref='next_concert'>
+    <h2>Next Show</h2>
+    <div data-ref='next'></div>
+  </div>
+
+  <div class='divider-dots'><i></i><i></i><i></i></div>
+
+  <div class='media-group' data-ref='future_concerts'>
+    <h2 class='text-center'>Future Shows</h2>
+    <div data-ref='concerts'></div>
+  </div>
+
+</div>

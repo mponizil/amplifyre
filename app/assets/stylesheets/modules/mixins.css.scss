@@ -50,3 +50,10 @@
 @mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
   @include position(absolute, $top, $right, $bottom, $left);
 }
+
+@mixin circle($radius: 5px, $background: #000) {
+  width: $radius * 2;
+  height: $radius * 2;
+  background-color: $background;
+  @include border-radius(50%);
+}

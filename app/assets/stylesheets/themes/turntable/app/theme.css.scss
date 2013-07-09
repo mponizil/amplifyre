@@ -1,7 +1,10 @@
+// # Lip
 .lip {
   background-color: #244679;
 }
 
+
+// # Corner top-right
 .corner-tr {
   width: 96px;
   top: 24px;
@@ -13,14 +16,15 @@
   }
 }
 
+// # Buttons
 .btn {
   display: inline-block;
   cursor: pointer;
-  font-size: 26px;
+  font-size: 13px;
   text-transform: uppercase;
   color: #f4f4f4;
   background-color: #327dee;
-  padding: 0 12px;
+  padding: 10px 20px;
   border: 0;
   &:hover {
     color: #fdfdfd;
@@ -31,6 +35,7 @@
   background-color: #ee3232;
 }
 
+// # Nav
 .nav {
   font-size: 26px;
   text-transform: uppercase;
@@ -55,10 +60,21 @@
   float: left;
 }
 
-.divider-earbuds {
+// # Dividers
+.divider-earbuds,
+.divider-dots {
   margin: 0 auto 20px auto;
 }
+.divider-dots {
+  text-align: center;
+  > i {
+    display: inline-block;
+    margin: 0 4px;
+    @include circle(3px, #c7c7c7);
+  }
+}
 
+// # Playback controls
 .controls {
   width: 240px;
   height: 240px;
@@ -68,6 +84,7 @@
   > * { @include absolute(0, 0, 0, 0); }
 }
 
+// # Main content
 .content {
   width: 575px;
   height: 575px;
@@ -75,6 +92,7 @@
   margin: 0 auto;
 }
 
+// # Gallery items
 .gallery-item a {
   border: 6px solid rgba(255, 255, 255, 0.65);
   &:hover {
@@ -82,4 +100,9 @@
     @include box-shadow(rgba(0, 0, 0, 0.25) 2px 2px 27px);
   }
   img { vertical-align: middle; }
+}
+
+// # Media
+.media {
+  font-family: Arial, sans-serif;
 }

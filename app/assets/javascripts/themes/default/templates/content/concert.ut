@@ -1,13 +1,13 @@
 <div class='media'>
-  <div class='media-body'>
-    <h3 class='media-heading'>
+  <div class='media-content'>
+    <h4 class='media-heading'>
       <span data-ref='date' data-date-attr='date' data-date-format='M/DD/YYYY'></span>
       -
       <span data-ref='venue' data-attr='venue'></span>
-    </h3>
-    <span data-ref='details' data-attr='details'></span>
+    </h4>
+    <p data-ref='details' data-attr='details'></p>
   </div>
-  <div class='pull-right' data-ref='right'>
+  <div class='media-actions' data-ref='right'>
     <a class='btn' target='_blank' data-attrs='{"href":"link"}'>Tix &amp; Info</a>
   </div>
 </div>

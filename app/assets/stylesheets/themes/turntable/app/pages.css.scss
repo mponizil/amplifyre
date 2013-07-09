@@ -1,6 +1,7 @@
 #page-landing {
   text-align: center;
 }
+
 #page-listen {
   .content {
     background-image: image-url('themes/turntable/tmp/album-cover.png');
@@ -25,12 +26,14 @@
     li { line-height: 1.4; }
   }
 }
+
 #page-photos {
   .content {
     padding-top: 10px;
     height: 565px;
   }
 }
+
 #page-videos {
   .content {
     padding-top: 40px;
@@ -38,5 +41,14 @@
   }
   .row-fluid {
     margin-bottom: 40px;
+  }
+}
+
+#page-tour {
+  .content { border: 0; }
+  .media-featured {
+    text-align: center;
+    .media-content { float: none; }
+    .media-actions { float: none; }
   }
 }

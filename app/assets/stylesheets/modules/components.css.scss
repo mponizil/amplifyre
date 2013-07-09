@@ -1,3 +1,4 @@
+// # Mirage
 .mirage {
   position: relative;
   overflow: hidden;
@@ -12,6 +13,7 @@
   }
 }
 
+// # Gallery Cluster
 .gallery-cluster {
   text-align: center;
 }
@@ -20,12 +22,27 @@
   &, a { display: inline-block; }
 }
 
+// # Media
+.media {
+  @include clearfix;
+  &:last-child { margin-bottom: 20px; }
+  .media-content {
+    float: left;
+    margin-bottom: 20px;
+  }
+  .media-actions {
+    float: right;
+  }
+}
+
+// # Lip
 .lip {
   width: 100%;
   height: 5px;
   margin-bottom: 10px;
 }
 
+// # Dropdown
 .dropdown {
   position: relative;
   z-index: 10;
