@@ -1,7 +1,7 @@
 Amplifyre::Application.routes.draw do
 
   # Band site based on subdomain
-  constraints :subdomain => /.+/ do
+  constraints Subdomain do
     match 'edit(/:page)' => 'band_sites#edit_mode'
     match ':page' => 'band_sites#live'
     root :to => 'band_sites#live'
